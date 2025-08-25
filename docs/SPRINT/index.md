@@ -1,7 +1,20 @@
+---
+hide:
+  - toc
+---
+
+
 # SPRINT
 
-<video controls src="IMG_1944.mov" title="Title"></video>
+<figure style="margin:1.5rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <video controls src="firing.mov" title="Hot-fire Test" style="width:100%; max-width:600px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Hot-fire test of the SPRINT system.</figcaption>
+</figure>
 
+<figure style="margin:1.5rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <video controls src="IMG_1944.mov" title="Cold-flow Test" style="width:100%; max-width:600px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Cold-flow.</figcaption>
+</figure>
 
 
 

@@ -1,6 +1,6 @@
 # GSE
 
-![alt text](IMG_2071.JPG)
+![alt text](EGSE.JPG)
 
 ## Top Row
 
@@ -20,6 +20,5 @@
 ## Bottom Row
 
 - [Relays](https://www.digikey.ca/en/products/detail/phoenix-contact/2903361/4755334)
-- More random terminals
-- Couple SSRs 
+- Load Cell Amps
 - [13x 3 layer terminal blocks](https://www.digikey.ca/en/products/detail/phoenix-contact/3213713/3603867)
