@@ -1,6 +1,18 @@
-# GSE
+# Electronics
 
 ![alt text](EGSE.JPG)
+
+## Description
+
+The primary function of the Ground Support Equipment (GSE) is to collect telemetry and control the bi-propellant liquid rocket safely using a standardized, reliable electrical enclosure.
+
+Enclosure and connectors: The enclosure houses all critical hardware. It is IP65-rated for dust and water protection appropriate for launch pad conditions and employs IP67-rated connectors to ensure sealed, reliable interconnects.
+
+Instrumentation and control: A LabJack T7-Pro provides high‑resolution analog acquisition (thermocouples, pressure transducers, and load cells), while the CLICK PLUS C2-01CPU PLC delivers deterministic control of relays and PWM‑driven servos for valve actuation.
+
+Networking and software: All devices are routed through a hardened Gigabit Ethernet switch enabling remote software operation with manual override and integrated fail‑safes for mission‑critical functions.
+
+Additional capabilities: The system incorporates mechanical and solid‑state relays, fused power distribution, and organized terminal blocks to simplify maintenance and ensure electrical protection.
 
 ## Top Row
 
