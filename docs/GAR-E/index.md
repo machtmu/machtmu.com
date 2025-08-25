@@ -6,10 +6,6 @@ hide:
 
 # GAR-E
 
-
-## Blurb
-The GAR-E (Gaseous Ambient Liquid Oxygen Rocket Engine) is MACHTMU's flagship propulsion system. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce dignissim, quam vel tincidunt bibendum, nisi magna venenatis orci, a fermentum massa quam at magna. Donec vel vestibulum felis, id finibus tellus.
-
 ## Tests
 
 <div class="test-gallery">
