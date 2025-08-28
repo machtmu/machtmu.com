@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(devcontainer exec:*)"
+      "Bash(devcontainer exec:*)",
+      "WebSearch",
+      "Bash(gh repo list:*)",
+      "Bash(gh repo view:*)"
     ],
     "deny": [],
     "ask": []
