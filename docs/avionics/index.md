@@ -41,7 +41,7 @@ table, table * {
     <!-- Second Row -->
     <tr>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/board.front.png" alt="GPS" />
+        <img src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="GPS" />
         <br />
         <a href="PCB-Modules/gps/"><i>GPS</i></a>
       </td>
