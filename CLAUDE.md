@@ -92,3 +92,11 @@ mkdocs gh-deploy
 - User interaction triggers for media playback
 - Progressive enhancement for JavaScript features
 - Mobile-first responsive design approach
+
+## Commit Message Guidelines
+
+- Use clear, descriptive commit messages that explain what changed and why
+- Do NOT include "🤖 Generated with [Claude Code]" or similar attribution messages
+- Do NOT include "Co-Authored-By: Claude" lines
+- Commit as the user, not as co-authored by Claude
+- Keep commit messages professional and focused on the actual changes
