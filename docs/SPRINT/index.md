@@ -6,15 +6,69 @@ hide:
 
 # SPRINT
 
-<figure style="margin:1.5rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls src="firing.mov" title="Hot-fire Test" style="width:100%; max-width:600px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Hot-fire test of the SPRINT system.</figcaption>
-</figure>
+## Tests
 
-<figure style="margin:1.5rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls src="IMG_1944.mov" title="Cold-flow Test" style="width:100%; max-width:600px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Cold-flow.</figcaption>
-</figure>
+<div class="test-gallery">
+    
+    <div class="test-item">
+        <img src="hotfire_2024/thmbnl.png" alt="Hot-fire Test">
+        <h3>Hot Fire Test - 2024</h3>
+        <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
+        <a href="hotfire_2024/" class="find-out-more">Find out more →</a>
+    </div>
+    
+    <div class="test-item">
+        <img src="coldflow_2024/thmbnl.png" alt="Cold-flow Test">
+        <h3>Cold Flow Test - 2024</h3>
+        <p>Cold-flow test validating fluid dynamics and system integration.</p>
+        <a href="coldflow_2024/" class="find-out-more">Find out more →</a>
+    </div>
+
+</div>
+
+<style>
+    .test-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    
+    .test-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .test-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .test-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    
+    .find-out-more {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #0066cc;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .find-out-more:hover {
+        background-color: #004c99;
+        color: white !important;
+    }
+</style>
 
 
 

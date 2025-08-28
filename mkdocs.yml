@@ -1,9 +1,9 @@
 site_name: MACH
 
 site_url: https://machtmu.com/
-site_description: MACH - TMU's Liquid Rocketry
+site_description: MACH - TMU Liquid Rocketry
 site_author: Mach
-repo_url: https://github.com/tmurocketry/tmurocketry.com
+repo_url: https://github.com/machtmu/machtmu.com
 edit_uri: edit/main/docs/
 
 copyright: MACH © 2025 
@@ -61,8 +61,8 @@ plugins:
   #- git-committers:
   #    repository: sonicavionics/sonicavionics.com
   #   token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
-  # - blog:
-  #     authors: true
+  - blog:
+      authors: true
   - search
   # - rss:
   #     match_path: blog/posts/.* 
@@ -99,7 +99,7 @@ extra:
   generator: true
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/tmurocketry/
+      link: https://github.com/machtmu/
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/tmurocketry/
     - icon: fontawesome/brands/linkedin
