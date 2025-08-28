@@ -1,6 +1,7 @@
 # Plumbing
 
 ![alt text](IMG_2357.JPG)
+<p class="image-caption">Plumbing System Overview</p>
 
 ## Fill and Purge System
 

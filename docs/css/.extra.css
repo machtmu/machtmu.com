@@ -133,7 +133,9 @@ h5.doc-heading {
 
 .image-row img {
     max-width: 45%; /* Ensures the images are responsive */
+    max-height: 400px; /* Limit height to 400px */
     height: auto; /* Maintains the aspect ratio */
+    width: auto; /* Allow width to adjust to maintain aspect ratio */
 }
 
 

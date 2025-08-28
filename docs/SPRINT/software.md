@@ -2,14 +2,10 @@
 
 
 ![Front panel interface](front_panel.png)
-<div align="center">
-Front panel view of LabVIEW
-</div>
+<p class="image-caption">Front panel view of LabVIEW</p>
 
 ![Back panel block diagram](back_panel.png)
-<div align="center">
-Back panel (block diagram)
-</div>
+<p class="image-caption">Back panel (block diagram)</p>
 
 ## LabVIEW Human-Machine Interface
 

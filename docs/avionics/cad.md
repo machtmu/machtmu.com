@@ -7,8 +7,11 @@ hide:
 
 This is the page to describe the avionics bay CAD.
 
-![alt text](https://raw.githubusercontent.com/sonicavionics/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG)
-<p class="image-caption">Version 0.2.0</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sonicavionics/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD" style="height:500px; width:auto;">
+  <br />
+  <p class="image-caption">Avionics CAD Render</p>
+</div>
 
 There's just barely enough space to fit the RFD900 on a module. so why not?
 The challenge is to see if these over hangs can print.

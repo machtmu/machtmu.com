@@ -1,6 +1,7 @@
 # Electronics
 
 ![alt text](EGSE.JPG)
+<p class="image-caption">Electronics Ground Support Equipment (EGSE)</p>
 
 ## Description
 
