@@ -1,11 +1,11 @@
 ---
-title: SPRINT Hot Fire Test - 2024
+title: SPRINT Hot Fire Test - August 22nd, 2024
 hide:
   - navigation
   - toc
 ---
 
-# SPRINT Hot Fire Test - 2024
+# SPRINT Hot Fire Test - August 22nd, 2024
 
 ## Overview
 

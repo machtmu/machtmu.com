@@ -12,14 +12,14 @@ hide:
     
     <div class="test-item">
         <img src="hotfire_2024/thmbnl.png" alt="Hot-fire Test">
-        <h3>Hot Fire Test - 2024</h3>
+        <h3>Hot Fire Test - August 22nd, 2024</h3>
         <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
         <a href="hotfire_2024/" class="find-out-more">Find out more →</a>
     </div>
     
     <div class="test-item">
         <img src="coldflow_2024/thmbnl.png" alt="Cold-flow Test">
-        <h3>Cold Flow Test - 2024</h3>
+        <h3>Cold Flow Test - August 9th, 2024</h3>
         <p>Cold-flow test validating fluid dynamics and system integration.</p>
         <a href="coldflow_2024/" class="find-out-more">Find out more →</a>
     </div>
