@@ -1,10 +1,10 @@
 # Ground Software & HMI
 
 
-![Front panel interface](front_panel.png)
+![Front panel interface](software/front_panel.png)
 <p class="image-caption">Front panel view of LabVIEW</p>
 
-![Back panel block diagram](back_panel.png)
+![Back panel block diagram](software/back_panel.png)
 <p class="image-caption">Back panel (block diagram)</p>
 
 ## LabVIEW Human-Machine Interface
