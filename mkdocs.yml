@@ -41,7 +41,6 @@ theme:
   features:
     - content.action.edit
     - content.code.copy
-    - navigation.indexes # makes index page the home page
     - navigation.tabs
     - navigation.tabs.sticky
     - search.suggest
@@ -55,6 +54,7 @@ theme:
 
 
 plugins:
+  - meta
   - git-revision-date-localized:
       enable_creation_date: true
       timezone: America/Toronto

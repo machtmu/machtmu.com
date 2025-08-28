@@ -1,10 +1,9 @@
 ---
 title: SABRE
-
 hide:
-    - navigation
-    - toc
-    - path
+  - navigation
+  - toc
+  - path
 ---
 
 # SABRE

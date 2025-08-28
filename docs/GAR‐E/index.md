@@ -1,4 +1,5 @@
 ---
+title: GAR-E
 hide:
   - navigation
   - toc
@@ -21,7 +22,7 @@ hide:
         <img src="hotfire_aug_23/thmbnl.png" alt="not found">
         <h3>Hot Fire Attempt #1 (unsuccessful) - August 2023</h3>
         <p>First successful full duration burn demonstrating complete engine cycle.</p>
-        <a href="/docs/GAR-E/full-duration-sept2023" class="find-out-more">Find out more →</a>
+        <a href="/docs/GAR‐E/full-duration-sept2023" class="find-out-more">Find out more →</a>
     </div>
     
     <div class="test-item">
@@ -42,14 +43,14 @@ hide:
         <img src="hotfire_aug_24/thmbnl.png" alt="not found">
         <h3>LC2024 Hotfire #3 (successful) - August 2024</h3>
         <p>Extended duration testing validating engine reliability and thermal management.</p>
-        <a href="/docs/GAR-E/endurance-feb2024" class="find-out-more">Find out more →</a>
+        <a href="/docs/GAR‐E/endurance-feb2024" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="hotfire_sept_24/thmbnl.png" alt="not found">
         <h3>Hotfire #4 (successful) - September 2024</h3>
         <p>Extended duration testing validating engine reliability and thermal management.</p>
-        <a href="/docs/GAR-E/endurance-feb2024" class="find-out-more">Find out more →</a>
+        <a href="/docs/GAR‐E/endurance-feb2024" class="find-out-more">Find out more →</a>
     </div>
 
 </div>
