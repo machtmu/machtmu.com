@@ -70,8 +70,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://theengineering.ca/" target="_blank" class="sponsor-item">
-        <img src="mues-logo.png" alt="Metropolitan University Engineering Society">
-        <span>Metropolitan University Engineering Society</span>
+        <img src="mues-logo.png" alt="Metropolitan Undergraduate Engineering Society">
+        <span>Metropolitan Undergraduate Engineering Society</span>
     </a>
     
     <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item">
