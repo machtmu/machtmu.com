@@ -25,7 +25,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="#" target="_blank" class="sponsor-item">
-        <img src="dishon-logo.jpg" alt="Dishon">
+        <img src="dishon-logo.avif" alt="Dishon">
         <span>Dishon</span>
     </a>
     
@@ -39,17 +39,15 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Hoskin Scientific</span>
     </a>
     
-    <a href="https://www.torontomet.ca/innovation/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.torontomet.ca/innovation/" target="_blank" class="sponsor-item">
+        <img src="ibz-logo.png" alt="Innovation Boost Zone">
         <span>Innovation Boost Zone</span>
     </a>
     
-    <a href="https://www.jaksa.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.jaksa.com/" target="_blank" class="sponsor-item">
+        <img src="jaksa-logo.png" alt="Jaksa Solenoid Valves">
         <span>Jaksa Solenoid Valves</span>
     </a>
-    
-    <div class="sponsor-item individual">
-        <span>Joseph Wood</span>
-    </div>
     
     <a href="https://www.kulite.com/" target="_blank" class="sponsor-item">
         <img src="kulite-logo.svg" alt="Kulite">
@@ -62,16 +60,17 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.marssociety.ca/" target="_blank" class="sponsor-item">
-        <img src="mars-society-logo.jpg" alt="Mars Society of Canada">
+        <img src="mars-society-logo.png" alt="Mars Society of Canada">
         <span>Mars Society of Canada</span>
     </a>
     
     <a href="https://www.megapro.net/" target="_blank" class="sponsor-item">
-        <img src="megapro-logo.png" alt="Megapro">
+        <img src="megapro-logo.webp" alt="Megapro">
         <span>Megapro</span>
     </a>
     
-    <a href="https://theengineering.ca/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://theengineering.ca/" target="_blank" class="sponsor-item">
+        <img src="mues-logo.png" alt="Metropolitan University Engineering Society">
         <span>Metropolitan University Engineering Society</span>
     </a>
     
@@ -80,22 +79,24 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Red Rocket Coffee</span>
     </a>
     
-    <div class="sponsor-item individual">
+    <a href="#" target="_blank" class="sponsor-item">
+        <img src="simple-path-farms-logo.svg" alt="Simple Path Farms">
         <span>Simple Path Farms</span>
-    </div>
+    </a>
     
     <a href="https://www.solidworks.com/" target="_blank" class="sponsor-item">
         <img src="solidworks-logo.png" alt="SolidWorks">
         <span>SolidWorks</span>
     </a>
     
-    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item">
+        <img src="stein-logo.webp" alt="Stein Industries Inc">
         <span>Stein Industries Inc</span>
     </a>
     
     <a href="https://www.swagelok.com/" target="_blank" class="sponsor-item">
-        <img src="swagelok-logo.png" alt="Swagelok Ontario">
-        <span>Swagelok Ontario</span>
+        <img src="swagelok-logo.png" alt="Swagelok">
+        <span>Swagelok</span>
     </a>
     
     <a href="https://www.textreme.com/" target="_blank" class="sponsor-item">
@@ -113,7 +114,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Vibrant Performance</span>
     </a>
     
-    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item">
+        <img src="voestalpine-logo.png" alt="voestalpine">
         <span>voestalpine</span>
     </a>
 </div>
@@ -121,8 +123,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 <style>
     .sponsor-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.5rem;
         margin: 2rem 0;
     }
     
@@ -130,20 +132,17 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1.5rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        padding: 0.25rem;
         text-decoration: none;
         color: inherit;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background: white;
-        min-height: 150px;
+        transition: transform 0.3s ease;
+        background: transparent;
+        min-height: 80px;
         justify-content: center;
     }
     
     .sponsor-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transform: translateY(-3px);
         text-decoration: none;
         color: inherit;
     }
@@ -159,27 +158,34 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         text-align: center;
         font-weight: 500;
         font-size: 0.9rem;
+        color: #000;
     }
     
     .sponsor-item.individual {
-        background: #f8f9fa;
-        border-style: dashed;
+        background: transparent;
     }
     
     .sponsor-item.individual span {
         font-size: 1rem;
         color: #666;
+        text-align: center;
+        padding: 0.5rem;
+        border: 1px dashed #ccc;
+        border-radius: 4px;
     }
     
     .sponsor-item.no-logo {
-        background: #f0f0f0;
-        border-color: #ccc;
+        background: transparent;
     }
     
     .sponsor-item.no-logo span {
         font-size: 1rem;
         font-weight: 600;
         color: #555;
+        text-align: center;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
     }
     
     @media (max-width: 768px) {
