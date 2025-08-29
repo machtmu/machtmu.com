@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title>406 Status Error</title>
+        <meta charset="iso-8859-1"/>
+        <meta name="robots" content="noindex"/>
+        <link rel="stylesheet" type="text/css" href="/406error.css"/>
+    </head>
+    <body>
+        <div id="bdiv">
+	        <div id="content">
+	            <div id="title">
+					<b>406 status code</b>  - AutomationDirect - Not Acceptable Response
+	            </div>
+	            <div id="header-bar">
+	             please wait a few seconds and try again...
+	            </div>
+	            <div id="info">
+	                <img src="/406error.jpg" alt="AutomationDirect.com" width="52" height="40"/>
+	                Our server is having trouble processing your request for some reason. You may try again or contact our webmaster for support.<br><br>
+	            </div>
+	        </div>
+        </div>
+    </body>
+</html>

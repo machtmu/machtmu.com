@@ -10,7 +10,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 
 <div class="sponsor-grid">
     <a href="https://www.americanearthanchors.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/american-earth-anchors-logo.png" alt="American Earth Anchors">
+        <img src="american-earth-anchors-logo.png" alt="American Earth Anchors">
         <span>American Earth Anchors</span>
     </a>
     
@@ -18,7 +18,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Aqua Environment</span>
     </div>
     
-    <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item">
+        <img src="automation-direct-logo.png" alt="Automation Direct">
         <span>Automation Direct</span>
     </a>
     
@@ -34,7 +35,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Flownex</span>
     </a>
     
-    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item">
+        <img src="hoskin-logo.svg" alt="Hoskin Scientific">
         <span>Hoskin Scientific</span>
     </a>
     
@@ -51,21 +53,22 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </div>
     
     <a href="https://www.kulite.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/kulite-logo.svg" alt="Kulite">
+        <img src="kulite-logo.svg" alt="Kulite">
         <span>Kulite</span>
     </a>
     
     <a href="https://www.launchcanada.org/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/launch-canada-logo.png" alt="Launch Canada">
+        <img src="launch-canada-logo.png" alt="Launch Canada">
         <span>Launch Canada</span>
     </a>
     
     <a href="https://www.marssociety.ca/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/mars-society-logo.jpg" alt="Mars Society of Canada">
+        <img src="mars-society-logo.jpg" alt="Mars Society of Canada">
         <span>Mars Society of Canada</span>
     </a>
     
-    <a href="https://www.megapro.net/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.megapro.net/" target="_blank" class="sponsor-item">
+        <img src="megapro-logo.png" alt="Megapro">
         <span>Megapro</span>
     </a>
     
@@ -73,7 +76,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Metropolitan University Engineering Society</span>
     </a>
     
-    <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item">
+        <img src="red-rocket-coffee-logo.png" alt="Red Rocket Coffee">
         <span>Red Rocket Coffee</span>
     </a>
     
@@ -82,7 +86,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </div>
     
     <a href="https://www.solidworks.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/solidworks-logo.png" alt="SolidWorks">
+        <img src="solidworks-logo.png" alt="SolidWorks">
         <span>SolidWorks</span>
     </a>
     
@@ -91,20 +95,22 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.swagelok.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/swagelok-logo.png" alt="Swagelok Ontario">
+        <img src="swagelok-logo.png" alt="Swagelok Ontario">
         <span>Swagelok Ontario</span>
     </a>
     
-    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item">
+        <img src="textreme-logo.png" alt="TeXtreme">
         <span>TeXtreme</span>
     </a>
     
     <a href="https://www.torontomet.ca/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/tmu-logo.svg" alt="Toronto Metropolitan University">
+        <img src="tmu-logo.svg" alt="Toronto Metropolitan University">
         <span>Toronto Metropolitan University</span>
     </a>
     
-    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item">
+        <img src="vibrant-performance-logo.png" alt="Vibrant Performance">
         <span>Vibrant Performance</span>
     </a>
     
