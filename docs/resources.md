@@ -9,6 +9,8 @@ hide:
 
 ## MACH
 
+- [MACH 2025 LCR v0.1.0](<MACH_LCR2025 v0.1.0.pdf>)
+
 - [MACH 2025 LC PDR](machpdr2025.pdf)
 
 - [2023 Launch Canada (GAR-E)](<MACH_LCR2023 R4.2.pdf>)
@@ -49,6 +51,15 @@ hide:
 - [REFPROP](https://www.nist.gov/srd/refprop)
 - [RPA](https://www.rocket-propulsion.com/index.htm)
 
+
+## Launch Canada Guidelines
+
+- [Launch Canada Rules and Requirements Guide 2025R3](SPRINT/resources/Launch+Canada+Rules+and+Requirements+Guide+2025R3.pdf)
+- [Launch Canada Design, Test & Evaluation Guide R3](SPRINT/resources/Launch+Canada+Design,+Test+&+Evaluation+Guide+R3+(2).pdf)
+
+## Design for Manufacturing
+
+- [Avionics DFM Guide](avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
 
 ## References
 
