@@ -18,13 +18,11 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Aqua Environment</span>
     </div>
     
-    <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/automation-direct-logo.png" alt="Automation Direct">
+    <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item no-logo">
         <span>Automation Direct</span>
     </a>
     
-    <a href="https://www.torontomet.ca/dfz/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/dfz-logo.png" alt="Design Fabrication Zone">
+    <a href="https://www.torontomet.ca/dfz/" target="_blank" class="sponsor-item no-logo">
         <span>Design Fabrication Zone</span>
     </a>
     
@@ -32,23 +30,19 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Dishon</span>
     </div>
     
-    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/flownex-logo.png" alt="Flownex">
+    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item no-logo">
         <span>Flownex</span>
     </a>
     
-    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/hoskin-logo.png" alt="Hoskin Scientific">
+    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item no-logo">
         <span>Hoskin Scientific</span>
     </a>
     
-    <a href="https://www.torontomet.ca/innovation/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/ibz-logo.png" alt="Innovation Boost Zone">
+    <a href="https://www.torontomet.ca/innovation/" target="_blank" class="sponsor-item no-logo">
         <span>Innovation Boost Zone</span>
     </a>
     
-    <a href="https://www.jaksa.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/jaksa-logo.png" alt="Jaksa Solenoid Valves">
+    <a href="https://www.jaksa.com/" target="_blank" class="sponsor-item no-logo">
         <span>Jaksa Solenoid Valves</span>
     </a>
     
@@ -71,18 +65,15 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Mars Society of Canada</span>
     </a>
     
-    <a href="https://www.megapro.net/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/megapro-logo.png" alt="Megapro">
+    <a href="https://www.megapro.net/" target="_blank" class="sponsor-item no-logo">
         <span>Megapro</span>
     </a>
     
-    <a href="https://theengineering.ca/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/mues-logo.png" alt="Metropolitan University Engineering Society">
+    <a href="https://theengineering.ca/" target="_blank" class="sponsor-item no-logo">
         <span>Metropolitan University Engineering Society</span>
     </a>
     
-    <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/red-rocket-coffee-logo.png" alt="Red Rocket Coffee">
+    <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item no-logo">
         <span>Red Rocket Coffee</span>
     </a>
     
@@ -91,12 +82,11 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </div>
     
     <a href="https://www.solidworks.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/solidworks-logo.png" alt="Solidworks">
-        <span>Solidworks</span>
+        <img src="assets/images/sponsors/solidworks-logo.png" alt="SolidWorks">
+        <span>SolidWorks</span>
     </a>
     
-    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/stein-logo.png" alt="Stein Industries Inc">
+    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item no-logo">
         <span>Stein Industries Inc</span>
     </a>
     
@@ -105,8 +95,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Swagelok Ontario</span>
     </a>
     
-    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/textreme-logo.png" alt="TeXtreme">
+    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item no-logo">
         <span>TeXtreme</span>
     </a>
     
@@ -115,13 +104,11 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Toronto Metropolitan University</span>
     </a>
     
-    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/vibrant-logo.png" alt="Vibrant Performance">
+    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item no-logo">
         <span>Vibrant Performance</span>
     </a>
     
-    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item">
-        <img src="assets/images/sponsors/voestalpine-logo.png" alt="voestalpine">
+    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item no-logo">
         <span>voestalpine</span>
     </a>
 </div>
@@ -145,6 +132,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         color: inherit;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         background: white;
+        min-height: 150px;
+        justify-content: center;
     }
     
     .sponsor-item:hover {
@@ -175,6 +164,17 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     .sponsor-item.individual span {
         font-size: 1rem;
         color: #666;
+    }
+    
+    .sponsor-item.no-logo {
+        background: #f0f0f0;
+        border-color: #ccc;
+    }
+    
+    .sponsor-item.no-logo span {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #555;
     }
     
     @media (max-width: 768px) {
