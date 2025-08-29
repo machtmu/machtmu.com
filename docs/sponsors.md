@@ -14,24 +14,23 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>American Earth Anchors</span>
     </a>
     
-    <div class="sponsor-item individual">
+    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item">
+        <img src="aqua-environment-logo.svg" alt="Aqua Environment">
         <span>Aqua Environment</span>
-    </div>
+    </a>
     
     <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item">
         <img src="automation-direct-logo.png" alt="Automation Direct">
         <span>Automation Direct</span>
     </a>
     
-    <a href="https://www.torontomet.ca/dfz/" target="_blank" class="sponsor-item no-logo">
-        <span>Design Fabrication Zone</span>
+    <a href="#" target="_blank" class="sponsor-item">
+        <img src="dishon-logo.jpg" alt="Dishon">
+        <span>Dishon</span>
     </a>
     
-    <div class="sponsor-item individual">
-        <span>Dishon</span>
-    </div>
-    
-    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item no-logo">
+    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item">
+        <img src="flownex-logo.png" alt="Flownex">
         <span>Flownex</span>
     </a>
     
