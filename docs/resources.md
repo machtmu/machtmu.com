@@ -43,6 +43,7 @@ hide:
 
 - [Design of Liquid Propellant Rocket Engines](https://ntrs.nasa.gov/api/citations/19710019929/downloads/19710019929.pdf)
 - [Sutton, G. and Biblarz, O., Rocket Propulsion Elements, Wiley and Sons, New York, 9th ed., 2017](https://ftp.idu.ac.id/wp-content/uploads/ebook/tdg/DESIGN%20SISTEM%20DAYA%20GERAK/Rocket%20Propulsion%20Elements.pdf)
+- [Engineering Textbooks Collection](Engineering_Textbooks.zip) - Includes: Thermodynamics (10th ed), Fluid Mechanics (12th ed), Gas Dynamics + Solution Manual
 
 ## Software
 
