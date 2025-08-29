@@ -1,5 +1,5 @@
 ---
-title: SPRINT Hot Fire Test - August 22nd, 2024
+title: Hot Fire Test - August 22nd, 2024
 hide:
   - navigation
   - toc

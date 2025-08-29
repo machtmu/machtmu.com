@@ -40,6 +40,7 @@ theme:
   favicon: img/favicon.ico
   features:
     - content.action.edit
+    - navigation.indexes 
     - content.code.copy
     - navigation.tabs
     - navigation.tabs.sticky

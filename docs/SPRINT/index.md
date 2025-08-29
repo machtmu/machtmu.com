@@ -1,52 +1,124 @@
 ---
 hide:
   - toc
+  - navigation
 ---
 
 
 # SPRINT
+
+<div class="hero-section">
+    <img src="tests/hotfire/firing.gif" alt="SPRINT Hot Fire Test" class="hero-gif">
+    <div class="hero-text">
+        <p>SPRINT stands for <strong>Small-scale Prototyping for Rapid Iteration aNd Testing</strong> — a project that began just one month prior to its first hotfire at Launch Canada. We presented SPRINT, our rapidly iterative bipropellant liquid rocket engine fueled by ethanol and nitrous oxide, and completed a successful static hot-fire.</p>
+        <p>SPRINT's modular architecture supports quick configuration changes, efficient testing, and fast learning. The results put us on track to flying our flight-weight system now in development.</p>
+    </div>
+</div>
+
+## Subsystems
+
+<div class="subsystem-gallery">
+    
+    <div class="subsystem-item">
+        <img src="subsystems/propulsion/IMG_2357.JPG" alt="Propulsion System">
+        <h3>Propulsion</h3>
+        <p>Feed system, valves, and fluid dynamics for the liquid bipropellant engine. Features pneumatic control architecture with fail-safe valve positions and industry-standard fittings.</p>
+        <a href="subsystems/propulsion/" class="find-out-more">Learn more →</a>
+    </div>
+    
+    <div class="subsystem-item">
+        <img src="subsystems/Telemetry-And-Control/EGSE.JPG" alt="Telemetry and Control">
+        <h3>Telemetry & Control</h3>
+        <p>Ground support equipment for data acquisition and rocket control. IP65-rated enclosure with LabJack T7-Pro, PLC, and LabVIEW HMI for safe operations.</p>
+        <a href="subsystems/Telemetry-And-Control/" class="find-out-more">Learn more →</a>
+    </div>
+    
+    <div class="subsystem-item">
+        <img src="subsystems/avionics/cad/thumbnail.png" alt="Avionics">
+        <h3>Avionics</h3>
+        <p>Flight computer and sensor modules for the 4" rocket system. Custom PCB modules for power, telemetry, recovery, GPS, and sensor acquisition.</p>
+        <a href="subsystems/avionics/" class="find-out-more">Learn more →</a>
+    </div>
+
+</div>
 
 ## Tests
 
 <div class="test-gallery">
     
     <div class="test-item">
-        <img src="hotfire_2024/thmbnl.png" alt="Hot-fire Test">
+        <img src="tests/hotfire/thmbnl.png" alt="Hot-fire Test">
         <h3>Hot Fire Test - August 22nd, 2024</h3>
         <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
-        <a href="hotfire_2024/" class="find-out-more">Find out more →</a>
+        <a href="tests/hotfire/" class="find-out-more">Find out more →</a>
     </div>
     
     <div class="test-item">
-        <img src="coldflow_2024/thmbnl.png" alt="Cold-flow Test">
+        <img src="tests/coldflow/thmbnl.png" alt="Cold-flow Test">
         <h3>Cold Flow Test - August 9th, 2024</h3>
         <p>Cold-flow test validating fluid dynamics and system integration.</p>
-        <a href="coldflow_2024/" class="find-out-more">Find out more →</a>
+        <a href="tests/coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
 </div>
 
 <style>
-    .test-gallery {
+    .hero-section {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 2rem 0 3rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .hero-gif {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .hero-text {
+        flex: 1;
+        min-width: 300px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+        }
+        
+        .hero-gif {
+            max-width: 100%;
+        }
+    }
+    
+    .subsystem-gallery, .test-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 2rem;
         margin: 2rem 0;
     }
     
-    .test-item {
+    .subsystem-item, .test-item {
         border: 1px solid #ddd;
         border-radius: 8px;
         padding: 1rem;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .test-item:hover {
+    .subsystem-item:hover, .test-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     
-    .test-item img {
+    .subsystem-item img, .test-item img {
         width: 100%;
         height: 200px;
         object-fit: cover;

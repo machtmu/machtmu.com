@@ -1,5 +1,5 @@
 ---
-title: SPRINT Cold Flow Test - August 9th, 2024
+title: Cold Flow Test - August 9th, 2024
 hide:
   - navigation
   - toc

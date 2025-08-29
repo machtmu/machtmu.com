@@ -1,7 +1,7 @@
-# Plumbing
+# Propulsion
 
-![alt text](plumbing/IMG_2357.JPG)
-<p class="image-caption">Plumbing System Overview</p>
+![alt text](propulsion/IMG_2357.JPG)
+<p class="image-caption">Propulsion System Overview</p>
 
 ## Fill and Purge System
 
