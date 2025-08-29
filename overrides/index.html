@@ -29,6 +29,7 @@
       background-color: transparent !important;
       box-shadow: none !important;
     }
+
     .md-header::before {
       content: '';
       position: absolute;
@@ -188,7 +189,7 @@
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: none;
     }
 
     /* Scroll-reveal animations */
@@ -205,13 +206,13 @@
 
     /* Section styling */
     section:not(.home-hero) {
-      background-color: rgba(15, 20, 30, 0.85);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.9) 100%);
       padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl); /* Consistent section padding */
       border-radius: 6px;
       margin-bottom: var(--spacing-xl); /* Consistent section spacing */
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
+      color: #333;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: none;
     }
 
     /* Override MkDocs default spacing - ALL CONSISTENT */
@@ -249,18 +250,18 @@
 
     .feature {
       text-align: center;
-      color: white;
-      background-color: rgba(20, 25, 35, 0.8); /* Professional dark background */
+      color: #333;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 100%);
       padding: 2rem 1.5rem;
       border-radius: 6px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .feature:hover {
       transform: translateY(-2px); /* Subtle hover effect */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: none;
+      border-color: rgba(0, 0, 0, 0.15);
     }
 
     .media-wrapper {

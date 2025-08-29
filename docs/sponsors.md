@@ -152,13 +152,21 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         max-height: 80px;
         object-fit: contain;
         margin-bottom: 1rem;
+        padding: 0.25rem;
+        border-radius: 4px;
+    }
+    
+    [data-md-color-scheme="slate"] .sponsor-item img {
+        background-color: white;
+        padding: 8px;
+        border-radius: 6px;
     }
     
     .sponsor-item span {
         text-align: center;
         font-weight: 500;
         font-size: 0.9rem;
-        color: #000;
+        color: var(--md-default-fg-color);
     }
     
     .sponsor-item.individual {
