@@ -12,7 +12,7 @@
 
 This is an initial revision of the rubric. There will be improvements to it in the future.
 
-### [Cihad Khaled - Acceleration Monitor PCB (AMP)](../participants/cihad)
+### [Cihad Khaled - Acceleration Monitor PCB (AMP)](participants/cihad.md)
 
 | Item                  | 0 | 1 | 2 |
 |:---------------------:|:-:|:-:|:-:|
@@ -24,7 +24,7 @@ This is an initial revision of the rubric. There will be improvements to it in t
 | On-time submissions   | x |   |   |
 | **Total**             | 8 |   |   |
 
-### [Tristan Stanford - Cappie V1](../participants/tristan)
+### [Tristan Stanford - Cappie V1](participants/tristan.md)
 
 | Item                  | 0 | 1 | 2 |
 |:---------------------:|:-:|:-:|:-:|
@@ -36,7 +36,7 @@ This is an initial revision of the rubric. There will be improvements to it in t
 | On-time submissions   |   |   | x |
 | **Total**             | 6 |   |   |
 
-### [Nicholas Suarez - Step Motor With Variable Resistor](../participants/nicholas)
+### [Nicholas Suarez - Step Motor With Variable Resistor](participants/nicholas.md)
 
 | Item                  | 0 | 1 | 2 |
 |:---------------------:|:-:|:-:|:-:|
@@ -48,7 +48,7 @@ This is an initial revision of the rubric. There will be improvements to it in t
 | On-time submissions   |   |   | x |
 | **Total**             | 6 |   |   |
 
-### [Quentin Dela Torre - Three-Phase Motor Controller](../participants/quentin)
+### [Quentin Dela Torre - Three-Phase Motor Controller](participants/quentin.md)
 
 | Item                  | 0 | 1 | 2 |
 |:---------------------:|:-:|:-:|:-:|

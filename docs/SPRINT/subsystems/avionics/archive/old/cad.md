@@ -21,7 +21,7 @@ This is the page to describe the avionics bay CAD.
 
 There's just barely enough space to fit the RFD900x on a module. So why not?
 
-[Here](../../../blog/posts/2024/december/7/7.md) is a blog post showing some other revisions.
+<!-- [Here](../../../blog/posts/2024/december/7/7.md) is a blog post showing some other revisions. -->
 
 ## Rack
 

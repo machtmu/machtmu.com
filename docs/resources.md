@@ -9,13 +9,13 @@ hide:
 
 ## MACH
 
-- [MACH 2025 LCR v0.1.0](<MACH_LCR2025 v0.1.0.pdf>)
+- [MACH 2025 LCR v0.1.0](<resources/MACH_LCR2025 v0.1.0.pdf>)
 
-- [MACH 2025 LC PDR](machpdr2025.pdf)
+- [MACH 2025 LC PDR](resources/machpdr2025.pdf)
 
-- [2023 Launch Canada (GAR-E)](<MACH_LCR2023 R4.2.pdf>)
+- [2023 Launch Canada (GAR-E)](<resources/MACH_LCR2023 R4.2.pdf>)
 
-- [DayGlo P&ID](machpid.pdf)
+- [DayGlo P&ID](resources/machpid.pdf)
 
 ## Papers
 
@@ -23,7 +23,7 @@ hide:
 
 - [B. J. Solomon, Engineering Model to Calculate Mass Flow Rate of a Two-Phase Saturated Fluid Through an Injector Orifice, M.S. report, Dept. Mech. and Aerosp. Eng., Utah State Univ., Logan, UT, USA, 2011. ](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1110&context=gradreports)
 
-- [Dyer, J., Doran, E., Dunn, Z., Lohner, K., Bayart, C., Sadhwani, A., Cantwell, B., and Karabeyoglu, A., “Design and Development of a 100 km Nitrous Oxide / Paraffin Hybrid Rocket Vehicle"](JPC2007-1.pdf)
+- [Dyer, J., Doran, E., Dunn, Z., Lohner, K., Bayart, C., Sadhwani, A., Cantwell, B., and Karabeyoglu, A., "Design and Development of a 100 km Nitrous Oxide / Paraffin Hybrid Rocket Vehicle"](resources/JPC2007-1.pdf)
 
 - [E. V. Niño and M. R. Razavi, “Design of two-phase injectors using analytical and numerical methods with application to hybrid rockets,” in AIAA Propulsion and Energy 2019 Forum, Indianapolis, IN, Aug. 2019, AIAA Paper 2019-4154. doi: 10.2514/6.2019-4154](https://web.stanford.edu/~cantwell/AA284A_Course_Material/AA284A_Resources/Nino%20and%20Razavi,%20Design%20of%20Two-Phase%20Injectors%20Using%20Analytical%20and%20Numerical%20Methods%20with%20Application%20to%20Hybrid%20Rockets%202019-4154.pdf)
 
@@ -43,7 +43,7 @@ hide:
 
 - [Design of Liquid Propellant Rocket Engines](https://ntrs.nasa.gov/api/citations/19710019929/downloads/19710019929.pdf)
 - [Sutton, G. and Biblarz, O., Rocket Propulsion Elements, Wiley and Sons, New York, 9th ed., 2017](https://ftp.idu.ac.id/wp-content/uploads/ebook/tdg/DESIGN%20SISTEM%20DAYA%20GERAK/Rocket%20Propulsion%20Elements.pdf)
-- [Engineering Textbooks Collection](Engineering_Textbooks.zip) - Includes: Thermodynamics (10th ed), Fluid Mechanics (12th ed), Gas Dynamics + Solution Manual
+<!-- - [Engineering Textbooks Collection](Engineering_Textbooks.zip) - Includes: Thermodynamics (10th ed), Fluid Mechanics (12th ed), Gas Dynamics + Solution Manual -->
 
 ## Software
 
@@ -60,10 +60,10 @@ hide:
 
 ## Design for Manufacturing
 
-- [Avionics DFM Guide](avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
+- [Avionics DFM Guide](SPRINT/subsystems/avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
 
 ## References
 
 - [Parker O-Ring Handbook](https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5700.pdf)
-- [AER622 Appendix](appendix.pdf)
+- [AER622 Appendix](resources/appendix.pdf)
 

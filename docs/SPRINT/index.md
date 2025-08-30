@@ -15,6 +15,11 @@ hide:
     </div>
 </div>
 
+<!-- <div class="system-overview">
+    <img src="../assets/images/system-overview.jpg" alt="SPRINT System Overview" class="overview-image">
+    <p class="overview-caption">Complete SPRINT system overview showing integrated test setup and components</p>
+</div> -->
+
 ## Subsystems
 
 <div class="subsystem-gallery">
@@ -97,6 +102,27 @@ hide:
         .hero-gif {
             max-width: 100%;
         }
+    }
+    
+    .system-overview {
+        margin: 3rem 0;
+        text-align: center;
+    }
+    
+    .overview-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .overview-caption {
+        margin-top: 1rem;
+        font-style: italic;
+        color: #666;
+        font-size: 0.9rem;
     }
     
     .subsystem-gallery, .test-gallery {

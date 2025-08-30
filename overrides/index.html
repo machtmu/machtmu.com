@@ -204,14 +204,15 @@
       transform: translateY(0);
     }
 
-    /* Section styling */
-    section:not(.home-hero) {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.9) 100%);
+    /* Section styling - transparent backgrounds for main content */
+    section.about,
+    section.video-showcase {
+      background: transparent;
       padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl); /* Consistent section padding */
       border-radius: 6px;
       margin-bottom: var(--spacing-xl); /* Consistent section spacing */
-      color: #333;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: white; /* White text on transparent background */
+      border: none;
       box-shadow: none;
     }
 
@@ -399,6 +400,77 @@
         padding: var(--spacing-sm) var(--spacing-md); /* Consistent small screen button sizing */
       }
     }
+
+    /* Fix slideshow images on all screen sizes to prevent horizontal scroll */
+    .image-slideshow-container {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .image-slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .slideshow-image {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      object-fit: contain !important;
+      border-radius: 6px !important;
+      transition: opacity 1s ease-in-out !important;
+      display: block !important;
+      position: relative !important;
+    }
+    
+    .slideshow-image:not(:first-child) {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .image-slideshow-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .image-slideshow {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+      }
+      
+      .slideshow-image {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+      
+      .slideshow-image.slideshow-spacer {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+      
+      /* Ensure container doesn't cause horizontal overflow */
+      .video-showcase {
+        overflow-x: hidden !important;
+      }
+      
+      .md-container {
+        padding-left: var(--spacing-md) !important;
+        padding-right: var(--spacing-md) !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+    }
   </style>
 
   <script>
@@ -480,6 +552,45 @@
         });
       }, { threshold: 0.01 });
       document.querySelectorAll('.slide-in-bottom').forEach(el => observer.observe(el));
+
+      // Image slideshow functionality
+      const slideshowImages = document.querySelectorAll('.slideshow-image');
+      const slideshowCaption = document.querySelector('.slideshow-caption');
+      
+      const captions = [
+        "Tank assembly showing integrated propulsion system components",
+        "MACH team members working alongside the latest propulsion system development",
+        "Complete SPRINT system overview showing integrated test setup and components"
+      ];
+      
+      let currentSlide = 0;
+      
+      function nextSlide() {
+        // Fade out current image
+        if (currentSlide === 0) {
+          // First image is positioned relatively, so hide it normally
+          slideshowImages[currentSlide].style.opacity = '0';
+        } else {
+          // Other images are positioned absolutely
+          slideshowImages[currentSlide].style.opacity = '0';
+        }
+        
+        // Move to next slide
+        currentSlide = (currentSlide + 1) % slideshowImages.length;
+        
+        // Fade in next image
+        slideshowImages[currentSlide].style.opacity = '1';
+        
+        // Update caption
+        if (slideshowCaption) {
+          slideshowCaption.textContent = captions[currentSlide];
+        }
+      }
+      
+      // Start slideshow after page loads
+      if (slideshowImages.length > 0) {
+        setInterval(nextSlide, 4000); // Change image every 4 seconds
+      }
     });
   </script>
 {% endblock %}
@@ -509,7 +620,7 @@
       <p>Join our team of passionate engineers as we design PCB modules, test rocket engines, and compete in national rocketry competitions. Whether you're interested in mechanical design, electronics, software development, or project management, MACH offers opportunities to work on meaningful aerospace projects that make an impact.</p>
       <div class="home-hero__cta">
         <a href="{{ 'https://discord.gg/3kak7Ydu43' | url }}" class="btn btn-primary" style="background-color: #1B365C; color: white; border: 1px solid #2C4F7C;">Join Discord</a>
-        <a href="{{ 'https://forms.gle/rEXPh4EdQAaig14TA' | url }}" class="btn btn-primary" style="background-color: #2C3E50; color: white; border: 1px solid #34495E;">Apply Now</a>
+        <a href="{{ 'https://docs.google.com/forms/d/1nB9E7GfI9xKZft5upYKaKwPe6TqOhcOMXWlJfZyjplk/edit' | url }}" class="btn btn-primary" style="background-color: #2C3E50; color: white; border: 1px solid #34495E;">Apply Now</a>
       </div>
     </div>
   </section>
@@ -520,10 +631,18 @@
       <h2>Propulsion System Testing</h2>
       <div class="video-container" style="position: relative; overflow: hidden; border-radius: 6px;">
         <video class="showcase-video" autoplay muted loop playsinline preload="auto" poster="{{ base_url }}/assets/images/showcase-fallback.jpg" style="width: 100%; height: auto; border-radius: 6px;">
-          <source src="{{ base_url }}/assets/videos/coldflow1.mp4" type="video/mp4">
+          <source src="{{ base_url }}/assets/videos/coldflow_montage.mp4" type="video/mp4">
         </video>
       </div>
       <p>Comprehensive injector characterization and fluid dynamics analysis for liquid propulsion systems.</p>
+      
+      <div class="image-slideshow-container" style="margin-top: var(--spacing-xl);">
+        <div class="image-slideshow" style="position: relative; width: 100%; border-radius: 6px; overflow: hidden;">
+          <img src="{{ base_url }}/assets/images/tank-assembly.jpg" alt="Tank Assembly" class="slideshow-image slideshow-spacer" style="position: relative; width: 100%; height: auto; border-radius: 6px; opacity: 1; transition: opacity 1s ease-in-out;">
+          <img src="{{ base_url }}/assets/images/team-and-system.jpg" alt="Team and System" class="slideshow-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px; opacity: 0; transition: opacity 1s ease-in-out; object-fit: cover;">
+          <img src="{{ base_url }}/assets/images/system-overview.jpg" alt="System Overview" class="slideshow-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px; opacity: 0; transition: opacity 1s ease-in-out; object-fit: cover;">
+        </div>
+      </div>
     </div>
   </section>
 

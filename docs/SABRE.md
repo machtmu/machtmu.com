@@ -12,7 +12,32 @@ Our newest engine SABRE (Student Additive Bi-propellant Regen Engine) Is the lar
 
 Project SABRE is a multi year long project for our team. This year, our SABRE test campaign will begin with a short duration hotfire to gather data on our engine. With a better understanding of SABRE's real engine performance, we will prepare for a long duration hotfire of 30+ seconds and integrate a thrust vectoring system (TVC) and a torch ignition system. We plan to showcase the full potential of project SABRE at next year's Launch Canada in 2026.
 
-<div style="display: flex; gap: 10px; margin: 20px 0; justify-content: center; align-items: flex-start;">
+<div class="sabre-images" style="display: flex; gap: 10px; margin: 20px 0; justify-content: center; align-items: flex-start;">
     <img src="IMG_4995.jpg" alt="SABRE engine assembly" style="height: 350px; width: auto; max-width: 100%; object-fit: contain;">
     <img src="render.jpg" alt="SABRE engine detail" style="height: 350px; width: auto; max-width: 100%; object-fit: contain;">
 </div>
+
+<style>
+@media (max-width: 768px) {
+    .sabre-images {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+    
+    .sabre-images img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        max-height: 250px !important;
+        object-fit: contain !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sabre-images img {
+        max-width: 100% !important;
+        max-height: 200px !important;
+    }
+}
+</style>
