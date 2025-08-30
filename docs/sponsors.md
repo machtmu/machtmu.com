@@ -115,8 +115,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item">
-        <img src="voestalpine-logo.png" alt="voestalpine">
-        <span>voestalpine</span>
+        <img src="voestalpine-logo.png" alt="voestalpine AMNA">
+        <span>voestalpine AMNA</span>
     </a>
 </div>
 
