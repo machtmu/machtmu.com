@@ -44,6 +44,20 @@ hide:
         <p>Flight computer and sensor modules for the 4" rocket system. Custom PCB modules for power, telemetry, recovery, GPS, and sensor acquisition.</p>
         <a href="subsystems/avionics/" class="find-out-more">Learn more →</a>
     </div>
+    
+    <!-- <div class="subsystem-item">
+        <img src="subsystems/propulsion/IMG_2357.JPG" alt="Structures">
+        <h3>Structures</h3>
+        <p>Mechanical framework components including rocket airframe, engine mounts, and recovery bay assemblies. Designs prioritize safety, manufacturability, and integration.</p>
+        <a href="subsystems/structures/" class="find-out-more">Learn more →</a>
+    </div>
+    
+    <div class="subsystem-item">
+        <img src="tests/hotfire/thmbnl.png" alt="Media & Logistics">
+        <h3>Media & Logistics</h3>
+        <p>Operations support through documentation, safety management, event coordination, and public outreach. Enabling successful rocket development through communication and organization.</p>
+        <a href="subsystems/media-logistics/" class="find-out-more">Learn more →</a>
+    </div> -->
 
 </div>
 

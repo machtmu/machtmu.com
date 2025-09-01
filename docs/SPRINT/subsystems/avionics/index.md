@@ -68,6 +68,10 @@ table, table * {
 
 ---
 
+## About the Avionics Team
+
+The Avionics team brings rockets to life with custom PCBs and flight weight electronics. The team works on flight computers, GPS, antenna systems, radios, sensors, and power systems to ensure reliable telemetry and fault protection. This team specializes in electronics, embedded systems, and hardware integration for rocket control systems.
+
 ## Overview of System
 
 The avionics system is composed of five  modules interconnected through CAN bus. These modules are: [Power](PCB-Modules/power.md), [Sensors](PCB-Modules/sensors.md), [GPS](PCB-Modules/gps.md), [Antenna](PCB-Modules/antenna.md), and [Recovery](PCB-Modules/recovery.md). The backplate features PCIe slots, and connects all the modules.

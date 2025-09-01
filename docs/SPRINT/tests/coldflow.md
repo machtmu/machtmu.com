@@ -1,7 +1,6 @@
 ---
 title: Cold Flow Test - August 9th, 2025
 hide:
-  - navigation
   - toc
 ---
 

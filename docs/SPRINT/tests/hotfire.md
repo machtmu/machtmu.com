@@ -1,7 +1,6 @@
 ---
 title: Hot Fire Test - August 22nd, 2025
 hide:
-  - navigation
   - toc
 ---
 
