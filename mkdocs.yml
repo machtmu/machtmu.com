@@ -109,6 +109,8 @@ extra:
       link: https://discord.gg/3kak7Ydu43
     - icon: fontawesome/brands/twitch
       link: https://www.twitch.tv/machtmu
+    - icon: fontawesome/solid/envelope
+      link: mailto:machtmu.com
     # - icon: custom/notion
     #   link: https://marstmu.notion.site/MARS-Notion-1912fcb069e2804d92e6dc49248b4dbb
 
