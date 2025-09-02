@@ -24,7 +24,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Automation Direct</span>
     </a>
     
-    <a href="#" target="_blank" class="sponsor-item">
+    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item">
         <img src="dishon-logo.avif" alt="Dishon">
         <span>Dishon</span>
     </a>
@@ -39,12 +39,12 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Hoskin Scientific</span>
     </a>
     
-    <a href="https://www.torontomet.ca/innovation/" target="_blank" class="sponsor-item">
+    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item">
         <img src="ibz-logo.png" alt="Innovation Boost Zone">
         <span>Innovation Boost Zone</span>
     </a>
     
-    <a href="https://www.jaksa.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.jaksa.si/" target="_blank" class="sponsor-item">
         <img src="jaksa-logo.png" alt="Jaksa Solenoid Valves">
         <span>Jaksa Solenoid Valves</span>
     </a>
@@ -64,7 +64,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Mars Society of Canada</span>
     </a>
     
-    <a href="https://www.megapro.net/" target="_blank" class="sponsor-item">
+    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item">
         <img src="megapro-logo.webp" alt="Megapro">
         <span>Megapro</span>
     </a>
@@ -74,7 +74,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Notion</span>
     </a>
     
-    <a href="https://theengineering.ca/" target="_blank" class="sponsor-item">
+    <a href="https://mues.ca/" target="_blank" class="sponsor-item">
         <img src="mues-logo.png" alt="Metropolitan Undergraduate Engineering Society">
         <span>Metropolitan Undergraduate Engineering Society</span>
     </a>
@@ -84,7 +84,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Red Rocket Coffee</span>
     </a>
     
-    <a href="#" target="_blank" class="sponsor-item">
+    <a href="https://www.simplepathfarms.com/" target="_blank" class="sponsor-item">
         <img src="simple-path-farms-logo.svg" alt="Simple Path Farms">
         <span>Simple Path Farms</span>
     </a>
@@ -109,7 +109,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>TeXtreme</span>
     </a>
     
-    <a href="https://www.torontomet.ca/" target="_blank" class="sponsor-item">
+    <a href="https://www.torontomu.ca/" target="_blank" class="sponsor-item">
         <img src="tmu-logo.svg" alt="Toronto Metropolitan University">
         <span>Toronto Metropolitan University</span>
     </a>
