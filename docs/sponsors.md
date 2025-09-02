@@ -69,6 +69,11 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Megapro</span>
     </a>
     
+    <a href="https://www.notion.so/" target="_blank" class="sponsor-item">
+        <img src="sponsors/notion-logo.svg" alt="Notion">
+        <span>Notion</span>
+    </a>
+    
     <a href="https://theengineering.ca/" target="_blank" class="sponsor-item">
         <img src="mues-logo.png" alt="Metropolitan Undergraduate Engineering Society">
         <span>Metropolitan Undergraduate Engineering Society</span>
