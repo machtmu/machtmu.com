@@ -15,6 +15,8 @@ hide:
 
 - [2023 Launch Canada (GAR-E)](<resources/MACH_LCR2023 R4.2.pdf>)
 
+- [Sponsorship Package 2022-2023](<resources/MACH - Sponsorship Package 2022-2023.pdf>)
+
 - [DayGlo P&ID](resources/machpid.pdf)
 
 ## Papers
