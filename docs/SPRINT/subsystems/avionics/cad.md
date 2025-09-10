@@ -8,7 +8,7 @@ hide:
 This is the page to describe the avionics bay CAD.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sonicavionics/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD" style="height:500px; width:auto;">
+  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD" style="height:500px; width:auto;">
   <br />
   <p class="image-caption">Avionics CAD Render</p>
 </div>

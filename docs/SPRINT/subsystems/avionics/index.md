@@ -60,7 +60,7 @@ table, table * {
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sonicavionics/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD">
+  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD">
   <br />
   <p class="image-caption">Avionics CAD Render</p>
 </div>
