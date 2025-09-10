@@ -1,4 +1,4 @@
-# [Status](https://github.com/machtmu/4in-NicolasSuarez-statusmodule)
+# [Status](https://github.com/machtmu/4in-status)
 
 ---
 
