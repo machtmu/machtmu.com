@@ -23,13 +23,13 @@
 
 ## LabVIEW Control Interface
 
-<img src="docs/SPRINT/subsystems/Telemetry-And-Control/software/front_panel.png" alt="LabVIEW Front Panel" width="500"/>
+<img src="docs/SPRINT/subsystems/electronics/software/front_panel.png" alt="LabVIEW Front Panel" width="500"/>
 
 *Real-time monitoring and control interface for test operations*
 
 ## Electronics Panel (EGSE)
 
-<img src="docs/SPRINT/subsystems/Telemetry-And-Control/EGSE.JPG" alt="Electronics Ground Support Equipment" width="400"/>
+<img src="docs/SPRINT/subsystems/electronics/EGSE.JPG" alt="Electronics Ground Support Equipment" width="400"/>
 
 *Electronics panel featuring PLC and control systems for test operations*
 
