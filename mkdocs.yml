@@ -62,8 +62,8 @@ plugins:
   #- git-committers:
   #    repository: sonicavionics/sonicavionics.com
   #   token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
-  - blog:
-      authors: true
+  # - blog:
+  #     authors: true
   - search
   # - rss:
   #     match_path: blog/posts/.* 

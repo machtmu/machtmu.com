@@ -10,8 +10,8 @@ hide:
 <div class="hero-section">
     <img src="tests/hotfire/firing.gif" alt="SPRINT Hot Fire Test" class="hero-gif">
     <div class="hero-text">
-        <p>SPRINT stands for <strong>Small-scale Prototyping for Rapid Iteration aNd Testing</strong> — a project that began just one month prior to its first hotfire at Launch Canada. We presented SPRINT, our rapidly iterative bipropellant liquid rocket engine fueled by ethanol and nitrous oxide, and completed a successful static hot-fire.</p>
-        <p>SPRINT's modular architecture supports quick configuration changes, efficient testing, and fast learning. The results put us on track to flying our flight-weight system now in development.</p>
+        <p>SPRINT is a project that officially began just one month prior to its first hotfire at Launch Canada.</p>
+        <p>SPRINT's modular architecture supports quick configuration changes, efficient testing, and fast learning. The results of our hotfire puts us on track to flying our flight-weight system now in development.</p>
     </div>
 </div>
 
