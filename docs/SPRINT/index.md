@@ -32,10 +32,10 @@ hide:
     </div>
     
     <div class="subsystem-item">
-        <img src="subsystems/Telemetry-And-Control/EGSE.JPG" alt="Telemetry and Control">
-        <h3>Telemetry & Control</h3>
+        <img src="subsystems/electronics/EGSE.JPG" alt="Electrical">
+        <h3>Electrical</h3>
         <p>Ground support equipment for data acquisition and rocket control. IP65-rated enclosure with LabJack T7-Pro, PLC, and LabVIEW HMI for safe operations.</p>
-        <a href="subsystems/Telemetry-And-Control/" class="find-out-more">Learn more →</a>
+        <a href="subsystems/electronics/" class="find-out-more">Learn more →</a>
     </div>
     
     <div class="subsystem-item">
