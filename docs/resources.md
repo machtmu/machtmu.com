@@ -40,6 +40,10 @@ hide:
 
 - [Waxman: Investigation of Injectors for Use with High Vapor Pressure Propellants with Applications to Hybrid Rockets](https://stacks.stanford.edu/file/druid:ng346xh6244/BenjaminWaxmanFinal-augmented.pdf)
 
+### Zimmerman
+
+- [Zimmerman, J. E., "Self-Pressurizing Propellant Tank Dynamics," Ph.D. dissertation, Dept. Aeronautics and Astronautics, Stanford Univ., Stanford, CA, USA, Dec. 2015.](<resources/Zimmerman2015_Self-Pressurizing_Propellant_Tank_Dynamics.pdf>)
+
 
 ## Textbooks
 
