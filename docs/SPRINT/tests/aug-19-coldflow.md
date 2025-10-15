@@ -1,7 +1,5 @@
 ---
 title: Cold Flow Test - August 9th, 2025
-hide:
-  - toc
 ---
 
 # SPRINT Cold Flow Test - August 9th, 2025

@@ -1,7 +1,5 @@
 ---
 title: Hot Fire Test - September 13th and 14th, 2025
-hide:
-  - toc
 ---
 
 # SPRINT Hot Fire Test - September 13th and 14th, 2025

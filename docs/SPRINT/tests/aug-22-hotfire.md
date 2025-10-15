@@ -1,7 +1,5 @@
 ---
 title: Hot Fire Test - August 22nd, 2025
-hide:
-  - toc
 ---
 
 # SPRINT Hot Fire Test - August 22nd, 2025

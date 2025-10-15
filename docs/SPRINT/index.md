@@ -8,7 +8,7 @@ hide:
 # SPRINT
 
 <div class="hero-section">
-    <img src="tests/hotfire/firing.gif" alt="SPRINT Hot Fire Test" class="hero-gif">
+    <img src="tests/aug-22-hotfire/firing.gif" alt="SPRINT Hot Fire Test" class="hero-gif">
     <div class="hero-text">
         <p>SPRINT is a project that officially began just one month prior to its first hotfire at Launch Canada.</p>
         <p>SPRINT's modular architecture supports quick configuration changes, efficient testing, and fast learning. The results of our hotfire puts us on track to flying our flight-weight system now in development.</p>
@@ -66,24 +66,24 @@ hide:
 <div class="test-gallery">
 
     <div class="test-item">
-        <img src="tests/sept-13-14-hotfire/thmbnl.png" alt="September Hot-fire Test">
+        <img src="tests/sept-13-hotfire/thmbnl.png" alt="September Hot-fire Test">
         <h3>Hot Fire Test - September 13th & 14th, 2025</h3>
         <p>Multi-day hot-fire test campaign demonstrating improved engine performance and system reliability across multiple firing sequences.</p>
-        <a href="tests/sept-13-14-hotfire/" class="find-out-more">Find out more →</a>
+        <a href="tests/sept-13-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="tests/hotfire/thmbnl.png" alt="Hot-fire Test">
+        <img src="tests/aug-22-hotfire/thmbnl.png" alt="Hot-fire Test">
         <h3>Hot Fire Test - August 22nd, 2025</h3>
         <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
-        <a href="tests/hotfire/" class="find-out-more">Find out more →</a>
+        <a href="tests/aug-22-hotfire/" class="find-out-more">Find out more →</a>
     </div>
-    
+
     <div class="test-item">
-        <img src="tests/coldflow/thmbnl.png" alt="Cold-flow Test">
+        <img src="tests/aug-19-coldflow/thmbnl.png" alt="Cold-flow Test">
         <h3>Cold Flow Test - August 9th, 2025</h3>
         <p>Cold-flow test validating fluid dynamics and system integration.</p>
-        <a href="tests/coldflow/" class="find-out-more">Find out more →</a>
+        <a href="tests/aug-19-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
 </div>
