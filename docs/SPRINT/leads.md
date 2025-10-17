@@ -1,4 +1,4 @@
-# Team Leads
+# Team
 
 Meet the leadership team driving MACH forward.
 
@@ -10,29 +10,23 @@ Meet the leadership team driving MACH forward.
 
     *Captain*
 
+-   ![Audrey](../assets/images/leads/Audrey - Head Engineer.jpg)
+
+    **Audrey**
+
+    *Head Engineer*
+
+-   ![Kasper](../assets/images/leads/Kasper - Mission Control.jpg)
+
+    **Kasper**
+
+    *Mission Control*
+
 -   ![Julia](../assets/images/leads/Julia - Operations Director.jpg)
 
     **Julia**
 
     *Operations Director*
-
--   ![Adi](../assets/images/leads/Adi - Software lead.jpg)
-
-    **Adi**
-
-    *Software Lead*
-
--   ![Evan](../assets/images/leads/Evan - Avionics Lead.jpg)
-
-    **Evan**
-
-    *Avionics Lead*
-
--   ![Jan](../assets/images/leads/Jan - Propulsion lead.jpg)
-
-    **Jan**
-
-    *Propulsion Lead*
 
 -   ![Anuja](../assets/images/leads/Anuja - Media and Logisitics lead.jpg)
 
@@ -40,10 +34,16 @@ Meet the leadership team driving MACH forward.
 
     *Media and Logistics Lead*
 
--   ![Eve](../assets/images/leads/Eve - lead.jpg)
+-   ![Adi](../assets/images/leads/Adi - Software lead.jpg)
 
-    **Eve**
+    **Adi**
 
-    *Lead*
+    *Avionics Software Lead*
+
+-   ![Jan](../assets/images/leads/Jan - Propulsion lead.jpg)
+
+    **Jan**
+
+    *Propulsion Lead*
 
 </div>

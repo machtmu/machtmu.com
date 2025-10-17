@@ -61,6 +61,18 @@ hide:
 
 </div>
 
+## Meet the Team
+
+<div class="leads-section">
+    <div class="leads-item">
+        <img src="../assets/images/leads/team-placeholder.jpg" alt="SPRINT Team">
+        <div class="leads-content">
+            <p>Get to know the leadership team driving SPRINT forward.</p>
+            <a href="leads/" class="find-out-more">Meet the team →</a>
+        </div>
+    </div>
+</div>
+
 ## Tests
 
 <div class="test-gallery">
@@ -152,24 +164,71 @@ hide:
         gap: 2rem;
         margin: 2rem 0;
     }
-    
+
     .subsystem-item, .test-item {
         border: 1px solid #ddd;
         border-radius: 8px;
         padding: 1rem;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .subsystem-item:hover, .test-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-    
+
     .subsystem-item img, .test-item img {
         width: 100%;
         height: 200px;
         object-fit: cover;
         border-radius: 5px;
+    }
+
+    .leads-section {
+        margin: 2rem 0;
+    }
+
+    .leads-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .leads-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .leads-item img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        flex-shrink: 0;
+    }
+
+    .leads-content {
+        flex: 1;
+    }
+
+    .leads-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .leads-item {
+            flex-direction: column;
+        }
+
+        .leads-item img {
+            width: 100%;
+            max-width: 100%;
+        }
     }
     
     .find-out-more {
