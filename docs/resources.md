@@ -9,11 +9,13 @@ hide:
 
 ## MACH
 
-- [MACH 2025 LCR v0.1.0](<resources/MACH_LCR2025 v0.1.0.pdf>)
+- [MACH 2025 LCR](resources/MACH_LCR2025.pdf)
+
+- [MACH 2024 LCR](resources/MACH_LCR2024.pdf)
 
 - [MACH 2025 LC PDR](resources/machpdr2025.pdf)
 
-- [2023 Launch Canada (GAR-E)](<resources/MACH_LCR2023 R4.2.pdf>)
+- [MACH 2023 LCR](resources/MACH_LCR2023.pdf)
 
 - [Sponsorship Package 2022-2023](<resources/MACH - Sponsorship Package 2022-2023.pdf>)
 
