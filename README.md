@@ -17,25 +17,25 @@
 
 ## SPRINT System in Action
 
-<img src="docs/SPRINT/subsystems/propulsion/IMG_2357.JPG" alt="SPRINT System Plumbing" width="400"/>
+<img src="docs/propulsion/IMG_2357.JPG" alt="SPRINT System Plumbing" width="400"/>
 
 *Advanced plumbing and fluid control systems for liquid rocket engine testing*
 
 ## LabVIEW Control Interface
 
-<img src="docs/SPRINT/subsystems/electronics/software/front_panel.png" alt="LabVIEW Front Panel" width="500"/>
+<img src="docs/electronics/software/front_panel.png" alt="LabVIEW Front Panel" width="500"/>
 
 *Real-time monitoring and control interface for test operations*
 
 ## Electronics Panel (EGSE)
 
-<img src="docs/SPRINT/subsystems/electronics/EGSE.JPG" alt="Electronics Ground Support Equipment" width="400"/>
+<img src="docs/electronics/EGSE.JPG" alt="Electronics Ground Support Equipment" width="400"/>
 
 *Electronics panel featuring PLC and control systems for test operations*
 
 ## Hot Fire Testing
 
-<img src="docs/SPRINT/tests/hotfire/firing.gif" alt="Hot Fire Test" width="400"/>
+<img src="docs/SPRINT/tests/aug-22-hotfire/firing.gif" alt="Hot Fire Test" width="400"/>
 
 *Live hot fire test footage of our liquid rocket engine*
 
