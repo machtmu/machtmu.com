@@ -1,6 +1,13 @@
+---
+hide:
+  - toc
+  - navigation
+---
+
+
 # Propulsion
 
-![alt text](propulsion/IMG_2357.JPG)
+![alt text](IMG_2357.JPG)
 <p class="image-caption">Propulsion System Overview</p>
 
 ## About the Propulsion Team

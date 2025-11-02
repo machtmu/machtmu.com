@@ -15,63 +15,6 @@ hide:
     </div>
 </div>
 
-<!-- <div class="system-overview">
-    <img src="../assets/images/system-overview.jpg" alt="SPRINT System Overview" class="overview-image">
-    <p class="overview-caption">Complete SPRINT system overview showing integrated test setup and components</p>
-</div> -->
-
-## Subsystems
-
-<div class="subsystem-gallery">
-    
-    <div class="subsystem-item">
-        <img src="subsystems/propulsion/IMG_2357.JPG" alt="Propulsion System">
-        <h3>Propulsion</h3>
-        <p>Feed system, valves, and fluid dynamics for the liquid bipropellant engine. Features pneumatic control architecture with fail-safe valve positions and industry-standard fittings.</p>
-        <a href="subsystems/propulsion/" class="find-out-more">Learn more →</a>
-    </div>
-    
-    <div class="subsystem-item">
-        <img src="subsystems/electronics/EGSE.JPG" alt="Electrical">
-        <h3>Electrical</h3>
-        <p>Ground support equipment for data acquisition and rocket control. IP65-rated enclosure with LabJack T7-Pro, PLC, and LabVIEW HMI for safe operations.</p>
-        <a href="subsystems/electronics/" class="find-out-more">Learn more →</a>
-    </div>
-    
-    <div class="subsystem-item">
-        <img src="subsystems/avionics/cad/thumbnail.png" alt="Avionics">
-        <h3>Avionics</h3>
-        <p>Flight computer and sensor modules for the 4" rocket system. Custom PCB modules for power, telemetry, recovery, GPS, and sensor acquisition.</p>
-        <a href="subsystems/avionics/" class="find-out-more">Learn more →</a>
-    </div>
-    
-    <!-- <div class="subsystem-item">
-        <img src="subsystems/propulsion/IMG_2357.JPG" alt="Structures">
-        <h3>Structures</h3>
-        <p>Mechanical framework components including rocket airframe, engine mounts, and recovery bay assemblies. Designs prioritize safety, manufacturability, and integration.</p>
-        <a href="subsystems/structures/" class="find-out-more">Learn more →</a>
-    </div>
-    
-    <div class="subsystem-item">
-        <img src="tests/hotfire/thmbnl.png" alt="Media & Logistics">
-        <h3>Media & Logistics</h3>
-        <p>Operations support through documentation, safety management, event coordination, and public outreach. Enabling successful rocket development through communication and organization.</p>
-        <a href="subsystems/media-logistics/" class="find-out-more">Learn more →</a>
-    </div> -->
-
-</div>
-
-## Meet the Team
-
-<div class="leads-section">
-    <div class="leads-item">
-        <img src="../assets/images/leads/team-placeholder.jpg" alt="SPRINT Team">
-        <div class="leads-content">
-            <p>Get to know the leadership team driving SPRINT forward.</p>
-            <a href="leads/" class="find-out-more">Meet the team →</a>
-        </div>
-    </div>
-</div>
 
 ## Tests
 
