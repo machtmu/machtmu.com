@@ -38,12 +38,6 @@ Meet the leadership team driving MACH forward.
 
     **Adi**
 
-    *Avionics Software Lead*
-
--   ![Jan](../assets/images/leads/Jan - Propulsion lead.jpg)
-
-    **Jan**
-
-    *Propulsion Lead*
+    *Electrical Lead*
 
 </div>
