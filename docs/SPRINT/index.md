@@ -21,6 +21,13 @@ hide:
 <div class="test-gallery">
 
     <div class="test-item">
+        <img src="tests/nov-7-coldflow/thmbnl.png" alt="November Cold-flow Test">
+        <h3>Cold Flow Test - November 7th, 2025</h3>
+        <p>Cold-flow test of the SPRINT system.</p>
+        <a href="tests/nov-7-coldflow/" class="find-out-more">Find out more →</a>
+    </div>
+
+    <div class="test-item">
         <img src="tests/sept-13-hotfire/thmbnl.png" alt="September Hot-fire Test">
         <h3>Hot Fire Test - September 13th & 14th, 2025</h3>
         <p>Multi-day hot-fire test campaign demonstrating improved engine performance and system reliability across multiple firing sequences.</p>
