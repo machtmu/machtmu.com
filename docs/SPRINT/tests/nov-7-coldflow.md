@@ -11,6 +11,13 @@ title: Cold Flow Test - November 7th, 2025
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT cold flow test on November 7th, 2025.</figcaption>
 </figure>
 
+## Test Data
+
+<figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <img src="/assets/images/sprint-nov7-coldflow-data.png" alt="Cold Flow Test Data" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Data from the November 7th, 2025 cold flow test.</figcaption>
+</figure>
+
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
