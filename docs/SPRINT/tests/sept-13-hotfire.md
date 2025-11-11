@@ -22,6 +22,13 @@ The September 13th and 14th SPRINT hot fire test represents another successful m
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT hot fire test demonstrating successful ignition and stable combustion over the September 13th and 14th test campaign.</figcaption>
 </figure>
 
+## Engine Performance Data
+
+<figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <img src="/assets/images/sprint-hotfire3-perf.png" alt="SPRINT Engine Performance Data" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Engine performance data from Hotfire 3 (September 13th and 14th, 2025).</figcaption>
+</figure>
+
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
