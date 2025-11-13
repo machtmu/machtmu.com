@@ -1,3 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+  - path
+---
+
 # Team
 
 Meet the leadership team driving MACH forward.
