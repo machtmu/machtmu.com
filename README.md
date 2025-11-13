@@ -35,7 +35,7 @@
 
 ## Hot Fire Testing
 
-<img src="docs/SPRINT/tests/aug-22-hotfire/firing.gif" alt="Hot Fire Test" width="400"/>
+<img src="docs/SPRINT/aug-22-hotfire/firing.gif" alt="Hot Fire Test" width="400"/>
 
 *Live hot fire test footage of our liquid rocket engine*
 
