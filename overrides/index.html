@@ -2,24 +2,12 @@
 
 {% block extrahead %}
   {{ super() }}
-  <!-- <link rel="stylesheet" href="{{ base_url }}/css/stars.css"> -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap">
   <style>
-    /* SPACING SYSTEM - Professional consistency */
-    :root {
-      --spacing-xs: 0.5rem;   /* 8px */
-      --spacing-sm: 0.75rem;  /* 12px */
-      --spacing-md: 1rem;     /* 16px */
-      --spacing-lg: 1.5rem;   /* 24px */
-      --spacing-xl: 2rem;     /* 32px */
-      --spacing-xxl: 3rem;    /* 48px */
-    }
-
     body {
-      background-color: #0A0E1A; /* Professional dark navy */
+      background-color: #0A0E1A;
     }
 
-    /* Transparent header and nav bars */
     .md-header {
       position: absolute;
       top: 0;
@@ -30,566 +18,308 @@
       box-shadow: none !important;
     }
 
-    .md-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 120px; /* Reduced height for cleaner look */
-      background: linear-gradient(to bottom, rgba(10,14,26,0.95) 0%, rgba(10,14,26,0) 100%);
-      z-index: -1; /* Place it behind the header content */
-      pointer-events: none; /* Ensure it doesn't block interactions */
+    .md-main__inner {
+      margin-top: 0 !important;
     }
 
+    .md-content {
+      position: relative;
+      z-index: 1;
+    }
 
-
-
+    /* Stars background */
     #stars-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
-        background: #000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      background: #000;
     }
 
     .star {
-        position: absolute;
-        background-color: #fff;
-        border-radius: 50%;
-        animation: twinkle linear infinite;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
     }
 
     @keyframes twinkle {
-        0% {
-            opacity: 0;
-            transform: scale(0.5);
-        }
-        50% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0.5);
-        }
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
     }
 
-    .md-main__inner {
-        margin-top: 0 !important;
-    }
-    .md-content {
-        z-index: 1;
-        position: relative;
-    }
-    .md-header-nav,
-    .md-tabs {
-      background-color: transparent !important;
-    }
-
-    /* Full-screen hero section */
+    /* HERO */
     .home-hero {
       position: relative;
-      height: 100vh; /* Full viewport height */
+      height: 100vh;
       width: 100vw;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0;
       margin: 0;
+      padding: 0;
       background: transparent;
-      overflow: hidden; /* Contain the parallaxing background */
+      overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
-      height: 100%; /* Adjust for less zoom */
+      height: 100%;
       object-fit: cover;
       z-index: -1;
+      will-change: transform;
+    }
+
+    /* Light / dark video switch */
+    [data-md-color-scheme="default"] .hero-bg--light {
+      display: block;
+    }
+    [data-md-color-scheme="default"] .hero-bg--dark {
+      display: none;
+    }
+    [data-md-color-scheme="slate"] .hero-bg--light {
+      display: none;
+    }
+    [data-md-color-scheme="slate"] .hero-bg--dark {
+      display: block;
     }
 
     .home-hero__inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      padding: var(--spacing-xxl) var(--spacing-xl); /* Consistent spacing */
-      z-index: 1;
-      max-width: 1200px;
+      padding: 3rem 1.5rem;
+      max-width: 900px;
       margin: 0 auto;
+      will-change: transform;
     }
 
     .home-hero__inner h1 {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 3.2rem;
-      color: white;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6);
-      margin: 0 0 var(--spacing-lg) 0; /* Consistent margin */
+      font-size: 3rem;
+      color: #fff;
+      margin: 0 0 1rem 0;
       letter-spacing: -0.01em;
       line-height: 1.1;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
     }
 
     .home-hero__inner p {
       font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin: 0; /* Reset margin */
-      color: rgba(255, 255, 255, 255); /* Increased opacity for better visibility */
-      text-shadow: 0 4px 16px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.9); /* Enhanced shadow for visibility */
-      max-width: 700px;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0;
       line-height: 1.6;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.9);
     }
 
-    .hero-text-content p {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0 1px 5px rgba(0,0,0,0.4);
-    }
-
-    /* CTA section in about - consistent spacing */
     .home-hero__cta {
-      margin-top: var(--spacing-xl); /* Consistent spacing */
-      padding: 0;
-      text-align: center;
-    }
-
-    /* Video container consistent spacing */
-    .video-container {
-      margin: var(--spacing-md) 0 var(--spacing-md) 0 !important; /* Consistent video spacing */
+      margin-top: 2rem;
     }
 
     .btn {
       display: inline-block;
-      padding: var(--spacing-sm) var(--spacing-xl); /* Consistent button padding */
+      padding: 0.6rem 1.8rem;
       border-radius: 4px;
       text-decoration: none;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
       font-size: 0.95rem;
-      letter-spacing: 0.025em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      transition: all 0.25s ease;
-      margin: 0 var(--spacing-xs); /* Consistent button spacing */
+      transition: transform 0.2s ease;
+      margin: 0 0.4rem;
       border: 1px solid transparent;
-      position: relative;
-      overflow: hidden;
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: none;
     }
 
-    /* Scroll-reveal animations */
-    .slide-in-bottom {
-      opacity: 0;
-      transform: translateY(30px); /* Reduced for subtlety */
-      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    }
-
-    .slide-in-bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Section styling - transparent backgrounds for main content */
+    /* Sections */
     section.about,
     section.video-showcase {
       background: transparent;
-      padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl); /* Consistent section padding */
-      border-radius: 6px;
-      margin-bottom: var(--spacing-xl); /* Consistent section spacing */
-      color: white; /* White text on transparent background */
-      border: none;
-      box-shadow: none;
+      color: #fff;
+      margin: 2rem auto 3rem auto;
     }
 
-    /* Override MkDocs default spacing - ALL CONSISTENT */
-    section:not(.home-hero) .md-container {
-      padding: 0 !important;
-      margin: 0 !important;
+    .md-container.md-typeset {
+      max-width: 960px;
+      margin: 0 auto;
     }
 
-    section:not(.home-hero) .md-typeset h2 {
-      margin: 0 0 var(--spacing-lg) 0 !important; /* Consistent heading spacing */
+    section.about h2,
+    section.video-showcase h2 {
       font-family: 'Inter', sans-serif;
       font-weight: 600;
-      font-size: 1.75rem;
-      line-height: 1.3;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    section:not(.home-hero) .md-typeset p {
-      margin: 0 0 var(--spacing-md) 0 !important; /* Consistent paragraph spacing */
+    section.about p,
+    section.video-showcase p {
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
-    section:not(.home-hero) .md-typeset p:last-of-type {
-      margin-bottom: 0 !important; /* Remove margin from last paragraph */
-    }
-
-    /* Projects grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .feature {
-      text-align: center;
-      color: #333;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 100%);
-      padding: 2rem 1.5rem;
+    .video-container {
+      margin-top: 1rem;
       border-radius: 6px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .feature:hover {
-      transform: translateY(-2px); /* Subtle hover effect */
-      box-shadow: none;
-      border-color: rgba(0, 0, 0, 0.15);
-    }
-
-    .media-wrapper {
-      position: relative;
-      padding-top: 56.25%;
       overflow: hidden;
-      border-radius: 0.5rem;
     }
 
-    .media-wrapper img,
-    .media-wrapper video {
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Simple slideshow */
+    .image-slideshow-container {
+      margin-top: 2rem;
+    }
+
+    .image-slideshow {
+      position: relative;
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .slideshow-image {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    /* Media queries for mobile devices */
+    .slideshow-image:first-child {
+      position: relative;
+      opacity: 1;
+    }
+
+    .slideshow-caption {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
     @media (max-width: 768px) {
       .home-hero {
         height: auto;
-        min-height: 75vh;
-      }
-
-      .home-hero__inner {
-        padding: var(--spacing-xl) var(--spacing-md); /* Consistent mobile spacing */
+        min-height: 70vh;
       }
 
       .home-hero__inner h1 {
-        font-size: 2.5rem;
-        margin-bottom: var(--spacing-md); /* Consistent mobile spacing */
-        line-height: 1.2;
+        font-size: 2.3rem;
       }
 
       .home-hero__inner p {
-        font-size: 1.1rem;
-        margin-top: var(--spacing-md); /* Consistent mobile spacing */
-        line-height: 1.5;
-        max-width: 90%;
-      }
-
-      .hero-bg {
-        position: absolute;
-        height: 100%;
-      }
-
-      .btn {
-        padding: var(--spacing-sm) var(--spacing-lg); /* Consistent mobile button spacing */
-        font-size: 1rem;
-      }
-
-      /* About section mobile improvements */
-      section.about {
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg) var(--spacing-md); /* Consistent mobile section padding */
-      }
-
-      section.about h2 {
-        font-size: 1.8rem;
-        margin-bottom: var(--spacing-md) !important; /* Consistent mobile heading spacing */
-        text-align: center;
-      }
-
-      section.about p {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: var(--spacing-md) !important; /* Consistent mobile paragraph spacing */
-      }
-
-      .home-hero__cta {
-        margin-top: var(--spacing-lg) !important; /* Consistent mobile CTA spacing */
-        padding: 0 var(--spacing-md);
+        font-size: 1.05rem;
       }
 
       .home-hero__cta .btn {
         display: block;
-        margin: var(--spacing-xs) auto; /* Consistent mobile button spacing */
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-      }
-
-      /* Disable parallax on mobile for performance */
-      .home-hero__inner,
-      .hero-bg {
-        transform: none !important;
-      }
-    }
-
-    /* Extra small screens (below 480px) */
-    @media (max-width: 480px) {
-      .home-hero__inner {
-        padding: var(--spacing-lg) var(--spacing-md); /* Consistent small screen spacing */
-      }
-
-      .home-hero__inner h1 {
-        font-size: 2rem;
-        margin-bottom: var(--spacing-sm); /* Consistent small screen spacing */
-      }
-
-      .home-hero__inner p {
-        font-size: 1rem;
-        margin-top: var(--spacing-sm); /* Consistent small screen spacing */
-        max-width: 95%;
-      }
-
-      .btn {
-        padding: var(--spacing-sm) var(--spacing-md); /* Consistent small screen button spacing */
-        font-size: 0.9rem;
-      }
-
-      /* About section for very small screens */
-      section.about {
-        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md) var(--spacing-sm); /* Consistent small screen section padding */
-      }
-
-      section.about h2 {
-        font-size: 1.5rem;
-        margin-bottom: var(--spacing-sm) !important; /* Consistent small screen heading spacing */
-      }
-
-      section.about p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: var(--spacing-sm) !important; /* Consistent small screen paragraph spacing */
-      }
-
-      .home-hero__cta {
-        padding: 0 var(--spacing-xs); /* Consistent small screen CTA padding */
-      }
-
-      .home-hero__cta .btn {
-        font-size: 0.9rem;
-        padding: var(--spacing-sm) var(--spacing-md); /* Consistent small screen button sizing */
-      }
-    }
-
-    /* Fix slideshow images on all screen sizes to prevent horizontal scroll */
-    .image-slideshow-container {
-      width: 100%;
-      max-width: 100%;
-      overflow: hidden;
-    }
-    
-    .image-slideshow {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      overflow: hidden;
-    }
-    
-    .slideshow-image {
-      width: 100% !important;
-      height: auto !important;
-      max-width: 100% !important;
-      object-fit: contain !important;
-      border-radius: 6px !important;
-      transition: opacity 1s ease-in-out !important;
-      display: block !important;
-      position: relative !important;
-    }
-    
-    .slideshow-image:not(:first-child) {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-    }
-
-    @media (max-width: 768px) {
-      .image-slideshow-container {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-      
-      .image-slideshow {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: hidden !important;
-      }
-      
-      .slideshow-image {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-      }
-      
-      .slideshow-image.slideshow-spacer {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-      }
-      
-      /* Ensure container doesn't cause horizontal overflow */
-      .video-showcase {
-        overflow-x: hidden !important;
-      }
-      
-      .md-container {
-        padding-left: var(--spacing-md) !important;
-        padding-right: var(--spacing-md) !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
+        margin: 0.4rem auto;
+        max-width: 260px;
       }
     }
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Create stars
-      const container = document.getElementById('stars-container');
-      if (container) {
+      // Stars
+      const starsContainer = document.getElementById('stars-container');
+      if (starsContainer) {
         for (let i = 0; i < 200; i++) {
           const star = document.createElement('div');
           star.className = 'star';
           const size = Math.random() * 3;
-          star.style.width = `${size}px`;
-          star.style.height = `${size}px`;
-          star.style.top = `${Math.random() * 100}%`;
-          star.style.left = `${Math.random() * 100}%`;
-          star.style.animationDuration = `${Math.random() * 5 + 2}s`;
-          star.style.animationDelay = `${Math.random() * 3}s`;
-          container.appendChild(star);
+          star.style.width = size + 'px';
+          star.style.height = size + 'px';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.animationDuration = (Math.random() * 5 + 2) + 's';
+          star.style.animationDelay = (Math.random() * 3) + 's';
+          starsContainer.appendChild(star);
         }
       }
 
-      // Add playing property to HTMLMediaElement
-      Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-        get: function() {
-          return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-        }
+      // Hero video autoplay (with simple fallback)
+      const heroVideos = document.querySelectorAll('.hero-bg');
+      function tryPlayHeroVideos() {
+        heroVideos.forEach(v => {
+          if (!v) return;
+          v.play().catch(() => {});
+        });
+      }
+      tryPlayHeroVideos();
+      document.body.addEventListener('click', function once() {
+        tryPlayHeroVideos();
+        document.body.removeEventListener('click', once);
       });
 
-      const video = document.querySelector('.hero-bg');
-      if (video) {
-        // Attempt to play the video on load
-        video.play().catch(error => {
-          console.log('Autoplay prevented:', error);
-        });
+      // Parallax for hero text + background
+      const heroContent = document.querySelector('.home-hero__inner');
+      const heroBgs = document.querySelectorAll('.hero-bg');
 
-        // Add event listener for suspend event (optional UI trigger)
-        video.addEventListener('suspend', () => {
-          console.log('Video suspended, awaiting user interaction');
-        });
-
-        // Add event listener for play event (optional UI cleanup)
-        video.addEventListener('play', () => {
-          console.log('Video playing');
-        });
-
-        // Play video on first user interaction with the page
-        document.body.addEventListener('click', function handler() {
-          if (!video.playing) {
-            video.play().catch(error => {
-              console.log('Manual play failed:', error);
-            });
-          }
-          // Remove listener after first interaction
-          document.body.removeEventListener('click', handler);
-        });
-      }
-
-      // Parallax effect
       window.addEventListener('scroll', function() {
-        const heroContent = document.querySelector('.home-hero__inner');
-        const heroBg = document.querySelector('.hero-bg');
-        const scrollPosition = window.pageYOffset;
+        const y = window.pageYOffset || document.documentElement.scrollTop || 0;
 
         if (heroContent) {
-          heroContent.style.transform = `translateY(${scrollPosition * -0.3}px)`;
+          heroContent.style.transform = 'translateY(' + (y * -0.3) + 'px)';
         }
-        if (heroBg) {
-          heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        }
+
+        heroBgs.forEach(bg => {
+          bg.style.transform = 'translateY(' + (y * 0.2) + 'px)';
+        });
       });
 
-      // Scroll reveal animations
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.01 });
-      document.querySelectorAll('.slide-in-bottom').forEach(el => observer.observe(el));
-
-      // Image slideshow functionality
+      // Simple image slideshow
       const slideshowImages = document.querySelectorAll('.slideshow-image');
-      const slideshowCaption = document.querySelector('.slideshow-caption');
-      
       const captions = [
         "Tank assembly showing integrated propulsion system components",
         "MACH team members working alongside the latest propulsion system development",
         "Complete SPRINT system overview showing integrated test setup and components"
       ];
-      
+      const slideshowCaption = document.querySelector('.slideshow-caption');
       let currentSlide = 0;
-      
-      function nextSlide() {
-        // Fade out current image
-        if (currentSlide === 0) {
-          // First image is positioned relatively, so hide it normally
-          slideshowImages[currentSlide].style.opacity = '0';
-        } else {
-          // Other images are positioned absolutely
-          slideshowImages[currentSlide].style.opacity = '0';
-        }
-        
-        // Move to next slide
-        currentSlide = (currentSlide + 1) % slideshowImages.length;
-        
-        // Fade in next image
-        slideshowImages[currentSlide].style.opacity = '1';
-        
-        // Update caption
-        if (slideshowCaption) {
-          slideshowCaption.textContent = captions[currentSlide];
-        }
+
+      if (slideshowCaption && captions.length > 0) {
+        slideshowCaption.textContent = captions[0];
       }
-      
-      // Start slideshow after page loads
-      if (slideshowImages.length > 0) {
-        setInterval(nextSlide, 4000); // Change image every 4 seconds
+
+      if (slideshowImages.length > 1) {
+        setInterval(() => {
+          slideshowImages[currentSlide].style.opacity = '0';
+          currentSlide = (currentSlide + 1) % slideshowImages.length;
+          slideshowImages[currentSlide].style.opacity = '1';
+          if (slideshowCaption) {
+            slideshowCaption.textContent = captions[currentSlide] || '';
+          }
+        }, 4000);
       }
     });
   </script>
@@ -597,53 +327,69 @@
 
 {% block hero %}
   <div id="stars-container"></div>
-  <!-- HERO with video background -->
   <section class="home-hero">
-    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="{{ base_url }}/assets/images/hotfire-fallback.jpg">
-      <source src="{{ base_url }}/assets/videos/hotfirevertical.mp4" type="video/mp4" media="(max-width: 768px)">
+    <!-- Light mode video -->
+    <video class="hero-bg hero-bg--light" autoplay muted loop playsinline preload="auto"
+           poster="{{ base_url }}/assets/images/hotfire-fallback.jpg">
+      <source src="{{ base_url }}/assets/videos/lc24_hf.mov" type="video/mp4">
+    </video>
+
+    <!-- Dark mode video -->
+    <video class="hero-bg hero-bg--dark" autoplay muted loop playsinline preload="auto"
+           poster="{{ base_url }}/assets/images/hotfire-fallback.jpg">
       <source src="{{ base_url }}/assets/videos/hotfiresupercut.mov" type="video/mp4">
     </video>
 
     <div class="home-hero__inner">
-        <h1>MACH - TMU Liquid Rocketry</h1>
-        <p>Advanced liquid propulsion systems, precision avionics, and rigorous aerospace research</p>
+      <h1>MACH - TMU Liquid Rocketry</h1>
+      <p>Advanced liquid propulsion systems, precision avionics, and rigorous aerospace research</p>
     </div>
   </section>
 {% endblock %}
 
 {% block content %}
   <!-- About Section -->
-  <section class="about slide-in-bottom">
+  <section class="about">
     <div class="md-container md-typeset">
       <h2>About Mach</h2>
       <p>MACH is TMU's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry.</p>
-      <p>Join our team of passionate engineers as we design PCB modules, test rocket engines, and compete in national rocketry competitions. Whether you're interested in mechanical design, electronics, software development, or project management, MACH offers opportunities to work on meaningful aerospace projects that make an impact.</p>
+      <p>Our team designs PCB modules, tests rocket engines, and competes in national rocketry competitions.</p>
       <div class="home-hero__cta">
-        <a href="https://forms.gle/A58LRnTvz6VZtvXFA" class="btn btn-primary" style="background-color: #1B365C; color: white; border: 1px solid #2C4F7C;">Apply Now</a>
-        <a href="{{ 'SPRINT/' | url }}" class="btn btn-primary" style="background-color: #2C3E50; color: white; border: 1px solid #34495E;">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Showcase Section -->
-  <section class="video-showcase slide-in-bottom">
-    <div class="md-container md-typeset">
-      <h2>Propulsion System Testing</h2>
-      <div class="video-container" style="position: relative; overflow: hidden; border-radius: 6px;">
-        <video class="showcase-video" autoplay muted loop playsinline preload="auto" poster="{{ base_url }}/assets/images/showcase-fallback.jpg" style="width: 100%; height: auto; border-radius: 6px;">
-          <source src="{{ base_url }}/assets/videos/img_3004.MOV" type="video/mp4">
-        </video>
-      </div>
-      <p style="text-align: center;">SPRINT hotfire test</p>
-      
-      <div class="image-slideshow-container" style="margin-top: var(--spacing-xl);">
-        <div class="image-slideshow" style="position: relative; width: 100%; border-radius: 6px; overflow: hidden;">
-          <img src="{{ base_url }}/assets/images/tank-assembly.jpg" alt="Tank Assembly" class="slideshow-image slideshow-spacer" style="position: relative; width: 100%; height: auto; border-radius: 6px; opacity: 1; transition: opacity 1s ease-in-out;">
-          <img src="{{ base_url }}/assets/images/team-and-system.jpg" alt="Team and System" class="slideshow-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px; opacity: 0; transition: opacity 1s ease-in-out; object-fit: cover;">
-          <img src="{{ base_url }}/assets/images/system-overview.jpg" alt="System Overview" class="slideshow-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px; opacity: 0; transition: opacity 1s ease-in-out; object-fit: cover;">
+        <div style="text-align: center;">
+          <a href="{{ 'SPRINT/' | url }}"
+             class="btn"
+             style="background-color:#2C3E50;color:#fff;border:1px solid #34495E;">
+            Learn More
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  {% endblock %}
+  <!-- Video Showcase Section -->
+  <section class="video-showcase">
+    <div class="md-container md-typeset">
+      <h2>Latest hotfire:</h2>
+      <div class="video-container">
+        <video class="showcase-video" autoplay muted loop playsinline preload="auto"
+               poster="{{ base_url }}/assets/images/showcase-fallback.jpg">
+          <source src="{{ base_url }}/assets/videos/img_3004.MOV" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="image-slideshow-container">
+        <div class="image-slideshow">
+          <img src="{{ base_url }}/assets/images/tank-assembly.jpg"
+               alt="Tank Assembly"
+               class="slideshow-image">
+          <img src="{{ base_url }}/assets/images/team-and-system.jpg"
+               alt="Team and System"
+               class="slideshow-image">
+          <img src="{{ base_url }}/assets/images/system-overview.jpg"
+               alt="System Overview"
+               class="slideshow-image">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

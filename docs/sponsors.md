@@ -2,6 +2,8 @@
 hide:
   - navigation
   - toc
+  - path
+  - footer
 ---
 
 # Sponsors

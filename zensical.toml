@@ -1,0 +1,202 @@
+[project]
+site_name        = "MACH"
+site_description = "MACH - TMU Liquid Rocketry"
+site_author      = "Mach"
+site_url         = "https://machtmu.com/"
+repo_url         = "https://github.com/machtmu/machtmu.com"
+edit_uri         = "edit/main/docs/"
+copyright        = "MACH - TMU Liquid Rocketry © 2025"
+
+
+# Extra styling / scripts
+extra_css = [
+  "css/extra.css",
+]
+
+
+
+[project.extra]
+generator = false
+
+# Social icons in the footer
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/machtmu/"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/instagram"
+link = "https://www.instagram.com/machtmu/"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/company/tmurocketry/"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/3kak7Ydu43"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/twitch"
+link = "https://www.twitch.tv/machtmu"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/youtube"
+link = "https://www.youtube.com/@machtmu"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/envelope"
+link = "mailto:machtmu.com"
+
+# -----------------------------------------------------------------------------
+# THEME – using Zensical's modern look
+# -----------------------------------------------------------------------------
+
+[project.theme]
+# "modern" is the new look; explicit here so it's obvious
+
+# If your overrides are heavily tuned to old Material, you can comment this out
+# to see the pure modern look first and re-enable once you've adjusted them.
+custom_dir = "overrides"
+logo    = "img/logo1.png"
+favicon = "img/favicon.ico"
+
+features = [
+  # Header / announcement
+  "announce.dismiss",
+
+  # Code goodies
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+
+  # Tooltips / tabs / footnotes (nice modern UX touches)
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+
+  # Header behavior
+  "header.autohide",
+
+  # Navigation
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+
+  # Search
+  "search.highlight",
+
+  # TOC behavior
+  "toc.follow",
+]
+
+[project.theme.icon]
+# Use repo icon in header (Zensical will still infer some things from repo_url)
+repo = "fontawesome/brands/github"
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# If you want MACH-black accent later:
+# primary = "black"  # under each palette block
+
+# -----------------------------------------------------------------------------
+# PLUGINS
+# -----------------------------------------------------------------------------
+
+# Meta plugin
+[project.plugins.meta]
+
+# Git revision date (same behavior as in mkdocs.yml)
+[project.plugins."git-revision-date-localized"]
+enable_creation_date = true
+timezone             = "America/Toronto"
+
+# Table-reader plugin
+[project.plugins."table-reader"]
+
+# (Not needed: Zensical already has search built in, so no "search" plugin here)
+
+# -----------------------------------------------------------------------------
+# MARKDOWN EXTENSIONS
+# -----------------------------------------------------------------------------
+
+# Direct ports of your pymdownx + friends.
+# These tables mirror `markdown_extensions:` from mkdocs.yml.
+
+[project.markdown_extensions."pymdownx.caret"]
+[project.markdown_extensions."pymdownx.mark"]
+[project.markdown_extensions."pymdownx.tilde"]
+
+[project.markdown_extensions."pymdownx.arithmatex"]
+generic = true
+
+[project.markdown_extensions.attr_list]
+
+# Use Zensical's emoji helpers (same visuals as Material, but new path) :contentReference[oaicite:2]{index=2}
+[project.markdown_extensions."pymdownx.emoji"]
+emoji_index     = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions."pymdownx.tasklist"]
+custom_checkbox = true
+
+[project.markdown_extensions.md_in_html]
+
+[project.markdown_extensions."pymdownx.highlight"]
+anchor_linenums     = true
+line_spans          = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions."pymdownx.inlinehilite"]
+[project.markdown_extensions."pymdownx.snippets"]
+[project.markdown_extensions."pymdownx.superfences"]
+
+# Optional: enable Zensical's own instant-preview extension later:
+# [project.markdown_extensions."zensical.extensions.preview"]
+# configurations = [
+#   { targets.include = ["customization.md", "setup/extensions/*"] }
+# ]
+
+# -----------------------------------------------------------------------------
+# NAVIGATION (optional – only if you want to define it explicitly)
+# -----------------------------------------------------------------------------
+# If you want implicit nav from folder structure, leave this out.
+# Here's an example skeleton you can fill in:
+#
+# [project]
+# nav = [
+#   { "Home" = "index.md" },
+#   { "Rocket" = [
+#       "rocket/index.md",
+#       "rocket/airframe.md",
+#       "rocket/avionics.md",
+#       "rocket/propulsion.md",
+#     ]
+#   },
+#   { "Team" = "team/index.md" },
+#   { "Sponsors" = "sponsors/index.md" },
+# ]

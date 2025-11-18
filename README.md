@@ -5,13 +5,9 @@
 **Official website documenting liquid propulsion systems, avionics development, and test campaigns**
 
 <p align="center">
-  <a href="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/ci.yml"><img
-    src="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/ci.yml/badge.svg"
+  <a href="https://github.com/machtmu/machtmu.com2/actions/workflows/docs.yml"><img
+    src="https://github.com/machtmu/machtmu.com2/actions/workflows/docs.yml/badge.svg"
     alt="Build"
-  /></a>
-  <a href="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/pages/pages-build-deployment"><img
-    src="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/pages/pages-build-deployment/badge.svg"
-    alt="Downloads"
   /></a>
 </p>
 
@@ -41,9 +37,10 @@
 
 ---
 
-<div align="center">
-
-[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
-
-</div>
-
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png">
+    <img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" width="145" height="120">
+  </picture>
+</p>

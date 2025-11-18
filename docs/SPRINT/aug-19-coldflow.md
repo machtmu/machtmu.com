@@ -22,6 +22,6 @@ We didn't collect data for the cold flow, but characterizing mass flow rates act
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/assets/images/sprint-coldflow-team.jpg" alt="SPRINT Team at Cold Flow Test" style="width:100%; max-width:800px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
+  <img src="sprint-coldflow-team.jpg" alt="SPRINT Team at Cold Flow Test" style="width:100%; max-width:800px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT team members at the cold flow test on August 9th, 2025.</figcaption>
 </figure>

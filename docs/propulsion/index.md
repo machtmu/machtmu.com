@@ -1,7 +1,10 @@
 ---
 hide:
-  - toc
   - navigation
+  - toc
+  - path
+  - footer
+  
 ---
 
 

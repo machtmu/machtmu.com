@@ -3,6 +3,8 @@ hide:
   - navigation
   - toc
   - path
+  - footer
+  
 ---
 
 # Resources

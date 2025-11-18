@@ -1,0 +1,402 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap">
+  <style>
+    body {
+      background-color: #0A0E1A;
+    }
+
+    .md-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .md-main__inner {
+      margin-top: 0 !important;
+    }
+
+    .md-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Stars background */
+    #stars-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    /* HERO */
+    .home-hero {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      will-change: transform;
+    }
+
+    /* Light / dark video switch */
+    [data-md-color-scheme="default"] .hero-bg--light {
+      display: block;
+    }
+    [data-md-color-scheme="default"] .hero-bg--dark {
+      display: none;
+    }
+    [data-md-color-scheme="slate"] .hero-bg--light {
+      display: none;
+    }
+    [data-md-color-scheme="slate"] .hero-bg--dark {
+      display: block;
+    }
+
+    .home-hero__inner {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      will-change: transform;
+    }
+
+    .home-hero__inner h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: #fff;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+    }
+
+    .home-hero__inner p {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0;
+      line-height: 1.6;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.9);
+    }
+
+    .home-hero__cta {
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease;
+      margin: 0 0.4rem;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Sections */
+    section.about,
+    section.video-showcase {
+      background: transparent;
+      color: #fff;
+      margin: 2rem auto 3rem auto;
+    }
+
+    .md-container.md-typeset {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    section.about h2,
+    section.video-showcase h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    section.about p,
+    section.video-showcase p {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      margin-top: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Simple slideshow */
+    .image-slideshow-container {
+      margin-top: 2rem;
+    }
+
+    .image-slideshow {
+      position: relative;
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .slideshow-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow-image:first-child {
+      position: relative;
+      opacity: 1;
+    }
+
+    .slideshow-caption {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .home-hero {
+        height: auto;
+        min-height: 70vh;
+      }
+
+      .home-hero__inner h1 {
+        font-size: 2.3rem;
+      }
+
+      .home-hero__inner p {
+        font-size: 1.05rem;
+      }
+
+      .home-hero__cta .btn {
+        display: block;
+        margin: 0.4rem auto;
+        max-width: 260px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Stars
+      const starsContainer = document.getElementById('stars-container');
+      if (starsContainer) {
+        for (let i = 0; i < 200; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          const size = Math.random() * 3;
+          star.style.width = size + 'px';
+          star.style.height = size + 'px';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.animationDuration = (Math.random() * 5 + 2) + 's';
+          star.style.animationDelay = (Math.random() * 3) + 's';
+          starsContainer.appendChild(star);
+        }
+      }
+
+      // Hero video autoplay (with simple fallback)
+      const heroVideos = document.querySelectorAll('.hero-bg');
+      function tryPlayHeroVideos() {
+        heroVideos.forEach(v => {
+          if (!v) return;
+          v.play().catch(() => {});
+        });
+      }
+      tryPlayHeroVideos();
+      document.body.addEventListener('click', function once() {
+        tryPlayHeroVideos();
+        document.body.removeEventListener('click', once);
+      });
+
+      // Parallax for hero text + background
+      const heroContent = document.querySelector('.home-hero__inner');
+      const heroBgs = document.querySelectorAll('.hero-bg');
+
+      window.addEventListener('scroll', function() {
+        const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        if (heroContent) {
+          heroContent.style.transform = 'translateY(' + (y * -0.3) + 'px)';
+        }
+
+        heroBgs.forEach(bg => {
+          bg.style.transform = 'translateY(' + (y * 0.2) + 'px)';
+        });
+      });
+
+      // Simple image slideshow
+      const slideshowImages = document.querySelectorAll('.slideshow-image');
+      const captions = [
+        "Tank assembly showing integrated propulsion system components",
+        "MACH team members working alongside the latest propulsion system development",
+        "Complete SPRINT system overview showing integrated test setup and components"
+      ];
+      const slideshowCaption = document.querySelector('.slideshow-caption');
+      let currentSlide = 0;
+
+      if (slideshowCaption && captions.length > 0) {
+        slideshowCaption.textContent = captions[0];
+      }
+
+      if (slideshowImages.length > 1) {
+        setInterval(() => {
+          slideshowImages[currentSlide].style.opacity = '0';
+          currentSlide = (currentSlide + 1) % slideshowImages.length;
+          slideshowImages[currentSlide].style.opacity = '1';
+          if (slideshowCaption) {
+            slideshowCaption.textContent = captions[currentSlide] || '';
+          }
+        }, 4000);
+      }
+    });
+  </script>
+{% endblock %}
+
+{% block hero %}
+  <div id="stars-container"></div>
+  <section class="home-hero">
+    <!-- Light mode video -->
+    <video class="hero-bg hero-bg--light" autoplay muted loop playsinline preload="auto"
+           poster="{{ base_url }}/assets/images/hotfire-fallback.jpg">
+      <source src="{{ base_url }}/assets/videos/lc24_hf.mov" type="video/mp4">
+    </video>
+
+    <!-- Dark mode video -->
+    <video class="hero-bg hero-bg--dark" autoplay muted loop playsinline preload="auto"
+           poster="{{ base_url }}/assets/images/hotfire-fallback.jpg">
+      <source src="{{ base_url }}/assets/videos/hotfiresupercut.mov" type="video/mp4">
+    </video>
+
+    <div class="home-hero__inner">
+      <h1>MACH - TMU Liquid Rocketry</h1>
+      <p>Advanced liquid propulsion systems, precision avionics, and rigorous aerospace research</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <!-- About Section -->
+  <section class="about">
+    <div class="md-container md-typeset">
+      <h2>About Mach</h2>
+      <p>MACH is TMU's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry.</p>
+      <p>Join our team of passionate engineers as we design PCB modules, test rocket engines, and compete in national rocketry competitions. Whether you're interested in mechanical design, electronics, software development, or project management, MACH offers opportunities to work on meaningful aerospace projects that make an impact.</p>
+      <div class="home-hero__cta">
+        <a href="https://forms.gle/A58LRnTvz6VZtvXFA"
+           class="btn"
+           style="background-color:#1B365C;color:#fff;border:1px solid #2C4F7C;">
+          Apply Now
+        </a>
+        <a href="{{ 'SPRINT/' | url }}"
+           class="btn"
+           style="background-color:#2C3E50;color:#fff;border:1px solid #34495E;">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section -->
+  <section class="video-showcase">
+    <div class="md-container md-typeset">
+      <h2>Propulsion System Testing</h2>
+      <div class="video-container">
+        <video class="showcase-video" autoplay muted loop playsinline preload="auto"
+               poster="{{ base_url }}/assets/images/showcase-fallback.jpg">
+          <source src="{{ base_url }}/assets/videos/img_3004.MOV" type="video/mp4">
+        </video>
+      </div>
+      <p style="text-align:center;">SPRINT hotfire test</p>
+
+      <div class="image-slideshow-container">
+        <div class="image-slideshow">
+          <img src="{{ base_url }}/assets/images/tank-assembly.jpg"
+               alt="Tank Assembly"
+               class="slideshow-image">
+          <img src="{{ base_url }}/assets/images/team-and-system.jpg"
+               alt="Team and System"
+               class="slideshow-image">
+          <img src="{{ base_url }}/assets/images/system-overview.jpg"
+               alt="System Overview"
+               class="slideshow-image">
+        </div>
+        <p class="slideshow-caption">
+          Tank assembly showing integrated propulsion system components
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
