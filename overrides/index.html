@@ -8,23 +8,15 @@
       background-color: #0A0E1A;
     }
 
+    /* Make the top header fully transparent, nothing else */
     .md-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
       background-color: transparent !important;
-      box-shadow: none !important;
-    }
-
-    .md-main__inner {
-      margin-top: 0 !important;
+      background: transparent !important;
     }
 
     .md-content {
       position: relative;
-      z-index: 1;
+      z-index: 1; /* content above background video/stars */
     }
 
     /* Stars background */
@@ -34,7 +26,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: -2;
       overflow: hidden;
       background: #000;
     }
@@ -64,10 +56,9 @@
     /* HERO */
     .home-hero {
       position: relative;
-      height: 100vh;
-      width: 100vw;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -4.8rem;          /* pull hero up so video extends behind header */
+      min-height: 100vh;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -83,8 +74,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1;
+      z-index: -1;   /* behind hero content, above page background */
       will-change: transform;
+      pointer-events: none;
     }
 
     /* Light / dark video switch */
@@ -228,7 +220,6 @@
 
     @media (max-width: 768px) {
       .home-hero {
-        height: auto;
         min-height: 70vh;
       }
 
@@ -389,6 +380,7 @@
                alt="System Overview"
                class="slideshow-image">
         </div>
+        <p class="slideshow-caption"></p>
       </div>
     </div>
   </section>
