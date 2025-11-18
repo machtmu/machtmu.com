@@ -4,7 +4,6 @@ hide:
   - toc
   - path
   - footer
-  
 ---
 
 # Sponsors

@@ -1,4 +1,11 @@
-# 4" Avionics
+---
+hide:
+  - path
+  - footer
+---
+
+
+# Avionics
 
 <style>
 /* Disable background highlight on hover */
@@ -59,11 +66,11 @@ table, table * {
   </table>
 </div>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD">
-  <br />
-  <p class="image-caption">Avionics CAD Render</p>
+<div align="center" style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; align-items:center;">
+  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD 1" style="max-width:48%; height:auto;" />
+  <img src="cad/avionics.jpeg" alt="Avionics CAD 2" style="max-width:48%; height:auto;" />
 </div>
+<p align="center" class="image-caption">Avionics CAD Render</p>
 
 
 ---
