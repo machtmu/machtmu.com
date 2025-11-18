@@ -4,6 +4,8 @@ title: Cold Flow Test - November 7th, 2025
 
 # SPRINT Cold Flow Test - November 7th, 2025
 
+We coldflowed Sprint in the quad for the first time at 9:30pm. Software was completely rewritten so it very much was an integration test. We got really good data.
+
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">

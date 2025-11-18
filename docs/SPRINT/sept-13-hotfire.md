@@ -4,6 +4,10 @@ title: Hot Fire Test - September 13th and 14th, 2025
 
 # SPRINT Hot Fire Test - September 13th and 14th, 2025
 
+On september 13th, we set up, hotfired then accidentally coldflowed in a single day. We didn't rent any cars, and our only expense was the propellant. The place we tested at is about an hour and a half from our school. We were very proud of our pace, however we didn't collect data for the hotfire, only the coldflow. The cause of failed igntion is unknown. We looked at the igniter and e-match and neither went off.
+
+The next day on sunday the 14th, we hotfired and collected data for it for the first time.
+
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
