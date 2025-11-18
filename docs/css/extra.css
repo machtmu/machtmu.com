@@ -36,7 +36,7 @@ img {
     justify-content: center;
 }
 
-.image-container img {
+.image-container img {w
     max-width: 500px;
     width: 100%;
     border: none;
@@ -49,10 +49,6 @@ img {
 .md-tooltip,
 .md-tooltip--inline,
 [role="tooltip"] {
-  z-index: 9999 !important;
+  z-index: 9999
 }
 
-/* (Optional) Make sure the header isn't absurdly high */
-.md-header {
-  z-index: 10;
-}
