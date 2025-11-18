@@ -43,7 +43,7 @@ table, table * {
       <td align="center" style="vertical-align: middle;">
         <img src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="GPS" />
         <br />
-        <a href="PCB-Modules/gps/"><i>GPS</i></a>
+        <a href="PCB-Modules/powersim/"><i>PowerSim</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
         <img src="https://raw.githubusercontent.com/machtmu/4in-recovery/refs/heads/main/images/board.front.png" alt="Recovery" />

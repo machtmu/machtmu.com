@@ -37,9 +37,10 @@
 
 ---
 
-<div align="center">
-
-[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
-
-</div>
-
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png">
+    <img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" width="145" height="120">
+  </picture>
+</p>
