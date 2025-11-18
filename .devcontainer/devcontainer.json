@@ -1,15 +1,11 @@
 {
-  "name": "machtmu.com",
+  "name": "machtmu.com2",
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
     "ghcr.io/devcontainers/features/python": {},
     "ghcr.io/akhildevelops/devcontainer-features/pip": {
       "packages": [
-        "mkdocs-material",
-        "mkdocs-git-committers-plugin-2",
-        "mkdocs-git-revision-date-localized-plugin",
-        "mkdocs-rss-plugin",
-        "mkdocs-table-reader-plugin"
+        "zensical"
       ]
     }
   },
@@ -19,8 +15,7 @@
         "ms-python.python",
         "streetsidesoftware.code-spell-checker",
         "github.vscode-github-actions",
-        "mechatroner.rainbow-csv",
-        "ritwickdey.LiveServer"
+        "mechatroner.rainbow-csv"
       ]
     }
   }

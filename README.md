@@ -5,13 +5,9 @@
 **Official website documenting liquid propulsion systems, avionics development, and test campaigns**
 
 <p align="center">
-  <a href="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/ci.yml"><img
-    src="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/ci.yml/badge.svg"
+  <a href="https://github.com/machtmu/machtmu.com2/actions/workflows/docs.yml"><img
+    src="https://github.com/machtmu/machtmu.com2/actions/workflows/docs.yml/badge.svg"
     alt="Build"
-  /></a>
-  <a href="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/pages/pages-build-deployment"><img
-    src="https://github.com/tmurocketry/tmurocketry.com/actions/workflows/pages/pages-build-deployment/badge.svg"
-    alt="Downloads"
   /></a>
 </p>
 
