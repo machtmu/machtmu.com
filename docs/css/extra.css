@@ -1,0 +1,58 @@
+/* General image styling with height constraints */
+img {
+    display: block;
+    margin: 0 auto;
+    max-height: 400px;
+    width: auto; /* Maintains aspect ratio */
+}
+
+/* Image row styling for side-by-side images */
+.image-row {
+    display: flex;
+    justify-content: center; /* Centers the images within the row */
+    gap: 20px; /* Adds space between the images */
+}
+
+.image-row img {
+    max-width: 45%; /* Ensures the images are responsive */
+    max-height: 400px; /* Limit height to 400px */
+    height: auto; /* Maintains the aspect ratio */
+    width: auto; /* Allow width to adjust to maintain aspect ratio */
+}
+
+/* Image caption styling */
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 500px;
+    width: 100%;
+    border: none;
+    max-height: 400px;
+}
+
+/* --- Fix header tooltip being blurred behind the header --- */
+
+/* Put Zensical / Material tooltips above the header */
+.md-tooltip,
+.md-tooltip--inline,
+[role="tooltip"] {
+  z-index: 9999 !important;
+}
+
+/* (Optional) Make sure the header isn't absurdly high */
+.md-header {
+  z-index: 10;
+}
