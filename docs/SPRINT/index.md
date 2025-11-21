@@ -21,7 +21,14 @@ hide:
 <div class="test-gallery">
 
     <div class="test-item">
-        <img src="nov-7-coldflow/thmbnl.png" alt="November Cold-flow Test">
+        <img src="nov-20-coldflow/thmbnl.png" alt="November 20 Cold-flow Test">
+        <h3>Cold Flow Test - November 20th, 2025</h3>
+        <p>Cold-flow test of the SPRINT system.</p>
+        <a href="nov-20-coldflow/" class="find-out-more">Find out more →</a>
+    </div>
+
+    <div class="test-item">
+        <img src="nov-7-coldflow/thmbnl.png" alt="November 7 Cold-flow Test">
         <h3>Cold Flow Test - November 7th, 2025</h3>
         <p>Cold-flow test of the SPRINT system.</p>
         <a href="nov-7-coldflow/" class="find-out-more">Find out more →</a>
