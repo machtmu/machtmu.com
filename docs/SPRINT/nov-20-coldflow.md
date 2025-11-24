@@ -37,5 +37,5 @@ title: Cold Flow Test - November 20th, 2025
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
   <img src="sprint-nov20-coldflow-team.jpg" alt="SPRINT Team at Cold Flow Test" style="width:100%; max-width:800px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT team members at the cold flow test on November 20th, 2025.</figcaption>
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Photos from the cold flow test on November 20th, 2025.</figcaption>
 </figure>
