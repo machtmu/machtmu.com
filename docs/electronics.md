@@ -1,9 +1,16 @@
-# Hardware
+---
+hide:
+  - nav
+---
 
-![alt text](EGSE.JPG)
+# Electronics
+
+## Hardware
+
+![alt text](electronics/EGSE.JPG)
 <p class="image-caption">Electronics Ground Support Equipment (EGSE)</p>
 
-## Description
+### Description
 
 The primary function of the Ground Support Equipment (GSE) is to collect telemetry and control the bi-propellant liquid rocket safely using a standardized, reliable electrical enclosure.
 
@@ -15,7 +22,7 @@ Networking and software: All devices are routed through a hardened Gigabit Ether
 
 Additional capabilities: The system incorporates mechanical and solid‑state relays, fused power distribution, and organized terminal blocks to simplify maintenance and ensure electrical protection.
 
-## Top Row
+### Top Row
 
 - [Mean Well NDR-240-24 240W 24VDC 10A AC/DC](https://www.amazon.ca/dp/B09K5K5R48?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
 - [MEAN WELL MDR-60-5 AC to DC DIN-Rail Power Supply 5V 10 Amp 50W ](https://www.amazon.ca/dp/B005T6SAJI?ref=ppx_yo2ov_dt_b_fed_asin_title)
@@ -24,14 +31,26 @@ Additional capabilities: The system incorporates mechanical and solid‑state re
 - [Steloproad Mini Industrial 5 Ports Gigabit Switch Hardened 5 Port RJ45 10/100/1000Mbps Ethernet Switch](https://www.amazon.ca/dp/B09WY79QBM?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
 - [LabJack T7-Pro](https://labjack.com/products/labjack-t7-pro)
 
-## Middle Row
+### Middle Row
 
 - Random fuse box (VHB taped to din rail lol)
 - Random terminals, ground and 24V
 - Labjack breakout
 
-## Bottom Row
+### Bottom Row
 
 - [Relays](https://www.digikey.ca/en/products/detail/phoenix-contact/2903361/4755334)
 - Load Cell Amps
 - [13x 3 layer terminal blocks](https://www.digikey.ca/en/products/detail/phoenix-contact/3213713/3603867)
+
+
+## LabVIEW 
+
+![Front panel interface](electronics/software/front_panel.png)
+<p class="image-caption">Front panel view of LabVIEW</p>
+
+![Back panel block diagram](electronics/software/back_panel.png)
+<p class="image-caption">Back panel (block diagram)</p>
+
+
+
