@@ -1,6 +1,8 @@
 ---
 hide:
-  - nav
+  - navigation
+  - path
+  - footer
 ---
 
 # Electronics
