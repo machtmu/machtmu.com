@@ -9,8 +9,8 @@ title: Cold Flow Test - November 20th, 2025
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls src="video.mov" title="SPRINT Cold Flow Test" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT cold flow test on November 20th, 2025.</figcaption>
+  <video controls src="video.mp4" title="SPRINT Cold Flow Test" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">November 20th, 2025 cold flow Test 1 video.</figcaption>
 </figure>
 
 ## Test Data
