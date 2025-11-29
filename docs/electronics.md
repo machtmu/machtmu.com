@@ -10,19 +10,24 @@ hide:
 ## Hardware
 
 ![alt text](electronics/EGSE.JPG)
-<p class="image-caption">Electronics Ground Support Equipment (EGSE)</p>
+<p class="image-caption">Electrical Ground Support Equipment (EGSE)</p>
 
-### Description
 
-The primary function of the Ground Support Equipment (GSE) is to collect telemetry and control the bi-propellant liquid rocket safely using a standardized, reliable electrical enclosure.
+### Enclosure
 
-Enclosure and connectors: The enclosure houses all critical hardware. It is IP65-rated for dust and water protection appropriate for launch pad conditions and employs IP67-rated connectors to ensure sealed, reliable interconnects.
+- [VEVOR Steel Electrical Box 24'' x 24'' x 8'' ](https://www.vevor.ca/electrical-enclosure-c_10749/vevor-steel-electrical-box-electrical-enclosure-box-24x24x8-carbon-steel-ip65-p_010590231787?utm_source=email&utm_medium=emailnotice&utm_campaign=en_CA_orderDelivery_2025-06-09_23-24-50). Both latches broke so we replaced them. The hinges seem fine.
 
-Instrumentation and control: A LabJack T7-Pro provides high‑resolution analog acquisition (thermocouples, pressure transducers, and load cells), while the CLICK PLUS C2-01CPU PLC delivers deterministic control of relays and PWM‑driven servos for valve actuation.
+- [Custom bottom panel from SendCutSend](https://cad.onshape.com/documents/0c03de3f9e7910fd1817c74c/w/839331d5ea26310bf6a065d9/e/913649c37274f5204784182b?renderMode=0&uiState=692b76cdd383de71500c5b16)
 
-Networking and software: All devices are routed through a hardened Gigabit Ethernet switch enabling remote software operation with manual override and integrated fail‑safes for mission‑critical functions.
+- Valve, load cell and pressure transducer: [Panel](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4132012051-000/8854114) and [wire](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4110001051-000/6679522). In different pin numbers. These are quite large, and we're running out of room. 
 
-Additional capabilities: The system incorporates mechanical and solid‑state relays, fused power distribution, and organized terminal blocks to simplify maintenance and ensure electrical protection.
+- Unsure which thermocouple panel connector we're using.
+
+### Bottom Panel
+
+- [Ethercon](https://www.mouser.com/ProductDetail/Neutrik/NE8FDP-TOP?qs=gZXFycFWdAPZSXS%252BNdoDvg%3D%3D&countryCode=CA&currencyCode=CAD)
+
+- [Power](https://www.digikey.ca/en/products/detail/schurter-inc/4312-0013/9094669) Not gonna use this on the next version, already broke one of the latches on it. [This one next time](https://www.digikey.ca/en/products/detail/schurter-inc/3-153-699/26775310) (or maybe without the switch because panel space is limited)
 
 ### Top Row
 
@@ -35,14 +40,14 @@ Additional capabilities: The system incorporates mechanical and solid‑state re
 
 ### Middle Row
 
-- Random fuse box (VHB taped to din rail lol)
+- [Blade fuse terminals](https://www.digikey.ca/en/products/detail/phoenix-contact/3212166/12138996)
 - Random terminals, ground and 24V
-- Labjack breakout
+- [Labjack breakout](https://labjack.com/products/cb37-terminal-board)
 
 ### Bottom Row
 
 - [Relays](https://www.digikey.ca/en/products/detail/phoenix-contact/2903361/4755334)
-- Load Cell Amps
+- [2x Load Cell Amplifiers](https://www.800loadcel.com/electronics/signal-conditioners/tle-load-cell-amplifier.html)
 - [13x 3 layer terminal blocks](https://www.digikey.ca/en/products/detail/phoenix-contact/3213713/3603867)
 
 
