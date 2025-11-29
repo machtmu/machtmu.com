@@ -17,17 +17,17 @@ hide:
 
 - [VEVOR Steel Electrical Box 24'' x 24'' x 8'' ](https://www.vevor.ca/electrical-enclosure-c_10749/vevor-steel-electrical-box-electrical-enclosure-box-24x24x8-carbon-steel-ip65-p_010590231787?utm_source=email&utm_medium=emailnotice&utm_campaign=en_CA_orderDelivery_2025-06-09_23-24-50). Both latches broke so we replaced them. The hinges seem fine.
 
-- [Custom bottom panel from SendCutSend](https://cad.onshape.com/documents/0c03de3f9e7910fd1817c74c/w/839331d5ea26310bf6a065d9/e/913649c37274f5204784182b?renderMode=0&uiState=692b76cdd383de71500c5b16)
-
-- Valve, load cell and pressure transducer: [Panel](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4132012051-000/8854114) and [wire](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4110001051-000/6679522). In different pin numbers. These are quite large, and we're running out of room. 
-
-- Unsure which thermocouple panel connector we're using.
-
 ### Bottom Panel
+
+- [Custom bottom panel from SendCutSend](https://cad.onshape.com/documents/0c03de3f9e7910fd1817c74c/w/839331d5ea26310bf6a065d9/e/913649c37274f5204784182b?renderMode=0&uiState=692b76cdd383de71500c5b16)
 
 - [Ethercon](https://www.mouser.com/ProductDetail/Neutrik/NE8FDP-TOP?qs=gZXFycFWdAPZSXS%252BNdoDvg%3D%3D&countryCode=CA&currencyCode=CAD)
 
 - [Power](https://www.digikey.ca/en/products/detail/schurter-inc/4312-0013/9094669) Not gonna use this on the next version, already broke one of the latches on it. [This one next time](https://www.digikey.ca/en/products/detail/schurter-inc/3-153-699/26775310) (or maybe without the switch because panel space is limited)
+
+- Valve, load cell and pressure transducer: [Panel](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4132012051-000/8854114) and [wire](https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/T4110001051-000/6679522). In different pin numbers. These are quite large, and we're running out of room. 
+
+- Unsure which thermocouple panel connector we're using.
 
 ### Top Row
 
