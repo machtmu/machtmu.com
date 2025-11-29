@@ -10,12 +10,11 @@ hide:
 
 # Propulsion
 
-![alt text](IMG_2357.JPG)
-<p class="image-caption">Propulsion System Overview</p>
+![alt text](propulsion/IMG_2357.JPG)
+<p class="image-caption">Propulsion GSE</p>
 
-## About the Propulsion Team
+- [Pressure transmitters](https://www.automationdirect.com/adc/shopping/catalog/process_control_-a-_measurement/pressure_sensors/pressure_transmitters/ptd25-10-1000h)
 
-The Propulsion team drives the power of flight by designing, machining, and testing engines and propellant systems. The team develops injectors, plumbing, and conducts static hot-fires to advance toward a flight-weight rocket. This team focuses on combustion, fluid dynamics, and high-performance engineering to create reliable and efficient propulsion systems.
 
 ## Fill and Purge System
 

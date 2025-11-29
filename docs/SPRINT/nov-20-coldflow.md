@@ -4,7 +4,8 @@ title: Cold Flow Test - November 20th, 2025
 
 # SPRINT Cold Flow Test - November 20th, 2025
 
-[Add description of the Nov 20 cold flow test here]
+On nov 20th 2025 we did another cold flow. We're still learning a lot when it comes to testing. The software had a major overhaul again and we almost scrubbed the test. 
+We pretty much set up with 4 doing the hardware and 2 people setting up mission control. For this test our mission control didn't have to leave our design zone. This test was again less about the data but more about assembling the team and working through integration again. There's a lot of new people and it's not easy to train people and run a test at the same time. So the more we do this the easier it should become. We plan on doing another cold flow on December 11th. We're working towards having the software a truly multi operator workflow. We live streamed on twitch this time to test that out as well. [Here is the debrief](nov-20-coldflow/debrief.md). 
 
 ## Test Video
 
