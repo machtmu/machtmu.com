@@ -1,8 +1,10 @@
 {
   "name": "machtmu.com2",
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
   "features": {
-    "ghcr.io/devcontainers/features/python": {},
+    "ghcr.io/devcontainers/features/python": {
+      "version": "3.13"
+    },
     "ghcr.io/akhildevelops/devcontainer-features/pip": {
       "packages": [
         "zensical"
