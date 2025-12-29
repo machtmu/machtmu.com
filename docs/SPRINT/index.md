@@ -21,10 +21,10 @@ hide:
 <div class="test-gallery">
 
     <div class="test-item">
-        <img src="dec-16-17-hotfire/thmbnl.png" alt="December 16-17 Hot Fire Test">
-        <h3>Hot Fire Test - December 16th & 17th, 2025</h3>
+        <img src="dec-15-16-hotfire/thmbnl.png" alt="December 15-16 Hot Fire Test">
+        <h3>Hot Fire Test - December 15th & 16th, 2025</h3>
         <p>Hot fire test campaign demonstrating engine performance and system integration over two days.</p>
-        <a href="dec-16-17-hotfire/" class="find-out-more">Find out more →</a>
+        <a href="dec-15-16-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
