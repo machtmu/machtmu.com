@@ -23,7 +23,7 @@ Our system employs both high- and low-pressure nitrogen regulators. One for pneu
 Quick disconnect testing:
 
 <video controls width="100%">
-  <source src="propulsion/quick-disconnect.mov" type="video/quicktime">
+  <source src="propulsion/quick-disconnect.mp4" type="video/mp4">
 </video>
 
 
