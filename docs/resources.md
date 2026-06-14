@@ -27,11 +27,27 @@ hide:
 
 - [Toronto Metropolitan University Student Branch: Building a Professional Community](https://aerospaceamerica.aiaa.org/institute/toronto-metropolitan-university-student-branch-building-a-professional-community/) (Aerospace America, October 29, 2025) - [Archived PDF](resources/news/aerospace-america-tmu-student-branch-professional-community.pdf)
 
+- [The Creative Enterprise Hub: A Space for Students to Build Their Futures](https://societyofthecreativeschool.ca/blog/2025/4/20/the-creative-enterprise-hub-a-space-for-students-to-build-their-futures) (Society of The Creative School, May 6, 2025) - [Archived PDF](resources/news/society-creative-school-creative-enterprise-hub-2025.pdf)
+
+- [Flownex Student Rocketry Highlights](https://www.padtinc.com/2023/12/15/flownex-student-rocketry-highlights/) (PADT, December 15, 2023) - [Archived PDF](resources/news/padt-flownex-student-rocketry-highlights-2023.pdf)
+
+- [Zone Learning hits the street with student startup opportunities](https://www.torontomu.ca/news-events/news/2023/10/zone-learning-street-fair/) (TorontoMet Today, October 10, 2023) - [Archived PDF](resources/news/torontomet-zone-learning-street-fair-2023.pdf)
+
 - [Second Launch Canada Competition in Timmins Draws 18 Student Rocket Teams](https://spaceq.ca/second-launch-canada-competition-in-timmins-draws-18-student-rocket-teams/) (SpaceQ, September 13, 2023) - [Archived PDF](resources/news/spaceq-second-launch-canada-competition-2023.pdf)
+
+- [Canadian Student Rocket Challenge Sees Significant Growth for 2023](https://spaceq.ca/canadian-student-rocket-challenge-sees-significant-growth-for-2023/) (SpaceQ, February 10, 2023) - [Archived PDF](resources/news/spaceq-canadian-student-rocket-challenge-growth-2023.pdf)
 
 - [The future of space engineering is Bold](https://theeyeopener.com/2023/01/the-future-of-space-engineering-is-bold/) (The Eyeopener, January 31, 2023) - [Archived PDF](resources/news/the-eyeopener-the-future-of-space-engineering-is-bold-2023.pdf)
 
+- [Ryerson group setting sights high on national rocket competition](https://theeyeopener.com/2020/10/ryerson-group-setting-sights-high-on-national-rocket-competition/) (The Eyeopener, October 22, 2020) - [Archived PDF](resources/news/the-eyeopener-ryerson-group-national-rocket-competition-2020.pdf)
+
+- [Ryerson student team on track to complete new rocket](https://ontherecordnews.ca/ryerson-student-team-on-track-to-complete-new-rocket/) (On The Record, October 7, 2020) - [Archived PDF](resources/news/on-the-record-ryerson-student-team-new-rocket-2020.pdf)
+
+- [Ryerson University Reverses Course and Approves Rocketry Propulsion Group Funding](https://spaceq.ca/ryerson-university-reverses-course-and-approves-rocketry-propulsion-group-funding/) (SpaceQ, October 24, 2019) - [Archived PDF](resources/news/spaceq-ryerson-reverses-course-funding-2019.pdf)
+
 - [Students' rocket dreams grounded by Ryerson University](https://www.cbc.ca/news/canada/toronto/rocket-space-engineer-ryerson-engine-toronto-student-university-1.5241841) (CBC News, August 10, 2019) - [Archived PDF](resources/news/cbc-students-rocket-dreams-grounded-2019.pdf)
+
+- [Pioneering Ryerson Rocketry Students in Conflict With Engineering School Administration](https://spaceq.ca/pioneering-ryerson-rocketry-students-in-conflict-with-engineering-school-administration/) (SpaceQ, July 2019) - [Archived PDF](resources/news/spaceq-pioneering-ryerson-rocketry-students-2019.pdf)
 
 ## Papers
 
