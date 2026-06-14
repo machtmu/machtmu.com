@@ -1,0 +1,9 @@
+{% if config.theme.logo %}
+  <span class="mach-logo">
+    <img class="mach-logo__image mach-logo__image--light" src="{{ config.theme.logo | url }}" alt="{{ config.site_name }}">
+    <img class="mach-logo__image mach-logo__image--dark" src="{{ 'img/logo1-dark.png' | url }}" alt="{{ config.site_name }}">
+  </span>
+{% else %}
+  {% set icon = config.theme.icon.logo or "material/library" %}
+  {% include ".icons/" ~ icon ~ ".svg" %}
+{% endif %}

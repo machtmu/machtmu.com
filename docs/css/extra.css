@@ -6,6 +6,57 @@ img {
     width: auto; /* Maintains aspect ratio */
 }
 
+.md-logo .mach-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.md-header__button.md-logo .mach-logo__image {
+    height: 1.2rem;
+    width: auto;
+}
+
+@media screen and (max-width: 76.234375em) {
+    .md-header__button.md-logo {
+        display: flex;
+    }
+}
+
+.md-header__title,
+.md-nav .md-nav__title[for="__drawer"] {
+    font-size: 0;
+}
+
+.md-nav .md-nav__title[for="__drawer"] .md-logo {
+    height: 2rem;
+    width: 5.25rem;
+}
+
+.md-nav .md-nav__title[for="__drawer"] .md-logo .mach-logo,
+.md-nav .md-nav__title[for="__drawer"] .md-logo .mach-logo__image {
+    height: 100%;
+    width: 100%;
+}
+
+.md-nav .md-nav__title[for="__drawer"] .md-logo .mach-logo__image {
+    object-fit: contain;
+}
+
+.md-header__button.md-logo img.mach-logo__image--dark,
+.md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--dark {
+    display: none;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img.mach-logo__image--light,
+[data-md-color-scheme="slate"] .md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--light {
+    display: none;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img.mach-logo__image--dark,
+[data-md-color-scheme="slate"] .md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--dark {
+    display: block;
+}
+
 /* Image row styling for side-by-side images */
 .image-row {
     display: flex;
@@ -51,4 +102,3 @@ img {
 [role="tooltip"] {
   z-index: 9999
 }
-
