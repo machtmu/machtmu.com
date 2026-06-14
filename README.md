@@ -34,13 +34,3 @@
 <img src="docs/SPRINT/aug-22-hotfire/firing.gif" alt="Hot Fire Test" width="400"/>
 
 *Live hot fire test footage of our liquid rocket engine*
-
----
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png">
-    <img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" width="145" height="120">
-  </picture>
-</p>
