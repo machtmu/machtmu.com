@@ -1,7 +1,80 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  <title>MACH</title>
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MACH">
+  <meta property="og:title" content="MACH | TMU Liquid Rocketry">
+  <meta property="og:description" content="MACH is Toronto Metropolitan University's liquid rocketry team, also known as TMU Rocketry, building propulsion, avionics, and test systems in Toronto.">
+  <meta property="og:url" content="https://machtmu.com/">
+  <meta property="og:image" content="https://machtmu.com/assets/images/hotfire-fallback.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MACH | TMU Liquid Rocketry">
+  <meta name="twitter:description" content="MACH is Toronto Metropolitan University's liquid rocketry team, also known as TMU Rocketry, building propulsion, avionics, and test systems in Toronto.">
+  <meta name="twitter:image" content="https://machtmu.com/assets/images/hotfire-fallback.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://machtmu.com/#website",
+          "url": "https://machtmu.com/",
+          "name": "MACH",
+          "alternateName": [
+            "TMU Rocketry",
+            "TMU Liquid Rocketry",
+            "Toronto Metropolitan University Rocketry"
+          ],
+          "description": "MACH is Toronto Metropolitan University's liquid rocketry team, also known as TMU Rocketry.",
+          "publisher": {
+            "@id": "https://machtmu.com/#organization"
+          },
+          "inLanguage": "en-CA"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://machtmu.com/#organization",
+          "name": "MACH",
+          "alternateName": [
+            "TMU Rocketry",
+            "TMU Liquid Rocketry",
+            "Toronto Metropolitan University Rocketry"
+          ],
+          "url": "https://machtmu.com/",
+          "logo": "https://machtmu.com/img/logo1.png",
+          "description": "MACH is Toronto Metropolitan University's liquid rocketry team, building liquid propulsion, avionics, and test systems in Toronto.",
+          "email": "mach@torontomu.com",
+          "location": {
+            "@type": "Place",
+            "name": "TMU KNH03 (Dungeon)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Toronto",
+              "addressRegion": "ON",
+              "addressCountry": "CA"
+            }
+          },
+          "parentOrganization": {
+            "@type": "CollegeOrUniversity",
+            "name": "Toronto Metropolitan University",
+            "url": "https://www.torontomu.ca/"
+          },
+          "sameAs": [
+            "https://github.com/machtmu/",
+            "https://www.instagram.com/machtmu/",
+            "https://www.linkedin.com/company/tmurocketry/",
+            "https://www.twitch.tv/machtmu",
+            "https://www.youtube.com/@machtmu"
+          ]
+        }
+      ]
+    }
+  </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap">
   <style>
     body {
@@ -362,7 +435,7 @@
   <section class="about">
     <div class="md-container md-typeset">
       <h2>About Mach</h2>
-      <p>MACH is TMU's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry.</p>
+      <p>MACH is Toronto Metropolitan University's liquid rocketry team, also known as TMU Rocketry, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry.</p>
       <p>Our team designs PCB modules, tests rocket engines, and competes in national rocketry competitions.</p>
       <div class="home-hero__cta">
         <div style="text-align: center;">

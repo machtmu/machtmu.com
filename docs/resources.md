@@ -23,6 +23,16 @@ hide:
 
 - [DayGlo P&ID](resources/machpid.pdf)
 
+## MACH in the News
+
+- [Toronto Metropolitan University Student Branch: Building a Professional Community](https://aerospaceamerica.aiaa.org/institute/toronto-metropolitan-university-student-branch-building-a-professional-community/) (Aerospace America, October 29, 2025) - [Archived PDF](resources/news/aerospace-america-tmu-student-branch-professional-community.pdf)
+
+- [Second Launch Canada Competition in Timmins Draws 18 Student Rocket Teams](https://spaceq.ca/second-launch-canada-competition-in-timmins-draws-18-student-rocket-teams/) (SpaceQ, September 13, 2023) - [Archived PDF](resources/news/spaceq-second-launch-canada-competition-2023.pdf)
+
+- [The future of space engineering is Bold](https://theeyeopener.com/2023/01/the-future-of-space-engineering-is-bold/) (The Eyeopener, January 31, 2023) - [Archived PDF](resources/news/the-eyeopener-the-future-of-space-engineering-is-bold-2023.pdf)
+
+- [Students' rocket dreams grounded by Ryerson University](https://www.cbc.ca/news/canada/toronto/rocket-space-engineer-ryerson-engine-toronto-student-university-1.5241841) (CBC News, August 10, 2019) - [Archived PDF](resources/news/cbc-students-rocket-dreams-grounded-2019.pdf)
+
 ## Papers
 
 - [A. Karabeyoglu, J. Dyer, J. Stevens, and B. Cantwell, “Modeling of N₂O decomposition events,” in Proc. 44th AIAA/ASME/SAE/ASEE Joint Propulsion Conf., Hartford, CT, Jul. 2008, AIAA Paper 2008-4933.](https://web.stanford.edu/~cantwell/AA284A_Course_Material/AA284A_Resources/Karabeyoglu,%20Dyer,%20Stevens%20and%20Cantwell,%20Modeling%20of%20N2O%20Decomposition%20Events%20AIAA%202008-4933.pdf)
