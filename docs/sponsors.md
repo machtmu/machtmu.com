@@ -27,7 +27,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item">
-        <img src="sponsors/dishon-logo.avif" alt="Dishon">
+        <img src="sponsors/dishon-logo.jpg" alt="Dishon">
         <span>Dishon</span>
     </a>
     
@@ -67,7 +67,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item">
-        <img src="sponsors/megapro-logo.webp" alt="Megapro">
+        <img src="sponsors/megapro-logo.png" alt="Megapro">
         <span>Megapro</span>
     </a>
     
@@ -97,7 +97,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://steinindustries.com/" target="_blank" class="sponsor-item">
-        <img src="sponsors/stein-logo.webp" alt="Stein Industries Inc">
+        <img src="sponsors/stein-logo.png" alt="Stein Industries Inc">
         <span>Stein Industries Inc</span>
     </a>
     

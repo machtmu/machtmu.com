@@ -70,7 +70,7 @@ hide:
 
 ## Design for Manufacturing
 
-- [Avionics DFM Guide](SPRINT/subsystems/avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
+- [Avionics DFM Guide](avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
 
 ## References
 

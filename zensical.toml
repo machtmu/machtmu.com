@@ -17,6 +17,7 @@ extra_css = [
 
 [project.extra]
 generator = false
+location = "Toronto, Canada · TMU KNH03 (Dungeon)"
 
 # Social icons in the footer
 [[project.extra.social]]
@@ -45,7 +46,7 @@ link = "https://www.youtube.com/@machtmu"
 
 [[project.extra.social]]
 icon = "fontawesome/solid/envelope"
-link = "mailto:machtmu.com"
+link = "mailto:mach@torontomu.com"
 
 # -----------------------------------------------------------------------------
 # THEME – using Zensical's modern look
