@@ -26,9 +26,9 @@ Meet the people leading and building MACH.
 
     *Lead*
 
--   [![Audrey](assets/images/leads/Audrey-Head-Engineer.jpg)](https://www.linkedin.com/in/audrey-abergel-preston-801470374/)
+-   [![Audrey](assets/images/leads/Audrey-Head-Engineer.jpg)](https://www.linkedin.com/in/audreyap/)
 
-    **[Audrey Abergel-Preston](https://www.linkedin.com/in/audrey-abergel-preston-801470374/)**
+    **[Audrey Abergel-Preston](https://www.linkedin.com/in/audreyap/)**
 
     *Head Engineer*
 
