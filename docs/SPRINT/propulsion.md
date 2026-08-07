@@ -10,7 +10,7 @@ hide:
 
 # SPRINT Propulsion
 
-![alt text](propulsion/IMG_2357.JPG)
+![SPRINT propulsion ground-support equipment and feed-system plumbing](propulsion/overview.webp)
 <p class="image-caption">Propulsion GSE</p>
 
 - [Pressure transmitters](https://www.automationdirect.com/adc/shopping/catalog/process_control_-a-_measurement/pressure_sensors/pressure_transmitters/ptd25-10-1000h)
@@ -22,6 +22,6 @@ Our system employs both high- and low-pressure nitrogen regulators. One for pneu
 
 Quick disconnect testing:
 
-<video controls width="100%">
+<video controls preload="metadata" playsinline poster="/SPRINT/propulsion/quick-disconnect-poster.jpg" aria-label="SPRINT quick-disconnect test" width="100%">
   <source src="/SPRINT/propulsion/quick-disconnect.mp4" type="video/mp4">
 </video>

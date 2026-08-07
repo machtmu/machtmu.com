@@ -8,7 +8,9 @@ hide:
 # SPRINT
 
 <div class="hero-section">
-    <img src="aug-22-hotfire/firing.gif" alt="SPRINT Hot Fire Test" class="hero-gif">
+    <video class="hero-gif" autoplay muted loop playsinline preload="metadata" poster="aug-22-hotfire/test-video-poster.jpg" aria-label="SPRINT hot fire on August 22nd, 2025">
+      <source src="aug-22-hotfire/firing.mp4" type="video/mp4">
+    </video>
     <div class="hero-text">
         <p>SPRINT is a project that officially began just one month prior to its first hotfire at Launch Canada.</p>
         <p>SPRINT's modular architecture supports quick configuration changes, efficient testing, and fast learning. The results of our hotfire puts us on track to flying our flight-weight system now in development.</p>
@@ -21,21 +23,21 @@ hide:
 <div class="subsystem-gallery">
 
     <div class="subsystem-item">
-        <img src="propulsion/IMG_2357.JPG" alt="SPRINT propulsion ground-support equipment">
+        <img src="propulsion/overview.webp" alt="SPRINT propulsion ground-support equipment" loading="lazy" decoding="async">
         <h3>Propulsion</h3>
         <p>Feed-system plumbing, ground-support equipment, and quick-disconnect testing.</p>
         <a href="propulsion/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="subsystem-item">
-        <img src="electronics/EGSE.JPG" alt="SPRINT electrical ground-support equipment">
+        <img src="electronics/overview.webp" alt="SPRINT electrical ground-support equipment" loading="lazy" decoding="async">
         <h3>Electronics</h3>
         <p>Electrical ground-support hardware and the LabVIEW control interface.</p>
         <a href="electronics/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="subsystem-item">
-        <img src="avionics/cad/thumbnail.png" alt="SPRINT avionics system">
+        <img src="avionics/cad/thumbnail.webp" alt="SPRINT avionics system" loading="lazy" decoding="async">
         <h3>Avionics</h3>
         <p>Flight computers, sensors, power, telemetry, and recovery electronics.</p>
         <a href="avionics/" class="find-out-more">Find out more →</a>
@@ -49,42 +51,42 @@ hide:
 <div class="test-gallery">
 
     <div class="test-item">
-        <img src="dec-15-16-hotfire/thmbnl.png" alt="December 15-16 Hot Fire Test">
+        <img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - December 15th & 16th, 2025</h3>
         <p>Hot fire test campaign demonstrating engine performance and system integration over two days.</p>
         <a href="dec-15-16-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="nov-20-coldflow/thmbnl.png" alt="November 20 Cold-flow Test">
+        <img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - November 20th, 2025</h3>
         <p>Cold-flow test of the SPRINT system.</p>
         <a href="nov-20-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="nov-7-coldflow/thmbnl.png" alt="November 7 Cold-flow Test">
+        <img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - November 7th, 2025</h3>
         <p>Cold-flow test of the SPRINT system.</p>
         <a href="nov-7-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="sept-13-hotfire/thmbnl.png" alt="September Hot-fire Test">
+        <img src="sept-13-hotfire/thumbnail.webp" alt="September Hot-fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - September 13th & 14th, 2025</h3>
         <p>Multi-day hot-fire test campaign demonstrating improved engine performance and system reliability across multiple firing sequences.</p>
         <a href="sept-13-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="aug-22-hotfire/thmbnl.png" alt="Hot-fire Test">
+        <img src="aug-22-hotfire/thumbnail.webp" alt="Hot-fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - August 22nd, 2025</h3>
         <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
         <a href="aug-22-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
-        <img src="aug-19-coldflow/thmbnl.png" alt="Cold-flow Test">
+        <img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - August 9th, 2025</h3>
         <p>Cold-flow test validating fluid dynamics and system integration.</p>
         <a href="aug-19-coldflow/" class="find-out-more">Find out more →</a>

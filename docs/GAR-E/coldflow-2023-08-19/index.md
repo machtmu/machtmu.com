@@ -27,6 +27,6 @@ title: Cold Flow Test - August 19th–20th, 2023
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
-  <img src="team.jpg" alt="GAR-E team at the August 2023 cold-flow campaign" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:cover;">
+  <img loading="lazy" decoding="async" src="team.webp" alt="GAR-E team at the August 2023 cold-flow campaign" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:cover;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">GAR-E team at the August 19th–20th, 2023 cold-flow campaign.</figcaption>
 </figure>

@@ -8,18 +8,18 @@ The GPS module features a u-blox NEO-M9N GNSS receiver with multi-constellation 
 ---
 
 <div class="image-row">
-    <img src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/board.front.png" alt="3D Render">
-    <img src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/board.back.png" alt="3D Render">
+    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/board.front.png" alt="3D Render">
+    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/board.back.png" alt="3D Render">
 </div>
 <p class="image-caption">3D Render</p>
 
-![alt text](https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/sch.svg)
+![GPS module electrical schematic](https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/sch.svg)
 <p class="image-caption">Schematic</p>
 
 
 <div class="image-row">
-    <img src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/pcbf.svg" alt="Front">
-    <img src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/pcbb.svg" alt="Back">
+    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/pcbf.svg" alt="Front">
+    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-gps/refs/heads/main/images/pcbb.svg" alt="Back">
 </div>
 <p class="image-caption">Footprint</p>
 

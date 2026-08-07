@@ -8,7 +8,7 @@ hide:
 This is the page to describe the avionics bay CAD.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD" style="height:500px; width:auto;">
+  <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD" style="height:500px; width:auto;">
   <br />
   <p class="image-caption">Avionics CAD Render</p>
 </div>
@@ -26,5 +26,5 @@ The rack will use [these threaded inserts](https://www.amazon.ca/gp/product/B0CN
 
 The rack had to be printed at a 45 degree angle.
 
-![alt text](cad/rack.png)
+![SPRINT avionics rack CAD model](cad/rack.png)
 <p class="image-caption">Slicer Render</p>

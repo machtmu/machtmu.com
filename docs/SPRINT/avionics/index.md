@@ -24,23 +24,23 @@ table, table * {
     <!-- First Row -->
     <tr>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-sensors/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-sensors/refs/heads/main/images/board.front.png" />
         <br />
         <a href="PCB-Modules/sensors/"><i>Sensors</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-power/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-power/refs/heads/main/images/board.front.png" />
         <br />
         <a href="PCB-Modules/power/"><i>Power</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-status/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-status/refs/heads/main/images/board.front.png" />
         <br />
         <a href="PCB-Modules/status/"><i>Status</i></a>
       </td>
       <!-- Extra column cell with rowspan -->
       <td rowspan="2" align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-backplate/refs/heads/main/images/board.front.png" alt="Longer Image" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-backplate/refs/heads/main/images/board.front.png" alt="Longer Image" />
         <br />
         <a href="PCB-Modules/backplate/"><i>Backplate</i></a>
       </td>
@@ -48,17 +48,17 @@ table, table * {
     <!-- Second Row -->
     <tr>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="GPS" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="GPS" />
         <br />
         <a href="PCB-Modules/powersim/"><i>PowerSim</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-recovery/refs/heads/main/images/board.front.png" alt="Recovery" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-recovery/refs/heads/main/images/board.front.png" alt="Recovery" />
         <br />
         <a href="PCB-Modules/recovery/"><i>Recovery</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img src="https://raw.githubusercontent.com/machtmu/4in-antenna/refs/heads/main/images/board.front.png" alt="Antenna" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-antenna/refs/heads/main/images/board.front.png" alt="Antenna" />
         <br />
         <a href="PCB-Modules/antenna/"><i>Antenna</i></a>
       </td>
@@ -67,8 +67,8 @@ table, table * {
 </div>
 
 <div align="center" style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; align-items:center;">
-  <img src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD 1" style="max-width:48%; height:auto;" />
-  <img src="cad/avionics.jpeg" alt="Avionics CAD 2" style="max-width:48%; height:auto;" />
+  <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-avionics/refs/heads/main/exports/images/avionics_rack.PNG" alt="Avionics CAD 1" style="max-width:48%; height:auto;" />
+  <img loading="lazy" decoding="async" src="cad/avionics.jpeg" alt="Avionics CAD 2" style="max-width:48%; height:auto;" />
 </div>
 <p align="center" class="image-caption">Avionics CAD Render</p>
 

@@ -9,7 +9,7 @@ The November campaign included an ignition test and one hot-fire attempt. The ge
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
-  <video controls src="test-video.mp4" title="GAR-E hot-fire attempt on November 19th, 2023" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block;"></video>
+  <video controls preload="metadata" playsinline src="test-video.mp4" poster="test-video-poster.jpg" aria-label="GAR-E hot-fire attempt on November 19th, 2023" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block;"></video>
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">GAR-E hot-fire attempt on November 19th, 2023.</figcaption>
 </figure>
 
@@ -24,12 +24,12 @@ The November campaign included an ignition test and one hot-fire attempt. The ge
 ## Burn Telemetry
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
-  <img src="mach-hotfire-2023-11-19-burn-telemetry.png" alt="GAR-E tank pressure, chamber pressure and thrust telemetry from the November 19th, 2023 hot-fire attempt" style="width:100%; max-width:1400px; height:auto; display:block;">
+  <img loading="lazy" decoding="async" src="mach-hotfire-2023-11-19-burn-telemetry.png" alt="GAR-E tank pressure, chamber pressure and thrust telemetry from the November 19th, 2023 hot-fire attempt" style="width:100%; max-width:1400px; height:auto; display:block;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Raw measurements with consecutive duplicate values removed. Ignition and valve timing are inferred because command-state telemetry was not recorded.</figcaption>
 </figure>
 
 ## Test Stand
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
-  <img src="test-stand.jpg" alt="GAR-E test stand during the November 19th, 2023 campaign" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:cover;">
+  <img loading="lazy" decoding="async" src="test-stand.webp" alt="GAR-E test stand during the November 19th, 2023 campaign" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:cover;">
 </figure>

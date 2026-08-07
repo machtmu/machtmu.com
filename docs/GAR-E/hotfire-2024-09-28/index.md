@@ -42,7 +42,7 @@ This was GAR-E's successful final hot-fire test.
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
   <a href="https://drive.google.com/file/d/1hXNXq7gPc806abhY1mTzlJ7LFzDUH-dA/view" target="_blank" rel="noopener" style="display:block; width:100%; max-width:1000px;">
-    <img src="team.jpg" alt="GAR-E team working around the test stand during the September 28th, 2024 hot-fire test" loading="lazy" decoding="async" style="width:100%; height:auto; border-radius:8px; display:block; object-fit:cover;">
+    <img src="team.webp" alt="GAR-E team working around the test stand during the September 28th, 2024 hot-fire test" loading="lazy" decoding="async" style="width:100%; height:auto; border-radius:8px; display:block; object-fit:cover;">
   </a>
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">The GAR-E team at work during the September 28th, 2024 hot-fire test.</figcaption>
 </figure>
