@@ -35,6 +35,8 @@ hide:
 
 - [Second Launch Canada Competition in Timmins Draws 18 Student Rocket Teams](https://spaceq.ca/second-launch-canada-competition-in-timmins-draws-18-student-rocket-teams/) (SpaceQ, September 13, 2023) - [Archived PDF](resources/news/spaceq-second-launch-canada-competition-2023.pdf)
 
+- [Canadian rocketry teams show their potential at Launch Canada event](https://www.timminspress.com/news/canadian-rocketry-teams-show-their-potential-at-launch-canada-event) (Timmins Press, August 26, 2023)
+
 - [Canadian Student Rocket Challenge Sees Significant Growth for 2023](https://spaceq.ca/canadian-student-rocket-challenge-sees-significant-growth-for-2023/) (SpaceQ, February 10, 2023) - [Archived PDF](resources/news/spaceq-canadian-student-rocket-challenge-growth-2023.pdf)
 
 - [The future of space engineering is Bold](https://theeyeopener.com/2023/01/the-future-of-space-engineering-is-bold/) (The Eyeopener, January 31, 2023) - [Archived PDF](resources/news/the-eyeopener-the-future-of-space-engineering-is-bold-2023.pdf)
@@ -96,7 +98,7 @@ hide:
 
 ## Design for Manufacturing
 
-- [Avionics DFM Guide](avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
+- [Avionics DFM Guide](SPRINT/avionics/resources/dfmguide.md) - Comprehensive guide for PCB design and manufacturing with JLCPCB
 
 ## References
 

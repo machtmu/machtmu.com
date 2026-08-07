@@ -13,6 +13,10 @@ extra_css = [
   "css/extra.css",
 ]
 
+extra_javascript = [
+  "js/home.js",
+]
+
 
 
 [project.extra]
