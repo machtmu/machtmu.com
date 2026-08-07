@@ -15,13 +15,13 @@ We didn't collect data for the cold flow, but characterizing mass flow rates act
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls src="/SPRINT/aug-19-coldflow/IMG_1944.mov" title="SPRINT Cold Flow Test" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <video controls preload="metadata" playsinline src="/SPRINT/aug-19-coldflow/test-video.mp4" poster="/SPRINT/aug-19-coldflow/test-video-poster.jpg" aria-label="SPRINT cold flow test on August 9th, 2025" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT cold flow test validating fluid dynamics and system integration.</figcaption>
 </figure>
 
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/aug-19-coldflow/sprint-coldflow-team.jpg" alt="SPRINT Team at Cold Flow Test" style="width:100%; max-width:800px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
+  <img src="/SPRINT/aug-19-coldflow/sprint-coldflow-team.webp" alt="SPRINT team at the August 9th, 2025 cold flow test" loading="lazy" decoding="async" style="width:100%; max-width:800px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT team members at the cold flow test on August 9th, 2025.</figcaption>
 </figure>

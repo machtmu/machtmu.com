@@ -100,7 +100,7 @@
       if (source && heroVideo.getAttribute("src") !== source) {
         heroVideo.pause();
         heroVideo.src = source;
-        heroVideo.preload = "auto";
+        heroVideo.preload = "metadata";
         heroVideo.load();
       }
       updateHeroPlayback();

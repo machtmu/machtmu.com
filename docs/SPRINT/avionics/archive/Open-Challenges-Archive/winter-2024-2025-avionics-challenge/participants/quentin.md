@@ -70,4 +70,4 @@ The scope at the bottom side of the simulation shows the waveforms of each phase
 
 ## Images
 
-![alt text](<quentin/3d_render_pcb - Quentin Dela Torre.jpg>)
+![3D rendering of Quentin's motor-controller PCB](<quentin/3d_render_pcb - Quentin Dela Torre.jpg>)

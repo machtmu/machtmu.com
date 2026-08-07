@@ -9,7 +9,7 @@ hide:
 
 ## Hardware
 
-![alt text](electronics/EGSE.JPG)
+![SPRINT electrical ground-support equipment](electronics/overview.webp)
 <p class="image-caption">Electrical Ground Support Equipment (EGSE)</p>
 
 
@@ -58,5 +58,3 @@ hide:
 
 ![Back panel block diagram](electronics/software/back_panel.png)
 <p class="image-caption">Back panel (block diagram)</p>
-
-

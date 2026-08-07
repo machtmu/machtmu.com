@@ -55,5 +55,5 @@ The archived test summary contains the pressure plots and derived measurements. 
 </div>
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; width:100%; text-align:center;">
-  <img src="thumbnail.png" alt="GAR-E V2 cold-flow test on July 14th, 2024" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:contain;">
+  <img loading="lazy" decoding="async" src="thumbnail.webp" alt="GAR-E V2 cold-flow test on July 14th, 2024" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; object-fit:contain;">
 </figure>

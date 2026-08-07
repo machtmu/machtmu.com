@@ -12,41 +12,41 @@ The AMP was designed using KiCad:
 
 ### Schematics Design
 
-![alt text](cihad/schi.png)  
+![Acceleration Monitor PCB electrical schematic](cihad/schi.png)
 **Figure 1.0**  
 
 ### PCB Design
 
-![alt text](cihad/pcb.png)  
+![Acceleration Monitor PCB layout](cihad/pcb.png)
 **Figure 1.1**  
 
 ### 3D Rendering of AMP
 
-![alt text](cihad/3D.png)  
+![3D rendering of the Acceleration Monitor PCB](cihad/3D.png)
 **Figure 1.2**  
 
 ## Hardware
 All parts were bought and put together by [JLCPCB](https://jlcpcb.com/). **Table 2.0** has a list of all the components used in the AMP.  
 
-![alt text](cihad/bom.png)  
+![Acceleration Monitor PCB bill of materials](cihad/bom.png)
 **Table 2.0**  
 
 ## Physical PCB
 The board arrived, and in **Figure 3.1**, the 1x2 connector is shorted using the red wire, thus in **BOOTSEL** mode.  
 
 ### AMP  
-![alt text](cihad/AMP.jpg)  
+![Assembled Acceleration Monitor PCB](cihad/AMP.jpg)
 **Figure 3.0**  
 
 ### BOOTSEL Mode  
-![alt text](cihad/phys.png)  
+![Acceleration Monitor PCB in BOOTSEL mode](cihad/phys.png)
 **Figure 3.1**  
 
 ## Software
 The software was programmed in **MicroPython** and uploaded to the RP2040's file system. The software configures the I²C interface by connecting the RP2040's GPIO28 and GPIO29 to the SDA and SCL of the MPU6050. The MPU6050 has a standardized address that the RP2040 communicates with to wake it up and start collecting acceleration data from the AMP.  
 
 ### Code uploaded onto the AMP  
-![alt text](cihad/Code.png)  
+![MicroPython code running on the Acceleration Monitor PCB](cihad/Code.png)
 **Figure 4.0**  
 
 ### Output
@@ -56,28 +56,28 @@ The code displays the data from the AMP onto the console, showing the x, y, and 
 
 When the AMP is placed stationary and upright, the z component represents the Earth's gravity on the AMP (~1g = 9.8 m/s²), while x and y are close to zero g. Shown in **Figure 4.1**, there is a slight discrepancy due to the AMP not being perfectly upright, causing Earth's gravity to also appear in the x and y components. Additionally, some noise is present in the readings.  
 
-![alt text](cihad/Stationary.png)  
+![Stationary three-axis acceleration measurements](cihad/Stationary.png)
 **Figure 4.1**  
 
 ### AMP says WOOF!
 
 The AMP was getting antsy staying stationary, so it went on a walk in the negative y direction while slowly increasing speed, as shown in **Figure 4.2**.  
 
-![alt text](cihad/walking.png)  
+![Acceleration measurements while moving in the negative y direction](cihad/walking.png)
 **Figure 4.2**  
 
 ### AMP goes up, up, up... and back down?
 
 The AMP being thrown into the air was **simulated** (no broken PCB today!). The z-axis shows the acceleration of it going up and then coming back down, as shown in **Figure 4.3**.  
 
-![alt text](cihad/thowingup.png)  
+![Simulated vertical-throw acceleration measurements](cihad/thowingup.png)
 **Figure 4.3**  
 
 ### "Around we go"
 
 The AMP was swung around in a circle, and the y-axis represents the **centripetal acceleration** of the PCB, as shown in **Figure 4.4**. The centripetal acceleration could be used to calculate the **tension** of the wire connecting the computer and the AMP.  
 
-![alt text](cihad/Tension.png)  
+![Centripetal-acceleration measurements from circular motion](cihad/Tension.png)
 **Figure 4.4**  
 
 ## Challenges 

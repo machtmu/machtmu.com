@@ -53,6 +53,6 @@ All resistors are either thin film or metal film to reduce noise and increase li
 
 ## Images
 
-![alt text](tristan/4.jpg)
+![Assembled Cappie V1 audio-amplifier PCB](tristan/4.jpg)
 
-![alt text](tristan/3.jpg)
+![Cappie V1 audio-amplifier PCB and connected components](tristan/3.jpg)

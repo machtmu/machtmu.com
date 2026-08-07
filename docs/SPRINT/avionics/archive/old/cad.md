@@ -7,15 +7,15 @@ hide:
 
 This is the page to describe the avionics bay CAD.
 
-![alt text](cad/1.png)
+![Archived avionics rack CAD view](cad/1.png)
 <p class="image-caption">Version 1</p>
 
 
-![alt text](cad/thumbnail2.png)
+![Archived avionics rack assembly view](cad/thumbnail2.png)
 <p class="image-caption">Version 2</p>
 
 
-![alt text](cad/2_3_side.png)
+![Archived avionics rack side view](cad/2_3_side.png)
 <p class="image-caption">Version 2, Section View</p>
 
 

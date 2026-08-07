@@ -14,42 +14,42 @@ GAR-E was MACH's nitrous oxide and ethanol liquid rocket engine program. The arc
 <div class="test-gallery">
 
   <div class="test-item">
-    <img src="hotfire-2024-09-28/team.jpg" alt="GAR-E team members at the September 28, 2024 hot fire test">
+    <img src="hotfire-2024-09-28/team.webp" alt="GAR-E team members at the September 28, 2024 hot fire test" loading="lazy" decoding="async">
     <h3>Hot Fire Test - September 28th, 2024</h3>
     <p>Successful final GAR-E hot fire.</p>
     <a href="hotfire-2024-09-28/" class="find-out-more">Find out more →</a>
   </div>
 
   <div class="test-item">
-    <img src="hotfire-2024-08-22/team.jpg" alt="GAR-E team at the August 22, 2024 hot fire test">
+    <img src="hotfire-2024-08-22/team.webp" alt="GAR-E team at the August 22, 2024 hot fire test" loading="lazy" decoding="async">
     <h3>Hot Fire Test - August 22nd, 2024</h3>
     <p>Successful GAR-E hot fire at Launch Canada 2024.</p>
     <a href="hotfire-2024-08-22/" class="find-out-more">Find out more →</a>
   </div>
 
   <div class="test-item">
-    <img src="coldflow-2024-07-14/thumbnail.png" alt="GAR-E V2 cold-flow test on July 14, 2024">
+    <img src="coldflow-2024-07-14/thumbnail.webp" alt="GAR-E V2 cold-flow test on July 14, 2024" loading="lazy" decoding="async">
     <h3>Cold Flow Test - July 14th, 2024</h3>
     <p>Cold-flow characterization of the new injector and thrust chamber.</p>
     <a href="coldflow-2024-07-14/" class="find-out-more">Find out more →</a>
   </div>
 
   <div class="test-item">
-    <img src="hotfire-2023-11-19/thumbnail.png" alt="GAR-E hot-fire attempt on November 19, 2023">
+    <img src="hotfire-2023-11-19/thumbnail.webp" alt="GAR-E hot-fire attempt on November 19, 2023" loading="lazy" decoding="async">
     <h3>Hot Fire Attempt - November 19th, 2023</h3>
     <p>Ignition test and hot-fire attempt with recorded pressure data.</p>
     <a href="hotfire-2023-11-19/" class="find-out-more">Find out more →</a>
   </div>
 
   <div class="test-item">
-    <img src="hotfire-2023-08-30/team.jpg" alt="GAR-E team at Launch Canada in August 2023">
+    <img src="hotfire-2023-08-30/team.webp" alt="GAR-E team at Launch Canada in August 2023" loading="lazy" decoding="async">
     <h3>Hot Fire Attempt - August 30th, 2023</h3>
     <p>GAR-E's first Launch Canada hot-fire attempt.</p>
     <a href="hotfire-2023-08-30/" class="find-out-more">Find out more →</a>
   </div>
 
   <div class="test-item">
-    <img src="coldflow-2023-08-19/team.jpg" alt="GAR-E team at the August 2023 cold-flow campaign">
+    <img src="coldflow-2023-08-19/team.webp" alt="GAR-E team at the August 2023 cold-flow campaign" loading="lazy" decoding="async">
     <h3>Cold Flow Test - August 19th–20th, 2023</h3>
     <p>GAR-E cold-flow test campaign.</p>
     <a href="coldflow-2023-08-19/" class="find-out-more">Find out more →</a>

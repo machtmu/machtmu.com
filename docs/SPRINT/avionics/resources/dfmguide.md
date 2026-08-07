@@ -156,11 +156,11 @@ Most of these come in 0402 basic as well.
 
 The following is a good BOM:
 
-![alt text](dfmguide/bom.png)
+![Example bill of materials with component references and part numbers](dfmguide/bom.png)
 
 The most important thing in your BOM is the LCSC part number:
 
-![alt text](dfmguide/8.png)
+![LCSC part-number field in a bill of materials](dfmguide/8.png)
 
 When you upload your BOM to JLCPCB it looks for the LCSC part number and matches the component automatically.
 
