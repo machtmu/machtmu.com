@@ -21,19 +21,19 @@ During the hotfire, the rocket tank nitrous pressure fell to about 350 psi, whic
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls src="video.mov" title="SPRINT Hot Fire Test December 15-16" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <video controls src="/SPRINT/dec-15-16-hotfire/video.mov" title="SPRINT Hot Fire Test December 15-16" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">December 16th and 17th, 2025 hot fire test.</figcaption>
 </figure>
 
 ## Test Data
 
 <div style="text-align:center; margin:1rem 0 2rem 0;">
-  <a href="sprint-dec15-16-data.csv" class="md-button">Download Raw Test Data (.csv)</a>
+  <a href="/SPRINT/dec-15-16-hotfire/sprint-dec15-16-data.csv" class="md-button">Download Raw Test Data (.csv)</a>
 </div>
 
 ## Burn Telemetry
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="sprint-december-hotfire-burn-telemetry.png" alt="SPRINT burn telemetry for December 16th, 2025" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <img src="/SPRINT/dec-15-16-hotfire/sprint-december-hotfire-burn-telemetry.png" alt="SPRINT burn telemetry for December 16th, 2025" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Burn telemetry from the December 16th, 2025 hot fire test.</figcaption>
 </figure>

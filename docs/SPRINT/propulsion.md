@@ -23,7 +23,5 @@ Our system employs both high- and low-pressure nitrogen regulators. One for pneu
 Quick disconnect testing:
 
 <video controls width="100%">
-  <source src="quick-disconnect.mp4" type="video/mp4">
+  <source src="/SPRINT/propulsion/quick-disconnect.mp4" type="video/mp4">
 </video>
-
-

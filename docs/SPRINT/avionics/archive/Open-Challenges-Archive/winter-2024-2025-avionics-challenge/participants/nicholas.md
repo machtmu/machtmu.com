@@ -2,7 +2,7 @@
 
 **By: Nicholas Suarez.** [Altium Files](nicholas/altium.zip)
 
-<video controls src="vid.mp4" title="Title"></video>
+<video controls src="/SPRINT/avionics/archive/Open-Challenges-Archive/winter-2024-2025-avionics-challenge/participants/nicholas/vid.mp4" title="Title"></video>
 
 ![alt text](nicholas/pcb3d.png)
 
