@@ -16,6 +16,34 @@ hide:
 </div>
 
 
+## Systems
+
+<div class="subsystem-gallery">
+
+    <div class="subsystem-item">
+        <img src="propulsion/IMG_2357.JPG" alt="SPRINT propulsion ground-support equipment">
+        <h3>Propulsion</h3>
+        <p>Feed-system plumbing, ground-support equipment, and quick-disconnect testing.</p>
+        <a href="propulsion/" class="find-out-more">Find out more →</a>
+    </div>
+
+    <div class="subsystem-item">
+        <img src="electronics/EGSE.JPG" alt="SPRINT electrical ground-support equipment">
+        <h3>Electronics</h3>
+        <p>Electrical ground-support hardware and the LabVIEW control interface.</p>
+        <a href="electronics/" class="find-out-more">Find out more →</a>
+    </div>
+
+    <div class="subsystem-item">
+        <img src="avionics/cad/thumbnail.png" alt="SPRINT avionics system">
+        <h3>Avionics</h3>
+        <p>Flight computers, sensors, power, telemetry, and recovery electronics.</p>
+        <a href="avionics/" class="find-out-more">Find out more →</a>
+    </div>
+
+</div>
+
+
 ## Tests
 
 <div class="test-gallery">

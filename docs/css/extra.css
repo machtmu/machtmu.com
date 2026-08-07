@@ -6,6 +6,44 @@ img {
     width: auto; /* Maintains aspect ratio */
 }
 
+/* Compact former-member cards with optional LinkedIn profile photos. */
+.former-members-grid {
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.former-member-card {
+    align-items: center;
+    border: 0.05rem solid var(--md-default-fg-color--lightest);
+    border-radius: 0.2rem;
+    display: flex;
+    gap: 0.65rem;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.65rem;
+    transition: border-color 125ms, box-shadow 125ms;
+}
+
+a.former-member-card:hover {
+    border-color: var(--md-accent-fg-color);
+    box-shadow: 0 0.1rem 0.25rem rgb(0 0 0 / 8%);
+}
+
+.former-member-card--text-only {
+    padding-left: 0.75rem;
+}
+
+.former-member-card .former-member-avatar {
+    border-radius: 50%;
+    display: block;
+    flex: 0 0 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+    max-height: none;
+    object-fit: cover;
+    width: 2.5rem;
+}
+
 .md-logo .mach-logo {
     display: inline-flex;
     align-items: center;
