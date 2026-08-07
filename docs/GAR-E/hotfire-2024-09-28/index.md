@@ -6,18 +6,6 @@ title: Hot Fire Test - September 28th, 2024
 
 This was GAR-E's successful final hot-fire test.
 
-## Test Video
-
-<figure style="margin:1rem auto 2rem; width:100%; max-width:1000px; text-align:center;">
-  <video controls playsinline preload="metadata" poster="hotfire-poster.webp" style="display:block; width:100%; height:auto; border-radius:8px; background:#000;">
-    <source src="hotfire.mp4" type="video/mp4">
-    Your browser does not support embedded video.
-  </video>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">
-    GAR-E hot-fire test on September 28th, 2024. <a href="hotfire.mp4" download>Download video</a>
-  </figcaption>
-</figure>
-
 ## Test Photos
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:1rem; margin:1rem 0 2rem;">
