@@ -219,6 +219,14 @@
       margin-top: 2rem;
     }
 
+    .home-project-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
     .btn {
       display: inline-block;
       padding: 0.6rem 1.8rem;
@@ -236,6 +244,42 @@
 
     .btn:hover {
       transform: translateY(-1px);
+    }
+
+    .home-project-link,
+    .home-project-link:visited {
+      align-items: center;
+      background: rgba(44, 62, 80, 0.94);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: #fff !important;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      justify-content: center;
+      margin: 0;
+      padding: 0.75rem 0.8rem;
+      text-decoration: none !important;
+    }
+
+    .home-project-link:hover,
+    .home-project-link:focus {
+      background: rgba(52, 73, 94, 0.98);
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+
+    .home-project-link__name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .home-project-link__years {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      opacity: 0.8;
     }
 
     /* Sections */
@@ -337,9 +381,22 @@
       }
 
       .home-hero__cta .btn {
-        display: block;
-        margin: 0.4rem auto;
-        max-width: 260px;
+        margin: 0;
+        max-width: none;
+        padding-right: 0.4rem;
+        padding-left: 0.4rem;
+      }
+
+      .home-project-links {
+        gap: 0.4rem;
+      }
+
+      .home-project-link__name {
+        font-size: 0.8rem;
+      }
+
+      .home-project-link__years {
+        font-size: 0.62rem;
       }
     }
 
@@ -385,14 +442,20 @@
   <section class="about">
     <div class="md-container md-typeset">
       <h2>About Mach</h2>
-      <p>MACH is Toronto Metropolitan University's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry.</p>
-      <p>Our team designs PCB modules, tests rocket engines, and competes in national rocketry competitions.</p>
+      <p>MACH is Toronto Metropolitan University's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry. Our team designs PCB modules, tests rocket engines, and competes in national rocketry competitions.</p>
       <div class="home-hero__cta">
-        <div style="text-align: center;">
-          <a href="{{ 'SPRINT/' | url }}"
-             class="btn"
-             style="background-color:#2C3E50;color:#fff;border:1px solid #34495E;">
-            Learn More
+        <div class="home-project-links">
+          <a href="{{ 'Seraphina/' | url }}" class="btn home-project-link">
+            <span class="home-project-link__name">Seraphina</span>
+            <span class="home-project-link__years">2026</span>
+          </a>
+          <a href="{{ 'SPRINT/' | url }}" class="btn home-project-link">
+            <span class="home-project-link__name">SPRINT</span>
+            <span class="home-project-link__years">2025</span>
+          </a>
+          <a href="{{ 'GAR-E/' | url }}" class="btn home-project-link">
+            <span class="home-project-link__name">GAR-E</span>
+            <span class="home-project-link__years">2023–2024</span>
           </a>
         </div>
       </div>

@@ -24,6 +24,23 @@ img {
     transition: border-color 125ms, box-shadow 125ms;
 }
 
+.md-typeset .team-leads a,
+.md-typeset .team-leads a:visited,
+.md-typeset .former-member-card,
+.md-typeset .former-member-card:visited {
+    background-image: none !important;
+    color: var(--md-default-fg-color) !important;
+    text-decoration: none !important;
+}
+
+.md-typeset .team-leads a:hover,
+.md-typeset .team-leads a:focus,
+.md-typeset .former-member-card:hover,
+.md-typeset .former-member-card:focus {
+    color: var(--md-default-fg-color) !important;
+    text-decoration: none !important;
+}
+
 a.former-member-card:hover {
     border-color: var(--md-accent-fg-color);
     box-shadow: 0 0.1rem 0.25rem rgb(0 0 0 / 8%);

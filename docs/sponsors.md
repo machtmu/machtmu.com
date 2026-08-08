@@ -77,8 +77,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://mues.ca/" target="_blank" class="sponsor-item">
-        <img loading="lazy" decoding="async" src="/sponsors/mues-logo.png" alt="Metropolitan Undergraduate Engineering Society">
-        <span>Metropolitan Undergraduate Engineering Society</span>
+        <img loading="lazy" decoding="async" src="/sponsors/mues-logo.png" alt="MUES">
+        <span>MUES</span>
     </a>
     
     <a href="https://www.redrocketcoffee.com/" target="_blank" class="sponsor-item">
@@ -112,8 +112,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.torontomu.ca/" target="_blank" class="sponsor-item">
-        <img loading="lazy" decoding="async" src="/sponsors/tmu-logo.svg" alt="Toronto Metropolitan University">
-        <span>Toronto Metropolitan University</span>
+        <img loading="lazy" decoding="async" src="/sponsors/tmu-logo.svg" alt="TMU">
+        <span>TMU</span>
     </a>
     
     <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item">
@@ -135,23 +135,27 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         margin: 2rem 0;
     }
     
-    .sponsor-item {
+    .md-typeset .sponsor-item,
+    .md-typeset .sponsor-item:visited,
+    .md-typeset .sponsor-item:focus {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0.25rem;
-        text-decoration: none;
-        color: inherit;
+        text-decoration: none !important;
+        color: var(--md-default-fg-color) !important;
+        background-image: none !important;
         transition: transform 0.3s ease;
         background: transparent;
         min-height: 80px;
         justify-content: center;
     }
     
-    .sponsor-item:hover {
+    .md-typeset .sponsor-item:hover {
         transform: translateY(-3px);
-        text-decoration: none;
-        color: inherit;
+        text-decoration: none !important;
+        color: var(--md-default-fg-color) !important;
+        background-image: none !important;
     }
     
     .sponsor-item img {
@@ -174,6 +178,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         font-weight: 500;
         font-size: 0.9rem;
         color: var(--md-default-fg-color);
+        text-decoration: none !important;
     }
     
     .sponsor-item.individual {

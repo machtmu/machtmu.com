@@ -12,7 +12,7 @@ Meet the people leading and building MACH.
 
 ## Leads
 
-<div class="grid cards" markdown>
+<div class="grid cards team-leads" markdown>
 
 -   [![Julia](assets/images/leads/Julia-Operations-Director.jpg)](https://www.linkedin.com/in/julia-puszynska-7977b72b0/)
 
