@@ -104,12 +104,13 @@ hide:
     }
     
     .hero-gif {
-        flex: 1;
-        min-width: 300px;
+        flex: 1 1 440px;
+        min-width: 280px;
         max-width: 500px;
-        width: auto;
-        height: auto;
-        object-fit: contain;
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        object-position: center 68%;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -128,6 +129,7 @@ hide:
         
         .hero-gif {
             max-width: 100%;
+            height: min(78vw, 360px);
         }
     }
     
