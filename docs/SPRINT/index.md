@@ -104,13 +104,12 @@ hide:
     }
     
     .md-typeset video.hero-gif {
-        flex: 1 1 400px;
-        min-width: 280px;
-        max-width: 500px;
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        object-position: center 68%;
+        flex: none;
+        width: auto;
+        height: 320px;
+        max-width: 100%;
+        aspect-ratio: 80 / 143;
+        object-fit: contain;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -128,9 +127,7 @@ hide:
         }
         
         .md-typeset video.hero-gif {
-            flex: none;
-            max-width: 100%;
-            height: 220px;
+            height: 280px;
         }
     }
     
