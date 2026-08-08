@@ -103,7 +103,7 @@ hide:
         flex-wrap: wrap;
     }
     
-    .hero-gif {
+    .md-typeset video.hero-gif {
         flex: 1 1 400px;
         min-width: 280px;
         max-width: 500px;
@@ -127,7 +127,8 @@ hide:
             flex-direction: column;
         }
         
-        .hero-gif {
+        .md-typeset video.hero-gif {
+            flex: none;
             max-width: 100%;
             height: 220px;
         }
