@@ -131,7 +131,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     .sponsor-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 1rem;
+        column-gap: 1rem;
+        row-gap: 1.5rem;
         margin: 2rem 0;
     }
     
@@ -143,15 +144,15 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         align-items: center;
         justify-content: space-between;
         gap: 0.75rem;
-        min-height: 168px;
-        padding: 1rem;
-        border: 1px solid #e2e6eb;
-        border-radius: 12px;
+        min-height: 142px;
+        padding: 0.5rem;
+        border: 0;
+        border-radius: 0;
         text-decoration: none !important;
         color: var(--md-default-fg-color) !important;
         background-image: none !important;
-        background-color: #fff;
-        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        background-color: transparent;
+        transition: transform 180ms ease, opacity 180ms ease;
     }
     
     .md-typeset .sponsor-item:hover {
@@ -159,8 +160,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         text-decoration: none !important;
         color: var(--md-default-fg-color) !important;
         background-image: none !important;
-        border-color: var(--md-accent-fg-color);
-        box-shadow: 0 8px 22px rgb(15 23 42 / 10%);
+        opacity: 0.9;
     }
     
     .sponsor-item img {
@@ -177,16 +177,6 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         box-shadow: inset 0 0 0 1px rgb(15 23 42 / 6%);
     }
 
-    [data-md-color-scheme="slate"] .md-typeset .sponsor-item {
-        background-color: #14181f;
-        border-color: #2b323d;
-    }
-
-    [data-md-color-scheme="slate"] .md-typeset .sponsor-item:hover {
-        border-color: #697586;
-        box-shadow: 0 10px 24px rgb(0 0 0 / 28%);
-    }
-    
     .sponsor-item span {
         display: flex;
         align-items: center;
@@ -231,12 +221,13 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     @media (max-width: 768px) {
         .sponsor-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.75rem;
+            column-gap: 0.75rem;
+            row-gap: 1rem;
         }
         
         .md-typeset .sponsor-item {
-            min-height: 145px;
-            padding: 0.75rem;
+            min-height: 125px;
+            padding: 0.25rem;
         }
         
         .sponsor-item img {
