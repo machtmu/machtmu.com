@@ -1,4 +1,5 @@
 .cache/
+.lighthouseci/
 .DS_Store
 .venv
 site
