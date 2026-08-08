@@ -16,7 +16,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>American Earth Anchors</span>
     </a>
     
-    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/aqua-environment-logo.svg" alt="Aqua Environment">
         <span>Aqua Environment</span>
     </a>
@@ -26,7 +26,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Automation Direct</span>
     </a>
     
-    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/dishon-logo.jpg" alt="Dishon">
         <span>Dishon</span>
     </a>
@@ -36,12 +36,12 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Flownex</span>
     </a>
     
-    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item">
+    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo.svg" alt="Hoskin Scientific">
         <span>Hoskin Scientific</span>
     </a>
     
-    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/ibz-logo.png" alt="Innovation Boost Zone">
         <span>Innovation Boost Zone</span>
     </a>
@@ -66,7 +66,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Mars Society of Canada</span>
     </a>
     
-    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item">
+    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/megapro-logo.png" alt="Megapro">
         <span>Megapro</span>
     </a>
@@ -96,7 +96,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>SolidWorks</span>
     </a>
     
-    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item">
+    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/stein-logo.png" alt="Stein Industries Inc">
         <span>Stein Industries Inc</span>
     </a>
@@ -106,7 +106,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Swagelok</span>
     </a>
     
-    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/textreme-logo.png" alt="TeXtreme">
         <span>TeXtreme</span>
     </a>
@@ -116,7 +116,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>TMU</span>
     </a>
     
-    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item">
+    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item logo-light-plate">
         <img loading="lazy" decoding="async" src="/sponsors/vibrant-performance-logo.png" alt="Vibrant Performance">
         <span>Vibrant Performance</span>
     </a>
@@ -130,8 +130,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 <style>
     .sponsor-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
         margin: 2rem 0;
     }
     
@@ -141,14 +141,17 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.25rem;
+        justify-content: space-between;
+        gap: 0.75rem;
+        min-height: 168px;
+        padding: 1rem;
+        border: 1px solid #e2e6eb;
+        border-radius: 12px;
         text-decoration: none !important;
         color: var(--md-default-fg-color) !important;
         background-image: none !important;
-        transition: transform 0.3s ease;
-        background: transparent;
-        min-height: 80px;
-        justify-content: center;
+        background-color: #fff;
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
     
     .md-typeset .sponsor-item:hover {
@@ -156,27 +159,44 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         text-decoration: none !important;
         color: var(--md-default-fg-color) !important;
         background-image: none !important;
+        border-color: var(--md-accent-fg-color);
+        box-shadow: 0 8px 22px rgb(15 23 42 / 10%);
     }
     
     .sponsor-item img {
-        max-width: 150px;
-        max-height: 80px;
+        display: block;
+        width: 100%;
+        height: 82px;
         object-fit: contain;
-        margin-bottom: 1rem;
-        padding: 0.25rem;
-        border-radius: 4px;
+        padding: 10px;
+        border-radius: 8px;
     }
     
-    [data-md-color-scheme="slate"] .sponsor-item img {
-        background-color: white;
-        padding: 8px;
-        border-radius: 6px;
+    .sponsor-item.logo-light-plate img {
+        background-color: #f5f6f8;
+        box-shadow: inset 0 0 0 1px rgb(15 23 42 / 6%);
+    }
+
+    [data-md-color-scheme="slate"] .md-typeset .sponsor-item {
+        background-color: #14181f;
+        border-color: #2b323d;
+    }
+
+    [data-md-color-scheme="slate"] .md-typeset .sponsor-item:hover {
+        border-color: #697586;
+        box-shadow: 0 10px 24px rgb(0 0 0 / 28%);
     }
     
     .sponsor-item span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 2.6em;
         text-align: center;
-        font-weight: 500;
-        font-size: 0.9rem;
+        font-weight: 600;
+        font-size: 0.82rem;
+        line-height: 1.3;
         color: var(--md-default-fg-color);
         text-decoration: none !important;
     }
@@ -210,17 +230,18 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     
     @media (max-width: 768px) {
         .sponsor-grid {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
         }
         
-        .sponsor-item {
-            padding: 1rem;
+        .md-typeset .sponsor-item {
+            min-height: 145px;
+            padding: 0.75rem;
         }
         
         .sponsor-item img {
-            max-width: 120px;
-            max-height: 60px;
+            height: 68px;
+            padding: 8px;
         }
     }
 </style>
