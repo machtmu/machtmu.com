@@ -1,5 +1,7 @@
 ---
 title: GAR-E
+description: GAR-E was MACH's nitrous oxide and ethanol liquid rocket engine program. The archive below covers the team's cold-flow and hot-fire campaigns from August 2023 through September 2024.
+image: https://machtmu.com/GAR-E/hotfire-2024-08-22/team.webp
 hide:
   - toc
   - navigation

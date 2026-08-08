@@ -1,5 +1,7 @@
 ---
 title: Cold Flow Test - August 9th, 2025
+description: This hot fire attempt at Jay's farm concluded with an igniter integration issue.
+image: https://machtmu.com/SPRINT/aug-19-coldflow/sprint-coldflow-team.webp
 ---
 
 # SPRINT Cold Flow Test - August 9th, 2025

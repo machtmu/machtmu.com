@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block site_meta %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="{{ page.meta.redirect_to }}">
+  <meta http-equiv="refresh" content="0; url={{ page.meta.redirect_to }}">
+{% endblock %}
+
+{% block content %}{% endblock %}

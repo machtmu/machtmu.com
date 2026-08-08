@@ -83,7 +83,9 @@
     function updateHeroMedia() {
       if (!heroVideo) return;
       const scheme = activeScheme();
-      const source = scheme === "dark" ? heroVideo.dataset.darkSrc : heroVideo.dataset.lightSrc;
+      const source = window.innerWidth <= 768 && heroVideo.dataset.mobileSrc
+        ? heroVideo.dataset.mobileSrc
+        : (scheme === "dark" ? heroVideo.dataset.darkSrc : heroVideo.dataset.lightSrc);
       const poster = scheme === "dark" ? heroVideo.dataset.darkPoster : heroVideo.dataset.lightPoster;
 
       if (poster) heroVideo.poster = poster;
@@ -197,6 +199,7 @@
 
     function handleResize() {
       setHeaderOffset();
+      updateHeroMedia();
       scheduleVisualUpdate();
     }
 

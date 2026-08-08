@@ -1,4 +1,7 @@
 ---
+title: SPRINT
+description: SPRINT is a project that officially began just one month prior to its first hotfire at Launch Canada.
+image: https://machtmu.com/SPRINT/aug-22-hotfire/thumbnail.webp
 hide:
   - toc
   - navigation

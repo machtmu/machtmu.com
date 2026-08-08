@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - September 28th, 2024
+description: This was GAR-E's successful final hot-fire test.
+image: https://machtmu.com/GAR-E/hotfire-2024-09-28/test-fire.webp
 ---
 
 # GAR-E Hot Fire Test - September 28th, 2024

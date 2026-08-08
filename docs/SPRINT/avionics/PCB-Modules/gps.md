@@ -96,7 +96,7 @@ The ANT-20087EB56 GPS antenna was purchased from DigiKey to confirm dimensions d
 
 [ANT-20087EB56 Digikey](https://www.digikey.com/en/products/detail/adam-tech/ANT-20087EB56/16123699)
 
-# GPS Module Development Updates
+## GPS Module Development Updates
 
 Since the last update, several changes and improvements have been implemented in the GPS module design and development process:
 

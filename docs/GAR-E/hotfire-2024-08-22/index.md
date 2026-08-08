@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - August 22nd, 2024
+description: GAR-E completed a successful nitrous oxide and ethanol hot fire at Launch Canada 2024.
+image: https://machtmu.com/GAR-E/hotfire-2024-08-22/team.webp
 ---
 
 # GAR-E Hot Fire Test - August 22nd, 2024

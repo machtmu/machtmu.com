@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - September 13th and 14th, 2025
+description: On Sunday, September 14th, we returned, completed another hot fire, and collected hot-fire data for the first time.
+image: https://machtmu.com/SPRINT/sept-13-hotfire/thumbnail.webp
 ---
 
 # SPRINT Hot Fire Test - September 13th and 14th, 2025

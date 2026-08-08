@@ -6,10 +6,10 @@
 {% endif %}
 <header class="{{ class }}" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-    <label class="md-header__button md-icon" for="__drawer" aria-label="{{ lang.t('nav') }}">
+    <button class="md-header__button md-icon mach-drawer-toggle" type="button" aria-label="{{ lang.t('nav') }}" aria-controls="__drawer" aria-expanded="false" data-mach-drawer-toggle>
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
-    </label>
+    </button>
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
     </a>
@@ -45,10 +45,6 @@
     {% if "search" in config.plugins %}
       {% set search = config.plugins["search"] | attr("config") %}
       {% if search.enabled %}
-        <label class="md-header__button md-icon" for="__search" aria-label="{{ lang.t('search') }}">
-          {% set icon = config.theme.icon.search or "material/magnify" %}
-          {% include ".icons/" ~ icon ~ ".svg" %}
-        </label>
         {% include "partials/search.html" %}
       {% endif %}
     {% endif %}

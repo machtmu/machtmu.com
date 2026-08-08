@@ -1,4 +1,7 @@
 ---
+title: SPRINT Propulsion
+description: Our system employs both high- and low-pressure nitrogen regulators. One for pneumatics and one for purge.
+image: https://machtmu.com/SPRINT/propulsion/overview.webp
 hide:
   - navigation
   - toc

@@ -1,5 +1,7 @@
 ---
 title: Cold Flow Test - August 19th–20th, 2023
+description: GAR-E Cold Flow Test - August 19th–20th, 2023
+image: https://machtmu.com/GAR-E/coldflow-2023-08-19/team.webp
 ---
 
 # GAR-E Cold Flow Test - August 19th–20th, 2023
