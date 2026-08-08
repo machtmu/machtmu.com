@@ -104,11 +104,11 @@ hide:
     }
     
     .hero-gif {
-        flex: 1 1 440px;
+        flex: 1 1 400px;
         min-width: 280px;
         max-width: 500px;
         width: 100%;
-        height: 360px;
+        height: 240px;
         object-fit: cover;
         object-position: center 68%;
         border-radius: 8px;
@@ -129,7 +129,7 @@ hide:
         
         .hero-gif {
             max-width: 100%;
-            height: min(78vw, 360px);
+            height: 220px;
         }
     }
     
