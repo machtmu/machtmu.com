@@ -20,10 +20,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
       - run: pip install zensical
+      - run: npm install --global @lhci/cli@0.15.x
       - run: zensical build --clean
       - name: Check built-site links and media
         run: python scripts/check_site_media.py
+      - name: Run Lighthouse checks
+        run: lhci autorun
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/reports
+          if-no-files-found: ignore
+          retention-days: 14
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
