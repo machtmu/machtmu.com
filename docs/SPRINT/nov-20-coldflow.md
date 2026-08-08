@@ -1,5 +1,7 @@
 ---
 title: Cold Flow Test - November 20th, 2025
+description: On November 20th, 2025, we completed another cold flow while continuing to develop the team's test operations.
+image: https://machtmu.com/SPRINT/nov-20-coldflow/thumbnail.webp
 ---
 
 # SPRINT Cold Flow Test - November 20th, 2025

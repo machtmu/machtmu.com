@@ -1,4 +1,7 @@
 ---
+title: SPRINT Electronics
+description: SPRINT Electronics
+image: https://machtmu.com/SPRINT/electronics/overview.webp
 hide:
   - navigation
   - path

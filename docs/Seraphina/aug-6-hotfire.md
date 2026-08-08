@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - August 6th, 2026
+description: Seraphina Hot Fire Test - August 6th, 2026
+image: https://machtmu.com/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp
 ---
 
 # Seraphina Hot Fire Test - August 6th, 2026
@@ -8,14 +10,14 @@ title: Hot Fire Test - August 6th, 2026
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap:1.25rem; margin:1rem 0 1.5rem 0;">
   <figure style="margin:0;">
-    <video controls preload="metadata" playsinline poster="/Seraphina/aug-6-hotfire/seraphina-hotfire-wide-poster.jpg" aria-label="Wide view of the Seraphina hot fire on August 6th, 2026" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <video controls preload="metadata" playsinline poster="/Seraphina/aug-6-hotfire/seraphina-hotfire-wide-poster.webp" aria-label="Wide view of the Seraphina hot fire on August 6th, 2026" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
       <source src="/Seraphina/aug-6-hotfire/seraphina-hotfire-wide.mp4" type="video/mp4">
       Your browser does not support embedded video.
     </video>
     <figcaption style="margin-top:0.5rem; text-align:center;">Wide GSE camera view</figcaption>
   </figure>
   <figure style="margin:0;">
-    <video controls preload="metadata" playsinline poster="/Seraphina/aug-6-hotfire/seraphina-hotfire-close-poster.jpg" aria-label="Close view of the Seraphina hot fire on August 6th, 2026" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <video controls preload="metadata" playsinline poster="/Seraphina/aug-6-hotfire/seraphina-hotfire-close-poster.webp" aria-label="Close view of the Seraphina hot fire on August 6th, 2026" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
       <source src="/Seraphina/aug-6-hotfire/seraphina-hotfire-close.mp4" type="video/mp4">
       Your browser does not support embedded video.
     </video>
@@ -43,5 +45,5 @@ title: Hot Fire Test - August 6th, 2026
 ## Team Photo
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/Seraphina/aug-6-hotfire/seraphina-hotfire-team.jpg" alt="Seraphina team at the August 6th, 2026 hot fire test" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
+  <img src="/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6th, 2026 hot fire test" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:cover;">
 </figure>

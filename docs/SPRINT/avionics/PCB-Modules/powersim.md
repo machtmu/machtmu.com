@@ -21,7 +21,7 @@ The PowerSim module is a precursor to the Power module. It's meant to be very si
 </div>
 <p class="image-caption">Footprint</p>
 
-# Components
+## Components
 
 - [Regulator](https://jlcpcb.com/partdetail/DiodesIncorporated-AP63203WU7/C780769)
 - [Inductor](https://jlcpcb.com/partdetail/Tdk-SLF7055T_6R8N2R83PF/C21218)

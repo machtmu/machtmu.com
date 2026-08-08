@@ -420,11 +420,12 @@
   <div id="stars-container"></div>
   <section class="home-hero">
     <video class="hero-bg" muted loop playsinline preload="none" aria-hidden="true"
-           poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.jpg"
-           data-light-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire.mp4"
-           data-dark-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire.mp4"
-           data-light-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.jpg"
-           data-dark-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.jpg">
+           poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
+           data-light-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-optimized.mp4"
+           data-dark-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-optimized.mp4"
+           data-mobile-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-mobile.mp4"
+           data-light-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
+           data-dark-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp">
       Your browser does not support embedded video.
     </video>
 
@@ -467,22 +468,28 @@
       <div class="video-container">
         <video class="showcase-video" controls muted loop playsinline preload="metadata"
                aria-label="Seraphina hot fire on August 6th, 2026"
-               poster="{{ base_url }}/assets/images/seraphina-aug-6-hotfire-cam3-poster.jpg">
+               poster="{{ base_url }}/assets/images/seraphina-aug-6-hotfire-cam3-poster.webp">
           <source src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-cam3.mp4" type="video/mp4">
         </video>
       </div>
 
       <div class="image-slideshow-container">
         <div class="image-slideshow">
-          <img src="{{ base_url }}/assets/images/tank-assembly.webp"
+          <img src="{{ base_url }}/assets/images/tank-assembly-640.webp"
+               srcset="{{ base_url }}/assets/images/tank-assembly-640.webp 640w, {{ base_url }}/assets/images/tank-assembly.webp 1400w"
+               sizes="(max-width: 760px) 92vw, 700px"
                alt="Seraphina tank assembly with integrated propulsion components"
                loading="lazy" decoding="async"
                class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/team-and-system.webp"
+          <img src="{{ base_url }}/assets/images/team-and-system-640.webp"
+               srcset="{{ base_url }}/assets/images/team-and-system-640.webp 640w, {{ base_url }}/assets/images/team-and-system.webp 1400w"
+               sizes="(max-width: 760px) 92vw, 700px"
                alt="MACH team members working beside the propulsion system"
                loading="lazy" decoding="async"
                class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/system-overview.webp"
+          <img src="{{ base_url }}/assets/images/system-overview-640.webp"
+               srcset="{{ base_url }}/assets/images/system-overview-640.webp 640w, {{ base_url }}/assets/images/system-overview.webp 1400w"
+               sizes="(max-width: 760px) 92vw, 700px"
                alt="Integrated SPRINT test system and ground-support equipment"
                loading="lazy" decoding="async"
                class="slideshow-image">

@@ -1,5 +1,7 @@
 ---
 title: Cold Flow Test - November 7th, 2025
+description: We ran SPRINT's first cold flow in the quad at 9:30 p.m. The control software had been completely rewritten, making this primarily an integration test. The test produced strong data.
+image: https://machtmu.com/SPRINT/nov-7-coldflow/thumbnail.webp
 ---
 
 # SPRINT Cold Flow Test - November 7th, 2025

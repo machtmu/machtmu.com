@@ -1,0 +1,20 @@
+<button class="md-header__button md-icon mach-search-toggle" type="button" aria-label="Search" aria-haspopup="dialog" aria-controls="mach-search-dialog" aria-expanded="false" data-mach-search-open>
+  {% set icon = config.theme.icon.search or "material/magnify" %}
+  {% include ".icons/" ~ icon ~ ".svg" %}
+  <span class="mach-search-toggle__label">Search</span>
+  <kbd class="mach-search-toggle__shortcut">Ctrl+K</kbd>
+</button>
+
+<div class="mach-search-dialog" id="mach-search-dialog" role="dialog" aria-modal="true" aria-labelledby="mach-search-title" hidden>
+  <button class="mach-search-dialog__backdrop" type="button" aria-label="Close search" data-mach-search-close></button>
+  <section class="mach-search-dialog__panel">
+    <h2 class="mach-visually-hidden" id="mach-search-title">Search MACH</h2>
+    <div class="mach-search-dialog__controls">
+      <label class="mach-visually-hidden" for="mach-search-input">Search MACH</label>
+      <input id="mach-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Search" data-mach-search-input>
+      <button class="mach-search-dialog__close" type="button" aria-label="Close search" data-mach-search-close>&times;</button>
+    </div>
+    <p class="mach-search-dialog__status" aria-live="polite" data-mach-search-status></p>
+    <ol class="mach-search-results" data-mach-search-results></ol>
+  </section>
+</div>

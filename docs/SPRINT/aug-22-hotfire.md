@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - August 22nd, 2025
+description: This was the first time Sprint was hot-fired.
+image: https://machtmu.com/SPRINT/aug-22-hotfire/sprint-hotfire-team.webp
 ---
 
 # SPRINT Hot Fire Test - August 22nd, 2025

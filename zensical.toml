@@ -6,6 +6,37 @@ site_url         = "https://machtmu.com/"
 repo_url         = "https://github.com/machtmu/machtmu.com"
 edit_uri         = "edit/main/docs/"
 copyright        = "MACH - TMU Liquid Rocketry © 2026"
+nav = [
+  { "MACH" = "index.md" },
+  { "Team" = "team.md" },
+  { "Resources" = "resources.md" },
+  { "Sponsors" = "sponsors.md" },
+  { "GAR-E" = [
+      { "Overview" = "GAR-E/index.md" },
+      { "Cold Flow - August 19th–20th, 2023" = "GAR-E/coldflow-2023-08-19/index.md" },
+      { "Hot Fire - August 30th, 2023" = "GAR-E/hotfire-2023-08-30/index.md" },
+      { "Hot Fire - November 19th, 2023" = "GAR-E/hotfire-2023-11-19/index.md" },
+      { "Cold Flow - July 14th, 2024" = "GAR-E/coldflow-2024-07-14/index.md" },
+      { "Hot Fire - August 22nd, 2024" = "GAR-E/hotfire-2024-08-22/index.md" },
+      { "Hot Fire - September 28th, 2024" = "GAR-E/hotfire-2024-09-28/index.md" },
+    ] },
+  { "SPRINT" = [
+      { "Overview" = "SPRINT/index.md" },
+      { "Propulsion" = "SPRINT/propulsion.md" },
+      { "Electronics" = "SPRINT/electronics.md" },
+      { "Avionics" = "SPRINT/avionics/index.md" },
+      { "Cold Flow - August 9th, 2025" = "SPRINT/aug-19-coldflow.md" },
+      { "Hot Fire - August 22nd, 2025" = "SPRINT/aug-22-hotfire.md" },
+      { "Hot Fire - September 13th and 14th, 2025" = "SPRINT/sept-13-hotfire.md" },
+      { "Cold Flow - November 7th, 2025" = "SPRINT/nov-7-coldflow.md" },
+      { "Cold Flow - November 20th, 2025" = "SPRINT/nov-20-coldflow.md" },
+      { "Hot Fire - December 15th and 16th, 2025" = "SPRINT/dec-15-16-hotfire.md" },
+    ] },
+  { "Seraphina" = [
+      { "Overview" = "Seraphina/index.md" },
+      { "Hot Fire - August 6th, 2026" = "Seraphina/aug-6-hotfire.md" },
+    ] },
+]
 
 
 # Extra styling / scripts
@@ -15,6 +46,7 @@ extra_css = [
 
 extra_javascript = [
   "js/home.js",
+  "js/site.js",
 ]
 
 
@@ -51,6 +83,7 @@ link = "https://www.youtube.com/@machtmu"
 [[project.extra.social]]
 icon = "fontawesome/solid/envelope"
 link = "mailto:mach@torontomu.com"
+name = "Email MACH"
 
 # -----------------------------------------------------------------------------
 # THEME – using Zensical's modern look

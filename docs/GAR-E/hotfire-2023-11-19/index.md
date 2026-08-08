@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Attempt - November 19th, 2023
+description: The November campaign included an ignition test and one hot-fire attempt.
+image: https://machtmu.com/GAR-E/hotfire-2023-11-19/test-video-poster.jpg
 ---
 
 # GAR-E Hot Fire Attempt - November 19th, 2023

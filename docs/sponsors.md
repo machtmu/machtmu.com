@@ -1,4 +1,6 @@
 ---
+title: Sponsors
+description: MACH is grateful for the support of our sponsors and partners who make our liquid rocketry research and development possible.
 hide:
   - navigation
   - toc
@@ -16,7 +18,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>American Earth Anchors</span>
     </a>
     
-    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item logo-light-plate">
+    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item logo-dark-adapt">
         <img loading="lazy" decoding="async" src="/sponsors/aqua-environment-logo.svg" alt="Aqua Environment">
         <span>Aqua Environment</span>
     </a>
@@ -26,8 +28,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Automation Direct</span>
     </a>
     
-    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-light-plate">
-        <img loading="lazy" decoding="async" src="/sponsors/dishon-logo.jpg" alt="Dishon">
+    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+        <img loading="lazy" decoding="async" src="/sponsors/dishon-logo-transparent.png" alt="Dishon">
         <span>Dishon</span>
     </a>
     
@@ -36,13 +38,13 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Flownex</span>
     </a>
     
-    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-light-plate">
-        <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo.svg" alt="Hoskin Scientific">
+    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-dark-adapt">
+        <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo-transparent.png" alt="Hoskin Scientific">
         <span>Hoskin Scientific</span>
     </a>
     
-    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-light-plate">
-        <img loading="lazy" decoding="async" src="/sponsors/ibz-logo.png" alt="Innovation Boost Zone">
+    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+        <img loading="lazy" decoding="async" src="/sponsors/ibz-logo-transparent.png" alt="Innovation Boost Zone">
         <span>Innovation Boost Zone</span>
     </a>
     
@@ -66,8 +68,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Mars Society of Canada</span>
     </a>
     
-    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item logo-light-plate">
-        <img loading="lazy" decoding="async" src="/sponsors/megapro-logo.png" alt="Megapro">
+    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item">
+        <img loading="lazy" decoding="async" src="/sponsors/megapro-logo-transparent.png" alt="Megapro">
         <span>Megapro</span>
     </a>
     
@@ -96,8 +98,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>SolidWorks</span>
     </a>
     
-    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item logo-light-plate">
-        <img loading="lazy" decoding="async" src="/sponsors/stein-logo.png" alt="Stein Industries Inc">
+    <a href="https://steinindustries.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+        <img loading="lazy" decoding="async" src="/sponsors/stein-logo-transparent.png" alt="Stein Industries Inc">
         <span>Stein Industries Inc</span>
     </a>
     
@@ -106,7 +108,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>Swagelok</span>
     </a>
     
-    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item logo-light-plate">
+    <a href="https://www.textreme.com/" target="_blank" class="sponsor-item logo-dark-adapt">
         <img loading="lazy" decoding="async" src="/sponsors/textreme-logo.png" alt="TeXtreme">
         <span>TeXtreme</span>
     </a>
@@ -116,7 +118,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         <span>TMU</span>
     </a>
     
-    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item logo-light-plate">
+    <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item logo-dark-adapt">
         <img loading="lazy" decoding="async" src="/sponsors/vibrant-performance-logo.png" alt="Vibrant Performance">
         <span>Vibrant Performance</span>
     </a>
@@ -172,9 +174,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         border-radius: 8px;
     }
     
-    .sponsor-item.logo-light-plate img {
-        background-color: #f5f6f8;
-        box-shadow: inset 0 0 0 1px rgb(15 23 42 / 6%);
+    [data-md-color-scheme="slate"] .sponsor-item.logo-dark-adapt img {
+        filter: invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);
     }
 
     .sponsor-item span {

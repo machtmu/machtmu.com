@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Attempt - August 30th, 2023
+description: This was GAR-E's first hot-fire attempt at Launch Canada 2023. The attempt was unsuccessful.
+image: https://machtmu.com/GAR-E/hotfire-2023-08-30/team.webp
 ---
 
 # GAR-E Hot Fire Attempt - August 30th, 2023

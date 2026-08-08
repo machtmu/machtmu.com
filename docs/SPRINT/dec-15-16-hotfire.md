@@ -1,5 +1,7 @@
 ---
 title: Hot Fire Test - December 15th and 16th, 2025
+description: The December 16–17 hotfire campaign was run in roughly -5°C ambient conditions and was dominated by cold-soak and schedule delays that ultimately limited the team to a single hotfire attempt with reduced performance and a minor post-test fire during purge.
+image: https://machtmu.com/SPRINT/dec-15-16-hotfire/thumbnail.webp
 ---
 
 # SPRINT Hot Fire Test - December 15th and 16th, 2025

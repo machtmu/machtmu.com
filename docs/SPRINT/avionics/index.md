@@ -1,4 +1,7 @@
 ---
+title: SPRINT Avionics
+description: The Avionics team brings rockets to life with custom PCBs and flight weight electronics.
+image: https://machtmu.com/SPRINT/avionics/cad/thumbnail.webp
 hide:
   - path
   - footer
@@ -24,23 +27,23 @@ table, table * {
     <!-- First Row -->
     <tr>
       <td align="center" style="vertical-align: middle;">
-        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-sensors/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-sensors/refs/heads/main/images/board.front.png" alt="Sensors module" />
         <br />
         <a href="PCB-Modules/sensors/"><i>Sensors</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-power/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-power/refs/heads/main/images/board.front.png" alt="Power module" />
         <br />
         <a href="PCB-Modules/power/"><i>Power</i></a>
       </td>
       <td align="center" style="vertical-align: middle;">
-        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-status/refs/heads/main/images/board.front.png" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-status/refs/heads/main/images/board.front.png" alt="Status module" />
         <br />
         <a href="PCB-Modules/status/"><i>Status</i></a>
       </td>
       <!-- Extra column cell with rowspan -->
       <td rowspan="2" align="center" style="vertical-align: middle;">
-        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-backplate/refs/heads/main/images/board.front.png" alt="Longer Image" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-backplate/refs/heads/main/images/board.front.png" alt="Backplate module" />
         <br />
         <a href="PCB-Modules/backplate/"><i>Backplate</i></a>
       </td>
@@ -48,7 +51,7 @@ table, table * {
     <!-- Second Row -->
     <tr>
       <td align="center" style="vertical-align: middle;">
-        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="GPS" />
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/machtmu/4in-powersim/refs/heads/main/images/board.front.png" alt="PowerSim module" />
         <br />
         <a href="PCB-Modules/powersim/"><i>PowerSim</i></a>
       </td>

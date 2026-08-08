@@ -1,5 +1,7 @@
 ---
 title: Cold Flow Test - July 14th, 2024
+description: This test characterized the new GAR-E injector and thrust chamber, checked system compatibility and measured the cavitating venturi discharge coefficient.
+image: https://machtmu.com/GAR-E/coldflow-2024-07-14/thumbnail.webp
 ---
 
 # GAR-E V2 Cold Flow Test - July 14th, 2024

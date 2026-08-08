@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% set description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% if (page.meta and page.meta.noindex) or '/archive/' in page.url %}
+    <meta name="robots" content="noindex,follow">
+  {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ page.title | striptags }} - {{ config.site_name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  {% if page.meta and page.meta.image %}
+    <meta property="og:image" content="{{ page.meta.image }}">
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | striptags }} - {{ config.site_name }}">
+  <meta name="twitter:description" content="{{ description }}">
+  {% if page.meta and page.meta.image %}
+    <meta name="twitter:image" content="{{ page.meta.image }}">
+  {% endif %}
+{% endblock %}

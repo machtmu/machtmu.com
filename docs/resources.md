@@ -1,4 +1,6 @@
 ---
+title: Resources
+description: Resources
 hide:
   - navigation
   - toc
