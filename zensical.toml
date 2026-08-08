@@ -1,6 +1,6 @@
 [project]
 site_name        = "MACH"
-site_description = "MACH - TMU Liquid Rocketry"
+site_description = "MACH is TMU Rocketry, a Toronto rocketry team building liquid propulsion, avionics, and test systems."
 site_author      = "Mach"
 site_url         = "https://machtmu.com/"
 repo_url         = "https://github.com/machtmu/machtmu.com"
