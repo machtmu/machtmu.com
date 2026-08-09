@@ -20,6 +20,7 @@ hide:
     </div>
 </div>
 
+[See the complete MACH test timeline](../timeline/){ .md-button }
 
 ## Systems
 
@@ -56,42 +57,42 @@ hide:
     <div class="test-item">
         <img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - December 15th & 16th, 2025</h3>
-        <p>Hot fire test campaign demonstrating engine performance and system integration over two days.</p>
+        <p>One cold-weather hot fire reached 510.0 N and 107.2 psi; residual fuel ignited during purge.</p>
         <a href="dec-15-16-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - November 20th, 2025</h3>
-        <p>Cold-flow test of the SPRINT system.</p>
+        <p>Mission-control integration exposed a wrong V5 mapping, an incompletely installed P4 sensor and a leaking CO₂ fitting.</p>
         <a href="nov-20-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - November 7th, 2025</h3>
-        <p>Cold-flow test of the SPRINT system.</p>
+        <p>Two cold flows followed the control-software rewrite and recorded complete oxidizer-pressure and tank-mass files.</p>
         <a href="nov-7-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="sept-13-hotfire/thumbnail.webp" alt="September Hot-fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - September 13th & 14th, 2025</h3>
-        <p>Multi-day hot-fire test campaign demonstrating improved engine performance and system reliability across multiple firing sequences.</p>
+        <p>Three successful fires; the final run reached 839.1 N, 184.1 psi chamber pressure and approximately 2.4 kN·s.</p>
         <a href="sept-13-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="aug-22-hotfire/thumbnail.webp" alt="Hot-fire Test" loading="lazy" decoding="async">
         <h3>Hot Fire Test - August 22nd, 2025</h3>
-        <p>Hot-fire test of the SPRINT system demonstrating successful ignition and combustion.</p>
+        <p>The first SPRINT hot fire reached commanded cutoff, but a partial fill and missing telemetry prevented a measured performance result.</p>
         <a href="aug-22-hotfire/" class="find-out-more">Find out more →</a>
     </div>
 
     <div class="test-item">
         <img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async">
         <h3>Cold Flow Test - August 9th, 2025</h3>
-        <p>Cold-flow test validating fluid dynamics and system integration.</p>
+        <p>CO₂ and distilled water flowed after two leak checks passed; an igniter integration failure blocked the planned hot fire.</p>
         <a href="aug-19-coldflow/" class="find-out-more">Find out more →</a>
     </div>
 

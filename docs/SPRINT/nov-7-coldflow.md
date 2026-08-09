@@ -1,12 +1,16 @@
 ---
 title: Cold Flow Test - November 7th, 2025
-description: We ran SPRINT's first cold flow in the quad at 9:30 p.m. The control software had been completely rewritten, making this primarily an integration test. The test produced strong data.
+description: Two SPRINT cold flows in the quad on November 7th, 2025 exercised rewritten control software and recorded oxidizer-tank pressure and tank-mass telemetry.
 image: https://machtmu.com/SPRINT/nov-7-coldflow/thumbnail.webp
 ---
 
 # SPRINT Cold Flow Test - November 7th, 2025
 
-We ran SPRINT's first cold flow in the quad at 9:30 p.m. The control software had been completely rewritten, making this primarily an integration test. The test produced strong data.
+Two cold flows were completed in the quad beginning after 9:30 p.m. This was the first integrated test after the control software rewrite.
+
+## Recorded Result
+
+The oxidizer-tank pressure channel peaked at approximately 579 psi in Test 1 and 523 psi in Test 2. The first file contains 3,848 rows over 68.45 seconds, or approximately 56 recorded rows per second. The second contains 1,942 rows over 57.13 seconds, or approximately 34 rows per second. Those measured row rates do not match the `100Hz` and `50Hz` labels in the archived filenames.
 
 ## Test Video
 

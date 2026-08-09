@@ -6,6 +6,20 @@ image: https://machtmu.com/GAR-E/coldflow-2023-08-19/team.webp
 
 # GAR-E Cold Flow Test - August 19th–20th, 2023
 
+The campaign flowed inert substitutes through the integrated Spender and GAR-E injector: two oxidizer-side carbon-dioxide tests and one fuel-side water test. The instrumentation installed for the weekend included seven pressure transducers and two thermocouples; two pressure channels were temporarily housed in the Spender enclosure rather than the planned pad-side LabJack.
+
+## Sequence and result
+
+The water flow and both carbon-dioxide flows completed. The archived logs were mapped to a first carbon-dioxide run at 16:33, a second at 18:02 and the water run at 19:10. Operators had to work around GUI and sequence-control failures during the campaign.
+
+## Measurements and data limits
+
+The water-side injector pressure drop was estimated at approximately 150 psi, but its regulator set pressure was above the recorded inlet pressure, which limits that calculation. The carbon-dioxide data showed an impossible apparent injector drop near 600 psi. The pressure traces froze or stopped before the representative main-valve transient, and the expected downstream shutdown drop was missing. The problem affected the saved data, not only the GUI display, so no reliable full transient or mass-flow result was recovered.
+
+## Corrective actions
+
+The review called for independent verification of every pressure-channel mapping, continuous acquisition that could not be blocked by the command sequence, and a recorded high-rate check through valve opening and shutdown before another hot-fire attempt.
+
 ## Test Videos
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); gap:1.25rem; margin:1rem 0 2rem;">

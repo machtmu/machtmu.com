@@ -29,7 +29,7 @@ LABELS = {
     "oxidizer_tank_psi": "Oxidizer tank pressure",
     "fuel_tank_psi": "Fuel tank pressure",
     "chamber_pressure_psi": "Chamber pressure",
-    "thrust_lbf": "Thrust",
+    "thrust_lbf": "Load-cell signal",
     "fuel_feed_psi": "Fuel feed pressure",
     "oxidizer_feed_psi": "Oxidizer feed pressure",
 }
@@ -109,16 +109,22 @@ def rate_note(doc: dict, august: bool) -> str:
         feed = (r["oxidizer_feed"] + r["fuel_feed"]) / 2
         return (
             f"Usable new-value rates: tank pressures {tank:.1f} Hz · "
-            f"feed pressures {feed:.1f} Hz · thrust {r['thrust']:.1f} Hz"
+            f"feed pressures {feed:.1f} Hz · load-cell signal {r['thrust']:.1f} Hz"
         )
     tank = (r["oxidizer_tank"] + r["fuel_tank"]) / 2
     return (
         f"Usable new-value rates: tank pressures {tank:.1f} Hz · "
-        f"chamber {r['chamber_pressure']:.1f} Hz · thrust {r['thrust']:.1f} Hz"
+        f"chamber {r['chamber_pressure']:.1f} Hz · load-cell signal {r['thrust']:.1f} Hz"
     )
 
 
-def make_plot(date: str, pressure_names: list[str], output: Path, august: bool = False):
+def make_plot(
+    date: str,
+    pressure_names: list[str],
+    output: Path,
+    august: bool = False,
+    force_note: str = "",
+):
     doc = load(date)
     fig, ax = plt.subplots(figsize=(14, 7.5), dpi=140, facecolor="white")
     fig.subplots_adjust(top=0.75, right=0.86, left=0.09, bottom=0.13)
@@ -170,7 +176,7 @@ def make_plot(date: str, pressure_names: list[str], output: Path, august: bool =
 
     ax.set_xlabel("Time, t (s)", fontsize=11)
     ax.set_ylabel("Pressure (psi)", fontsize=11)
-    ax2.set_ylabel("Thrust (N)", fontsize=11, color=COLORS["thrust_lbf"])
+    ax2.set_ylabel("Load-cell signal (N)", fontsize=11, color=COLORS["thrust_lbf"])
     ax2.tick_params(axis="y", colors=COLORS["thrust_lbf"])
     ax2.spines["right"].set_color(COLORS["thrust_lbf"])
     ax.xaxis.set_major_locator(MultipleLocator(1))
@@ -209,6 +215,18 @@ def make_plot(date: str, pressure_names: list[str], output: Path, august: bool =
             color="#475569",
         )
         legend_y = 0.825
+    if force_note:
+        fig.text(
+            0.5,
+            0.822,
+            force_note,
+            ha="center",
+            va="center",
+            fontsize=9.5,
+            color="#9F1239",
+            fontweight="bold",
+        )
+        legend_y = 0.793
     fig.legend(handles=handles, labels=[h.get_label() for h in handles], loc="upper center", bbox_to_anchor=(0.5, legend_y), ncol=len(handles), frameon=False, fontsize=9.5)
 
     ignition_label = "INFERRED IGNITION"
@@ -226,16 +244,6 @@ def make_plot(date: str, pressure_names: list[str], output: Path, august: bool =
             COLORS["chamber_pressure_psi"],
             offset=(18, 16),
         )
-    pk = doc["peaks"]
-    annotate_peak(
-        ax2,
-        pk["thrust_time_s"],
-        pk["thrust_lbf"] * LBF_TO_N,
-        f"Peak thrust\n{pk['thrust_lbf'] * LBF_TO_N:.1f} N",
-        COLORS["thrust_lbf"],
-        offset=(18, 12 if august else 18),
-    )
-
     for spine in ["top"]:
         ax.spines[spine].set_visible(False)
         ax2.spines[spine].set_visible(False)
@@ -251,12 +259,14 @@ def main():
         "2023-11-19",
         ["oxidizer_tank_psi", "fuel_tank_psi", "chamber_pressure_psi"],
         ROOT / "docs/GAR-E/hotfire-2023-11-19/mach-hotfire-2023-11-19-burn-telemetry.png",
+        force_note="Force channel invalid · load cell contacted the stand",
     )
     make_plot(
         "2024-08-22",
         ["oxidizer_tank_psi", "fuel_tank_psi", "oxidizer_feed_psi", "fuel_feed_psi"],
         ROOT / "docs/GAR-E/hotfire-2024-08-22/mach-hotfire-2024-08-22-burn-telemetry.png",
         august=True,
+        force_note="Startup force signal lost · remaining load-cell data cannot support a thrust result",
     )
 
 

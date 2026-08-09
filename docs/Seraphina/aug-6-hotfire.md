@@ -1,10 +1,22 @@
 ---
 title: Hot Fire Test - August 6th, 2026
-description: Seraphina Hot Fire Test - August 6th, 2026
+description: A failed ignition attempt and an 8.2-second Seraphina hot fire on August 6th, 2026, with pressure, thrust and tank-mass telemetry.
 image: https://machtmu.com/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp
 ---
 
 # Seraphina Hot Fire Test - August 6th, 2026
+
+Two firing attempts were recorded as logging runs 7 and 8. The first attempt did not ignite after the installed e-match failed its continuity check. The main valves still flowed propellant, producing a 29.22 psi chamber-pressure reading and a 172.11 N load-cell signal; neither value represents a hot-fire thrust result. The second attempt produced the sustained burn shown below, reaching 254.36 psi chamber pressure and 1,233.28 N peak thrust. Its oxidizer and fuel tanks peaked at 660.56 psi and 651.25 psi. The team loaded 4.62 kg of nitrous oxide and 2.20 kg of ethanol for the campaign.
+
+## Second-attempt sequence
+
+The ignition command defines t = 0 on the graph. The logger recorded ignition confirmation at t = 0.13 seconds, the main oxidizer and fuel valve command at t = 0.75 seconds, and entry into the engine-run state at t = 1.31 seconds. Chamber pressure and thrust reached their peaks near t = 3 seconds. The purge command followed at t = 9.97 seconds, giving 8.66 seconds in the engine-run state; the team reported an 8.2-second measured burn. Measured tank mass fell from about 7 kg before valve opening to about 1.3 kg after the burn.
+
+## Failure and Data Limits
+
+The igniter cartridge plug, retained by a hose clamp, failed during the successful attempt. Contemporary test notes report a resulting loss of chamber pressure and thrust. Later discussion considered backflow and a missing check valve as possible contributors, but the archive does not establish either as the cause.
+
+The logger wrote rows at approximately 37.1 Hz, but several rows repeated unchanged sensor values. System-clock and delta-time measurements agree on that row rate. After duplicate values were removed without smoothing, the usable new-value rates were 8.2 Hz for tank pressure, 8.1 Hz for chamber pressure, 7.2 Hz for thrust and 6.6 Hz for tank mass. The graph plots those unsmoothed new values.
 
 ## Test Videos
 
@@ -32,8 +44,9 @@ image: https://machtmu.com/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp
 
 ## Test Data
 
-<div style="text-align:center; margin:1rem 0 2rem 0;">
-  <a href="/Seraphina/aug-6-hotfire/seraphina-hotfire-2026-08-06-run-8.csv" class="md-button">Download Raw Test Data (.csv)</a>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem; margin:1rem 0 2rem 0;">
+  <a href="/Seraphina/aug-6-hotfire/seraphina-hotfire-2026-08-06-run-7.csv" class="md-button">Download First-Attempt Data (.csv)</a>
+  <a href="/Seraphina/aug-6-hotfire/seraphina-hotfire-2026-08-06-run-8.csv" class="md-button">Download Second-Attempt Data (.csv)</a>
 </div>
 
 ## Burn Telemetry

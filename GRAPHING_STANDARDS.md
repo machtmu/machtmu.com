@@ -70,6 +70,8 @@ Column names may vary between logger versions. Confirm their meaning from the so
 
 If a required channel is unavailable or invalid, omit it and state that clearly on the page or in the processing notes. Do not replace it with an unrelated channel.
 
+If a force channel exists but its calibration or mechanical installation invalidates a thrust result, it may be retained only as `Load-cell signal (N)`. Add the failure reason on the figure, do not call the series thrust, and do not annotate a peak thrust value. Examples include a load cell contacting the stand and the loss of startup samples during the firing transient.
+
 ## 4. Units and conversions
 
 ### 4.1 Pressure
@@ -295,7 +297,7 @@ Do not include a run number in the published title unless it is necessary to dis
 
 ## 10. Peak annotations
 
-Annotate:
+Annotate, when the channel is valid:
 
 - peak chamber pressure in psi;
 - peak thrust in N.
@@ -313,6 +315,8 @@ Standards:
 - report one decimal place unless source resolution justifies another choice.
 
 Never move the peak marker away from the measured peak to improve appearance.
+
+Do not annotate a thrust peak from an invalid or performance-incomplete force channel. Preserve the raw signal only when it helps document the instrumentation failure, and label it as a load-cell signal throughout the legend, axis and caption.
 
 ## 11. Output files
 

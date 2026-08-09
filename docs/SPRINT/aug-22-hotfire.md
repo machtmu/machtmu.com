@@ -1,24 +1,28 @@
 ---
 title: Hot Fire Test - August 22nd, 2025
-description: This was the first time Sprint was hot-fired.
+description: SPRINT reached ignition and commanded cutoff on August 22nd, 2025 after two failed attempts; a partial fill and unusable telemetry limited the measured result.
 image: https://machtmu.com/SPRINT/aug-22-hotfire/sprint-hotfire-team.webp
 ---
 
 # SPRINT Hot Fire Test - August 22nd, 2025
 
-This was the first time Sprint was hot-fired. It took us all week at Launch Canada, and we just barely pulled it off in the last hour of the last day, Friday around 11:30.
+SPRINT completed its first hot fire at Launch Canada on Friday, August 22nd, at approximately 11:25 a.m. The engine reached ignition and commanded cutoff.
 
-We tried twice before on Thursday. Our first attempt resulted in cold-flowing the system due to a threshold error on the ignition. We had tried to use thrust to detect ignition but overestimated how much thrust our igniter produced.
+## Attempt Sequence
 
-The second attempt failed because the fuel bulkhead servo valve handle was mechanically blocked by the tank mount turnbuckle. Fuel did not flow while the oxidizer did, so we left the fuel in the tank overnight. We realized we could use chamber pressure as well as thrust for ignition detection.
+The first Thursday attempt cold-flowed the system because the ignition detector's thrust threshold was set above the igniter's output.
 
-The next morning we arrived at about 6:45 and managed a successful hot-fire. Thrust was reduced because of a partial fill, and the piston likely partially blocked the static vent. Unfortunately, we weren’t able to collect usable data.
+The second attempt failed because the tank-mount turnbuckle physically blocked the fuel bulkhead servo-valve handle. Oxidizer flowed but fuel did not. The remaining fuel stayed in the tank overnight. The ignition logic was revised to use chamber pressure as well as thrust. The team returned at approximately 6:45 a.m. for the Friday attempt.
+
+## Result and Data Limit
+
+The August 22 run used a partial propellant fill. The team later attributed the partial fill to the piston covering part of the static vent. No usable telemetry was recovered, so the observed reduction in performance cannot be stated as a measured pressure or thrust result.
 
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
   <video controls preload="metadata" playsinline src="/SPRINT/aug-22-hotfire/firing.mp4" poster="/SPRINT/aug-22-hotfire/test-video-poster.jpg" aria-label="SPRINT hot fire test on August 22nd, 2025" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">SPRINT hot fire test demonstrating successful ignition and stable combustion.</figcaption>
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">August 22 firing from ignition through commanded cutoff.</figcaption>
 </figure>
 
 ## Team Photo

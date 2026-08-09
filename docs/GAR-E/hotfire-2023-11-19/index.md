@@ -6,7 +6,30 @@ image: https://machtmu.com/GAR-E/hotfire-2023-11-19/test-video-poster.jpg
 
 # GAR-E Hot Fire Attempt - November 19th, 2023
 
-The November campaign included an ignition test and one hot-fire attempt. The gerb igniter lit propellant downstream, but the flame did not propagate into the chamber. Recorded chamber pressure reached approximately 80 psi; the test review attributed this to cold nitrous vapour rather than sustained combustion.
+The November campaign included two igniter acceptance firings on November 16th, a chamberless ignition test and one integrated ethanol and nitrous-oxide attempt on November 19th. The November 19th event was announced as GAR-E's first hot fire immediately after the test, but the later data and video review found no sustained combustion in the chamber.
+
+## Igniter acceptance tests
+
+| Test | Igniter above autoignition | Maximum igniter temperature | Chamber measurement |
+| --- | ---: | ---: | --- |
+| 1 | 29.8 s | 1,032 °C | Maximum 256 °C; did not reach autoignition |
+| 2 | 24.0 s | 860 °C | 10.3 s above autoignition; maximum 597 °C |
+
+The similar igniter traces were treated as a repeatability check. The second setup also demonstrated that the downstream chamber location could exceed the target autoignition temperature.
+
+## November 19 sequence and outcome
+
+The gerb igniter lit the propellant stream, but review of the video showed the flame front stabilizing downstream of the nozzle. The pressure data showed no sustained chamber-pressure rise, no valid thrust measurement was recovered, and the throat changed from 0.680 to 0.681 inch, within measurement error. The event is therefore recorded as an ignition and hot-fire attempt, not a completed steady chamber burn.
+
+Video review also identified nitrous leaking from the oxidizer line as the main valves opened, producing the large external fireball. A separate fuel leak was found at the hose and flare-fitting connection after the test.
+
+## Measurement correction
+
+The first same-day read reported an approximately 80 psi pressure peak and 39 lbf with a 13 lbf preload. Those numbers were not valid hot-fire performance. The load-cell contact indented its mount and touched the frame, mechanically bypassing the sensor, while the later pressure and video review showed that the flame never anchored in the chamber. The telemetry plot below preserves the recorded channels without presenting either early value as chamber performance.
+
+## Corrective actions
+
+The post-test work called for a chamber and injector geometry review, replacement of damaged or overtightened flare fittings, a flat load-cell interface with positive clearance from the frame, higher sensor polling rates and added injector thermocouples.
 
 ## Test Video
 
