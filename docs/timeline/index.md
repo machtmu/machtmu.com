@@ -1,7 +1,7 @@
 ---
 title: Timeline
 description: A verified timeline of MACH projects, component tests, cold flows, ignition attempts and hot fires from 2018 through 2026.
-image: https://machtmu.com/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp
+image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
 hide:
   - toc
   - navigation
@@ -29,6 +29,22 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
+      <a class="gare-timeline__media" href="/Seraphina/aug-20-hotfire/" aria-label="Open the August 20, 2026 Seraphina relight-test page">
+        <img src="/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp" alt="Seraphina firing during the August 20, 2026 relight test" loading="lazy" decoding="async">
+      </a>
+      <div class="gare-timeline__body">
+        <time datetime="2026-08-20">August 20, 2026</time>
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
+        <h2><a href="/Seraphina/aug-20-hotfire/">Seraphina relight test</a></h2>
+        <p>Seraphina completed two hot fires in one uninterrupted remotely commanded sequence. The relight command followed the first ignition command by 13.85 seconds. The burns reached 1,380.1 N and 1,208.1 N peak thrust, with 287.7 psi and 250.0 psi peak chamber pressure.</p>
+        <a class="gare-timeline__link" href="/Seraphina/aug-20-hotfire/">Video, telemetry and test data <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </li>
+
+  <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
+    <span class="gare-timeline__dot" aria-hidden="true"></span>
+    <article class="gare-timeline__card">
       <a class="gare-timeline__media gare-timeline__media--team" href="/Seraphina/aug-6-hotfire/" aria-label="Open the August 2026 Seraphina hot-fire page">
         <img src="/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6, 2026 hot fire" loading="lazy" decoding="async">
       </a>
@@ -42,7 +58,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
+  <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
       <a class="gare-timeline__media" href="/timeline/seraphina-coldflow-2026-07-16/" aria-label="Open the July 2026 Seraphina operations rehearsal">
@@ -58,7 +74,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
+  <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
       <a class="gare-timeline__media" href="/timeline/seraphina-tank-proof-2026-06-26/" aria-label="Open the June 2026 Seraphina tank proof test">
@@ -74,7 +90,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__event gare-timeline__event--right">
+  <li class="gare-timeline__event gare-timeline__event--left">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
       <time datetime="2026-01-31">January 27–31, 2026</time>

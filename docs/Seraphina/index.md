@@ -1,7 +1,7 @@
 ---
 title: Seraphina
 description: Seraphina is MACH's project for 2026. It is a complete overhaul of the tank system with automated fueling.
-image: https://machtmu.com/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp
+image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
 hide:
   - toc
   - navigation
@@ -16,6 +16,14 @@ Seraphina is MACH's project for 2026. It is a complete overhaul of the tank syst
 ## Tests
 
 <div class="program-test-grid">
+  <article>
+    <a href="aug-20-hotfire/"><img src="aug-20-hotfire/seraphina-double-hotfire-poster.webp" alt="Seraphina firing during the August 20 relight test" loading="lazy" decoding="async"></a>
+    <div>
+      <time datetime="2026-08-20">August 20, 2026</time>
+      <h2><a href="aug-20-hotfire/">Relight test</a></h2>
+      <p>Two hot fires were completed in one uninterrupted remotely commanded sequence. The relight command followed the first ignition command by 13.85 seconds.</p>
+    </div>
+  </article>
   <article>
     <a class="program-test-grid__media--team" href="aug-6-hotfire/"><img src="aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6 hot-fire campaign" loading="lazy" decoding="async"></a>
     <div>

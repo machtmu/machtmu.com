@@ -35,6 +35,7 @@ nav = [
     ] },
   { "Seraphina" = [
       { "Overview" = "Seraphina/index.md" },
+      { "Relight Test - August 20th, 2026" = "Seraphina/aug-20-hotfire.md" },
       { "Hot Fire - August 6th, 2026" = "Seraphina/aug-6-hotfire.md" },
     ] },
 ]
