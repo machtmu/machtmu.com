@@ -6,7 +6,7 @@ image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-pos
 
 # Seraphina Relight Test - August 20th, 2026
 
-On August 20, 2026, MACH completed what we believe is the first publicly documented collegiate test of a liquid-bipropellant engine intentionally shut down to ambient chamber pressure and commanded through a second hotfire without physical servicing or personnel approaching the system. The first ignition command defines t = 0 in the telemetry below, and the relight command followed at t = 13.85 seconds. The continuous video preserves both firings and the complete interval between them.
+On August 20, 2026, MACH completed what we believe is the first publicly documented collegiate test of a liquid-bipropellant engine intentionally shut down to ambient chamber pressure and commanded through a second hotfire without physical servicing or personnel approaching the system.
 
 ## Measured Result
 
@@ -19,22 +19,10 @@ The control log records the first ignition command at system-clock time 13,000.4
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <div style="position:relative; width:100%; max-width:1000px; aspect-ratio:16/9; overflow:hidden; border-radius:8px; background:#111;">
-    <iframe
-      src="https://drive.google.com/file/d/1JKEHkYLqhFiAS2FQHi9xCJ5kkZH1zRr9/preview"
-      title="Continuous view of both Seraphina hot fires on August 20th, 2026"
-      loading="lazy"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen
-      style="position:absolute; inset:0; width:100%; height:100%; border:0;"
-    ></iframe>
-  </div>
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Continuous CAM3 view of the first firing, the untouched interval and the relight.</figcaption>
+  <video controls preload="metadata" playsinline poster="/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp" aria-label="Seraphina relight test on August 20th, 2026" style="display:block; width:100%; max-width:1000px; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <source src="/Seraphina/aug-20-hotfire/seraphina-double-hotfire.mp4" type="video/mp4">
+  </video>
 </figure>
-
-<div style="text-align:center; margin:0 0 2rem 0;">
-  <a href="https://drive.google.com/file/d/1JKEHkYLqhFiAS2FQHi9xCJ5kkZH1zRr9/view?usp=drivesdk" class="md-button" target="_blank" rel="noopener">View or Download CAM3 Video</a>
-</div>
 
 ## Test Data
 
@@ -46,5 +34,4 @@ The control log records the first ignition command at system-clock time 13,000.4
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
   <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" alt="Combined pressure, thrust and tank-mass telemetry for both Seraphina hot fires on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Unsmoothed telemetry covering the first firing and relight in one continuous time base.</figcaption>
 </figure>
