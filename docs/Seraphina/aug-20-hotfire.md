@@ -8,14 +8,6 @@ image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-pos
 
 On August 20, 2026, MACH completed what we believe is the first publicly documented collegiate test of a liquid-bipropellant engine intentionally shut down to ambient chamber pressure and commanded through a second hotfire without physical servicing or personnel approaching the system.
 
-## Measured Result
-
-The first burn reached 1,380.1 N peak thrust and 287.7 psi peak chamber pressure. The second burn reached 1,208.1 N peak thrust and 250.0 psi peak chamber pressure. Tank-pressure, chamber-pressure, thrust and tank-mass traces for both firings are shown together in the combined telemetry plot.
-
-## Sequence and Data Limits
-
-The control log records the first ignition command at system-clock time 13,000.43 seconds and the relight command at 13,014.28 seconds, a separation of 13.85 seconds. No smoothing was applied to the plotted sensor data. Because the logger repeated some unchanged sensor values, the usable new-value rates were 7.5 Hz for both tank pressures, 7.6 Hz for chamber pressure, 6.8 Hz for thrust and 5.6 Hz for tank mass.
-
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
