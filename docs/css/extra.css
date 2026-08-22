@@ -64,6 +64,7 @@ a.former-member-card:hover {
 .md-logo .mach-logo {
     display: inline-flex;
     align-items: center;
+    position: relative;
 }
 
 .md-header__button.md-logo .mach-logo__image {
@@ -110,6 +111,25 @@ a.former-member-card:hover {
 [data-md-color-scheme="slate"] .md-header__button.md-logo img.mach-logo__image--dark,
 [data-md-color-scheme="slate"] .md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--dark {
     display: block;
+}
+
+.mach-logo__hdr {
+    display: none;
+}
+
+@media (dynamic-range: high) {
+    @supports ((-webkit-mask-image: linear-gradient(#000, #000)) or (mask-image: linear-gradient(#000, #000))) {
+        [data-md-color-scheme="slate"] .md-logo .mach-logo__hdr {
+            background: url("/img/white-7.5x.jpg") center / cover no-repeat;
+            display: block;
+            inset: 0;
+            pointer-events: none;
+            position: absolute;
+            -webkit-mask: url("/img/logo-header-hdr-mask.png") center / contain no-repeat;
+            mask: url("/img/logo-header-hdr-mask.png") center / contain no-repeat;
+            z-index: 1;
+        }
+    }
 }
 
 .mach-footer-location {

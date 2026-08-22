@@ -2,6 +2,7 @@
   <span class="mach-logo">
     <img class="mach-logo__image mach-logo__image--light" src="{{ 'img/logo-header.png' | url }}" alt="{{ config.site_name }}" width="512" height="159">
     <img class="mach-logo__image mach-logo__image--dark" src="{{ 'img/logo-header-dark.png' | url }}" alt="{{ config.site_name }}" width="512" height="159">
+    <span class="mach-logo__hdr" aria-hidden="true"></span>
   </span>
 {% else %}
   {% set icon = config.theme.icon.logo or "material/library" %}
