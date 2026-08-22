@@ -18,15 +18,6 @@ On August 20, 2026, MACH completed what we believe is the first publicly documen
 
 ## Test Data
 
-<div style="width:100%; margin:1rem auto; overflow:hidden; border-radius:8px; background:#fff;">
-  <iframe
-    src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fmachtmu.com%2FSeraphina%2Faug-20-hotfire%2Fseraphina-2026-08-20-test-data.xlsx"
-    title="Seraphina August 20th, 2026 hotfire test data"
-    loading="lazy"
-    style="display:block; width:100%; height:72vh; min-height:560px; border:0;"
-  ></iframe>
-</div>
-
 <div style="text-align:center; margin:1rem 0 2rem 0;">
   <a href="/Seraphina/aug-20-hotfire/seraphina-2026-08-20-test-data.xlsx" class="md-button">Download Test Data (.xlsx)</a>
 </div>
