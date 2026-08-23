@@ -6,7 +6,7 @@ image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-pos
 
 # Seraphina Relight Test - August 20th, 2026
 
-On August 20, 2026, MACH completed what we believe is the first publicly documented collegiate test of a liquid-bipropellant engine intentionally shut down to ambient chamber pressure and commanded through a second hotfire without physical servicing or personnel approaching the system.
+On August 20, 2026, MACH completed a remotely commanded relight of its liquid-bipropellant engine. The first hotfire was intentionally shut down, chamber pressure returned to ambient, and the engine was then commanded through a second hotfire without physical servicing or personnel approaching the system.
 
 ## Test Video
 
@@ -25,5 +25,7 @@ On August 20, 2026, MACH completed what we believe is the first publicly documen
 ## Combined Telemetry
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" alt="Combined pressure, thrust and tank-mass telemetry for both Seraphina hot fires on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <a href="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" target="_blank" rel="noopener" aria-label="Open the full-resolution Seraphina relight telemetry plot">
+    <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" alt="Combined pressure, thrust and tank-mass telemetry for both Seraphina hot fires on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  </a>
 </figure>

@@ -36,7 +36,7 @@ Events are ordered newest first. This record separates completed tests, failed a
         <time datetime="2026-08-20">August 20, 2026</time>
         <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
         <h2><a href="/Seraphina/aug-20-hotfire/">Seraphina relight test</a></h2>
-        <p>Seraphina completed two hot fires in one uninterrupted remotely commanded sequence. The relight command followed the first ignition command by 13.85 seconds. The burns reached 1,380.1 N and 1,208.1 N peak thrust, with 287.7 psi and 250.0 psi peak chamber pressure.</p>
+        <p>Seraphina completed a remotely commanded relight. The first hotfire was intentionally shut down, chamber pressure returned to ambient, and the engine was then commanded through a second hotfire without physical servicing or personnel approaching the system.</p>
         <a class="gare-timeline__link" href="/Seraphina/aug-20-hotfire/">Video, telemetry and test data <span aria-hidden="true">→</span></a>
       </div>
     </article>
