@@ -210,6 +210,22 @@
       text-shadow: 0 4px 16px rgba(0,0,0,0.8);
     }
 
+    @media (dynamic-range: high) {
+      @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .home-hero__title {
+          background: url("/img/white-7.5x.jpg") center / cover;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        .home-hero__title::selection {
+          background: rgba(255, 255, 255, 0.25);
+          color: #fff;
+        }
+      }
+    }
+
     .home-hero__inner p {
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 1.25rem;
@@ -432,7 +448,7 @@
     </video>
 
     <div class="home-hero__inner">
-      <h1>MACH - TMU Liquid Rocketry</h1>
+      <h1 class="home-hero__title">MACH - TMU Liquid Rocketry</h1>
       <p>Advanced liquid propulsion systems, precision avionics, and rigorous aerospace research</p>
     </div>
   </section>
