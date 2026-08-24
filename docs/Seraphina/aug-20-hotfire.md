@@ -22,7 +22,15 @@ On August 20, 2026, MACH completed a remotely commanded relight of its liquid-bi
   <a href="/Seraphina/aug-20-hotfire/seraphina-2026-08-20-test-data.xlsx" class="md-button">Download Test Data (.xlsx)</a>
 </div>
 
-## Combined Telemetry
+## Propellant Loading
+
+<figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <a href="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-propellant-loading.png" target="_blank" rel="noopener" aria-label="Open the full-resolution Seraphina propellant-loading telemetry plot">
+    <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-propellant-loading.png" alt="Fuel and oxidizer tank pressures with raw propellant mass during loading for the Seraphina relight test on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  </a>
+</figure>
+
+## Double Hotfire Telemetry
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
   <a href="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" target="_blank" rel="noopener" aria-label="Open the full-resolution Seraphina relight telemetry plot">

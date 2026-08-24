@@ -127,7 +127,7 @@ def make_plot(
 ):
     doc = load(date)
     fig, ax = plt.subplots(figsize=(14, 7.5), dpi=140, facecolor="white")
-    fig.subplots_adjust(top=0.75, right=0.86, left=0.09, bottom=0.13)
+    fig.subplots_adjust(top=0.68, right=0.86, left=0.09, bottom=0.13)
     ax.set_facecolor("white")
 
     handles = []
@@ -187,38 +187,38 @@ def make_plot(
     ax.set_axisbelow(True)
 
     title = doc["metadata"]["title"]
-    fig.suptitle(title, y=0.972, fontsize=20, fontweight="bold")
+    fig.suptitle(title, y=0.975, fontsize=20, fontweight="bold")
     subtitle = (
         "t = 0 marks inferred ignition onset — command-state telemetry unavailable"
     )
-    fig.text(0.5, 0.918, subtitle, ha="center", va="center", fontsize=11, color="#475569")
-    fig.text(0.5, 0.885, rate_note(doc, august), ha="center", va="center", fontsize=10, color="#475569")
+    fig.text(0.5, 0.890, subtitle, ha="center", va="center", fontsize=11, color="#475569")
+    fig.text(0.5, 0.850, rate_note(doc, august), ha="center", va="center", fontsize=10, color="#475569")
     if august:
         fig.text(
             0.5,
-            0.854,
+            0.810,
             "Chamber-pressure and propellant-mass channels unavailable · feed pressures shown dashed",
             ha="center",
             va="center",
             fontsize=9.5,
             color="#475569",
         )
-        legend_y = 0.825
+        legend_y = 0.775
     else:
         fig.text(
             0.5,
-            0.854,
+            0.810,
             "Propellant-mass channel unavailable",
             ha="center",
             va="center",
             fontsize=9.5,
             color="#475569",
         )
-        legend_y = 0.825
+        legend_y = 0.775
     if force_note:
         fig.text(
             0.5,
-            0.822,
+            0.770,
             force_note,
             ha="center",
             va="center",
@@ -226,7 +226,7 @@ def make_plot(
             color="#9F1239",
             fontweight="bold",
         )
-        legend_y = 0.793
+        legend_y = 0.735
     fig.legend(handles=handles, labels=[h.get_label() for h in handles], loc="upper center", bbox_to_anchor=(0.5, legend_y), ncol=len(handles), frameon=False, fontsize=9.5)
 
     ignition_label = "INFERRED IGNITION"
@@ -240,7 +240,7 @@ def make_plot(
             ax,
             pk["chamber_pressure_time_s"],
             pk["chamber_pressure_psi"],
-            f"Peak chamber pressure\n{pk['chamber_pressure_psi']:.1f} psi",
+            f"Peak chamber {pk['chamber_pressure_psi']:.1f} psi",
             COLORS["chamber_pressure_psi"],
             offset=(18, 16),
         )

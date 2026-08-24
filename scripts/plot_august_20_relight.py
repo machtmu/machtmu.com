@@ -163,12 +163,12 @@ def add_event(axis, time: float, label: str, color: str) -> None:
     text.set_path_effects([pe.Stroke(linewidth=4, foreground="white"), pe.Normal()])
 
 
-def annotate_peak(axis, times, values, start, end, label, color, offset) -> None:
+def annotate_peak(axis, times, values, start, end, unit, color, offset) -> None:
     candidates = [(time, value) for time, value in zip(times, values) if start <= time < end]
     peak_time, peak_value = max(candidates, key=lambda item: item[1])
     axis.scatter([peak_time], [peak_value], s=38, color=color, edgecolor="white", linewidth=1.0, zorder=75)
     annotation = axis.annotate(
-        f"{label}\n{peak_value:.1f}",
+        f"{peak_value:.1f} {unit}",
         xy=(peak_time, peak_value),
         xytext=offset,
         textcoords="offset points",
@@ -214,13 +214,28 @@ def main() -> None:
 
     pressure_top = max(400.0, math.ceil(max(raw["oxidizer"] + raw["fuel"] + raw["chamber"]) * 1.05 / 100) * 100)
     mass_top = max(2.0, math.ceil(max(raw["mass"]) * 1.05))
-    thrust_bottom = math.floor(min(raw["thrust"]) / 200) * 200 if min(raw["thrust"]) < 0 else 0.0
     thrust_top = max(600.0, math.ceil(max(raw["thrust"]) * 1.05 / 200) * 200)
+    required_pressure_bottom = (
+        math.floor(min(raw["oxidizer"] + raw["fuel"] + raw["chamber"]) / 100) * 100
+        if min(raw["oxidizer"] + raw["fuel"] + raw["chamber"]) < 0
+        else 0.0
+    )
+    required_thrust_bottom = (
+        math.floor(min(raw["thrust"]) / 200) * 200
+        if min(raw["thrust"]) < 0
+        else 0.0
+    )
+    required_mass_bottom = math.floor(min(raw["mass"])) if min(raw["mass"]) < 0 else 0.0
+    negative_ratio = max(
+        -required_pressure_bottom / pressure_top,
+        -required_thrust_bottom / thrust_top,
+        -required_mass_bottom / mass_top,
+    )
 
     figure, pressure_axis = plt.subplots(figsize=(14, 7.5), dpi=140, facecolor="white")
     thrust_axis = pressure_axis.twinx()
     mass_axis = pressure_axis.twinx()
-    figure.subplots_adjust(top=0.73, right=0.775, left=0.085, bottom=0.12)
+    figure.subplots_adjust(top=0.69, right=0.775, left=0.085, bottom=0.12)
     pressure_axis.set_facecolor("white")
 
     definitions = [
@@ -246,9 +261,9 @@ def main() -> None:
         handles.append(line)
 
     pressure_axis.set_xlim(times[0], times[-1])
-    pressure_axis.set_ylim(0, pressure_top)
-    thrust_axis.set_ylim(thrust_bottom, thrust_top)
-    mass_axis.set_ylim(0, mass_top)
+    pressure_axis.set_ylim(-negative_ratio * pressure_top, pressure_top)
+    thrust_axis.set_ylim(-negative_ratio * thrust_top, thrust_top)
+    mass_axis.set_ylim(-negative_ratio * mass_top, mass_top)
     pressure_axis.xaxis.set_major_locator(MultipleLocator(1))
     pressure_axis.yaxis.set_major_locator(MultipleLocator(100))
     thrust_axis.yaxis.set_major_locator(MultipleLocator(200))
@@ -267,7 +282,7 @@ def main() -> None:
     mass_axis.spines["right"].set_color(COLORS["mass"])
     mass_axis.tick_params(axis="y", colors=COLORS["mass"], pad=5)
 
-    pressure_axis.set_xlabel("Time, t (s)", fontsize=11)
+    pressure_axis.set_xlabel("Time (s)", fontsize=11)
     pressure_axis.set_ylabel("Pressure (psi)", fontsize=11)
     thrust_axis.set_ylabel("Thrust (N)", fontsize=11, color=COLORS["thrust"], labelpad=9)
     mass_axis.set_ylabel("Propellant mass (kg)", fontsize=11, color=COLORS["mass"], labelpad=12)
@@ -279,25 +294,25 @@ def main() -> None:
 
     annotate_peak(
         thrust_axis, times, raw["thrust"], 0.0, second_relative,
-        "Burn 1 peak thrust (N)", COLORS["thrust"], (18, -34),
+        "N", COLORS["thrust"], (18, 18),
     )
     annotate_peak(
         thrust_axis, times, raw["thrust"], second_relative, purge_clock - first_ignition,
-        "Burn 2 peak thrust (N)", COLORS["thrust"], (-145, -34),
+        "N", COLORS["thrust"], (18, 18),
     )
     annotate_peak(
         pressure_axis, times, raw["chamber"], 0.0, second_relative,
-        "Burn 1 peak chamber (psi)", COLORS["chamber"], (18, 18),
+        "psi", COLORS["chamber"], (18, 18),
     )
     annotate_peak(
         pressure_axis, times, raw["chamber"], second_relative, purge_clock - first_ignition,
-        "Burn 2 peak chamber (psi)", COLORS["chamber"], (-155, 18),
+        "psi", COLORS["chamber"], (18, -32),
     )
 
     figure.suptitle(
         "MACH Hotfire — August 20, 2026",
         x=0.075,
-        y=0.965,
+        y=0.975,
         ha="left",
         color="#0F172A",
         fontsize=24,
@@ -305,8 +320,8 @@ def main() -> None:
     )
     figure.text(
         0.075,
-        0.905,
-        f"t = 0 marks first Command Ignition · relight command at t = {second_relative:.2f} s",
+        0.885,
+        "Propellant load: fuel 2.51 kg · oxidizer 5.02 kg",
         color="#64748B",
         fontsize=12,
         ha="left",
@@ -315,7 +330,7 @@ def main() -> None:
     tank_rate = (rates["oxidizer"] + rates["fuel"]) / 2
     figure.text(
         0.075,
-        0.868,
+        0.835,
         f"Usable new-value rates: tank pressures {tank_rate:.1f} Hz · "
         f"chamber {rates['chamber']:.1f} Hz · thrust {rates['thrust']:.1f} Hz · "
         f"propellant mass {rates['mass']:.1f} Hz",
@@ -328,7 +343,7 @@ def main() -> None:
         handles=handles,
         labels=[handle.get_label() for handle in handles],
         loc="upper center",
-        bbox_to_anchor=(0.50, 0.815),
+        bbox_to_anchor=(0.50, 0.775),
         ncol=5,
         frameon=False,
         fontsize=10.5,
@@ -336,15 +351,19 @@ def main() -> None:
 
     figure.canvas.draw()
     pressure_zero = pressure_axis.transData.transform((0, 0))[1]
+    thrust_zero = thrust_axis.transData.transform((0, 0))[1]
     mass_zero = mass_axis.transData.transform((0, 0))[1]
-    if not math.isclose(pressure_zero, mass_zero, abs_tol=0.01):
+    zero_delta = max(pressure_zero, thrust_zero, mass_zero) - min(
+        pressure_zero, thrust_zero, mass_zero
+    )
+    if zero_delta > 0.01:
         raise AssertionError(
-            f"Pressure/mass zero baselines differ by {abs(pressure_zero - mass_zero):.4f} px"
+            f"Axis zero baselines differ by {zero_delta:.4f} px"
         )
 
     figure.savefig(OUTPUT, dpi=140, facecolor="white", bbox_inches="tight", pad_inches=0.15)
     plt.close(figure)
-    print(f"{OUTPUT} (zero delta: {abs(pressure_zero - mass_zero):.6f} px)")
+    print(f"{OUTPUT} (three-axis zero delta: {zero_delta:.6f} px)")
 
 
 if __name__ == "__main__":

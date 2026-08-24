@@ -18,7 +18,7 @@ The standard applies to burn-focused plots and extended sequence-history plots m
 10. Do not add burn-start or burn-end event lines unless they are explicitly requested.
 11. Put all event text and peak labels above every telemetry trace in the visual stacking order.
 12. Show the actual date in the title.
-13. Report usable new-value rates, not a nominal logger setting, in the standard figure note.
+13. Every telemetry graph must display usable new-value rates for every displayed measurement channel or channel group, calculated from the raw selected rows rather than a nominal logger setting.
 14. Keep the raw data downloadable beside the graph.
 
 ## 2. Source data and provenance
@@ -277,9 +277,9 @@ Use rounded line caps and joins. The graph must remain readable without relying 
 - Outer right axis: `Propellant mass (kg)` with green ticks and spine.
 - Bottom axis: `Time, t (s)`.
 - Offset the propellant-mass spine outward enough that both right-axis labels remain legible.
-- Align the `0 kg` tick on the propellant-mass axis with the `0 psi` tick on the pressure axis at the same vertical position. When both series are non-negative, use the bottom plot boundary as their shared zero baseline.
+- Align the `0 psi`, `0 N`, and `0 kg` ticks on the pressure, thrust, and propellant-mass axes at exactly the same vertical position. When all three series are non-negative, use the bottom plot boundary as their shared zero baseline.
 - Choose limits that include every displayed measurement and annotation.
-- Never clip a requested series to align the zero baselines; if negative values are present, extend both axes below zero proportionally.
+- Never clip a requested series to align the zero baselines; if negative values are present on any channel, extend all three axes below zero proportionally.
 - Prefer clean major intervals: 100 psi for pressure, 100 or 200 N for thrust, and 0.5, 1, or 5 kg for propellant mass depending on span.
 
 Identical limits may be used for direct cross-test comparison. Otherwise, use readable per-test limits and rely on explicit axis units and tick values.
@@ -293,6 +293,10 @@ Use this order:
 3. usable new-value rate note;
 4. compact five-series legend;
 5. plotting area.
+
+Reserve a clear vertical gap between the title and the first subheading. The title,
+subheading, notes, legend, and plotting area must occupy separate rows without
+touching or overlapping, including after tight-bounding-box export.
 
 Do not include a run number in the published title unless it is necessary to distinguish multiple plots from the same date.
 
@@ -400,7 +404,7 @@ Do not add placeholder paragraphs, speculative explanations, or generated test c
 - [ ] Date appears in the title.
 - [ ] `t = 0` subtitle is present.
 - [ ] Pressure, thrust, and propellant-mass axes have correct units.
-- [ ] The pressure and propellant-mass zero ticks share the same horizontal baseline.
+- [ ] The pressure, thrust, and propellant-mass zero ticks share the same horizontal baseline.
 - [ ] One-second x ticks are used for the standard burn view.
 - [ ] Igniter and combined valve event lines are present.
 - [ ] No unrequested burn-start or burn-end lines are present.

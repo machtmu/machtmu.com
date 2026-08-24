@@ -164,22 +164,40 @@ def floor_step(value: float, step: float) -> float:
     return math.floor(value / step) * step
 
 
-def aligned_pressure_mass_limits(
-    pressure_values: list[float], mass_values: list[float]
-) -> tuple[tuple[float, float], tuple[float, float]]:
+def aligned_axis_limits(
+    pressure_values: list[float], thrust_values: list[float], mass_values: list[float]
+) -> tuple[tuple[float, float], tuple[float, float], tuple[float, float]]:
     pressure_top = max(400.0, ceil_step(max(pressure_values) * 1.05, 100.0))
     mass_min = min(mass_values)
-    if mass_min >= 0:
-        mass_top = max(2.0, ceil_step(max(mass_values) * 1.10, 1.0))
-        return (0.0, pressure_top), (0.0, mass_top)
+    mass_top = max(
+        4.0 if mass_min < 0 else 2.0,
+        ceil_step(max(mass_values) * 1.10, 1.0),
+    )
+    thrust_top = max(600.0, ceil_step(max(thrust_values) * 1.18, 100.0))
 
-    # Preserve negative raw load-cell readings while placing 0 psi and 0 kg on
-    # exactly the same horizontal baseline. Extra positive mass-axis headroom
-    # avoids forcing the pressure traces into an unnecessarily narrow band.
-    mass_bottom = floor_step(mass_min * 1.03, 0.5)
-    mass_top = max(4.0, ceil_step(max(mass_values) * 1.10, 1.0))
-    pressure_bottom = pressure_top * mass_bottom / mass_top
-    return (pressure_bottom, pressure_top), (mass_bottom, mass_top)
+    required_pressure_bottom = (
+        floor_step(min(pressure_values) * 1.03, 100.0)
+        if min(pressure_values) < 0
+        else 0.0
+    )
+    required_thrust_bottom = (
+        floor_step(min(thrust_values) * 1.10, 100.0)
+        if min(thrust_values) < 0
+        else 0.0
+    )
+    required_mass_bottom = (
+        floor_step(mass_min * 1.03, 0.5) if mass_min < 0 else 0.0
+    )
+    negative_ratio = max(
+        -required_pressure_bottom / pressure_top,
+        -required_thrust_bottom / thrust_top,
+        -required_mass_bottom / mass_top,
+    )
+    return (
+        (-negative_ratio * pressure_top, pressure_top),
+        (-negative_ratio * thrust_top, thrust_top),
+        (-negative_ratio * mass_top, mass_top),
+    )
 
 
 def halo(text) -> None:
@@ -233,12 +251,11 @@ def make_plot(config: dict) -> None:
         for key in ("oxidizer", "fuel", "chamber", "thrust", "mass")
     }
 
-    pressure_limits, mass_limits = aligned_pressure_mass_limits(
-        values["oxidizer"] + values["fuel"] + values["chamber"], values["mass"]
+    pressure_limits, thrust_limits, mass_limits = aligned_axis_limits(
+        values["oxidizer"] + values["fuel"] + values["chamber"],
+        values["thrust"],
+        values["mass"],
     )
-    thrust_min = min(values["thrust"])
-    thrust_bottom = floor_step(thrust_min * 1.10, 100.0) if thrust_min < 0 else 0.0
-    thrust_top = max(600.0, ceil_step(max(values["thrust"]) * 1.18, 100.0))
 
     plt.rcParams.update(
         {
@@ -302,11 +319,11 @@ def make_plot(config: dict) -> None:
 
     pressure_axis.set_xlim(time[0], time[-1])
     pressure_axis.set_ylim(*pressure_limits)
-    thrust_axis.set_ylim(thrust_bottom, thrust_top)
+    thrust_axis.set_ylim(*thrust_limits)
     mass_axis.set_ylim(*mass_limits)
     pressure_axis.xaxis.set_major_locator(MultipleLocator(1))
     pressure_axis.yaxis.set_major_locator(MultipleLocator(100))
-    thrust_axis.yaxis.set_major_locator(MultipleLocator(200 if thrust_top >= 800 else 100))
+    thrust_axis.yaxis.set_major_locator(MultipleLocator(200 if thrust_limits[1] >= 800 else 100))
     mass_axis.yaxis.set_major_locator(MultipleLocator(1 if mass_limits[1] >= 4 else 0.5))
     pressure_axis.grid(axis="y", color="#CBD5E1", linewidth=0.8, alpha=0.65)
     pressure_axis.grid(axis="x", visible=False)
@@ -359,7 +376,7 @@ def make_plot(config: dict) -> None:
     figure.suptitle(
         f"MACH Hotfire — {config['date']}",
         x=0.075,
-        y=0.965,
+        y=0.975,
         ha="left",
         color="#0F172A",
         fontsize=24,
@@ -367,7 +384,7 @@ def make_plot(config: dict) -> None:
     )
     figure.text(
         0.075,
-        0.905,
+        0.890,
         "t = 0 marks Command Ignition",
         color="#64748B",
         fontsize=12,
@@ -377,7 +394,7 @@ def make_plot(config: dict) -> None:
     tank_rate = (usable_rate(rows, "oxidizer") + usable_rate(rows, "fuel")) / 2
     figure.text(
         0.075,
-        0.868,
+        0.842,
         "Usable new-value rates: "
         f"tank pressures {tank_rate:.1f} Hz · "
         f"chamber {usable_rate(rows, 'chamber'):.1f} Hz · "
@@ -392,7 +409,7 @@ def make_plot(config: dict) -> None:
         handles=handles,
         labels=[handle.get_label() for handle in handles],
         loc="upper center",
-        bbox_to_anchor=(0.50, 0.815),
+        bbox_to_anchor=(0.50, 0.785),
         ncol=5,
         frameon=False,
         handlelength=2.4,
@@ -403,13 +420,17 @@ def make_plot(config: dict) -> None:
     for text in legend.get_texts():
         text.set_color("#1E293B")
 
-    figure.subplots_adjust(left=0.085, right=0.775, bottom=0.12, top=0.73)
+    figure.subplots_adjust(left=0.085, right=0.775, bottom=0.12, top=0.70)
     figure.canvas.draw()
     pressure_zero = pressure_axis.transData.transform((0, 0))[1]
+    thrust_zero = thrust_axis.transData.transform((0, 0))[1]
     mass_zero = mass_axis.transData.transform((0, 0))[1]
-    if not math.isclose(pressure_zero, mass_zero, abs_tol=0.01):
+    zero_delta = max(pressure_zero, thrust_zero, mass_zero) - min(
+        pressure_zero, thrust_zero, mass_zero
+    )
+    if zero_delta > 0.01:
         raise AssertionError(
-            f"Pressure/mass zero baselines differ by {abs(pressure_zero - mass_zero):.4f} px"
+            f"Axis zero baselines differ by {zero_delta:.4f} px"
         )
 
     config["output"].parent.mkdir(parents=True, exist_ok=True)
@@ -421,7 +442,7 @@ def make_plot(config: dict) -> None:
         pad_inches=0.14,
     )
     plt.close(figure)
-    print(f"{config['output']} (zero delta: {abs(pressure_zero - mass_zero):.6f} px)")
+    print(f"{config['output']} (three-axis zero delta: {zero_delta:.6f} px)")
 
 
 def main() -> None:
