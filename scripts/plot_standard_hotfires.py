@@ -361,7 +361,7 @@ def make_plot(config: dict) -> None:
         pressure_axis,
         time[chamber_peak_index],
         values["chamber"][chamber_peak_index],
-        f"Peak chamber {values['chamber'][chamber_peak_index]:.1f} psi",
+        f"{values['chamber'][chamber_peak_index]:.1f} psi",
         COLORS["chamber"],
     )
     thrust_peak_index = max(range(len(rows)), key=lambda index: values["thrust"][index])
@@ -369,7 +369,7 @@ def make_plot(config: dict) -> None:
         thrust_axis,
         time[thrust_peak_index],
         values["thrust"][thrust_peak_index],
-        f"Peak thrust {values['thrust'][thrust_peak_index]:.1f} N",
+        f"{values['thrust'][thrust_peak_index]:.1f} N",
         COLORS["thrust"],
     )
 

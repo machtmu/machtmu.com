@@ -310,6 +310,7 @@ Annotate, when the channel is valid:
 Standards:
 
 - compute peaks from raw values inside the plotted window;
+- show only the numeric value and unit in the callout, such as `254.4 psi` or `1233.3 N`; do not prefix it with `Peak chamber`, `Peak thrust`, a burn number, or other redundant wording;
 - place a visible point marker at the exact peak sample;
 - position text close to the peak, normally 16–20 display points away;
 - use a short leader line;

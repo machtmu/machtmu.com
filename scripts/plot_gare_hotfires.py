@@ -240,7 +240,7 @@ def make_plot(
             ax,
             pk["chamber_pressure_time_s"],
             pk["chamber_pressure_psi"],
-            f"Peak chamber {pk['chamber_pressure_psi']:.1f} psi",
+            f"{pk['chamber_pressure_psi']:.1f} psi",
             COLORS["chamber_pressure_psi"],
             offset=(18, 16),
         )
