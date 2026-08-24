@@ -12,8 +12,8 @@ The standard applies to burn-focused plots and extended sequence-history plots m
 4. Preserve the first and final measurement in the selected time window.
 5. Use the system clock as the primary plotting time base after checking it against `deltaTime`.
 6. Set `t = 0` to the `%sCommand Ignition` transition.
-7. Use pressure in psi, thrust in newtons (N), and tank weight in kilograms (kg).
-8. Put pressure on the left axis, thrust on the first right axis, and tank weight on the outer right axis.
+7. Use pressure in psi, thrust in newtons (N), and propellant mass in kilograms (kg).
+8. Put pressure on the left axis, thrust on the first right axis, and propellant mass on the outer right axis.
 9. Draw one ignition-command event line and one combined `MOV + MFV OPEN` event line.
 10. Do not add burn-start or burn-end event lines unless they are explicitly requested.
 11. Put all event text and peak labels above every telemetry trace in the visual stacking order.
@@ -64,7 +64,7 @@ The standard burn plot contains five channels:
 | Fuel tank pressure | `Fuel Tank Pressure` | psi | left |
 | Chamber pressure | `Chamber Pressure 1` | psi | left |
 | Thrust | `Thrust` or `Thrust (kg)` | N | first right |
-| Tank weight | `Total Tank Mass` | kg | outer right |
+| Propellant mass | `Total Tank Mass` | kg | outer right |
 
 Column names may vary between logger versions. Confirm their meaning from the source headers rather than relying only on column position.
 
@@ -90,13 +90,13 @@ N = kgf × 9.80665
 
 Label the axis `Thrust (N)`. Do not label kilograms-force as kilograms of mass in the published figure.
 
-### 4.3 Tank weight
+### 4.3 Propellant mass
 
-Keep tank weight in kilograms. The standard plot shows the raw `Total Tank Mass` or load-cell reading without automatically taring it to zero.
+Keep propellant mass in kilograms. The standard plot shows the raw `Total Tank Mass` or load-cell reading without automatically taring it to zero.
 
-If the analysis intentionally subtracts a starting value, label the result `Tank weight change (kg)` and record the baseline time and value. Never present a tared series as absolute tank weight.
+If the analysis intentionally subtracts a starting value, label the result `Propellant mass change (kg)` and record the baseline time and value. Never present a tared series as absolute propellant mass.
 
-Negative load-cell readings must remain visible when they occur. Expand the tank-weight axis instead of clipping them, and do not silently clamp them to zero.
+Negative load-cell readings must remain visible when they occur. Expand the propellant-mass and pressure axes below zero by proportional amounts so their zero ticks remain on the same horizontal baseline. Do not silently clamp negative readings to zero.
 
 ## 5. Time base
 
@@ -206,7 +206,7 @@ Calculate the rate from the raw selected rows before adding any forced final end
 Display rates to one decimal place. The standard note is:
 
 ```text
-Usable new-value rates: tank pressures X.X Hz · chamber X.X Hz · thrust X.X Hz · tank weight X.X Hz
+Usable new-value rates: tank pressures X.X Hz · chamber X.X Hz · thrust X.X Hz · propellant mass X.X Hz
 ```
 
 For the combined tank-pressure value, use the mean of the oxidizer- and fuel-tank new-value rates. If the two rates differ materially, report them separately or as a range.
@@ -258,7 +258,7 @@ Use the same mapping in every published hotfire plot:
 | Fuel tank pressure | `#F59E0B` | 2.8 |
 | Chamber pressure | `#7C3AED` | 3.2 |
 | Thrust | `#E11D48` | 3.2 |
-| Tank weight | `#059669` | 2.8 |
+| Propellant mass | `#059669` | 2.8 |
 
 Use rounded line caps and joins. The graph must remain readable without relying only on color; the legend and axis labels must name every series and unit.
 
@@ -274,12 +274,13 @@ Use rounded line caps and joins. The graph must remain readable without relying 
 
 - Left axis: `Pressure (psi)`.
 - First right axis: `Thrust (N)` with red ticks and spine.
-- Outer right axis: `Tank weight (kg)` with green ticks and spine.
+- Outer right axis: `Propellant mass (kg)` with green ticks and spine.
 - Bottom axis: `Time, t (s)`.
-- Offset the tank-weight spine outward enough that both right-axis labels remain legible.
+- Offset the propellant-mass spine outward enough that both right-axis labels remain legible.
+- Align the `0 kg` tick on the propellant-mass axis with the `0 psi` tick on the pressure axis at the same vertical position. When both series are non-negative, use the bottom plot boundary as their shared zero baseline.
 - Choose limits that include every displayed measurement and annotation.
-- Never clip a requested series merely to keep a preferred zero baseline.
-- Prefer clean major intervals: 100 psi for pressure, 100 or 200 N for thrust, and 0.5, 1, or 5 kg for tank weight depending on span.
+- Never clip a requested series to align the zero baselines; if negative values are present, extend both axes below zero proportionally.
+- Prefer clean major intervals: 100 psi for pressure, 100 or 200 N for thrust, and 0.5, 1, or 5 kg for propellant mass depending on span.
 
 Identical limits may be used for direct cross-test comparison. Otherwise, use readable per-test limits and rely on explicit axis units and tick values.
 
@@ -398,7 +399,8 @@ Do not add placeholder paragraphs, speculative explanations, or generated test c
 
 - [ ] Date appears in the title.
 - [ ] `t = 0` subtitle is present.
-- [ ] Pressure, thrust, and tank-weight axes have correct units.
+- [ ] Pressure, thrust, and propellant-mass axes have correct units.
+- [ ] The pressure and propellant-mass zero ticks share the same horizontal baseline.
 - [ ] One-second x ticks are used for the standard burn view.
 - [ ] Igniter and combined valve event lines are present.
 - [ ] No unrequested burn-start or burn-end lines are present.

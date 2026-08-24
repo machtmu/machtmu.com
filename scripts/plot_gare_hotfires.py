@@ -197,7 +197,7 @@ def make_plot(
         fig.text(
             0.5,
             0.854,
-            "Chamber-pressure and tank-weight channels unavailable · feed pressures shown dashed",
+            "Chamber-pressure and propellant-mass channels unavailable · feed pressures shown dashed",
             ha="center",
             va="center",
             fontsize=9.5,
@@ -208,7 +208,7 @@ def make_plot(
         fig.text(
             0.5,
             0.854,
-            "Tank-weight channel unavailable",
+            "Propellant-mass channel unavailable",
             ha="center",
             va="center",
             fontsize=9.5,
