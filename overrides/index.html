@@ -328,6 +328,38 @@
       margin-bottom: 1rem;
     }
 
+    .hotfire-showcase__header {
+      align-items: baseline;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    section.video-showcase .hotfire-showcase__header h2 {
+      margin-bottom: 0;
+    }
+
+    .hotfire-showcase__report,
+    .hotfire-showcase__report:visited {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.82) !important;
+      flex: 0 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding-bottom: 0.15rem;
+      text-decoration: none !important;
+      text-transform: uppercase;
+    }
+
+    .hotfire-showcase__report:hover,
+    .hotfire-showcase__report:focus {
+      border-bottom-color: #fff;
+      color: #fff !important;
+    }
+
     section.about p,
     section.video-showcase p {
       font-family: 'Source Sans Pro', sans-serif;
@@ -346,6 +378,32 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    .hotfire-data {
+      margin: 1.25rem 0 0;
+      width: 100%;
+    }
+
+    .hotfire-data a {
+      display: block;
+    }
+
+    .hotfire-data img {
+      background: #f5f6f8;
+      border-radius: 6px;
+      display: block;
+      height: auto;
+      margin: 0;
+      width: 100%;
+    }
+
+    .hotfire-data figcaption {
+      color: rgba(255, 255, 255, 0.68);
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.78rem;
+      margin-top: 0.5rem;
+      text-align: right;
     }
 
     /* Simple slideshow */
@@ -413,6 +471,16 @@
 
       .home-project-link__years {
         font-size: 0.62rem;
+      }
+
+      .hotfire-showcase__header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .hotfire-data figcaption {
+        text-align: left;
       }
     }
 
@@ -482,7 +550,10 @@
   <!-- Video Showcase Section -->
   <section class="video-showcase">
     <div class="md-container md-typeset">
-      <h2><a href="{{ 'Seraphina/aug-20-hotfire/' | url }}">Latest hotfire: August 20 relight test</a></h2>
+      <div class="hotfire-showcase__header">
+        <h2>Latest hotfire: August 20 relight test</h2>
+        <a class="hotfire-showcase__report" href="{{ 'Seraphina/aug-20-hotfire/' | url }}">View full test report</a>
+      </div>
       <div class="video-container">
         <video class="showcase-video" controls muted loop playsinline preload="metadata"
                aria-label="Seraphina relight test on August 20th, 2026"
@@ -490,6 +561,17 @@
           <source src="{{ base_url }}/Seraphina/aug-20-hotfire/seraphina-double-hotfire.mp4" type="video/mp4">
         </video>
       </div>
+
+      <figure class="hotfire-data">
+        <a href="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
+           target="_blank" rel="noopener"
+           aria-label="Open the full-resolution August 20 double-hotfire telemetry plot">
+          <img src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
+               alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Double-hotfire telemetry · Open for full resolution</figcaption>
+      </figure>
 
       <div class="image-slideshow-container">
         <div class="image-slideshow">
