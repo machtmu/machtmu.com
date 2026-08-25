@@ -14,7 +14,7 @@ Two additional hot fires were completed on September 14. The first again lost da
 
 ## Final Run Measurements
 
-The September 14 telemetry reached 839.1 N peak thrust and 184.1 psi peak chamber pressure. Contemporary analysis reported approximately 2.4 kN·s total impulse. After unchanged duplicate samples were removed without smoothing, usable new-value rates were 19.4 Hz for tank pressure, 16.0 Hz for chamber pressure, 13.6 Hz for thrust and 10.6 Hz for tank mass.
+The September 14 telemetry reached 839.1 N peak thrust and 184.1 psi peak chamber pressure. Contemporary analysis reported approximately 2.4 kN·s total impulse. The graph offsets the propellant-mass channel so its minimum plotted reading is 0 kg; pressure and thrust values are unchanged. After unchanged duplicate samples were removed without smoothing, usable new-value rates were 19.4 Hz for tank pressure, 16.0 Hz for chamber pressure, 13.6 Hz for thrust and 10.6 Hz for propellant mass.
 
 ## Test Videos
 
@@ -37,8 +37,8 @@ The September 14 telemetry reached 839.1 N peak thrust and 184.1 psi peak chambe
 ## Burn Telemetry
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/sept-13-hotfire/sprint-hotfire3-perf.png" alt="SPRINT burn telemetry for September 14th, 2025" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
-  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Unsmoothed telemetry from the final September 14 firing.</figcaption>
+  <img src="/SPRINT/sept-13-hotfire/sprint-hotfire3-perf.png" alt="SPRINT burn telemetry for September 14th, 2025 with propellant mass normalized to a minimum of zero kilograms" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Unsmoothed telemetry from the final September 14 firing; propellant mass is normalized to a minimum of 0 kg.</figcaption>
 </figure>
 
 ## Team Photo

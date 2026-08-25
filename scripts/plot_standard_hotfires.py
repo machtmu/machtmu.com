@@ -35,6 +35,7 @@ CONFIGS = [
         "output": ROOT / "docs/SPRINT/sept-13-hotfire/sprint-hotfire3-perf.png",
         "clock": "System Clock",
         "thrust": "Thrust (kg)",
+        "normalize_mass_to_minimum": True,
     },
     {
         "date": "December 16, 2025",
@@ -251,6 +252,10 @@ def make_plot(config: dict) -> None:
         key: [row[key] for row in rows]
         for key in ("oxidizer", "fuel", "chamber", "thrust", "mass")
     }
+    mass_offset = 0.0
+    if config.get("normalize_mass_to_minimum"):
+        mass_offset = min(values["mass"])
+        values["mass"] = [value - mass_offset for value in values["mass"]]
 
     pressure_limits, thrust_limits, mass_limits = aligned_axis_limits(
         values["oxidizer"] + values["fuel"] + values["chamber"],
@@ -349,7 +354,7 @@ def make_plot(config: dict) -> None:
     mass_axis.spines["right"].set_linewidth(1.0)
     mass_axis.tick_params(axis="y", colors=COLORS["mass"], length=4, pad=5)
 
-    pressure_axis.set_xlabel("Time, t (s)", color="#0F172A", labelpad=12)
+    pressure_axis.set_xlabel("Time (s)", color="#0F172A", labelpad=12)
     pressure_axis.set_ylabel("Pressure (psi)", color="#0F172A", labelpad=12)
     thrust_axis.set_ylabel("Thrust (N)", color=COLORS["thrust"], labelpad=9)
     mass_axis.set_ylabel("Propellant mass (kg)", color=COLORS["mass"], labelpad=12)
@@ -384,12 +389,15 @@ def make_plot(config: dict) -> None:
         fontweight="bold",
     )
     propellant_load = config.get("propellant_load")
-    subtitle = (
-        f"Propellant load: fuel {propellant_load['fuel']:.2f} kg · "
-        f"oxidizer {propellant_load['oxidizer']:.2f} kg"
-        if propellant_load
-        else "t = 0 marks Command Ignition"
-    )
+    if config.get("normalize_mass_to_minimum"):
+        subtitle = "Propellant mass normalized so the plotted minimum is 0 kg"
+    elif propellant_load:
+        subtitle = (
+            f"Propellant load: fuel {propellant_load['fuel']:.2f} kg · "
+            f"oxidizer {propellant_load['oxidizer']:.2f} kg"
+        )
+    else:
+        subtitle = "t = 0 marks Command Ignition"
     figure.text(
         0.075,
         0.890,
@@ -450,7 +458,10 @@ def make_plot(config: dict) -> None:
         pad_inches=0.14,
     )
     plt.close(figure)
-    print(f"{config['output']} (three-axis zero delta: {zero_delta:.6f} px)")
+    mass_note = f"; mass offset={mass_offset:.3f} kg" if config.get("normalize_mass_to_minimum") else ""
+    print(
+        f"{config['output']} (three-axis zero delta: {zero_delta:.6f} px{mass_note})"
+    )
 
 
 def main() -> None:
