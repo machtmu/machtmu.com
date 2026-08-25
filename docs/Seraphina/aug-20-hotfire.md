@@ -1,6 +1,6 @@
 ---
 title: Relight Test - August 20th, 2026
-description: Seraphina completed two hot fires in one uninterrupted remotely commanded sequence on August 20th, 2026, with combined pressure, thrust and propellant-mass telemetry.
+description: Seraphina completed a remotely commanded relight sequence and an additional hotfire on August 20th, 2026. Telemetry is available for the relight sequence; the additional firing is documented by video only.
 image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
 ---
 
@@ -14,6 +14,17 @@ On August 20, 2026, MACH completed a remotely commanded relight of its liquid-bi
   <video controls preload="metadata" playsinline poster="/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp" aria-label="Seraphina relight test on August 20th, 2026" style="display:block; width:100%; max-width:1000px; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
     <source src="/Seraphina/aug-20-hotfire/seraphina-double-hotfire.mp4" type="video/mp4">
   </video>
+</figure>
+
+## Additional Hotfire
+
+A separate Seraphina hotfire was also completed on August 20. No telemetry data is available for this firing, so it is documented by video only and is not represented in the plots below.
+
+<figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
+  <video controls preload="metadata" playsinline poster="/Seraphina/aug-20-hotfire/seraphina-additional-hotfire-poster.webp" aria-label="Additional Seraphina hotfire on August 20th, 2026; no telemetry data is available" style="display:block; width:100%; max-width:1000px; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <source src="/Seraphina/aug-20-hotfire/seraphina-additional-hotfire.mp4" type="video/mp4">
+  </video>
+  <figcaption style="margin-top:0.75rem;">Additional August 20 hotfire. No telemetry data is available for this firing.</figcaption>
 </figure>
 
 ## Test Data

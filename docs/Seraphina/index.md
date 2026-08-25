@@ -21,7 +21,7 @@ Seraphina is MACH's project for 2026. It is a complete overhaul of the tank syst
     <div>
       <time datetime="2026-08-20">August 20, 2026</time>
       <h2><a href="aug-20-hotfire/">Relight test</a></h2>
-      <p>Two hot fires were completed in one uninterrupted remotely commanded sequence. The relight command followed the first ignition command by 13.85 seconds.</p>
+      <p>Two hot fires were completed in one uninterrupted remotely commanded sequence. A separate firing from the same day is also documented by video; no telemetry data is available for that firing.</p>
     </div>
   </article>
   <article>
