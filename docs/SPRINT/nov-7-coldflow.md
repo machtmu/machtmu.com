@@ -10,7 +10,7 @@ Two cold flows were completed in the quad beginning after 9:30 p.m. This was the
 
 ## Recorded Result
 
-The oxidizer-tank pressure channel peaked at approximately 579 psi in Test 1 and 523 psi in Test 2. The first file contains 3,848 rows over 68.45 seconds, or approximately 56 recorded rows per second. The second contains 1,942 rows over 57.13 seconds, or approximately 34 rows per second. Those measured row rates do not match the `100Hz` and `50Hz` labels in the archived filenames.
+The oxidizer-tank pressure channel peaked at approximately 579 psi in Test 1 and 523 psi in Test 2. Propellant-mass change, zeroed to the median reading during the two seconds before the oxidizer fill valve opened, reached 21.14 kg and 21.10 kg respectively. The first file contains 3,848 rows over 68.45 seconds, or approximately 56 recorded rows per second. The second contains 1,942 rows over 57.13 seconds, or approximately 34 rows per second. Those measured row rates do not match the `100Hz` and `50Hz` labels in the archived filenames.
 
 ## Test Video
 
@@ -28,14 +28,14 @@ The oxidizer-tank pressure channel peaked at approximately 579 psi in Test 1 and
 ### Test 1
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/nov-7-coldflow/sprint-nov7-coldflow-test1.png" alt="Pressure and flow telemetry from SPRINT cold flow test 1" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <img src="/SPRINT/nov-7-coldflow/sprint-nov7-coldflow-test1.png" alt="Oxidizer fill and tank pressures with propellant-mass change from SPRINT cold flow test 1" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Data from the first cold flow test on November 7th, 2025.</figcaption>
 </figure>
 
 ### Test 2
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/nov-7-coldflow/sprint-nov7-coldflow-test2.png" alt="Pressure and flow telemetry from SPRINT cold flow test 2" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <img src="/SPRINT/nov-7-coldflow/sprint-nov7-coldflow-test2.png" alt="Oxidizer fill and tank pressures with propellant-mass change from SPRINT cold flow test 2" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Data from the second cold flow test on November 7th, 2025.</figcaption>
 </figure>
 

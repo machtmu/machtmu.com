@@ -16,7 +16,7 @@ Run numbering is incomplete, so the page does not infer a total run count from t
 
 ## Recorded Runs
 
-Test 2 contains 5,232 telemetry rows over 134.14 seconds and reached approximately 537 psi on the oxidizer-tank pressure channel. Test 3 contains 10,924 rows over 280.23 seconds and reached approximately 448 psi. Both files average approximately 39 recorded rows per second.
+Test 2 contains 5,232 telemetry rows over 134.14 seconds and reached approximately 537 psi on the oxidizer-tank pressure channel. Test 3 contains 10,924 rows over 280.23 seconds and reached approximately 448 psi. Both files average approximately 39 recorded rows per second. The graphs show the load-cell channel as a change from the median reading during the two seconds before fill-valve opening, but its recorded kilogram values remain unverified because the debrief identifies tank load-cell calibration as an open action.
 
 ## Test Video
 
@@ -34,14 +34,14 @@ Test 2 contains 5,232 telemetry rows over 134.14 seconds and reached approximate
 ### Test 2
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/nov-20-coldflow/sprint-nov20-coldflow-test1.png" alt="Pressure and tank-mass telemetry from SPRINT cold flow test 2" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <img src="/SPRINT/nov-20-coldflow/sprint-nov20-coldflow-test1.png" alt="Oxidizer fill and tank pressures with unverified recorded propellant-mass change from SPRINT cold flow test 2" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Data from cold flow test 2 on November 20th, 2025.</figcaption>
 </figure>
 
 ### Test 3
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <img src="/SPRINT/nov-20-coldflow/sprint-nov20-coldflow-test2.png" alt="Pressure, tank-mass and valve-state telemetry from SPRINT cold flow test 3" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
+  <img src="/SPRINT/nov-20-coldflow/sprint-nov20-coldflow-test2.png" alt="Oxidizer fill and tank pressures with unverified recorded propellant-mass change from SPRINT cold flow test 3" loading="lazy" decoding="async" style="width:100%; max-width:1000px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">Data from cold flow test 3 on November 20th, 2025.</figcaption>
 </figure>
 

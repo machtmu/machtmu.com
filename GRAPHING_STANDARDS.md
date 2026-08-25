@@ -438,3 +438,23 @@ When a plot cannot follow this standard because of missing channels, corrupt tim
 5. do not make the graph appear more precise than the measurements support.
 
 Update this file when the team intentionally changes the publication standard. Do not let one-off plotting changes silently become the new default.
+
+## 15. Cold-flow adaptation
+
+For a cold-flow log without ignition, retain the same raw-data, duplicate-removal,
+usable-rate, typography, color, axis-alignment and website-verification rules with
+these deliberate adaptations:
+
+1. Use `MACH Cold Flow — Month D, YYYY · Test N` when multiple runs share a date.
+2. Set `t = 0` to the first recorded oxidizer fill-valve opening and select at least
+   two seconds of pre-fill baseline plus the complete fill-and-flow cycle.
+3. Plot oxidizer fill pressure and oxidizer tank pressure on the left axis.
+4. Plot the load-cell channel on the right axis as `Propellant mass change (kg)`,
+   zeroed to the median raw reading in the two seconds before fill-valve opening.
+5. State the recorded propellant load in the subtitle. If calibration is missing or
+   disputed, mark the load as unverified both on the figure and on the test page.
+6. Mark fill-valve and main-oxidizer-valve transitions with restrained dashed event
+   lines instead of scaling valve commands onto a pressure or mass axis.
+7. Annotate the oxidizer-tank pressure peak with only its numeric value and unit.
+8. Use `Time (s)` on the horizontal axis and keep the pressure and mass zero ticks
+   on exactly the same horizontal baseline.
