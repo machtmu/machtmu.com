@@ -13,6 +13,8 @@ hide:
 
 ## MACH
 
+- [MACH 2026 LCR](resources/MACH_LCR2026.pdf)
+
 - [MACH 2025 LCR](resources/MACH_LCR2025.pdf)
 
 - [MACH 2024 LCR](resources/MACH_LCR2024.pdf)
