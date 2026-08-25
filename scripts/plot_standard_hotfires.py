@@ -49,6 +49,7 @@ CONFIGS = [
         "output": ROOT / "docs/Seraphina/aug-6-hotfire/seraphina-hotfire-burn-telemetry.png",
         "clock": "System Clock (s)",
         "thrust": "Thrust",
+        "propellant_load": {"fuel": 2.20, "oxidizer": 4.62},
     },
 ]
 
@@ -382,10 +383,17 @@ def make_plot(config: dict) -> None:
         fontsize=24,
         fontweight="bold",
     )
+    propellant_load = config.get("propellant_load")
+    subtitle = (
+        f"Propellant load: fuel {propellant_load['fuel']:.2f} kg · "
+        f"oxidizer {propellant_load['oxidizer']:.2f} kg"
+        if propellant_load
+        else "t = 0 marks Command Ignition"
+    )
     figure.text(
         0.075,
         0.890,
-        "t = 0 marks Command Ignition",
+        subtitle,
         color="#64748B",
         fontsize=12,
         ha="left",
