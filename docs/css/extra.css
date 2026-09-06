@@ -787,6 +787,11 @@ a.former-member-card:hover {
     font: inherit;
 }
 
+/* Match the theme's desktop navigation breakpoint for our button control. */
+@media screen and (min-width: 76.25em) {
+    .md-header__button.mach-drawer-toggle { display: none; }
+}
+
 .md-header__button.mach-search-toggle {
     align-items: center;
     background: color-mix(in srgb, var(--md-default-bg-color) 8%, transparent);

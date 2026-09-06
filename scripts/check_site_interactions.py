@@ -22,12 +22,14 @@ with sync_playwright() as p:
   for path in ['/','/team/','/sponsors/','/Seraphina/aug-20-hotfire/','/timeline/','/SPRINT/']:
    page.goto(base+path,wait_until='domcontentloaded');page.wait_for_timeout(500)
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'), (path,'overflow')
+   assert page.locator('[data-mach-drawer-toggle]').is_visible() == (width < 1220)
    if path=='/':
     sections=page.locator('.md-content section').evaluate_all('(s)=>s.map(e=>e.className)');assert sections[0]=='video-showcase',sections
     if width==390:assert page.locator('.hero-bg').get_attribute('src') is None
     hero=page.locator('[data-hero-motion]');hero.click();page.wait_for_timeout(300)
     hero.click();page.wait_for_timeout(300)
-    page.locator('[data-slide-next]').click();assert 'team members' in page.locator('.slideshow-caption').inner_text()
+    assert page.locator('.slideshow-image').first.get_attribute('src').endswith('/SPRINT/electronics/overview.webp')
+    page.locator('[data-slide-next]').click();assert 'tank assembly' in page.locator('.slideshow-caption').inner_text()
     page.locator('[data-slide-previous]').click()
    if path=='/team/':
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
