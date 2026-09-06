@@ -1,0 +1,166 @@
+/* Shared surfaces and controls across project pages, figures and navigation. */
+:root, [data-md-color-scheme] {
+  --mach-radius: 0.45rem;
+  --mach-border: var(--md-default-fg-color--lightest);
+  --mach-surface: color-mix(in srgb, var(--md-default-fg-color) 3%, var(--md-default-bg-color));
+}
+.mach-control,
+.md-typeset a.find-out-more,
+.md-typeset a.md-button {
+  align-items: center;
+  background: var(--md-default-bg-color);
+  background-image: none !important;
+  border: 1px solid var(--mach-border);
+  border-radius: var(--mach-radius);
+  color: var(--md-default-fg-color) !important;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.4;
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none !important;
+  transition: background-color 150ms, border-color 150ms;
+  cursor: pointer;
+}
+.mach-control:hover,
+.md-typeset a.find-out-more:hover,
+.md-typeset a.md-button:hover {
+  background: var(--mach-surface);
+  border-color: var(--md-default-fg-color--light);
+}
+.mach-control:focus-visible, .hero-motion-toggle:focus-visible,
+.timeline-controls :is(a, select):focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+}
+.mach-control:disabled { opacity: 0.45; cursor: default; }
+.md-typeset :is(.test-item, .subsystem-item, .gare-timeline__card) {
+  border-color: var(--mach-border);
+  border-radius: var(--mach-radius);
+  box-shadow: none;
+  background: var(--mach-surface);
+}
+.md-typeset :is(.test-item, .subsystem-item):hover { transform: none; box-shadow: none; }
+.md-typeset :is(.test-gallery, .subsystem-gallery) { gap: 1rem; }
+.md-typeset :is(.test-item, .subsystem-item) { display: flex; flex-direction: column; align-items: flex-start; }
+.md-typeset :is(.test-item, .subsystem-item) .find-out-more { margin-top: auto; }
+
+/* All portraits have the same crop; initials occupy the same area as a photo. */
+.md-typeset .team-leads { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.md-typeset .team-leads img,
+.md-typeset .team-leads .team-initials {
+  aspect-ratio: 1;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+.md-typeset .team-leads .team-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mach-surface);
+  border: 1px solid var(--mach-border);
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+.former-member-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  background: var(--mach-surface);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.hero-motion-toggle {
+  position: absolute;
+  bottom: 1rem;
+  right: max(1rem, calc((100vw - 1200px) / 2));
+  background: rgb(0 0 0 / 70%);
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 50%);
+  border-radius: var(--mach-radius);
+  min-height: 44px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+.slideshow-controls { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
+.slideshow-controls[hidden], .hero-motion-toggle[hidden] { display: none; }
+
+.md-content img.mach-plot { max-height: none; }
+.plot-actions { display: flex; justify-content: flex-end; width: 100%; margin: 0.6rem 0; }
+body.plot-viewer-open { overflow: hidden; }
+dialog.plot-viewer {
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--mach-border);
+  border-radius: var(--mach-radius);
+  margin: auto;
+  padding: 1rem;
+  width: min(96vw, 1700px);
+  height: 92dvh;
+  max-width: 96vw;
+  max-height: 96dvh;
+}
+dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; }
+.plot-viewer::backdrop { background: rgb(0 0 0 / 70%); }
+.plot-viewer__header { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.plot-viewer__header h2 { margin: 0; font-size: 1rem; font-weight: 650; }
+.plot-viewer__toolbar { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.plot-viewer__toolbar output { min-width: 2rem; font-size: 0.75rem; text-align: center; }
+.plot-viewer__stage {
+  background: white;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--mach-border);
+  border-radius: 0.2rem;
+  padding: 12px;
+}
+.plot-viewer__stage img { max-width: none; max-height: none; height: auto; margin: 0 auto; }
+.plot-viewer__hint { font-size: 0.65rem; color: var(--md-default-fg-color--light); margin: 0; }
+
+.timeline-controls { margin: 1.5rem 0 0; }
+.gare-tag { color: var(--md-default-fg-color); }
+.timeline-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.65rem; }
+.timeline-filters label { display: flex; flex: 1 1 9rem; flex-direction: column; gap: 0.3rem; font-size: 0.68rem; font-weight: 600; }
+.timeline-filters select {
+  appearance: auto;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  border: 1px solid var(--mach-border);
+  border-radius: var(--mach-radius);
+  font: inherit;
+  min-height: 44px;
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+}
+.timeline-years { display: flex; flex-wrap: wrap; gap: 0.15rem 0.6rem; margin: 0.7rem 0 0; }
+.timeline-years a { display: inline-flex; min-height: 44px; align-items: center; font-size: 0.7rem; padding: 0 0.25rem; }
+.timeline-filter-status { font-size: 0.68rem; color: var(--md-default-fg-color--light); }
+.gare-timeline__year { scroll-margin-top: 7rem; }
+.gare-timeline > [hidden], .timeline-years > [hidden] { display: none !important; }
+@media (max-width: 600px) {
+  section.video-showcase h2, section.about h2 { font-size: 1.4rem; line-height: 1.3; }
+  section.about, section.video-showcase, section.photo-showcase { margin-bottom: 2rem; }
+  .md-typeset .team-leads { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md-typeset .team-leads li { padding: 0.6rem; }
+  .md-typeset .team-leads .team-initials { font-size: 2rem; }
+  .timeline-filters label { flex-basis: calc(50% - 0.65rem); }
+  dialog.plot-viewer { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; padding: 0.6rem; }
+  .plot-viewer .mach-control { padding: 0.4rem 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mach-control { transition: none; }
+}

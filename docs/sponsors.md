@@ -172,10 +172,12 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         object-fit: contain;
         padding: 10px;
         border-radius: 8px;
+        background: #fff;
+        border: 1px solid #e4e7ec;
     }
     
     [data-md-color-scheme="slate"] .sponsor-item.logo-dark-adapt img {
-        filter: invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);
+        filter: none;
     }
 
     .sponsor-item span {

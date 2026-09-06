@@ -173,6 +173,12 @@
       openSearch();
     } else if (event.key === "Escape") {
       closeSearch();
+      const drawer = document.getElementById("__drawer");
+      if (drawer?.checked) {
+        drawer.checked = false;
+        drawer.dispatchEvent(new Event("change", { bubbles: true }));
+        document.querySelector("[data-mach-drawer-toggle]")?.focus();
+      }
     }
   });
 

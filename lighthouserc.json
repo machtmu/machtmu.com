@@ -8,7 +8,10 @@
         "http://localhost/sponsors/",
         "http://localhost/GAR-E/",
         "http://localhost/SPRINT/",
-        "http://localhost/Seraphina/aug-6-hotfire/"
+        "http://localhost/Seraphina/aug-6-hotfire/",
+        "http://localhost/Seraphina/aug-20-hotfire/",
+        "http://localhost/timeline/",
+        "http://localhost/resources/"
       ],
       "numberOfRuns": 2,
       "settings": {

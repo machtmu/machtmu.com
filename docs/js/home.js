@@ -1,249 +1,109 @@
 (() => {
   "use strict";
-
   if (window.__machHomeEnhancementsLoaded) return;
   window.__machHomeEnhancementsLoaded = true;
+  let cleanup = () => {};
 
-  const captions = [
-    "Tank assembly showing integrated propulsion system components",
-    "MACH team members working alongside the latest propulsion system development",
-    "Complete SPRINT system overview showing integrated test setup and components"
-  ];
-
-  let cleanupCurrentPage = () => {};
-
-  function initializeHomepage() {
+  function initialize() {
+    cleanup();
     const hero = document.querySelector(".home-hero");
-    if (!hero) return () => {};
-
+    if (!hero) return;
+    const controller = new AbortController();
+    const { signal } = controller;
     const header = document.querySelector(".md-header");
-    const heroContent = hero.querySelector(".home-hero__inner");
-    const heroVideo = hero.querySelector(".hero-bg");
-    const starsContainer = document.getElementById("stars-container");
-    const showcaseVideo = document.querySelector(".showcase-video");
-    const slideshowImages = [...document.querySelectorAll(".slideshow-image")];
-    const slideshowCaption = document.querySelector(".slideshow-caption");
-    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const abortController = new AbortController();
-    const { signal } = abortController;
+    const video = hero.querySelector(".hero-bg");
+    const toggle = hero.querySelector("[data-hero-motion]");
+    const motion = matchMedia("(prefers-reduced-motion: reduce)");
+    let wantsVideo = !motion.matches && innerWidth > 768 && !navigator.connection?.saveData;
+    let visible = true;
+    let frame = 0;
 
-    let reducedMotion = motionPreference.matches;
-    let heroVisible = hero.getBoundingClientRect().bottom > 0;
-    let animationFrame = 0;
-    let slideshowTimer = 0;
-    let currentSlide = 0;
-
-    function setHeaderOffset() {
-      if (header) {
-        hero.style.setProperty("--home-header-offset", `${header.offsetHeight}px`);
-      }
+    function updateHeader() {
+      frame = 0;
+      if (!header) return;
+      hero.style.setProperty("--home-header-offset", `${header.offsetHeight}px`);
+      header.dataset.homeHero = hero.getBoundingClientRect().bottom > header.offsetHeight ? "overlay" : "scrolled";
     }
-
-    function updateHeaderAndParallax() {
-      animationFrame = 0;
-      const heroRect = hero.getBoundingClientRect();
-      const headerHeight = header ? header.offsetHeight : 0;
-
-      if (header) {
-        header.dataset.homeHero = heroRect.bottom > headerHeight ? "overlay" : "scrolled";
-      }
-
-      if (!heroContent || !heroVideo) return;
-
-      if (reducedMotion || heroRect.bottom <= 0 || heroRect.top >= window.innerHeight) {
-        heroContent.style.transform = "none";
-        heroVideo.style.transform = "scale(1.025)";
+    function scheduleHeader() {
+      if (!frame) frame = requestAnimationFrame(updateHeader);
+    }
+    function updateVideo() {
+      if (!video || !toggle) return;
+      toggle.hidden = false;
+      toggle.textContent = wantsVideo ? "Pause background video" : "Play background video";
+      toggle.setAttribute("aria-pressed", String(wantsVideo));
+      if (!wantsVideo || !visible || document.hidden) {
+        video.pause();
         return;
       }
-
-      const travelled = Math.min(Math.max(-heroRect.top, 0), heroRect.height);
-      heroContent.style.transform = `translate3d(0, ${travelled * -0.12}px, 0)`;
-      heroVideo.style.transform = `translate3d(0, ${travelled * 0.04}px, 0) scale(1.025)`;
-    }
-
-    function scheduleVisualUpdate() {
-      if (!animationFrame) {
-        animationFrame = window.requestAnimationFrame(updateHeaderAndParallax);
+      const src = innerWidth <= 768 ? video.dataset.mobileSrc : video.dataset.lightSrc;
+      if (video.getAttribute("src") !== src) {
+        video.src = src;
+        video.load();
       }
-    }
-
-    function activeScheme() {
-      return document.body.dataset.mdColorScheme === "slate" ? "dark" : "light";
-    }
-
-    function updateHeroPlayback() {
-      if (!heroVideo) return;
-      if (!reducedMotion && heroVisible && !document.hidden) {
-        heroVideo.play().catch(() => {});
-      } else {
-        heroVideo.pause();
-      }
-    }
-
-    function updateHeroMedia() {
-      if (!heroVideo) return;
-      const scheme = activeScheme();
-      const source = window.innerWidth <= 768 && heroVideo.dataset.mobileSrc
-        ? heroVideo.dataset.mobileSrc
-        : (scheme === "dark" ? heroVideo.dataset.darkSrc : heroVideo.dataset.lightSrc);
-      const poster = scheme === "dark" ? heroVideo.dataset.darkPoster : heroVideo.dataset.lightPoster;
-
-      if (poster) heroVideo.poster = poster;
-
-      if (reducedMotion) {
-        heroVideo.pause();
-        if (heroVideo.hasAttribute("src")) {
-          heroVideo.removeAttribute("src");
-          heroVideo.load();
-        }
-        return;
-      }
-
-      if (source && heroVideo.getAttribute("src") !== source) {
-        heroVideo.pause();
-        heroVideo.src = source;
-        heroVideo.preload = "metadata";
-        heroVideo.load();
-      }
-      updateHeroPlayback();
-    }
-
-    function createStars() {
-      if (!starsContainer) return;
-      starsContainer.replaceChildren();
-      const count = window.innerWidth <= 768 ? 45 : 90;
-      const fragment = document.createDocumentFragment();
-
-      for (let index = 0; index < count; index += 1) {
-        const star = document.createElement("span");
-        const size = Math.random() * 2.5 + 0.35;
-        star.className = "star";
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.top = `${Math.random() * 100}%`;
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.animationDuration = `${Math.random() * 5 + 2}s`;
-        star.style.animationDelay = `${Math.random() * 3}s`;
-        fragment.appendChild(star);
-      }
-
-      starsContainer.appendChild(fragment);
-    }
-
-    function showSlide(index) {
-      currentSlide = index;
-      slideshowImages.forEach((image, imageIndex) => {
-        image.style.opacity = imageIndex === currentSlide ? "1" : "0";
+      video.play().catch(() => {
+        if (signal.aborted || !visible || document.hidden) return;
+        wantsVideo = false;
+        toggle.textContent = "Play background video";
+        toggle.setAttribute("aria-pressed", "false");
       });
-      if (slideshowCaption) {
-        slideshowCaption.textContent = captions[currentSlide] || "";
-      }
     }
+    toggle?.addEventListener("click", () => { wantsVideo = !wantsVideo; updateVideo(); }, { signal });
+    const observer = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      updateVideo();
+    });
+    observer.observe(hero);
 
+    const images = [...document.querySelectorAll(".slideshow-image")];
+    const caption = document.querySelector(".slideshow-caption");
+    const slideToggle = document.querySelector("[data-slide-motion]");
+    const controls = document.querySelector(".slideshow-controls");
+    let index = 0;
+    let slidesPlaying = !motion.matches && innerWidth > 768;
+    let timer;
+    function showSlide(next) {
+      if (!images.length) return;
+      index = (next + images.length) % images.length;
+      images.forEach((image, i) => {
+        image.style.opacity = i === index ? "1" : "0";
+        image.setAttribute("aria-hidden", String(i !== index));
+      });
+      if (caption) caption.textContent = images[index].alt;
+    }
     function updateSlideshow() {
-      window.clearInterval(slideshowTimer);
-      slideshowTimer = 0;
-      showSlide(0);
-
-      if (!reducedMotion && slideshowImages.length > 1) {
-        slideshowTimer = window.setInterval(() => {
-          showSlide((currentSlide + 1) % slideshowImages.length);
-        }, 4000);
+      clearInterval(timer);
+      if (slideToggle) {
+        slideToggle.textContent = slidesPlaying ? "Pause slideshow" : "Play slideshow";
+        slideToggle.setAttribute("aria-pressed", String(slidesPlaying));
+      }
+      if (slidesPlaying && !document.hidden && images.length > 1) {
+        timer = setInterval(() => showSlide(index + 1), 5000);
       }
     }
-
-    function updateShowcasePlayback(isVisible = false) {
-      if (!showcaseVideo) return;
-      if (!reducedMotion && isVisible && !document.hidden) {
-        showcaseVideo.play().catch(() => {});
-      } else {
-        showcaseVideo.pause();
-      }
+    if (controls) controls.hidden = false;
+    slideToggle?.addEventListener("click", () => { slidesPlaying = !slidesPlaying; updateSlideshow(); }, { signal });
+    for (const [selector, direction] of [["[data-slide-previous]", -1], ["[data-slide-next]", 1]]) {
+      document.querySelector(selector)?.addEventListener("click", () => {
+        slidesPlaying = false;
+        showSlide(index + direction);
+        updateSlideshow();
+      }, { signal });
     }
-
-    const heroObserver = "IntersectionObserver" in window && heroVideo
-      ? new IntersectionObserver(entries => {
-          heroVisible = entries[0]?.isIntersecting ?? false;
-          updateHeroPlayback();
-        }, { rootMargin: "100px 0px" })
-      : null;
-
-    if (heroObserver) heroObserver.observe(hero);
-
-    const showcaseObserver = "IntersectionObserver" in window && showcaseVideo
-      ? new IntersectionObserver(entries => {
-          updateShowcasePlayback(entries[0]?.isIntersecting ?? false);
-        }, { rootMargin: "200px 0px" })
-      : null;
-
-    if (showcaseObserver) showcaseObserver.observe(showcaseVideo);
-
-    const schemeObserver = new MutationObserver(mutations => {
-      if (mutations.some(mutation => mutation.attributeName === "data-md-color-scheme")) {
-        updateHeroMedia();
-      }
-    });
-    schemeObserver.observe(document.body, {
-      attributes: true,
-      attributeFilter: ["data-md-color-scheme"]
-    });
-
-    function handleMotionPreference() {
-      reducedMotion = motionPreference.matches;
-      document.body.classList.toggle("home-reduced-motion", reducedMotion);
-      updateHeroMedia();
-      updateSlideshow();
-      updateShowcasePlayback(false);
-      scheduleVisualUpdate();
-    }
-
-    function handleResize() {
-      setHeaderOffset();
-      updateHeroMedia();
-      scheduleVisualUpdate();
-    }
-
-    function handleVisibilityChange() {
-      updateHeroPlayback();
-      if (document.hidden) updateShowcasePlayback(false);
-    }
-
-    window.addEventListener("scroll", scheduleVisualUpdate, { passive: true, signal });
-    window.addEventListener("resize", handleResize, { passive: true, signal });
-    document.addEventListener("visibilitychange", handleVisibilityChange, { signal });
-    motionPreference.addEventListener("change", handleMotionPreference);
-
-    setHeaderOffset();
-    createStars();
-    updateHeroMedia();
-    updateSlideshow();
-    updateHeaderAndParallax();
-
-    return () => {
-      abortController.abort();
-      motionPreference.removeEventListener("change", handleMotionPreference);
-      heroObserver?.disconnect();
-      showcaseObserver?.disconnect();
-      schemeObserver.disconnect();
-      window.clearInterval(slideshowTimer);
-      if (animationFrame) window.cancelAnimationFrame(animationFrame);
-      heroVideo?.pause();
-      showcaseVideo?.pause();
-      header?.removeAttribute("data-home-hero");
-      document.body.classList.remove("home-reduced-motion");
+    motion.addEventListener("change", () => {
+      if (motion.matches) { wantsVideo = false; slidesPlaying = false; }
+      updateVideo(); updateSlideshow();
+    }, { signal });
+    window.addEventListener("scroll", scheduleHeader, { passive: true, signal });
+    window.addEventListener("resize", () => { scheduleHeader(); updateVideo(); }, { passive: true, signal });
+    document.addEventListener("visibilitychange", () => { updateVideo(); updateSlideshow(); }, { signal });
+    updateHeader(); updateVideo(); showSlide(0); updateSlideshow();
+    cleanup = () => {
+      controller.abort(); observer.disconnect(); clearInterval(timer);
+      cancelAnimationFrame(frame); video?.pause(); header?.removeAttribute("data-home-hero");
     };
   }
-
-  function activateCurrentPage() {
-    cleanupCurrentPage();
-    cleanupCurrentPage = initializeHomepage();
-  }
-
-  activateCurrentPage();
-
-  if (window.document$?.subscribe) {
-    window.document$.subscribe(activateCurrentPage);
-  } else if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", activateCurrentPage, { once: true });
-  }
+  if (window.document$?.subscribe) window.document$.subscribe(initialize);
+  else if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize, { once: true });
+  else initialize();
 })();

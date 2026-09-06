@@ -20,18 +20,6 @@ Meet the people leading and building MACH.
 
     *Team Captain*
 
--   [![Zeul](assets/images/leads/Zeul-Captain.jpg)](https://www.linkedin.com/in/zeulewan/)
-
-    **[Zeul Mordasiewicz](https://www.linkedin.com/in/zeulewan/)**
-
-    *Lead*
-
--   [![Audrey](assets/images/leads/Audrey-Head-Engineer.jpg)](https://www.linkedin.com/in/audreyap/)
-
-    **[Audrey Abergel-Preston](https://www.linkedin.com/in/audreyap/)**
-
-    *Head Engineer*
-
 -   [![Kasper](assets/images/leads/Kasper-Mission-Control.jpg)](https://www.linkedin.com/in/kasper-pajak-462435282/)
 
     **[Kasper Pajak](https://www.linkedin.com/in/kasper-pajak-462435282/)**
@@ -42,7 +30,13 @@ Meet the people leading and building MACH.
 
     **Sam**
 
-    *Business Lead*
+    *Operations Director*
+
+-   <a class="team-initials" href="https://www.linkedin.com/in/jonathan-al-hinn/" aria-label="Jonathan Al-Hinn on LinkedIn"><span aria-hidden="true">JA</span></a>
+
+    **[Jonathan Al-Hinn](https://www.linkedin.com/in/jonathan-al-hinn/)**
+
+    *Safety Officer*
 
 -   [![Tobe](assets/images/leads/Tobe-Propellant-Management-Lead.jpg)](https://www.linkedin.com/in/tobechukwu-okoh/)
 
@@ -64,6 +58,7 @@ Meet the people leading and building MACH.
   <a class="former-member-card" href="https://ca.linkedin.com/in/adam-oudeh"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/adam-oudeh.jpg" alt=""><strong>Adam Oudeh</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/adityapshinde"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/aditya-shinde.jpg" alt=""><strong>Aditya Shinde</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/anuja-thurairajah-7b1a11290"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/anuja-thurairajah.jpg" alt=""><strong>Anuja Thurairajah</strong></a>
+  <a class="former-member-card" href="https://www.linkedin.com/in/audreyap/"><span class="former-member-initials" aria-hidden="true">AA</span><strong>Audrey Abergel-Preston</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/ben-kubica-9ab3912bb"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/ben-kubica.jpg" alt=""><strong>Ben Kubica</strong></a>
   <a class="former-member-card former-member-card--text-only" href="https://ca.linkedin.com/in/d-ibanescu"><strong>Daniel Ibanescu</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Dmitriy Leminov</strong></div>
@@ -82,4 +77,5 @@ Meet the people leading and building MACH.
   <a class="former-member-card" href="https://ca.linkedin.com/in/umaremshabbir"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/umar-shabbir.jpg" alt=""><strong>Umar Shabbir</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/william-pirie-25b8b31a9"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/william-pirie.jpg" alt=""><strong>William Pirie</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Yiwei Luo</strong></div>
+  <a class="former-member-card" href="https://www.linkedin.com/in/zeulewan/"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/leads/Zeul-Captain.jpg" alt=""><strong>Zeul Mordasiewicz</strong></a>
 </div>

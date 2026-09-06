@@ -6,7 +6,7 @@ image: https://machtmu.com/SPRINT/nov-20-coldflow/thumbnail.webp
 
 # SPRINT Cold Flow Test - November 20th, 2025
 
-The November 20 campaign integrated the revised control software with a separate mission-control station. The archive contains a Test 1 video and telemetry files labelled Test 2 and Test 3. [Read the debrief](/SPRINT/nov-20-coldflow/debrief/).
+The November 20 campaign integrated the revised control software with a separate mission-control station. The archive contains a Test 1 video and telemetry files labelled Test 2 and Test 3. [Read the debrief](nov-20-coldflow/debrief.md).
 
 ## Faults Found
 

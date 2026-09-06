@@ -43,6 +43,11 @@ A separate Seraphina hotfire was also completed on August 20. No telemetry data 
 
 ## Double Hotfire Telemetry
 
+| Firing | Peak thrust | Peak chamber pressure |
+| --- | ---: | ---: |
+| First | 1,380.1 N | 287.7 psi |
+| Relight | 1,208.1 N | 250.0 psi |
+
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
   <a href="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" target="_blank" rel="noopener" aria-label="Open the full-resolution Seraphina relight telemetry plot">
     <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" alt="Combined pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">

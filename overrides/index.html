@@ -85,7 +85,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap">
   <style>
     body {
-      background-color: #0A0E1A;
+      background-color: var(--md-default-bg-color);
     }
 
     /* Keep header controls readable while the header overlays the hero, then
@@ -166,8 +166,8 @@
       position: relative;
       isolation: isolate;
       margin-top: calc(-1 * var(--home-header-offset));
-      min-height: 100vh;
-      min-height: 100svh;
+      min-height: 30rem;
+      min-height: clamp(24rem, 62svh, 36rem);
       width: 100%;
       display: flex;
       justify-content: center;
@@ -190,6 +190,15 @@
       z-index: -1;
       pointer-events: none;
       transform: scale(1.025);
+    }
+
+    .home-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgb(0 0 0 / 16%), rgb(0 0 0 / 45%));
+      z-index: -1;
+      pointer-events: none;
     }
 
     .home-hero__inner {
@@ -269,9 +278,9 @@
     .home-project-link,
     .home-project-link:visited {
       align-items: center;
-      background: rgba(44, 62, 80, 0.94);
-      border-color: rgba(255, 255, 255, 0.22);
-      color: #fff !important;
+      background: var(--md-default-bg-color);
+      border-color: var(--md-default-fg-color--lightest);
+      color: var(--md-default-fg-color) !important;
       display: flex;
       flex-direction: column;
       gap: 0.15rem;
@@ -283,8 +292,8 @@
 
     .home-project-link:hover,
     .home-project-link:focus {
-      background: rgba(52, 73, 94, 0.98);
-      color: #fff !important;
+      background: color-mix(in srgb, var(--md-default-fg-color) 6%, var(--md-default-bg-color));
+      color: var(--md-default-fg-color) !important;
       text-decoration: none !important;
     }
 
@@ -304,9 +313,10 @@
 
     /* Sections */
     section.about,
-    section.video-showcase {
+    section.video-showcase,
+    section.photo-showcase {
       background: transparent;
-      color: #fff;
+      color: var(--md-default-fg-color);
       margin: 2rem auto 3rem auto;
     }
 
@@ -342,8 +352,8 @@
 
     .hotfire-showcase__report,
     .hotfire-showcase__report:visited {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      color: rgba(255, 255, 255, 0.82) !important;
+      border-bottom: 1px solid currentColor;
+      color: var(--md-default-fg-color) !important;
       flex: 0 0 auto;
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
@@ -356,8 +366,8 @@
 
     .hotfire-showcase__report:hover,
     .hotfire-showcase__report:focus {
-      border-bottom-color: #fff;
-      color: #fff !important;
+      border-bottom-color: currentColor;
+      color: var(--md-default-fg-color) !important;
     }
 
     section.about p,
@@ -399,7 +409,7 @@
     }
 
     .hotfire-data figcaption {
-      color: rgba(255, 255, 255, 0.68);
+      color: var(--md-default-fg-color--light);
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 0.78rem;
       margin-top: 0.5rem;
@@ -442,6 +452,7 @@
     @media (max-width: 768px) {
       .home-hero {
         --home-header-offset: 2.4rem;
+        min-height: clamp(22rem, 56svh, 29rem);
       }
 
       .home-hero__inner h1 {
@@ -503,13 +514,12 @@
 {% endblock %}
 
 {% block hero %}
-  <div id="stars-container"></div>
   <section class="home-hero">
     <video class="hero-bg" muted loop playsinline preload="none" aria-hidden="true"
            poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
-           data-light-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-optimized.mp4"
-           data-dark-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-optimized.mp4"
-           data-mobile-src="{{ base_url }}/assets/videos/seraphina-aug-6-hotfire-mobile.mp4"
+           data-light-src="{{ base_url }}/assets/videos/seraphina-hero-desktop.mp4"
+           data-dark-src="{{ base_url }}/assets/videos/seraphina-hero-desktop.mp4"
+           data-mobile-src="{{ base_url }}/assets/videos/seraphina-hero-mobile.mp4"
            data-light-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
            data-dark-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp">
       Your browser does not support embedded video.
@@ -517,17 +527,47 @@
 
     <div class="home-hero__inner">
       <h1 class="home-hero__title">MACH - TMU Liquid Rocketry</h1>
-      <p>Advanced liquid propulsion systems, precision avionics, and rigorous aerospace research</p>
+      <p>Toronto Metropolitan University's liquid rocketry team</p>
     </div>
+    <button type="button" class="hero-motion-toggle" data-hero-motion hidden>Pause background video</button>
   </section>
 {% endblock %}
 
 {% block content %}
+  <!-- Video Showcase Section -->
+  <section class="video-showcase">
+    <div class="md-container md-typeset">
+      <div class="hotfire-showcase__header">
+        <h2>Latest hotfire: August 20 relight test</h2>
+        <a class="hotfire-showcase__report" href="{{ 'Seraphina/aug-20-hotfire/' | url }}">View all test data</a>
+      </div>
+      <div class="video-container">
+        <video class="showcase-video" controls playsinline preload="none"
+               aria-label="Seraphina relight test on August 20th, 2026"
+               poster="{{ base_url }}/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp">
+          <source src="{{ base_url }}/Seraphina/aug-20-hotfire/seraphina-double-hotfire.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <figure class="hotfire-data">
+        <a href="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
+           target="_blank" rel="noopener"
+           aria-label="Open the full-resolution August 20 double-hotfire telemetry plot">
+          <img src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
+               alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026"
+               loading="lazy" decoding="async">
+        </a>
+        <figcaption>Double-hotfire telemetry · Open for full resolution</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
   <!-- About Section -->
   <section class="about">
     <div class="md-container md-typeset">
-      <h2>About Mach</h2>
-      <p>MACH is Toronto Metropolitan University's liquid rocketry team, pushing the boundaries of aerospace engineering through hands-on design and testing. We're developing cutting-edge liquid propulsion engines, advanced avionics systems, and conducting real-world test campaigns that prepare students for careers in the space industry. Our team designs PCB modules, tests rocket engines, and competes in national rocketry competitions.</p>
+      <h2>Built and tested by MACH</h2>
+      <p>We design liquid rocket engines, avionics and ground-support systems, then put them through real test campaigns. Explore the hardware, footage and measured results from each project.</p>
       <div class="home-hero__cta">
         <div class="home-project-links">
           <a href="{{ 'Seraphina/' | url }}" class="btn home-project-link">
@@ -547,32 +587,8 @@
     </div>
   </section>
 
-  <!-- Video Showcase Section -->
-  <section class="video-showcase">
+  <section class="photo-showcase">
     <div class="md-container md-typeset">
-      <div class="hotfire-showcase__header">
-        <h2>Latest hotfire: August 20 relight test</h2>
-        <a class="hotfire-showcase__report" href="{{ 'Seraphina/aug-20-hotfire/' | url }}">View all test data</a>
-      </div>
-      <div class="video-container">
-        <video class="showcase-video" controls muted loop playsinline preload="metadata"
-               aria-label="Seraphina relight test on August 20th, 2026"
-               poster="{{ base_url }}/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp">
-          <source src="{{ base_url }}/Seraphina/aug-20-hotfire/seraphina-double-hotfire.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <figure class="hotfire-data">
-        <a href="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
-           target="_blank" rel="noopener"
-           aria-label="Open the full-resolution August 20 double-hotfire telemetry plot">
-          <img src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
-               alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026"
-               loading="lazy" decoding="async">
-        </a>
-        <figcaption>Double-hotfire telemetry · Open for full resolution</figcaption>
-      </figure>
-
       <div class="image-slideshow-container">
         <div class="image-slideshow">
           <img src="{{ base_url }}/assets/images/tank-assembly-640.webp"
@@ -595,6 +611,11 @@
                class="slideshow-image">
         </div>
         <p class="slideshow-caption"></p>
+        <div class="slideshow-controls" hidden>
+          <button type="button" class="mach-control" data-slide-previous aria-label="Previous photo">←</button>
+          <button type="button" class="mach-control" data-slide-motion>Pause slideshow</button>
+          <button type="button" class="mach-control" data-slide-next aria-label="Next photo">→</button>
+        </div>
       </div>
     </div>
   </section>
