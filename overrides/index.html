@@ -529,7 +529,10 @@
       <h1 class="home-hero__title">MACH - TMU Liquid Rocketry</h1>
       <p>Toronto Metropolitan University's liquid rocketry team</p>
     </div>
-    <button type="button" class="hero-motion-toggle" data-hero-motion hidden>Pause background video</button>
+    <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play background video" title="Play background video" hidden>
+      <svg class="hero-motion-icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 11 7-11 7Z" /></svg>
+      <svg class="hero-motion-icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg>
+    </button>
   </section>
 {% endblock %}
 

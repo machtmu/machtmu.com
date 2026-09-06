@@ -85,15 +85,29 @@
   position: absolute;
   bottom: 1rem;
   right: max(1rem, calc((100vw - 1200px) / 2));
-  background: rgb(0 0 0 / 70%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
   color: #fff;
-  border: 1px solid rgb(255 255 255 / 50%);
-  border-radius: var(--mach-radius);
-  min-height: 44px;
-  padding: 0.45rem 0.7rem;
-  font-size: 0.65rem;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
   cursor: pointer;
 }
+.hero-motion-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 60%);
+}
+.hero-motion-toggle:hover::before, .hero-motion-toggle:focus-visible::before { background: rgb(0 0 0 / 80%); }
+.hero-motion-toggle svg { position: relative; width: 18px; height: 18px; fill: currentColor; }
+.hero-motion-toggle .hero-motion-icon--pause,
+.hero-motion-toggle[data-playing="true"] .hero-motion-icon--play { display: none; }
+.hero-motion-toggle[data-playing="true"] .hero-motion-icon--pause { display: block; }
 .slideshow-controls { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
 .slideshow-controls[hidden], .hero-motion-toggle[hidden] { display: none; }
 

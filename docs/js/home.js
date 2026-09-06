@@ -27,11 +27,16 @@
     function scheduleHeader() {
       if (!frame) frame = requestAnimationFrame(updateHeader);
     }
+    function updateVideoControl() {
+      const label = wantsVideo ? "Pause background video" : "Play background video";
+      toggle.dataset.playing = String(wantsVideo);
+      toggle.setAttribute("aria-label", label);
+      toggle.title = label;
+    }
     function updateVideo() {
       if (!video || !toggle) return;
       toggle.hidden = false;
-      toggle.textContent = wantsVideo ? "Pause background video" : "Play background video";
-      toggle.setAttribute("aria-pressed", String(wantsVideo));
+      updateVideoControl();
       if (!wantsVideo || !visible || document.hidden) {
         video.pause();
         return;
@@ -44,8 +49,7 @@
       video.play().catch(() => {
         if (signal.aborted || !visible || document.hidden) return;
         wantsVideo = false;
-        toggle.textContent = "Play background video";
-        toggle.setAttribute("aria-pressed", "false");
+        updateVideoControl();
       });
     }
     toggle?.addEventListener("click", () => { wantsVideo = !wantsVideo; updateVideo(); }, { signal });
