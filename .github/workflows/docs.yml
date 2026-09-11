@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - run: pip install zensical
+      - run: pip install zensical pandas tabulate
       - run: npm install --global @lhci/cli@0.15.x
       - run: zensical build --clean
       - name: Check built-site links and media
