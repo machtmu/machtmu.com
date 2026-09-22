@@ -58,6 +58,13 @@ with sync_playwright() as p:
                         lastCentered:Math.abs(last.x+last.width/2-bounds.x-bounds.width/2)<1};
                 }''')
                 assert spacing['firstHeight'] < 85 and 8 <= spacing['gap'] <= 16 and spacing['lastCentered'], spacing
+                # Pair the thin wordmarks instead of leaving Stein beside SolidWorks.
+                pair = page.locator('.sponsor-grid').evaluate('''grid=>{
+                    const a=grid.querySelector('[href*="voestalpine"]').getBoundingClientRect();
+                    const b=grid.querySelector('[href*="steinindustries"]').getBoundingClientRect();
+                    return {sameRow:Math.abs(a.y-b.y)<1, leftOfStein:a.right<b.x};
+                }''')
+                assert pair['sameRow'] and pair['leftOfStein'], pair
             for item in page.locator('.sponsor-item').all():
                 item.scroll_into_view_if_needed()
                 item.locator('img:visible').evaluate('(img)=>img.decode()')

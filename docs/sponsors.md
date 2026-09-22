@@ -111,9 +111,9 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.solidworks.com/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.78527607; --logo-width:102.564103%; --logo-left:-1.282051%; --logo-top:-103.374233%;">
-            <img loading="lazy" decoding="async" src="/sponsors/solidworks-logo.png" alt="SolidWorks">
+    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.74545455; --logo-width:104.597701%; --logo-left:-1.596424%; --logo-top:-7.575758%;">
+            <img loading="lazy" decoding="async" src="/sponsors/voestalpine-logo.png" alt="voestalpine AMNA">
         </span></span>
     </a>
     
@@ -147,9 +147,9 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.voestalpine.com/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.74545455; --logo-width:104.597701%; --logo-left:-1.596424%; --logo-top:-7.575758%;">
-            <img loading="lazy" decoding="async" src="/sponsors/voestalpine-logo.png" alt="voestalpine AMNA">
+    <a href="https://www.solidworks.com/" target="_blank" class="sponsor-item">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.78527607; --logo-width:102.564103%; --logo-left:-1.282051%; --logo-top:-103.374233%;">
+            <img loading="lazy" decoding="async" src="/sponsors/solidworks-logo.png" alt="SolidWorks">
         </span></span>
     </a>
 </div>
