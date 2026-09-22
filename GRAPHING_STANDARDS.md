@@ -270,6 +270,17 @@ Use rounded line caps and joins. The graph must remain readable without relying 
 - Do not add a shaded burn overlay unless explicitly requested.
 - Keep decorative effects minimal.
 
+#### Requested dark-mode variants
+
+For a requested native dark-mode variant, render a separate `-dark.png` from the
+same raw rows and plotting code. Preserve all data, geometry, labels, event times,
+and zero alignment. Use a dark figure and plotting background, lighter shades of
+the same channel hues, and matching dark text halos/event backings. Do not invert
+an existing raster with CSS. Keep the default white-background export and raw
+download unchanged, and switch the inline image, expanded viewer, and full-size
+link together with the website theme. The August 20 relight renderer provides
+`--theme dark` as the reference implementation.
+
 ### 9.3 Axes
 
 - Left axis: `Pressure (psi)`.

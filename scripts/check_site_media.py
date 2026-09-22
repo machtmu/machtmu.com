@@ -20,6 +20,8 @@ URL_ATTRIBUTES = {
     "data-light-poster",
     "data-light-src",
     "data-mobile-src",
+    "data-plot-light-src",
+    "data-plot-dark-src",
 }
 IGNORED_SCHEMES = {"data", "javascript", "mailto", "tel"}
 

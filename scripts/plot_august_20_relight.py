@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import math
 import re
 import xml.etree.ElementTree as ET
@@ -29,6 +30,17 @@ COLORS = {
     "mass": "#059669",
     "ignition": "#475569",
     "valves": "#0F766E",
+}
+
+# Brighter shades of the same channel hues for a native dark figure.
+DARK_COLORS = {
+    "oxidizer": "#60A5FA",
+    "fuel": "#FBBF24",
+    "chamber": "#C4B5FD",
+    "thrust": "#FB7185",
+    "mass": "#34D399",
+    "ignition": "#CBD5E1",
+    "valves": "#5EEAD4",
 }
 
 
@@ -143,7 +155,7 @@ def deduplicate(times: list[float], values: list[float]) -> tuple[list[float], l
     return [times[index] for index in keep], [values[index] for index in keep]
 
 
-def add_event(axis, time: float, label: str, color: str) -> None:
+def add_event(axis, time: float, label: str, color: str, background="white") -> None:
     axis.axvline(time, color=color, linewidth=1.5, linestyle=(0, (4, 3)), zorder=25)
     text = axis.text(
         time - 0.035,
@@ -158,15 +170,15 @@ def add_event(axis, time: float, label: str, color: str) -> None:
         fontweight="bold",
         zorder=60,
         clip_on=False,
-        bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.94, "pad": 1.0},
+        bbox={"facecolor": background, "edgecolor": "none", "alpha": 0.94, "pad": 1.0},
     )
-    text.set_path_effects([pe.Stroke(linewidth=4, foreground="white"), pe.Normal()])
+    text.set_path_effects([pe.Stroke(linewidth=4, foreground=background), pe.Normal()])
 
 
-def annotate_peak(axis, times, values, start, end, unit, color, offset) -> None:
+def annotate_peak(axis, times, values, start, end, unit, color, offset, background="white") -> None:
     candidates = [(time, value) for time, value in zip(times, values) if start <= time < end]
     peak_time, peak_value = max(candidates, key=lambda item: item[1])
-    axis.scatter([peak_time], [peak_value], s=38, color=color, edgecolor="white", linewidth=1.0, zorder=75)
+    axis.scatter([peak_time], [peak_value], s=38, color=color, edgecolor=background, linewidth=1.0, zorder=75)
     annotation = axis.annotate(
         f"{peak_value:.1f} {unit}",
         xy=(peak_time, peak_value),
@@ -178,10 +190,16 @@ def annotate_peak(axis, times, values, start, end, unit, color, offset) -> None:
         arrowprops={"arrowstyle": "-", "color": color, "linewidth": 1.2},
         zorder=80,
     )
-    annotation.set_path_effects([pe.Stroke(linewidth=4, foreground="white"), pe.Normal()])
+    annotation.set_path_effects([pe.Stroke(linewidth=4, foreground=background), pe.Normal()])
 
 
-def main() -> None:
+def main(theme="light", output=None) -> None:
+    dark = theme == "dark"
+    colors = DARK_COLORS if dark else COLORS
+    background = "#0B0D0F" if dark else "white"
+    foreground = "#E5E7EB" if dark else "black"
+    muted = "#94A3B8" if dark else "#64748B"
+    output = Path(output) if output else (OUTPUT.with_stem(OUTPUT.stem + "-dark") if dark else OUTPUT)
     all_rows = load_rows()
     ignition_clocks = transition_times(all_rows, "%sCommand Ignition")
     valve_clocks = transition_times(all_rows, "%sOpen Valves")
@@ -232,11 +250,11 @@ def main() -> None:
         -required_mass_bottom / mass_top,
     )
 
-    figure, pressure_axis = plt.subplots(figsize=(14, 7.5), dpi=140, facecolor="white")
+    figure, pressure_axis = plt.subplots(figsize=(14, 7.5), dpi=140, facecolor=background)
     thrust_axis = pressure_axis.twinx()
     mass_axis = pressure_axis.twinx()
     figure.subplots_adjust(top=0.69, right=0.775, left=0.085, bottom=0.12)
-    pressure_axis.set_facecolor("white")
+    pressure_axis.set_facecolor(background)
 
     definitions = [
         ("oxidizer", "Oxidizer tank pressure", pressure_axis, 2.8),
@@ -251,7 +269,7 @@ def main() -> None:
         line, = axis.plot(
             x_values,
             y_values,
-            color=COLORS[key],
+            color=colors[key],
             linewidth=width,
             solid_capstyle="round",
             solid_joinstyle="round",
@@ -268,45 +286,47 @@ def main() -> None:
     pressure_axis.yaxis.set_major_locator(MultipleLocator(100))
     thrust_axis.yaxis.set_major_locator(MultipleLocator(200))
     mass_axis.yaxis.set_major_locator(MultipleLocator(1))
-    pressure_axis.grid(axis="y", color="#CBD5E1", alpha=0.62, linewidth=0.8)
+    pressure_axis.grid(axis="y", color="#334155" if dark else "#CBD5E1", alpha=0.62, linewidth=0.8)
     pressure_axis.grid(axis="x", visible=False)
     pressure_axis.set_axisbelow(True)
 
     for axis in (pressure_axis, thrust_axis, mass_axis):
         axis.spines["top"].set_visible(False)
-        axis.tick_params(labelsize=9.5)
+        axis.tick_params(labelsize=9.5, colors=foreground)
+        for spine in axis.spines.values():
+            spine.set_color("#64748B" if dark else "black")
     pressure_axis.spines["right"].set_visible(False)
-    thrust_axis.spines["right"].set_color(COLORS["thrust"])
-    thrust_axis.tick_params(axis="y", colors=COLORS["thrust"], pad=5)
+    thrust_axis.spines["right"].set_color(colors["thrust"])
+    thrust_axis.tick_params(axis="y", colors=colors["thrust"], pad=5)
     mass_axis.spines["right"].set_position(("outward", 92))
-    mass_axis.spines["right"].set_color(COLORS["mass"])
-    mass_axis.tick_params(axis="y", colors=COLORS["mass"], pad=5)
+    mass_axis.spines["right"].set_color(colors["mass"])
+    mass_axis.tick_params(axis="y", colors=colors["mass"], pad=5)
 
-    pressure_axis.set_xlabel("Time (s)", fontsize=11)
-    pressure_axis.set_ylabel("Pressure (psi)", fontsize=11)
-    thrust_axis.set_ylabel("Thrust (N)", fontsize=11, color=COLORS["thrust"], labelpad=9)
-    mass_axis.set_ylabel("Propellant mass (kg)", fontsize=11, color=COLORS["mass"], labelpad=12)
+    pressure_axis.set_xlabel("Time (s)", fontsize=11, color=foreground)
+    pressure_axis.set_ylabel("Pressure (psi)", fontsize=11, color=foreground)
+    thrust_axis.set_ylabel("Thrust (N)", fontsize=11, color=colors["thrust"], labelpad=9)
+    mass_axis.set_ylabel("Propellant mass (kg)", fontsize=11, color=colors["mass"], labelpad=12)
 
-    add_event(pressure_axis, 0.0, "IGNITER COMMAND 1", COLORS["ignition"])
-    add_event(pressure_axis, valve_relative[0], "MOV + MFV OPEN 1", COLORS["valves"])
-    add_event(pressure_axis, second_relative, "RELIGHT COMMAND", COLORS["ignition"])
-    add_event(pressure_axis, valve_relative[1], "MOV + MFV OPEN 2", COLORS["valves"])
+    add_event(pressure_axis, 0.0, "IGNITER COMMAND 1", colors["ignition"], background)
+    add_event(pressure_axis, valve_relative[0], "MOV + MFV OPEN 1", colors["valves"], background)
+    add_event(pressure_axis, second_relative, "RELIGHT COMMAND", colors["ignition"], background)
+    add_event(pressure_axis, valve_relative[1], "MOV + MFV OPEN 2", colors["valves"], background)
 
     annotate_peak(
         thrust_axis, times, raw["thrust"], 0.0, second_relative,
-        "N", COLORS["thrust"], (18, 18),
+        "N", colors["thrust"], (18, 18), background,
     )
     annotate_peak(
         thrust_axis, times, raw["thrust"], second_relative, purge_clock - first_ignition,
-        "N", COLORS["thrust"], (18, 18),
+        "N", colors["thrust"], (18, 18), background,
     )
     annotate_peak(
         pressure_axis, times, raw["chamber"], 0.0, second_relative,
-        "psi", COLORS["chamber"], (18, 18),
+        "psi", colors["chamber"], (18, 18), background,
     )
     annotate_peak(
         pressure_axis, times, raw["chamber"], second_relative, purge_clock - first_ignition,
-        "psi", COLORS["chamber"], (18, -32),
+        "psi", colors["chamber"], (18, -32), background,
     )
 
     figure.suptitle(
@@ -314,7 +334,7 @@ def main() -> None:
         x=0.075,
         y=0.975,
         ha="left",
-        color="#0F172A",
+        color=foreground if dark else "#0F172A",
         fontsize=24,
         fontweight="bold",
     )
@@ -322,7 +342,7 @@ def main() -> None:
         0.075,
         0.885,
         "Propellant load: fuel 2.51 kg · oxidizer 5.02 kg",
-        color="#64748B",
+        color=muted,
         fontsize=12,
         ha="left",
         va="bottom",
@@ -334,7 +354,7 @@ def main() -> None:
         f"Usable new-value rates: tank pressures {tank_rate:.1f} Hz · "
         f"chamber {rates['chamber']:.1f} Hz · thrust {rates['thrust']:.1f} Hz · "
         f"propellant mass {rates['mass']:.1f} Hz",
-        color="#64748B",
+        color=muted,
         fontsize=11,
         ha="left",
         va="bottom",
@@ -347,6 +367,7 @@ def main() -> None:
         ncol=5,
         frameon=False,
         fontsize=10.5,
+        labelcolor=foreground,
     )
 
     figure.canvas.draw()
@@ -361,10 +382,14 @@ def main() -> None:
             f"Axis zero baselines differ by {zero_delta:.4f} px"
         )
 
-    figure.savefig(OUTPUT, dpi=140, facecolor="white", bbox_inches="tight", pad_inches=0.15)
+    figure.savefig(output, dpi=140, facecolor=background, bbox_inches="tight", pad_inches=0.15)
     plt.close(figure)
-    print(f"{OUTPUT} (three-axis zero delta: {zero_delta:.6f} px)")
+    print(f"{output} (three-axis zero delta: {zero_delta:.6f} px)")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--theme", choices=("light", "dark"), default="light")
+    parser.add_argument("--output", type=Path, help="Override the themed PNG output path")
+    args = parser.parse_args()
+    main(args.theme, args.output)

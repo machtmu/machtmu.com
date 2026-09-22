@@ -143,6 +143,7 @@ dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; 
   padding: 12px;
 }
 .plot-viewer__stage img { max-width: none; max-height: none; height: auto; margin: 0 auto; }
+.plot-viewer[data-plot-theme="dark"] .plot-viewer__stage { background: #0b0d0f; }
 .plot-viewer__hint { font-size: 0.65rem; color: var(--md-default-fg-color--light); margin: 0; }
 
 .timeline-controls { margin: 1.5rem 0 0; }

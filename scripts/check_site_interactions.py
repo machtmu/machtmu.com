@@ -23,7 +23,16 @@ with sync_playwright() as p:
    page.goto(base+path,wait_until='domcontentloaded');page.wait_for_timeout(500)
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'), (path,'overflow')
    assert page.locator('[data-mach-drawer-toggle]').is_visible() == (width < 1220)
+   themed=page.locator('img[data-plot-dark-src]')
+   if themed.count():
+    assert themed.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
+    assert themed.get_attribute('src').endswith('double-hotfire-dark.png' if scheme=='dark' else 'double-hotfire.png')
    if path=='/':
+    assert page.get_by_role('button',name='Expand plot:',exact=False).count()==0
+    plot_link=page.locator('.hotfire-data > a')
+    plot_link.click();assert page.locator('dialog').is_visible()
+    assert page.locator('dialog img').get_attribute('src')==themed.get_attribute('src')
+    page.keyboard.press('Escape');assert plot_link.evaluate('(e)=>e===document.activeElement')
     sections=page.locator('.md-content section').evaluate_all('(s)=>s.map(e=>e.className)');assert sections[0]=='video-showcase',sections
     if width==390:assert page.locator('.hero-bg').get_attribute('src') is None
     hero=page.locator('[data-hero-motion]');hero.click();page.wait_for_timeout(300)
@@ -53,6 +62,9 @@ with sync_playwright() as p:
     controls=page.get_by_role('button',name='Expand plot:',exact=False);assert controls.count()==2
     controls.nth(1).click();page.wait_for_timeout(300)
     assert page.locator('dialog').is_visible()
+    assert page.locator('dialog img').get_attribute('src')==themed.get_attribute('src')
+    assert page.locator('dialog [data-plot-original]').get_attribute('href')==themed.get_attribute('src')
+    assert page.locator('dialog').get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
     w=page.locator('dialog img').evaluate('(i)=>i.width')
     page.get_by_role('button',name='Zoom in',exact=True).click();page.wait_for_timeout(100)
     assert page.locator('dialog img').evaluate('(i)=>i.width')>w*1.9
@@ -81,4 +93,39 @@ with sync_playwright() as p:
  ctx=b.new_context(viewport={'width':1440,'height':900},reduced_motion='reduce');page=ctx.new_page();page.goto(base,wait_until='domcontentloaded');page.wait_for_timeout(300)
  assert page.locator('.hero-bg').get_attribute('src') is None
  print('Reduced motion: no hero download; functional checks passed',flush=True)
+ ctx.close()
+ ctx=b.new_context(viewport={'width':1440,'height':900},color_scheme='light')
+ page=ctx.new_page();page.goto(base,wait_until='domcontentloaded')
+ plot=page.locator('img[data-plot-dark-src]')
+ plot.scroll_into_view_if_needed()
+ def check_theme(theme):
+  page.wait_for_function('(theme)=>document.querySelector("img[data-plot-dark-src]")?.dataset.plotTheme===theme',arg=theme)
+  assert plot.evaluate('(img)=>img.closest("a").href===img.src')
+  page.wait_for_function('()=>{const img=document.querySelector("img[data-plot-dark-src]");return img.complete&&img.naturalWidth>0}')
+ # Use the actual palette controls, including explicit choice overriding the OS.
+ check_theme('light')
+ page.locator('form[data-md-component="palette"] label:not([hidden])').wait_for(state='visible')
+ automatic=page.locator('label[for="__palette_1"]:visible')
+ if automatic.count(): automatic.click()
+ page.locator('label[for="__palette_2"]:visible').click()
+ check_theme('dark')
+ page.locator('label[for="__palette_0"]:visible').click()
+ check_theme('light')
+ page.emulate_media(color_scheme='dark');check_theme('dark')
+ page.locator('label[for="__palette_1"]:visible').click();check_theme('light')
+ page.emulate_media(color_scheme='light');page.emulate_media(color_scheme='dark');check_theme('light')
+ page.locator('label[for="__palette_2"]:visible').click()
+ page.locator('label[for="__palette_0"]:visible').click();check_theme('dark')
+ # A system-theme change must also update an already zoomed/open viewer.
+ link=page.locator('.hotfire-data > a');link.focus();page.keyboard.press('Enter')
+ page.get_by_role('button',name='Zoom in',exact=True).click()
+ page.emulate_media(color_scheme='light');check_theme('light')
+ assert page.locator('dialog[open] img').get_attribute('src')==plot.get_attribute('src')
+ assert page.locator('[data-plot-zoom]').inner_text()=='2×'
+ page.emulate_media(color_scheme='dark');check_theme('dark')
+ assert page.locator('dialog[open] [data-plot-original]').get_attribute('href')==plot.get_attribute('src')
+ assert page.locator('.plot-viewer__stage').evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(11, 13, 15)'
+ page.keyboard.press('Escape');assert link.evaluate('(e)=>e===document.activeElement')
+ print('Plot themes: palette controls, OS changes, explicit override, keyboard and open viewer passed',flush=True)
+ ctx.close()
  b.close()

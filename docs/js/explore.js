@@ -4,7 +4,31 @@
   window.__machExploreLoaded = true;
   let viewer;
   let opener;
+  let activePlot;
   let zoom = 1;
+  const colorPreference = matchMedia("(prefers-color-scheme: dark)");
+
+  function updateViewerSource() {
+    if (!viewer || !activePlot?.isConnected) return;
+    const full = activePlot.closest("a")?.href || activePlot.src;
+    const img = viewer.querySelector("img");
+    if (img.src !== full) img.src = full;
+    viewer.querySelector("[data-plot-original]").href = full;
+    viewer.dataset.plotTheme = activePlot.dataset.plotTheme || "light";
+  }
+
+  function updateThemedPlots() {
+    const scheme = document.body.getAttribute("data-md-color-scheme");
+    const dark = scheme === "slate" || (scheme !== "default" && colorPreference.matches);
+    document.querySelectorAll("img[data-plot-light-src][data-plot-dark-src]").forEach(img => {
+      const source = new URL(dark ? img.dataset.plotDarkSrc : img.dataset.plotLightSrc, document.baseURI).href;
+      if (img.src !== source) img.src = source;
+      img.dataset.plotTheme = dark ? "dark" : "light";
+      const link = img.closest("a");
+      if (link) link.href = source;
+    });
+    if (viewer?.open) updateViewerSource();
+  }
 
   function createViewer() {
     if (viewer) return;
@@ -46,6 +70,7 @@
     viewer.addEventListener("close", () => {
       document.body.classList.remove("plot-viewer-open");
       if (opener?.isConnected) opener.focus({ preventScroll: true });
+      activePlot = null;
     });
     viewer.addEventListener("click", e => { if (e.target === viewer) viewer.close(); });
     viewer.addEventListener("keydown", e => {
@@ -59,41 +84,43 @@
   function openPlot(image, button) {
     createViewer();
     opener = button;
+    activePlot = image;
     zoom = 1;
-    const full = image.closest("a")?.href || image.src;
     const img = viewer.querySelector("img");
     img.alt = image.alt;
     img.style.width = "";
-    viewer.querySelector("[data-plot-original]").href = full;
     viewer.querySelector("[data-plot-zoom]").textContent = "Fit";
-    img.src = full;
+    updateViewerSource();
     viewer.showModal();
     document.body.classList.add("plot-viewer-open");
     viewer.querySelector(".plot-viewer__stage").scrollTo(0, 0);
   }
 
   function enhancePlots() {
-    const names = /(?:burn-telemetry|double-hotfire|propellant-loading|hotfire3-perf|coldflow-test\d+)\.png$/i;
+    const names = /(?:burn-telemetry|double-hotfire|propellant-loading|hotfire3-perf|coldflow-test\d+)(?:-dark)?\.png$/i;
     document.querySelectorAll(".md-content img").forEach(img => {
       if (!names.test(new URL(img.src).pathname) || img.dataset.plotEnhanced) return;
       img.dataset.plotEnhanced = "true";
       img.classList.add("mach-plot");
-      const actions = document.createElement("div");
-      actions.className = "plot-actions";
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "mach-control";
-      button.textContent = "Expand plot";
-      button.setAttribute("aria-label", `Expand plot: ${img.alt}`);
-      button.setAttribute("aria-haspopup", "dialog");
-      button.addEventListener("click", () => openPlot(img, button));
-      actions.append(button);
-      const target = img.closest("a") || img;
-      target.after(actions);
       const link = img.closest("a");
+      let trigger = link;
+      if (img.dataset.plotControls !== "none") {
+        const actions = document.createElement("div");
+        actions.className = "plot-actions";
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "mach-control";
+        button.textContent = "Expand plot";
+        button.setAttribute("aria-label", `Expand plot: ${img.alt}`);
+        button.setAttribute("aria-haspopup", "dialog");
+        button.addEventListener("click", () => openPlot(img, button));
+        actions.append(button);
+        (link || img).after(actions);
+        trigger = button;
+      }
       if (link) link.addEventListener("click", e => {
         if (e.button || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-        e.preventDefault(); openPlot(img, button);
+        e.preventDefault(); openPlot(img, trigger);
       });
     });
   }
@@ -167,8 +194,13 @@
 
   function prepare() {
     if (viewer?.open) viewer.close();
+    updateThemedPlots();
     enhancePlots(); enhanceTimeline();
   }
+  new MutationObserver(updateThemedPlots).observe(document.body, {
+    attributes: true, attributeFilter: ["data-md-color-scheme"],
+  });
+  colorPreference.addEventListener("change", updateThemedPlots);
   if (window.document$?.subscribe) window.document$.subscribe(prepare);
   else if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", prepare, { once: true });
   else prepare();
