@@ -41,6 +41,10 @@ with sync_playwright() as p:
     hero.click();page.wait_for_timeout(300)
     assert page.locator('.slideshow-image').first.get_attribute('src').endswith('/SPRINT/electronics/overview.webp')
     assert page.locator('.slideshow-image').evaluate_all('(images)=>images.every(i=>getComputedStyle(i).objectFit==="contain"&&getComputedStyle(i).maxHeight==="none")')
+    plumbing=page.locator('.slideshow-image--plumbing-board')
+    assert plumbing.count()==1
+    assert plumbing.evaluate('(i)=>getComputedStyle(i).clipPath')=='inset(1.875% 14.4531%)'
+    assert page.locator('.slideshow-image:not(.slideshow-image--plumbing-board)').evaluate_all('(images)=>images.every(i=>getComputedStyle(i).clipPath==="none")')
     frame=page.locator('.image-slideshow').bounding_box();assert abs(frame['width']-frame['height'])<1 and frame['width']<=700
     if width==1440:assert abs(frame['width']-700)<1
     for img in page.locator('.slideshow-image').all():

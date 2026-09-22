@@ -439,6 +439,13 @@
       opacity: 1;
     }
 
+    /* This 982 × 1280 scan includes a black film edge. In the square,
+       contain-fit frame, trim 36 source pixels from each side and 24 from
+       the top/bottom. Keep the original photo and the other slides intact. */
+    .image-slideshow .slideshow-image--plumbing-board {
+      clip-path: inset(1.875% 14.453125%);
+    }
+
     .slideshow-caption {
       text-align: center;
       margin-top: 0.5rem;
@@ -614,7 +621,7 @@
                alt="Ground-support plumbing board"
                width="982" height="1280"
                loading="lazy" decoding="async"
-               class="slideshow-image">
+               class="slideshow-image slideshow-image--plumbing-board">
           <img src="{{ base_url }}/assets/images/seraphina-tank-machining.jpg"
                alt="Machining holes in the Seraphina tank"
                width="960" height="1280"
