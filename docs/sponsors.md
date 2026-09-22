@@ -26,26 +26,27 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.automationdirect.com/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.35593220; --logo-width:105.000000%; --logo-left:-1.875000%; --logo-top:-2.542373%;">
-            <img loading="lazy" decoding="async" src="/sponsors/automation-direct-logo.png" alt="Automation Direct">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.37103685;">
+            <img loading="lazy" decoding="async" src="/sponsors/automation-direct-logo-hires.png" alt="Automation Direct">
         </span></span>
     </a>
     
     <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-dark-adapt">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.85185185; --logo-width:100.000000%; --logo-left:0.000000%; --logo-top:0.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/dishon-logo-transparent.png" alt="Dishon">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.86296296; --logo-max-width:167px;">
+            <img loading="lazy" decoding="async" src="/sponsors/dishon-logo-hires.png" alt="Dishon">
         </span></span>
     </a>
     
-    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.85000000; --logo-width:101.237113%; --logo-left:0.000000%; --logo-top:-25.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/flownex-logo.png" alt="Flownex">
+    <a href="https://www.flownex.com/" target="_blank" class="sponsor-item" aria-label="Flownex">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:5.03125000; --logo-max-width:161px;">
+            <img loading="lazy" decoding="async" src="/sponsors/flownex-logo-original.png" alt="Flownex" class="sponsor-image--light">
+            <img loading="lazy" decoding="async" src="/sponsors/flownex-logo-dark.png" alt="" aria-hidden="true" class="sponsor-image--dark">
         </span></span>
     </a>
     
     <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-dark-adapt">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.52272727; --logo-width:100.000000%; --logo-left:0.000000%; --logo-top:0.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo-transparent.png" alt="Hoskin Scientific">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.58452722;">
+            <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo-hires.png" alt="Hoskin Scientific">
         </span></span>
     </a>
     
@@ -56,8 +57,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.jaksa.si/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.65384615; --logo-width:103.260870%; --logo-left:-1.811594%; --logo-top:-9.615385%;">
-            <img loading="lazy" decoding="async" src="/sponsors/jaksa-logo.png" alt="Jaksa Solenoid Valves">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.66876972;">
+            <img loading="lazy" decoding="async" src="/sponsors/jaksa-logo-vector.svg" alt="Jaksa Solenoid Valves">
         </span></span>
     </a>
     
@@ -79,15 +80,16 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.00000000; --logo-width:217.194570%; --logo-left:-58.597285%; --logo-top:-11.085973%;">
-            <img loading="lazy" decoding="async" src="/sponsors/megapro-logo-transparent.png" alt="Megapro">
+    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item" aria-label="Megapro">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:3.69565217; --logo-max-width:198px;">
+            <img loading="lazy" decoding="async" src="/sponsors/megapro-wordmark.png" alt="Megapro" class="sponsor-image--light">
+            <img loading="lazy" decoding="async" src="/sponsors/megapro-wordmark-dark.png" alt="" aria-hidden="true" class="sponsor-image--dark">
         </span></span>
     </a>
     
     <a href="https://www.notion.so/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:0.97714000; --logo-width:102.339481%; --logo-left:0.000000%; --logo-top:0.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/notion-logo.svg" alt="Notion">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:0.97720000;">
+            <img loading="lazy" decoding="async" src="/sponsors/notion-logo-clean.svg" alt="Notion">
         </span></span>
     </a>
     
@@ -116,20 +118,20 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://steinindustries.com/" target="_blank" class="sponsor-item logo-dark-adapt">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:7.33004926; --logo-width:104.301075%; --logo-left:-3.225806%; --logo-top:-18.226601%;">
-            <img loading="lazy" decoding="async" src="/sponsors/stein-logo-transparent.png" alt="Stein Industries Inc">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:7.45728643;">
+            <img loading="lazy" decoding="async" src="/sponsors/stein-logo-trimmed.png" alt="Stein Industries Inc">
         </span></span>
     </a>
     
     <a href="https://www.swagelok.com/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:3.83522727; --logo-width:100.000000%; --logo-left:0.000000%; --logo-top:0.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/swagelok-logo.png" alt="Swagelok">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:3.75139665;">
+            <img loading="lazy" decoding="async" src="/sponsors/swagelok-logo-hires.png" alt="Swagelok">
         </span></span>
     </a>
     
     <a href="https://www.textreme.com/" target="_blank" class="sponsor-item logo-dark-adapt">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:6.17187500; --logo-width:102.025316%; --logo-left:0.000000%; --logo-top:0.000000%;">
-            <img loading="lazy" decoding="async" src="/sponsors/textreme-logo.png" alt="TeXtreme">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:6.08000000;">
+            <img loading="lazy" decoding="async" src="/sponsors/textreme-logo-vector.svg" alt="TeXtreme">
         </span></span>
     </a>
     
@@ -140,8 +142,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
     
     <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item logo-dark-adapt">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.56652361; --logo-width:102.006689%; --logo-left:-1.170569%; --logo-top:-0.429185%;">
-            <img loading="lazy" decoding="async" src="/sponsors/vibrant-performance-logo.png" alt="Vibrant Performance">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.59388646; --logo-max-width:198px;">
+            <img loading="lazy" decoding="async" src="/sponsors/vibrant-performance-trimmed.png" alt="Vibrant Performance">
         </span></span>
     </a>
     
@@ -151,6 +153,8 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
 </div>
+
+<p class="sponsor-artwork-credits"><a href="/sponsors/artwork-credits/">Artwork credits</a></p>
 
 <style>
     .sponsor-grid {
@@ -200,10 +204,14 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     }
 
     .sponsor-logo__crop {
+        --logo-width: 100%;
+        --logo-left: 0%;
+        --logo-top: 0%;
+        --logo-max-width: 100%;
         display: block;
         position: relative;
         overflow: hidden;
-        width: min(100%, calc(var(--logo-max-height) * var(--logo-ratio)));
+        width: min(100%, var(--logo-max-width), calc(var(--logo-max-height) * var(--logo-ratio)));
         aspect-ratio: var(--logo-ratio);
     }
 
@@ -219,6 +227,19 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         margin: 0;
         padding: 0;
         border-radius: 0;
+    }
+
+    .md-typeset .sponsor-logo__crop .sponsor-image--dark,
+    [data-md-color-scheme="slate"] .md-typeset .sponsor-logo__crop .sponsor-image--light {
+        display: none;
+    }
+
+    [data-md-color-scheme="slate"] .md-typeset .sponsor-logo__crop .sponsor-image--dark {
+        display: block;
+    }
+
+    .sponsor-artwork-credits {
+        font-size: 0.65rem;
     }
     
     [data-md-color-scheme="slate"] .sponsor-item.logo-dark-adapt img {
