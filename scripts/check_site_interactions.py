@@ -45,6 +45,9 @@ with sync_playwright() as p:
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
+   if path=='/sponsors/':
+    crops=page.locator('.sponsor-logo__crop');assert crops.count()==23
+    assert crops.evaluate_all('(es)=>es.every(e=>{const r=e.getBoundingClientRect(),c=getComputedStyle(e);return r.width>0&&r.height>0&&Math.abs(r.width/r.height-parseFloat(c.getPropertyValue("--logo-ratio")))<0.03&&c.backgroundColor==="rgba(0, 0, 0, 0)"})')
    if path=='/Seraphina/aug-20-hotfire/':
     controls=page.get_by_role('button',name='Expand plot:',exact=False);assert controls.count()==2
     controls.nth(1).click();page.wait_for_timeout(300)
