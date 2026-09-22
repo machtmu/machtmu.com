@@ -47,6 +47,7 @@ with sync_playwright() as p:
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
    if path=='/sponsors/':
     crops=page.locator('.sponsor-logo__crop');assert crops.count()==23
+    assert page.locator('.sponsor-item').evaluate_all('(es)=>es.every(e=>!e.innerText.trim()&&e.querySelector("img")?.alt.trim())')
     assert crops.evaluate_all('(es)=>es.every(e=>{const r=e.getBoundingClientRect(),c=getComputedStyle(e);return r.width>0&&r.height>0&&Math.abs(r.width/r.height-parseFloat(c.getPropertyValue("--logo-ratio")))<0.03&&c.backgroundColor==="rgba(0, 0, 0, 0)"})')
    if path=='/Seraphina/aug-20-hotfire/':
     controls=page.get_by_role('button',name='Expand plot:',exact=False);assert controls.count()==2
