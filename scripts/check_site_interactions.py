@@ -34,7 +34,7 @@ with sync_playwright() as p:
     if width==1440:assert abs(frame['width']-700)<1
     for img in page.locator('.slideshow-image').all():
      box=img.bounding_box();assert abs(box['width']-frame['width'])<1 and abs(box['height']-frame['height'])<1
-    page.locator('[data-slide-next]').click();assert 'tank assembly' in page.locator('.slideshow-caption').inner_text()
+    page.locator('[data-slide-next]').click();assert 'All teams gathered at Launch Canada 2026' in page.locator('.slideshow-caption').inner_text()
     page.locator('[data-slide-previous]').click()
    if path=='/team/':
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
