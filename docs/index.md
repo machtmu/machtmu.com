@@ -1,6 +1,7 @@
 ---
 title: MACH
-description: MACH is TMU Rocketry, a Toronto rocketry team building liquid propulsion, avionics, and test systems.
+seo_title: MACH | Toronto Rocketry at Toronto Metropolitan University
+description: MACH is Toronto Metropolitan University's student liquid rocketry team in Toronto. Explore our rocket engines, hotfire test data, avionics and team.
 template: index.html
 
 hide:

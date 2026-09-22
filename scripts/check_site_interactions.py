@@ -28,6 +28,8 @@ with sync_playwright() as p:
     assert themed.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
     assert themed.get_attribute('src').endswith('double-hotfire-dark.png' if scheme=='dark' else 'double-hotfire.png')
    if path=='/':
+    assert page.locator('.home-hero__inner p').count()==0
+    assert "Toronto Metropolitan University" in page.locator('.about').inner_text()
     assert page.get_by_role('button',name='Expand plot:',exact=False).count()==0
     plot_link=page.locator('.hotfire-data > a')
     plot_link.click();assert page.locator('dialog').is_visible()

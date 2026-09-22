@@ -1,6 +1,7 @@
 ---
 title: SPRINT
-description: SPRINT is a project that officially began just one month prior to its first hotfire at Launch Canada.
+seo_title: SPRINT Liquid Rocket Engine and Test Results | MACH TMU
+description: Explore SPRINT, MACH's liquid rocket engine project at Toronto Metropolitan University, including propulsion, avionics, electronics and hotfire test results.
 image: https://machtmu.com/SPRINT/aug-22-hotfire/thumbnail.webp
 hide:
   - toc

@@ -1,6 +1,7 @@
 ---
 title: Seraphina
-description: Seraphina is MACH's project for 2026. It is a complete overhaul of the tank system with automated fueling.
+seo_title: Seraphina Liquid Rocket Engine and Hotfire Data | MACH TMU
+description: Explore Seraphina, MACH's 2026 liquid rocketry project at Toronto Metropolitan University, with automated fueling, hotfire videos and measured test data.
 image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
 hide:
   - toc

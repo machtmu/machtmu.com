@@ -1,4 +1,6 @@
 ---
+seo_title: TMU Rocketry Team in Toronto | MACH
+description: Meet MACH, Toronto Metropolitan University's student liquid rocketry team in Toronto, and the people leading its propulsion, telemetry and control work.
 hide:
   - navigation
   - toc
@@ -8,7 +10,7 @@ hide:
 
 # Team
 
-Meet the people leading and building MACH.
+Meet the people leading and building MACH, Toronto Metropolitan University's student liquid rocketry team in Toronto, Ontario. Our work spans rocket propulsion, propellant management, telemetry and control, and ground-support systems.
 
 ## Leads
 

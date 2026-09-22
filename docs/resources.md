@@ -1,6 +1,7 @@
 ---
 title: Resources
-description: Resources
+seo_title: Rocket Engineering and Launch Canada Reports | MACH TMU
+description: Explore MACH's Launch Canada design reports, rocket engineering references and press coverage from Toronto Metropolitan University's liquid rocketry team.
 hide:
   - navigation
   - toc

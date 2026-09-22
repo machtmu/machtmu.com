@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  <title>MACH | TMU Rocketry in Toronto</title>
+  <title>{{ page.meta.seo_title | e }}</title>
 {% endblock %}
 
 {% block extrahead %}
   {{ super() }}
-  <meta name="keywords" content="TMU rocketry, Toronto rocketry, liquid rocketry, student rocketry, MACH">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MACH">
-  <meta property="og:title" content="MACH | TMU Rocketry in Toronto">
-  <meta property="og:description" content="MACH is TMU Rocketry, a Toronto rocketry team building liquid propulsion, avionics, and test systems.">
+  <meta property="og:title" content="{{ page.meta.seo_title | e }}">
+  <meta property="og:description" content="{{ page.meta.description | e }}">
   <meta property="og:url" content="https://machtmu.com/">
   <meta property="og:image" content="https://machtmu.com/assets/images/social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="MACH liquid rocket engine hot fire">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MACH | TMU Rocketry in Toronto">
-  <meta name="twitter:description" content="MACH is TMU Rocketry, a Toronto rocketry team building liquid propulsion, avionics, and test systems.">
+  <meta name="twitter:title" content="{{ page.meta.seo_title | e }}">
+  <meta name="twitter:description" content="{{ page.meta.description | e }}">
   <meta name="twitter:image" content="https://machtmu.com/assets/images/social-card.jpg">
   <meta name="twitter:image:alt" content="MACH liquid rocket engine hot fire">
   <script type="application/ld+json">
@@ -33,10 +32,10 @@
           "alternateName": [
             "TMU Rocketry",
             "TMU Liquid Rocketry",
-            "Toronto Rocketry",
+            "Metropolitan Aerospace & Combustion Hub",
             "Toronto Metropolitan University Rocketry"
           ],
-          "description": "MACH is TMU Rocketry, a Toronto rocketry team focused on liquid propulsion.",
+          "description": {{ page.meta.description | tojson }},
           "publisher": {
             "@id": "https://machtmu.com/#organization"
           },
@@ -49,12 +48,12 @@
           "alternateName": [
             "TMU Rocketry",
             "TMU Liquid Rocketry",
-            "Toronto Rocketry",
+            "Metropolitan Aerospace & Combustion Hub",
             "Toronto Metropolitan University Rocketry"
           ],
           "url": "https://machtmu.com/",
           "logo": "https://machtmu.com/img/logo1.png",
-          "description": "MACH is TMU Rocketry, a Toronto rocketry team building liquid propulsion, avionics, and test systems.",
+          "description": {{ page.meta.description | tojson }},
           "email": "mach@torontomu.com",
           "location": {
             "@type": "Place",
@@ -213,7 +212,7 @@
       font-weight: 700;
       font-size: 3rem;
       color: #fff;
-      margin: 0 0 1rem 0;
+      margin: 0;
       letter-spacing: -0.01em;
       line-height: 1.1;
       text-shadow: 0 4px 16px rgba(0,0,0,0.8);
@@ -233,15 +232,6 @@
           color: #fff;
         }
       }
-    }
-
-    .home-hero__inner p {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1.25rem;
-      color: #fff;
-      margin: 0;
-      line-height: 1.6;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.9);
     }
 
     .home-hero__cta {
@@ -466,10 +456,6 @@
         font-size: 2.3rem;
       }
 
-      .home-hero__inner p {
-        font-size: 1.05rem;
-      }
-
       .home-hero__cta .btn {
         margin: 0;
         max-width: none;
@@ -534,7 +520,6 @@
 
     <div class="home-hero__inner">
       <h1 class="home-hero__title">MACH - TMU Liquid Rocketry</h1>
-      <p>Toronto Metropolitan University's liquid rocketry team</p>
     </div>
     <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play background video" title="Play background video" hidden>
       <svg class="hero-motion-icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 11 7-11 7Z" /></svg>
@@ -580,8 +565,9 @@
   <!-- About Section -->
   <section class="about">
     <div class="md-container md-typeset">
-      <h2>Built and tested by MACH</h2>
-      <p>We design liquid rocket engines, avionics and ground-support systems, then put them through real test campaigns. Explore the hardware, footage and measured results from each project.</p>
+      <h2>Student liquid rocketry in Toronto</h2>
+      <p>MACH (Metropolitan Aerospace &amp; Combustion Hub) is Toronto Metropolitan University's student liquid rocketry team, based in Toronto, Ontario. We design, build and test liquid rocket engines, avionics and ground-support systems.</p>
+      <p>Explore Seraphina, SPRINT and GAR-E below for the hardware, hotfire footage and measured test results. Our <a href="{{ 'timeline/' | url }}">rocket engine testing timeline</a> follows that development, and our <a href="{{ 'resources/' | url }}">Launch Canada reports</a> document the engineering behind it. <a href="{{ 'team/' | url }}">Meet the MACH team</a>.</p>
       <div class="home-hero__cta">
         <div class="home-project-links">
           <a href="{{ 'Seraphina/' | url }}" class="btn home-project-link">
