@@ -80,7 +80,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item" aria-label="Megapro">
+    <a href="https://megaprotools.ca/" target="_blank" class="sponsor-item" aria-label="Megapro" title="MEGAPRO wordmark © 2017 MEGAPRO Tools; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Source: https://commons.wikimedia.org/wiki/File:Megapro_Logo.jpg. Background removed, cropped; dark tagline lightened.">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:3.69565217; --logo-max-width:198px;">
             <img loading="lazy" decoding="async" src="/sponsors/megapro-wordmark.png" alt="Megapro" class="sponsor-image--light">
             <img loading="lazy" decoding="async" src="/sponsors/megapro-wordmark-dark.png" alt="" aria-hidden="true" class="sponsor-image--dark">
@@ -153,8 +153,6 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
 </div>
-
-<p class="sponsor-artwork-credits"><a href="/sponsors/artwork-credits/">Artwork credits</a></p>
 
 <style>
     .sponsor-grid {
@@ -238,10 +236,6 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         display: block;
     }
 
-    .sponsor-artwork-credits {
-        font-size: 0.65rem;
-    }
-    
     [data-md-color-scheme="slate"] .sponsor-item.logo-dark-adapt img {
         filter: invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);
     }
@@ -277,17 +271,24 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         .sponsor-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             column-gap: 0.75rem;
-            row-gap: 1rem;
+            row-gap: 0.65rem;
+            margin: 1rem 0;
         }
         
         .md-typeset .sponsor-item {
-            min-height: 110px;
+            min-height: 72px;
             padding: 0.25rem;
+        }
+
+        .sponsor-grid > .sponsor-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: calc((100% - 0.75rem) / 2);
         }
         
         .sponsor-logo {
             --logo-max-height: 92px;
-            height: 100px;
+            height: auto;
         }
     }
 </style>

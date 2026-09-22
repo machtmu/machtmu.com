@@ -14,11 +14,24 @@ import cairosvg
 import fitz
 import numpy as np
 from PIL import Image
+from PIL.PngImagePlugin import PngInfo
 from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs/sponsors"
 SVG = "http://www.w3.org/2000/svg"
+
+
+def megapro_metadata(dark=False):
+    """Keep the attribution with the image even when downloaded separately."""
+    info = PngInfo()
+    info.add_itxt('Title', 'MEGAPRO - Every bit better')
+    info.add_itxt('Author', 'MEGAPRO Tools')
+    info.add_itxt('Copyright', '© 2017 MEGAPRO Tools')
+    info.add_itxt('Source', 'https://commons.wikimedia.org/wiki/File:Megapro_Logo.jpg')
+    info.add_itxt('License', 'CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/')
+    info.add_itxt('Description', 'Adapted by MACH: white background removed; unused canvas cropped; original lettering preserved.' + (' Dark-mode tagline lightened.' if dark else ''))
+    return info
 
 
 def save_tight(image, name, max_width=None):
@@ -135,11 +148,11 @@ def main():
     megapro = Image.fromarray(array)
     bounds = megapro.getchannel('A').getbbox()
     megapro = megapro.crop(bounds)
-    megapro.save(OUT / 'megapro-wordmark.png', optimize=True)
+    megapro.save(OUT / 'megapro-wordmark.png', optimize=True, pnginfo=megapro_metadata())
     array = np.array(megapro)
     # The tagline is below the red wordmark, so no brand-red pixels change.
     array[100-bounds[1]:, :, :3] = (229, 231, 235)
-    Image.fromarray(array).save(OUT / 'megapro-wordmark-dark.png', optimize=True)
+    Image.fromarray(array).save(OUT / 'megapro-wordmark-dark.png', optimize=True, pnginfo=megapro_metadata(dark=True))
     print('megapro-wordmark.png', megapro.size)
 
     # Manufacturer master at native resolution; never invent geographical detail.

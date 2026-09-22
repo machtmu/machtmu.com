@@ -30,20 +30,34 @@ assert np.array_equal(light[:100-bounds[1]], dark[:100-bounds[1]])
 assert np.array_equal(light[:, :, 3], dark[:, :, 3])
 # No rectangular remnant outside the bottom-right of Megapro's O.
 for name in ('megapro-wordmark.png', 'megapro-wordmark-dark.png'):
-    logo = np.array(Image.open(root/'docs/sponsors'/name))
+    source = Image.open(root/'docs/sponsors'/name)
+    assert source.info['Author'] == 'MEGAPRO Tools'
+    assert 'creativecommons.org/licenses/by-sa/4.0/' in source.info['License']
+    logo = np.array(source)
     assert logo[78:80, 565:569, 3].max() < 20
 
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=args.chrome, headless=True, args=['--no-sandbox'])
     for width in (320, 390, 430, 768, 1024, 1440):
         for theme in ('light', 'dark'):
-            page = browser.new_page(viewport={'width':width, 'height':900}, device_scale_factor=3, color_scheme=theme)
+            page = browser.new_page(viewport={'width':width, 'height':900}, device_scale_factor=3, color_scheme=theme, is_mobile=width<=430, has_touch=width<=430)
             errors = []
             page.on('pageerror', lambda error: errors.append(str(error)))
             page.goto(args.url.rstrip('/')+'/sponsors/', wait_until='domcontentloaded')
             page.wait_for_function('(dark)=>document.body.dataset.mdColorScheme===(dark?"slate":"default")', arg=theme=='dark')
             assert page.locator('.sponsor-grid > a.sponsor-item').count() == 23
             assert page.locator('.sponsor-grid > :not(a)').count() == 0
+            assert page.get_by_role('link', name='Artwork credits', exact=True).count() == 0
+            assert '© 2017 MEGAPRO Tools' in page.locator('.sponsor-item[href*="megaprotools"]').get_attribute('title')
+            if width <= 768:
+                spacing = page.locator('.sponsor-grid').evaluate('''grid=>{
+                    const tiles=[...grid.children].map(e=>e.getBoundingClientRect());
+                    const bounds=grid.getBoundingClientRect();
+                    const last=tiles.at(-1);
+                    return {firstHeight:tiles[0].height, gap:tiles[2].y-tiles[0].bottom,
+                        lastCentered:Math.abs(last.x+last.width/2-bounds.x-bounds.width/2)<1};
+                }''')
+                assert spacing['firstHeight'] < 85 and 8 <= spacing['gap'] <= 16 and spacing['lastCentered'], spacing
             for item in page.locator('.sponsor-item').all():
                 item.scroll_into_view_if_needed()
                 item.locator('img:visible').evaluate('(img)=>img.decode()')
