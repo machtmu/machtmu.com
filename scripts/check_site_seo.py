@@ -68,7 +68,7 @@ def main():
             graph = page.structured[0]["@graph"]
             org = next(node for node in graph if node["@type"] == "Organization")
             assert "Toronto Rocketry" not in org["alternateName"]
-            assert "Metropolitan Aerospace & Combustion Hub" in org["alternateName"]
+            assert not any("Combustion Hub" in name for name in org["alternateName"])
             assert org["description"] == description
             assert org["location"]["address"]["addressLocality"] == "Toronto"
     assert "Sitemap: " + BASE + "sitemap.xml" in (ROOT / "robots.txt").read_text()
