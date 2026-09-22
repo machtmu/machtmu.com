@@ -36,6 +36,11 @@ with sync_playwright() as p:
      box=img.bounding_box();assert abs(box['width']-frame['width'])<1 and abs(box['height']-frame['height'])<1
     page.locator('[data-slide-next]').click();assert 'All teams gathered at Launch Canada 2026' in page.locator('.slideshow-caption').inner_text()
     page.locator('[data-slide-previous]').click()
+    expected=['Telemetry and control electrical enclosure','All teams gathered at Launch Canada 2026','SPRINT tank assembly with integrated propulsion components','Torquing plumbing fittings','Ground-support plumbing board','Machining holes in the Seraphina tank']
+    assert page.locator('.slideshow-image').evaluate_all('(images)=>images.map(i=>i.alt)')==expected
+    for caption in expected:
+     assert page.locator('.slideshow-caption').inner_text()==caption
+     page.locator('[data-slide-next]').click()
    if path=='/team/':
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
