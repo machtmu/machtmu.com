@@ -69,6 +69,10 @@
   font-weight: 600;
   letter-spacing: -0.05em;
 }
+.md-typeset .team-leads img[src$="Jonathan-Al-Hinn.jpg"],
+.md-typeset .team-leads img[src$="Madison-Warren.jpg"] {
+  object-position: center top;
+}
 .former-member-initials {
   display: inline-flex;
   align-items: center;

@@ -16,41 +16,47 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
 
 <div class="grid cards team-leads" markdown>
 
+-   [![Tobechukwu Okoh](assets/images/leads/Tobe-Propellant-Management-Lead.jpg)](https://www.linkedin.com/in/tobechukwu-okoh/)
+
+    **[Tobechukwu Okoh](https://www.linkedin.com/in/tobechukwu-okoh/)**
+
+    *Propulsion Lead*
+
 -   [![Julia](assets/images/leads/Julia-Operations-Director.jpg)](https://www.linkedin.com/in/julia-puszynska-7977b72b0/)
 
     **[Julia Puszynska](https://www.linkedin.com/in/julia-puszynska-7977b72b0/)**
 
     *Team Captain*
 
--   [![Kasper](assets/images/leads/Kasper-Mission-Control.jpg)](https://www.linkedin.com/in/kasper-pajak-462435282/)
+-   ![Samuel Li](assets/images/leads/Sam-Lead.jpg)
 
-    **[Kasper Pajak](https://www.linkedin.com/in/kasper-pajak-462435282/)**
-
-    *Telemetry and Control Lead*
-
--   ![Sam](assets/images/leads/Sam-Lead.jpg)
-
-    **Sam**
+    **Samuel Li**
 
     *Operations Director*
 
--   <a class="team-initials" href="https://www.linkedin.com/in/jonathan-al-hinn/" aria-label="Jonathan Al-Hinn on LinkedIn"><span aria-hidden="true">JA</span></a>
+-   [![Jonathan Al-Hinn](assets/images/leads/Jonathan-Al-Hinn.jpg)](https://www.linkedin.com/in/jonathan-al-hinn/)
 
     **[Jonathan Al-Hinn](https://www.linkedin.com/in/jonathan-al-hinn/)**
 
     *Safety Officer*
 
--   [![Tobe](assets/images/leads/Tobe-Propellant-Management-Lead.jpg)](https://www.linkedin.com/in/tobechukwu-okoh/)
+-   [![Kasper Pajak](assets/images/leads/Kasper-Mission-Control.jpg)](https://www.linkedin.com/in/kasper-pajak-462435282/)
 
-    **[Tobechukwu Okoh](https://www.linkedin.com/in/tobechukwu-okoh/)**
+    **[Kasper Pajak](https://www.linkedin.com/in/kasper-pajak-462435282/)**
 
-    *Propellant Management Lead*
+    *Electrical Lead*
+
+-   ![Madison Warren](assets/images/leads/Madison-Warren.jpg)
+
+    **Madison Warren**
+
+    *Media & Logistics Lead*
 
 -   [![Milad](assets/images/leads/Milad-Media-Lead.jpg)](https://www.linkedin.com/in/milad-hemmat-a84647386/)
 
     **[Milad Hemmat](https://www.linkedin.com/in/milad-hemmat-a84647386/)**
 
-    *Media Lead*
+    *Lead*
 
 </div>
 

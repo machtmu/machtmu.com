@@ -14,6 +14,8 @@ hide:
 
 ## MACH
 
+- [MACH Fall 2026 Kickoff Slides (PDF)](resources/MACH_Kickoff_Fall_2026.pdf)
+
 - [MACH 2026 LCR](resources/MACH_LCR2026.pdf)
 
 - [MACH 2025 LCR](resources/MACH_LCR2025.pdf)

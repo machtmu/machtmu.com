@@ -56,6 +56,13 @@ with sync_playwright() as p:
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
+    cards=page.locator('.team-leads li')
+    expected=[('Tobechukwu Okoh','Propulsion Lead'),('Julia Puszynska','Team Captain'),('Samuel Li','Operations Director'),('Jonathan Al-Hinn','Safety Officer'),('Kasper Pajak','Electrical Lead'),('Madison Warren','Media & Logistics Lead'),('Milad Hemmat','Lead')]
+    assert cards.count()==len(expected)
+    for card,(name,role) in zip(cards.all(),expected):
+     assert card.locator('strong').inner_text()==name
+     assert card.locator('em').inner_text()==role
+     card.locator('img').evaluate('(i)=>i.decode()')
    if path=='/sponsors/':
     crops=page.locator('.sponsor-logo__crop');assert crops.count()==23
     assert page.locator('.sponsor-item').evaluate_all('(es)=>es.every(e=>!e.innerText.trim()&&e.querySelector("img")?.alt.trim())')
