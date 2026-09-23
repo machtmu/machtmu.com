@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Audit all sponsor logos at 3x display density and common responsive widths."""
 import argparse
+from collections import Counter
 import base64
 import io
 import json
@@ -36,6 +37,15 @@ for name in ('megapro-wordmark.png', 'megapro-wordmark-dark.png'):
     logo = np.array(source)
     assert logo[78:80, 565:569, 3].max() < 20
 
+brand_colours = {}
+for sponsor, filename in (('hoskin.ca', 'hoskin-logo-hires.png'),
+                          ('innovationboostzone', 'ibz-logo-transparent.png')):
+    source = np.array(Image.open(root/'docs/sponsors'/filename).convert('RGBA'))
+    red = ((source[:, :, 0].astype(float) > source[:, :, 1]*1.4)
+           & (source[:, :, 0].astype(float) > source[:, :, 2]*1.1)
+           & (source[:, :, 3] == 255))
+    brand_colours[sponsor] = Counter(map(tuple, source[red, :3])).most_common(1)[0][0]
+
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=args.chrome, headless=True, args=['--no-sandbox'])
     for width in (320, 390, 430, 768, 1024, 1440):
@@ -68,6 +78,13 @@ with sync_playwright() as p:
             for item in page.locator('.sponsor-item').all():
                 item.scroll_into_view_if_needed()
                 item.locator('img:visible').evaluate('(img)=>img.decode()')
+            for sponsor, brand_colour in brand_colours.items():
+                tile = page.locator(f'.sponsor-item[href*="{sponsor}"]')
+                pixels = np.array(Image.open(io.BytesIO(tile.screenshot())).convert('RGB'))
+                matching = np.max(np.abs(pixels.astype(int)-np.array(brand_colour)), axis=2) <= 2
+                assert matching.sum() > 30, ('brand colour changed', sponsor, width, theme)
+                if theme == 'dark':
+                    assert (pixels.min(axis=2) > 245).sum() > 30, ('lettering not visible', sponsor)
             result = page.locator('.sponsor-item').evaluate_all('''items=>items.map(item=>{
                 const img=[...item.querySelectorAll('img')].find(i=>getComputedStyle(i).display!=='none');
                 const image=img.getBoundingClientRect(), crop=item.querySelector('.sponsor-logo__crop').getBoundingClientRect(), tile=item.getBoundingClientRect();

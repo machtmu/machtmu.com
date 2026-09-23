@@ -44,13 +44,13 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-dark-adapt">
+    <a href="https://www.hoskin.ca/" target="_blank" class="sponsor-item logo-dark-lettering">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.58452722;">
             <img loading="lazy" decoding="async" src="/sponsors/hoskin-logo-hires.png" alt="Hoskin Scientific">
         </span></span>
     </a>
     
-    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-dark-lettering">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.48394004; --logo-width:114.660936%; --logo-left:-7.975167%; --logo-top:-22.698073%;">
             <img loading="lazy" decoding="async" src="/sponsors/ibz-logo-transparent.png" alt="Innovation Boost Zone">
         </span></span>
@@ -154,6 +154,23 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     </a>
 </div>
 
+<!-- Preserve saturated reds while reversing neutral lettering and cutouts. -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;">
+    <defs>
+        <filter id="sponsor-preserve-red" color-interpolation-filters="sRGB">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  4 -4 0 0 0" result="red-mask" />
+            <feComponentTransfer in="SourceGraphic" result="neutral-inverted">
+                <feFuncR type="table" tableValues="1 0" />
+                <feFuncG type="table" tableValues="1 0" />
+                <feFuncB type="table" tableValues="1 0" />
+            </feComponentTransfer>
+            <feComposite in="SourceGraphic" in2="red-mask" operator="in" result="original-red" />
+            <feComposite in="neutral-inverted" in2="red-mask" operator="out" result="neutral-only" />
+            <feComposite in="original-red" in2="neutral-only" operator="arithmetic" k2="1" k3="1" />
+        </filter>
+    </defs>
+</svg>
+
 <style>
     .sponsor-grid {
         display: grid;
@@ -238,6 +255,11 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 
     [data-md-color-scheme="slate"] .sponsor-item.logo-dark-adapt img {
         filter: invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);
+    }
+
+    /* Keep the brand reds, including IBZ's dark negative space. */
+    [data-md-color-scheme="slate"] .logo-dark-lettering img {
+        filter: url(#sponsor-preserve-red);
     }
 
     .sponsor-item.individual {
