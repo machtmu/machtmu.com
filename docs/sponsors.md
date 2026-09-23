@@ -19,9 +19,10 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+    <a href="https://www.aquaenvironmentinc.com/" target="_blank" class="sponsor-item" aria-label="Aqua Environment">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:7.32075472; --logo-width:100.721649%; --logo-left:0.000000%; --logo-top:-3.773585%;">
-            <img loading="lazy" decoding="async" src="/sponsors/aqua-environment-logo.svg" alt="Aqua Environment">
+            <img loading="lazy" decoding="async" src="/sponsors/aqua-environment-logo.svg" alt="Aqua Environment" class="sponsor-image--light">
+            <img loading="lazy" decoding="async" src="/sponsors/aqua-environment-logo-dark.svg" alt="" aria-hidden="true" class="sponsor-image--dark">
         </span></span>
     </a>
     

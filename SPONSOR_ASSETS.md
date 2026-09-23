@@ -29,6 +29,11 @@ Farms, SolidWorks, TMU and voestalpine assets retain their high-resolution artwo
 
 ## Reproduction and verification
 
+Aqua Environment's `aqua-environment-logo-dark.svg` adds a filter only to the
+lettering, tagline and separator (`.cls-2`, `.cls-3`). The symbol's gradient,
+outline and embedded shadow are identical to the original SVG. No whole-image
+filter is applied, and the original remains the light-mode asset.
+
 Dishon, Hoskin and IBZ use an inline SVG filter in dark mode: saturated red pixels retain
 their source colours, while neutral black lettering becomes white and white
 cutouts become dark. A clamped red-minus-green mask isolates the brand colours.

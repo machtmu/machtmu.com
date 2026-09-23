@@ -23,6 +23,10 @@ out = Path('/tmp/mach-sponsor-audit')
 out.mkdir(exist_ok=True)
 
 original = Image.open(root/'docs/sponsors/flownex-logo.png').convert('RGBA')
+aqua_original = (root/'docs/sponsors/aqua-environment-logo.svg').read_text().strip()
+aqua_dark = (root/'docs/sponsors/aqua-environment-logo-dark.svg').read_text().strip()
+aqua_text_filter = '.cls-2,.cls-3{filter:invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);}'
+assert aqua_dark == aqua_original.replace('</style>', aqua_text_filter+'</style>')
 bounds = original.getchannel('A').getbbox()
 light = np.array(Image.open(root/'docs/sponsors/flownex-logo-original.png'))
 dark = np.array(Image.open(root/'docs/sponsors/flownex-logo-dark.png'))
@@ -60,6 +64,32 @@ with sync_playwright() as p:
             assert page.locator('.sponsor-grid > :not(a)').count() == 0
             assert page.get_by_role('link', name='Artwork credits', exact=True).count() == 0
             assert '© 2017 MEGAPRO Tools' in page.locator('.sponsor-item[href*="megaprotools"]').get_attribute('title')
+            aqua = page.locator('.sponsor-item[href*="aquaenvironment"] img:visible')
+            assert aqua.evaluate('(img)=>getComputedStyle(img).filter') == 'none'
+            assert aqua.get_attribute('src').endswith('aqua-environment-logo-dark.svg' if theme == 'dark' else 'aqua-environment-logo.svg')
+            if width == 390 and theme == 'dark':
+                comparison = page.locator('.sponsor-item[href*="aquaenvironment"]').evaluate('''async tile=>{
+                    const images=[...tile.querySelectorAll('img')].map(source=>{
+                        const img=new Image(); img.src=source.src; return img;
+                    });
+                    await Promise.all(images.map(img=>img.decode()));
+                    const buffers=images.map(img=>{
+                        const canvas=document.createElement('canvas');
+                        canvas.width=1954; canvas.height=275;
+                        const ctx=canvas.getContext('2d');
+                        ctx.drawImage(img,0,0,1954,275);
+                        return ctx.getImageData(0,0,1954,275).data;
+                    });
+                    let symbolChanges=0, textChanges=0;
+                    for(let y=0;y<275;y++) for(let x=0;x<1954;x++) {
+                        const i=(y*1954+x)*4;
+                        if(buffers[0].slice(i,i+4).some((v,c)=>v!==buffers[1][i+c])) {
+                            if(x<300) symbolChanges++; else textChanges++;
+                        }
+                    }
+                    return {symbolChanges,textChanges};
+                }''')
+                assert comparison['symbolChanges'] == 0 and comparison['textChanges'] > 0, comparison
             if width <= 768:
                 spacing = page.locator('.sponsor-grid').evaluate('''grid=>{
                     const tiles=[...grid.children].map(e=>e.getBoundingClientRect());
