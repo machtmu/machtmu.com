@@ -38,7 +38,8 @@ for name in ('megapro-wordmark.png', 'megapro-wordmark-dark.png'):
     assert logo[78:80, 565:569, 3].max() < 20
 
 brand_colours = {}
-for sponsor, filename in (('hoskin.ca', 'hoskin-logo-hires.png'),
+for sponsor, filename in (('dishoncnc.com', 'dishon-logo-hires.png'),
+                          ('hoskin.ca', 'hoskin-logo-hires.png'),
                           ('innovationboostzone', 'ibz-logo-transparent.png')):
     source = np.array(Image.open(root/'docs/sponsors'/filename).convert('RGBA'))
     red = ((source[:, :, 0].astype(float) > source[:, :, 1]*1.4)
@@ -81,7 +82,9 @@ with sync_playwright() as p:
             for sponsor, brand_colour in brand_colours.items():
                 tile = page.locator(f'.sponsor-item[href*="{sponsor}"]')
                 pixels = np.array(Image.open(io.BytesIO(tile.screenshot())).convert('RGB'))
-                matching = np.max(np.abs(pixels.astype(int)-np.array(brand_colour)), axis=2) <= 2
+                # Dishon's narrow red line is resampled even at 3x screen density.
+                tolerance = 45 if sponsor == 'dishoncnc.com' else 2
+                matching = np.max(np.abs(pixels.astype(int)-np.array(brand_colour)), axis=2) <= tolerance
                 assert matching.sum() > 30, ('brand colour changed', sponsor, width, theme)
                 if theme == 'dark':
                     assert (pixels.min(axis=2) > 245).sum() > 30, ('lettering not visible', sponsor)

@@ -31,7 +31,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-dark-adapt">
+    <a href="https://www.dishoncnc.com/" target="_blank" class="sponsor-item logo-dark-lettering">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.86296296; --logo-max-width:167px;">
             <img loading="lazy" decoding="async" src="/sponsors/dishon-logo-hires.png" alt="Dishon">
         </span></span>

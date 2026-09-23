@@ -29,10 +29,10 @@ Farms, SolidWorks, TMU and voestalpine assets retain their high-resolution artwo
 
 ## Reproduction and verification
 
-Hoskin and IBZ use an inline SVG filter in dark mode: saturated red pixels retain
+Dishon, Hoskin and IBZ use an inline SVG filter in dark mode: saturated red pixels retain
 their source colours, while neutral black lettering becomes white and white
 cutouts become dark. A clamped red-minus-green mask isolates the brand colours.
-Neither raster is modified; light mode is unchanged.
+The source rasters are not modified; light mode is unchanged.
 
 `scripts/prepare_sponsor_artwork.py` prepares the edited assets from originals and
 the source files staged in `/tmp`. It never edits a source PDF or any downloadable
