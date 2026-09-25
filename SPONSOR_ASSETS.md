@@ -34,10 +34,18 @@ lettering, tagline and separator (`.cls-2`, `.cls-3`). The symbol's gradient,
 outline and embedded shadow are identical to the original SVG. No whole-image
 filter is applied, and the original remains the light-mode asset.
 
-Dishon, Hoskin and IBZ use an inline SVG filter in dark mode: saturated red pixels retain
+Dishon and Hoskin use an inline SVG filter in dark mode: saturated red pixels retain
 their source colours, while neutral black lettering becomes white and white
 cutouts become dark. A clamped red-minus-green mask isolates the brand colours.
 The source rasters are not modified; light mode is unchanged.
+
+IBZ uses a separate sRGB filter that removes its white edge matte analytically:
+the source brand red is `#e40032`, so red coverage is `(R-G)/228` and black
+lettering coverage is `1-R/228+27G/(228*255)` (8-bit channel notation). These
+coverages are multiplied by source alpha and repainted in the same brand red
+and white lettering. The white cutouts become transparent, not outlined.
+This retains fractional edge coverage without tracing, erosion, resizing or
+changing the source PNG. Light mode is unchanged.
 
 `scripts/prepare_sponsor_artwork.py` prepares the edited assets from originals and
 the source files staged in `/tmp`. It never edits a source PDF or any downloadable

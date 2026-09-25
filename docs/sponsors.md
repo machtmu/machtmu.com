@@ -51,7 +51,7 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
     
-    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-dark-lettering">
+    <a href="https://www.innovationboostzone.com/" target="_blank" class="sponsor-item logo-ibz-dark">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:4.48394004; --logo-width:114.660936%; --logo-left:-7.975167%; --logo-top:-22.698073%;">
             <img loading="lazy" decoding="async" src="/sponsors/ibz-logo-transparent.png" alt="Innovation Boost Zone">
         </span></span>
@@ -158,6 +158,20 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 <!-- Preserve saturated reds while reversing neutral lettering and cutouts. -->
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;">
     <defs>
+        <!-- Recover coverage from white-matted IBZ edges. For brand #e40032,
+             red coverage=(R-G)/228 and black coverage=1-R/228+27G/(228*255).
+             Work in sRGB and preserve the source alpha; no dilation or tracing. -->
+        <filter id="sponsor-ibz-clean-edges" color-interpolation-filters="sRGB">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.118421053 -1.118421053 0 0 0" result="red-coverage" />
+            <feComposite in="red-coverage" in2="SourceAlpha" operator="in" result="red-alpha" />
+            <feFlood flood-color="#e40032" result="brand-red" />
+            <feComposite in="brand-red" in2="red-alpha" operator="in" result="clean-red" />
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.118421053 0.118421053 0 0 1" result="text-coverage" />
+            <feComposite in="text-coverage" in2="SourceAlpha" operator="in" result="text-alpha" />
+            <feFlood flood-color="white" result="white-text" />
+            <feComposite in="white-text" in2="text-alpha" operator="in" result="clean-text" />
+            <feComposite in="clean-red" in2="clean-text" operator="arithmetic" k2="1" k3="1" />
+        </filter>
         <filter id="sponsor-preserve-red" color-interpolation-filters="sRGB">
             <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  4 -4 0 0 0" result="red-mask" />
             <feComponentTransfer in="SourceGraphic" result="neutral-inverted">
@@ -261,6 +275,10 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
     /* Keep the brand reds, including IBZ's dark negative space. */
     [data-md-color-scheme="slate"] .logo-dark-lettering img {
         filter: url(#sponsor-preserve-red);
+    }
+
+    [data-md-color-scheme="slate"] .logo-ibz-dark img {
+        filter: url(#sponsor-ibz-clean-edges);
     }
 
     .sponsor-item.individual {

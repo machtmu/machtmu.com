@@ -118,6 +118,15 @@ with sync_playwright() as p:
                 assert matching.sum() > 30, ('brand colour changed', sponsor, width, theme)
                 if theme == 'dark':
                     assert (pixels.min(axis=2) > 245).sum() > 30, ('lettering not visible', sponsor)
+                    if sponsor == 'innovationboostzone':
+                        crop = tile.locator('.sponsor-logo__crop')
+                        edge_pixels = np.array(Image.open(io.BytesIO(crop.screenshot())).convert('RGB'))
+                        # The first 30% contains only red artwork/background, before Z.
+                        # Any bright green channel here is a pale/white edge halo.
+                        red_region = edge_pixels[:, :int(edge_pixels.shape[1]*.30)]
+                        assert red_region[:, :, 1].max() <= 20, ('IBZ white edge fringe', width, red_region[:, :, 1].max())
+                        if width == 390:
+                            crop.screenshot(path=str(out/'ibz-clean-dark.png'))
             result = page.locator('.sponsor-item').evaluate_all('''items=>items.map(item=>{
                 const img=[...item.querySelectorAll('img')].find(i=>getComputedStyle(i).display!=='none');
                 const image=img.getBoundingClientRect(), crop=item.querySelector('.sponsor-logo__crop').getBoundingClientRect(), tile=item.getBoundingClientRect();
