@@ -141,6 +141,12 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
             <img loading="lazy" decoding="async" src="/sponsors/tmu-logo.svg" alt="TMU">
         </span></span>
     </a>
+
+    <a href="https://www.torontomu.ca/student-life-and-learning/programs/student-initiativefund/" target="_blank" class="sponsor-item">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.94630872; --logo-width:114.009112%; --logo-left:-7.289294%; --logo-top:-3.691275%;">
+            <img loading="lazy" decoding="async" src="/sponsors/SIF-logo.png" alt="TMU SIF">
+        </span></span>
+    </a>
     
     <a href="https://www.vibrantperformance.com/" target="_blank" class="sponsor-item logo-dark-adapt">
         <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.59388646; --logo-max-width:198px;">
