@@ -142,9 +142,9 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
         </span></span>
     </a>
 
-    <a href="https://www.torontomu.ca/student-life-and-learning/programs/student-initiativefund/" target="_blank" class="sponsor-item">
-        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:2.94630872; --logo-width:114.009112%; --logo-left:-7.289294%; --logo-top:-3.691275%;">
-            <img loading="lazy" decoding="async" src="/sponsors/SIF-logo.png" alt="TMU SIF">
+    <a href="https://www.torontomu.ca/student-life-and-learning/programs/student-initiativefund/" target="_blank" class="sponsor-item logo-sif">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.581320451; --logo-width:104.276985743%; --logo-left:-2.240325866%; --logo-top:-31.400966184%;">
+            <img loading="lazy" decoding="async" src="/sponsors/SIF-logo.png" alt="TMU Student Initiative Fund (SIF)">
         </span></span>
     </a>
     
@@ -285,6 +285,15 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
 
     [data-md-color-scheme="slate"] .logo-ibz-dark img {
         filter: url(#sponsor-ibz-clean-edges);
+    }
+
+    /* The supplied SIF artwork is white with transparency. */
+    .sponsor-item.logo-sif img {
+        filter: brightness(0);
+    }
+
+    [data-md-color-scheme="slate"] .sponsor-item.logo-sif img {
+        filter: none;
     }
 
     .sponsor-item.individual {

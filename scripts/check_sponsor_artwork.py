@@ -42,6 +42,8 @@ for name in ('megapro-wordmark.png', 'megapro-wordmark-dark.png'):
     assert logo[78:80, 565:569, 3].max() < 20
 
 brand_colours = {}
+sif_bounds = Image.open(root/'docs/sponsors/SIF-logo.png').getchannel('A').getbbox()
+assert sif_bounds == (23, 196, 1003, 815), ('SIF artwork changed; recheck crop', sif_bounds)
 for sponsor, filename in (('dishoncnc.com', 'dishon-logo-hires.png'),
                           ('hoskin.ca', 'hoskin-logo-hires.png'),
                           ('innovationboostzone', 'ibz-logo-transparent.png')):
@@ -60,7 +62,7 @@ with sync_playwright() as p:
             page.on('pageerror', lambda error: errors.append(str(error)))
             page.goto(args.url.rstrip('/')+'/sponsors/', wait_until='domcontentloaded')
             page.wait_for_function('(dark)=>document.body.dataset.mdColorScheme===(dark?"slate":"default")', arg=theme=='dark')
-            assert page.locator('.sponsor-grid > a.sponsor-item').count() == 23
+            assert page.locator('.sponsor-grid > a.sponsor-item').count() == 24
             assert page.locator('.sponsor-grid > :not(a)').count() == 0
             assert page.get_by_role('link', name='Artwork credits', exact=True).count() == 0
             assert '© 2017 MEGAPRO Tools' in page.locator('.sponsor-item[href*="megaprotools"]').get_attribute('title')
@@ -96,9 +98,11 @@ with sync_playwright() as p:
                     const bounds=grid.getBoundingClientRect();
                     const last=tiles.at(-1);
                     return {firstHeight:tiles[0].height, gap:tiles[2].y-tiles[0].bottom,
-                        lastCentered:Math.abs(last.x+last.width/2-bounds.x-bounds.width/2)<1};
+                        lastBalanced:tiles.length%2
+                            ? Math.abs(last.x+last.width/2-bounds.x-bounds.width/2)<1
+                            : Math.abs(last.y-tiles.at(-2).y)<1};
                 }''')
-                assert spacing['firstHeight'] < 85 and 8 <= spacing['gap'] <= 16 and spacing['lastCentered'], spacing
+                assert spacing['firstHeight'] < 85 and 8 <= spacing['gap'] <= 16 and spacing['lastBalanced'], spacing
                 # Pair the thin wordmarks instead of leaving Stein beside SolidWorks.
                 pair = page.locator('.sponsor-grid').evaluate('''grid=>{
                     const a=grid.querySelector('[href*="voestalpine"]').getBoundingClientRect();
@@ -109,6 +113,22 @@ with sync_playwright() as p:
             for item in page.locator('.sponsor-item').all():
                 item.scroll_into_view_if_needed()
                 item.locator('img:visible').evaluate('(img)=>img.decode()')
+            sif = page.locator('.sponsor-item.logo-sif')
+            sif_geometry = sif.evaluate('''tile=>{
+                const img=tile.querySelector('img'), r=img.getBoundingClientRect();
+                const c=tile.querySelector('.sponsor-logo__crop').getBoundingClientRect();
+                const x=r.width/1024, y=r.height/1024;
+                return {filter:getComputedStyle(img).filter,
+                    margins:[r.x+23*x-c.x,r.y+196*y-c.y,
+                        c.right-r.x-1003*x,c.bottom-r.y-815*y]};
+            }''')
+            assert sif_geometry['filter'] == ('none' if theme == 'dark' else 'brightness(0)'), sif_geometry
+            assert all(-.05 <= margin <= 1 for margin in sif_geometry['margins']), ('SIF clipped or padded', sif_geometry)
+            sif_pixels = np.array(Image.open(io.BytesIO(sif.screenshot())).convert('RGB'))
+            sif_ink = sif_pixels.min(axis=2)>245 if theme=='dark' else sif_pixels.max(axis=2)<10
+            assert sif_ink.sum()>100, ('SIF lacks contrast', width, theme)
+            if width == 390:
+                sif.screenshot(path=str(out/f'sif-{theme}.png'))
             for sponsor, brand_colour in brand_colours.items():
                 tile = page.locator(f'.sponsor-item[href*="{sponsor}"]')
                 pixels = np.array(Image.open(io.BytesIO(tile.screenshot())).convert('RGB'))
@@ -171,4 +191,4 @@ with sync_playwright() as p:
             print(json.dumps({'width':width,'theme':theme,'logos':[{k:logo[k] for k in ('name','quality')} for logo in result]}), flush=True)
             page.close()
     browser.close()
-print('All 23 logos: 3x-or-vector sharpness, tight centered bounds and light/dark rendering passed.')
+print('All 24 logos: 3x-or-vector sharpness, tight centered bounds and light/dark rendering passed.')

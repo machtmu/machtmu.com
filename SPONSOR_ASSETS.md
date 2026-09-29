@@ -29,6 +29,12 @@ Farms, SolidWorks, TMU and voestalpine assets retain their high-resolution artwo
 
 ## Reproduction and verification
 
+SIF keeps the original white-on-transparent `SIF-logo.png` (1024 × 1024).
+Its visible alpha bounds are `(23, 196, 1003, 815)`; CSS crops to
+`(22, 195, 1004, 816)`, retaining a one-source-pixel margin and all three lines.
+CSS makes the lettering black in light mode and preserves white in dark mode.
+The source file is unchanged; no redraw or enlargement is needed.
+
 Aqua Environment's `aqua-environment-logo-dark.svg` adds a filter only to the
 lettering, tagline and separator (`.cls-2`, `.cls-3`). The symbol's gradient,
 outline and embedded shadow are identical to the original SVG. No whole-image
