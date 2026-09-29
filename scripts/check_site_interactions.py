@@ -31,10 +31,11 @@ with sync_playwright() as p:
     assert page.locator('.home-hero__inner p').count()==0
     assert "Toronto Metropolitan University" in page.locator('.about').inner_text()
     assert page.get_by_role('button',name='Expand plot:',exact=False).count()==0
-    plot_link=page.locator('.hotfire-data > a')
-    plot_link.click();assert page.locator('dialog').is_visible()
-    assert page.locator('dialog img').get_attribute('src')==themed.get_attribute('src')
-    page.keyboard.press('Escape');assert plot_link.evaluate('(e)=>e===document.activeElement')
+    assert page.locator('.hotfire-data a, .hotfire-data button').count()==0
+    caption=page.locator('.hotfire-data figcaption')
+    assert caption.inner_text()=='Double-hotfire telemetry'
+    assert caption.evaluate('(e)=>getComputedStyle(e).textAlign')=='center'
+    themed.click();assert page.locator('dialog:visible').count()==0
     sections=page.locator('.md-content section').evaluate_all('(s)=>s.map(e=>e.className)');assert sections[0]=='video-showcase',sections
     if width==390:assert page.locator('.hero-bg').get_attribute('src') is None
     hero=page.locator('[data-hero-motion]');hero.click();page.wait_for_timeout(300)

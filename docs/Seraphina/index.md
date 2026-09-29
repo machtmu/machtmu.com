@@ -16,7 +16,7 @@ Seraphina is MACH's project for 2026. It is a complete overhaul of the tank syst
 
 ## Launch Canada 2026
 
-<figure>
+<figure style="display:block; width:100%; max-width:720px; margin:1.5rem auto;">
   <a href="../assets/images/launch-canada-2026-all-teams.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Launch Canada 2026 group photo">
     <img src="../assets/images/launch-canada-2026-all-teams.jpg" alt="All teams gathered at Launch Canada 2026" width="1280" height="853" loading="lazy" decoding="async" style="width:100%; height:auto; max-height:none; border-radius:6px;">
   </a>

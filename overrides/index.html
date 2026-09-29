@@ -383,10 +383,6 @@
       width: 100%;
     }
 
-    .hotfire-data a {
-      display: block;
-    }
-
     .hotfire-data img {
       background: #f5f6f8;
       border-radius: 6px;
@@ -400,8 +396,10 @@
       color: var(--md-default-fg-color--light);
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 0.78rem;
-      margin-top: 0.5rem;
-      text-align: right;
+      margin: 0.5rem 0 0;
+      max-width: none;
+      text-align: center;
+      width: 100%;
     }
 
     /* Simple slideshow */
@@ -488,9 +486,6 @@
         gap: 0.35rem;
       }
 
-      .hotfire-data figcaption {
-        text-align: left;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -550,18 +545,14 @@
       </div>
 
       <figure class="hotfire-data">
-        <a href="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
-           target="_blank" rel="noopener"
-           aria-label="Open the full-resolution August 20 double-hotfire telemetry plot">
-          <img src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
+        <img src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
                data-plot-light-src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png"
                data-plot-dark-src="{{ base_url }}/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire-dark.png"
                data-plot-controls="none"
                width="1752" height="999"
                alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026"
                loading="lazy" decoding="async">
-        </a>
-        <figcaption>Double-hotfire telemetry · Open for full resolution</figcaption>
+        <figcaption>Double-hotfire telemetry</figcaption>
       </figure>
 
     </div>
