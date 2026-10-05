@@ -90,7 +90,8 @@ with sync_playwright() as p:
     video.evaluate('(v)=>v.play()')
     page.wait_for_timeout(600)
     assert video.evaluate('(v)=>v.currentTime>0 && !v.error')
-    assert abs(video.evaluate('(v)=>v.duration') - 32.466667) < .1
+    # Website edit removes 5.8 s of lead-in, keeping ~1 s before the audio onset.
+    assert abs(video.evaluate('(v)=>v.duration') - 26.666667) < .1
     video.evaluate('(v)=>v.pause()')
     expected = {
         'seraphina-2026-10-04-test-data.csv': 'e1a6491162f0ca62c1e1094f125f1274c6ba1086f864d4f869b0d355cf8e416d',
