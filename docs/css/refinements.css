@@ -183,3 +183,17 @@ dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; 
 @media (prefers-reduced-motion: reduce) {
   .mach-control { transition: none; }
 }
+.hotfire-frame-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+.md-typeset .hotfire-frame-grid figure { margin: 0; min-width: 0; }
+.md-typeset .hotfire-frame-grid img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.md-typeset .hotfire-frame-grid figcaption { margin-top: .6rem; text-align: center; }
+.hotfire-downloads { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: 1rem 0 2rem; }
+@media (max-width: 600px) {
+  .hotfire-frame-grid { grid-template-columns: 1fr; }
+  .hotfire-downloads .md-button { width: 100%; text-align: center; }
+}

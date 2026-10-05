@@ -2,7 +2,7 @@
 title: Seraphina
 seo_title: Seraphina Liquid Rocket Engine and Hotfire Data | MACH TMU
 description: Explore Seraphina, MACH's 2026 liquid rocketry project at Toronto Metropolitan University, with automated fueling, hotfire videos and measured test data.
-image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
+image: https://machtmu.com/Seraphina/oct-4-hotfire/pumpkin-breaking.webp
 hide:
   - toc
   - navigation
@@ -26,6 +26,14 @@ Seraphina is MACH's project for 2026. It is a complete overhaul of the tank syst
 ## Tests
 
 <div class="program-test-grid">
+  <article>
+    <a href="oct-4-hotfire/"><img src="oct-4-hotfire/pumpkin-breaking.webp" alt="A pumpkin breaking apart in the Seraphina engine exhaust on October 4, 2026" width="1920" height="1080" loading="lazy" decoding="async"></a>
+    <div>
+      <time datetime="2026-10-04">October 4, 2026</time>
+      <h2><a href="oct-4-hotfire/">Hotfire and relight</a></h2>
+      <p>Two commanded firings, with the relight command 13.49 seconds after the first ignition command. Watch the pumpkin hotfire and explore the loading and burn telemetry.</p>
+    </div>
+  </article>
   <article>
     <a href="aug-20-hotfire/"><img src="aug-20-hotfire/seraphina-double-hotfire-poster.webp" alt="Seraphina firing during the August 20 relight test" loading="lazy" decoding="async"></a>
     <div>
