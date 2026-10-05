@@ -6,8 +6,6 @@ image: https://machtmu.com/Seraphina/oct-4-hotfire/pumpkin-breaking.webp
 
 # Seraphina Hotfire & Relight — October 4, 2026
 
-During the October 3–4 campaign, Seraphina completed two commanded firings on October 4. The relight command occurred 13.49 seconds after the first ignition command. The close-up video also captures a carved pumpkin being blown apart in the exhaust path.
-
 ## Test Video
 
 <figure style="margin:2rem auto; width:100%; max-width:1000px; text-align:center;">
@@ -40,8 +38,6 @@ During the October 3–4 campaign, Seraphina completed two commanded firings on 
   <a href="/Seraphina/oct-4-hotfire/seraphina-2026-10-04-startup.csv" download class="md-button">Download Startup Log (.csv)</a>
 </div>
 
-The main log contains the loading sequence and both firings. The separate startup log contains ten safe-state rows and is not included in the plots. Both downloads preserve the original CSV contents.
-
 ## Propellant Loading
 
 <figure style="margin:2rem auto; width:100%; max-width:1200px; text-align:center;">
@@ -62,11 +58,3 @@ The main log contains the loading sequence and both firings. The separate startu
     <img src="/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png" data-plot-light-src="/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png" data-plot-dark-src="/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire-dark.png" alt="Pressure, thrust and propellant-mass telemetry for both Seraphina firings on October 4, 2026" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:8px;">
   </a>
 </figure>
-
-### Measurement Notes
-
-The estimated load was 2.28 kg of fuel and 4.41 kg of oxidizer. These are successive mass increases, using the median readings in the final second before piston indexing, oxidizer fill and the first ignition command. They are loading estimates, not separate propellant-flow measurements. Plot time is relative to the first ignition command.
-
-The figures show measured values without smoothing. Consecutive repeated values are omitted independently for each channel; the original CSV remains unchanged. Usable new-value rates are calculated from each plotted window, and pressure, thrust and propellant-mass zero ticks are aligned.
-
-The source's thrust channel is converted from kgf to N using 9.80665 N/kgf, following the MACH logger plotting standard. Propellant mass is plotted as recorded, without zeroing. Fuel tank pressure reads approximately 72 psi at the beginning of the main log; no offset correction has been applied. The temperature columns contain only zeros, so no thermocouple telemetry is plotted.
