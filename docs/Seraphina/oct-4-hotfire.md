@@ -14,6 +14,22 @@ image: https://machtmu.com/Seraphina/oct-4-hotfire/pumpkin-breaking.webp
   </video>
 </figure>
 
+### Additional Views
+
+<figure style="margin:2rem auto; width:100%; max-width:1000px; text-align:center;">
+  <video controls preload="none" playsinline poster="/Seraphina/oct-4-hotfire/seraphina-oct-4-iphone-poster.webp" aria-label="Additional camera view 1 of the Seraphina hotfire and relight" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <source src="/Seraphina/oct-4-hotfire/seraphina-oct-4-iphone.mp4" type="video/mp4">
+  </video>
+  <figcaption>View 1</figcaption>
+</figure>
+
+<figure style="margin:2rem auto; width:100%; max-width:1000px; text-align:center;">
+  <video controls preload="none" playsinline poster="/Seraphina/oct-4-hotfire/seraphina-oct-4-s10-poster.webp" aria-label="Additional camera view 2 of the Seraphina hotfire and relight" style="display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:8px;">
+    <source src="/Seraphina/oct-4-hotfire/seraphina-oct-4-s10.mp4" type="video/mp4">
+  </video>
+  <figcaption>View 2</figcaption>
+</figure>
+
 ## Pumpkin Frame Grabs
 
 <div class="hotfire-frame-grid">
