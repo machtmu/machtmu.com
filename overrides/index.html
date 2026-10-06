@@ -6,7 +6,9 @@
 
 {% block extrahead %}
   {{ super() }}
-  <noscript><style>img[data-home-deferred-src] { display: none !important; }</style></noscript>
+  {# Instant navigation parses fetched HTML with scripting disabled. Scope
+     fallbacks to the LIVE root state, not the parser's temporary noscript state. #}
+  <noscript><style>html.no-js img[data-home-deferred-src] { display: none !important; }</style></noscript>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MACH">
   <meta property="og:title" content="{{ page.meta.seo_title | e }}">
@@ -810,7 +812,7 @@
              data-poster="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp">
         <source src="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-hotfire.mp4" type="video/mp4">
       </video>
-      <noscript><style>.home-hotfire .showcase-video { background: center / cover no-repeat url("{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp"); }</style></noscript>
+      <noscript><style>html.no-js .home-hotfire .showcase-video { background: center / cover no-repeat url("{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp"); }</style></noscript>
     </div>
   </section>
   <section class="home-data" aria-label="October 4 relight telemetry">
