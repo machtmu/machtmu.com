@@ -31,6 +31,13 @@ with sync_playwright() as p:
      assert image.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
      assert image.get_attribute('src').endswith('-dark.png')==(scheme=='dark')
    if path=='/':
+    assert themed.evaluate('(i)=>getComputedStyle(i).backgroundColor')=='rgba(0, 0, 0, 0)'
+    assert themed.evaluate('(i)=>getComputedStyle(i).borderRadius')=='0px'
+    framing=page.locator('.hero-bg').evaluate('(v)=>({hero:v.parentElement.getBoundingClientRect().toJSON(),video:v.getBoundingClientRect().toJSON(),transform:getComputedStyle(v).transform,position:getComputedStyle(v).objectPosition,rem:parseFloat(getComputedStyle(document.documentElement).fontSize)})')
+    assert framing['video']['top']<=framing['hero']['top'] and framing['video']['bottom']>=framing['hero']['bottom'], framing
+    if width<=768:
+     assert abs(framing['video']['height']-framing['hero']['height']-8*framing['rem'])<1, framing
+     assert framing['position']=='100% 0%' and framing['transform']=='none', framing
     assert page.locator('.home-hero__inner p').count()==0
     assert "Toronto Metropolitan University" in page.locator('.about').inner_text()
     assert page.get_by_role('button',name='Expand plot:',exact=False).count()==0

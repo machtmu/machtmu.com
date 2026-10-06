@@ -389,8 +389,8 @@
     }
 
     .hotfire-data img {
-      background: #f5f6f8;
-      border-radius: 6px;
+      background: transparent;
+      border-radius: 0;
       display: block;
       height: auto;
       margin: 0;
@@ -458,6 +458,13 @@
       .home-hero {
         --home-header-offset: 2.4rem;
         min-height: clamp(22rem, 56svh, 29rem);
+      }
+
+      .hero-bg {
+        /* Lower the engine/exhaust below the title; cover the top without gaps. */
+        height: calc(100% + 8rem);
+        object-position: right top;
+        transform: none;
       }
 
       .home-hero__inner h1 {
