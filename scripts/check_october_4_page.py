@@ -92,15 +92,37 @@ with sync_playwright() as p:
     assert page.locator('dialog[open] img').get_attribute('src') == plot.get_attribute('src')
     assert page.locator('[data-plot-zoom]').inner_text() == '2×'
     page.keyboard.press('Escape')
-    video = page.locator('video')
+    assert page.locator('video').count() == 3
+    video = page.locator('video:has(source[src$="seraphina-oct-4-hotfire.mp4"])')
+    assert video.count() == 1
     video.evaluate('(v)=>{v.muted=true;v.preload="auto";v.load()}')
-    page.wait_for_function('()=>document.querySelector("video").readyState>=2')
+    page.wait_for_function('(v)=>v.readyState>=2', arg=video.element_handle())
     video.evaluate('(v)=>v.play()')
     page.wait_for_timeout(600)
     assert video.evaluate('(v)=>v.currentTime>0 && !v.error')
     # Website edit removes 5.8 s of lead-in, keeping ~1 s before the audio onset.
     assert abs(video.evaluate('(v)=>v.duration') - 26.666667) < .1
     video.evaluate('(v)=>v.pause()')
+    for name, duration in (('iphone', 18.566667), ('s10', 19.733333)):
+        video = page.locator(f'video:has(source[src$="seraphina-oct-4-{name}.mp4"])')
+        assert video.count() == 1
+        assert video.get_attribute('controls') is not None
+        assert video.get_attribute('playsinline') is not None
+        assert video.get_attribute('autoplay') is None
+        assert video.get_attribute('preload') == 'none'
+        assert video.get_attribute('poster')
+        video.scroll_into_view_if_needed()
+        bounds = video.bounding_box()
+        assert abs(bounds['width'] / bounds['height'] - 16 / 9) < .01
+        assert video.evaluate('(v)=>getComputedStyle(v).transform') == 'none'
+        video.evaluate('(v)=>{v.muted=true;v.preload="auto";v.load()}')
+        page.wait_for_function('(v)=>v.readyState>=2', arg=video.element_handle())
+        video.evaluate('(v)=>v.play()')
+        page.wait_for_timeout(600)
+        assert video.evaluate('(v)=>v.currentTime>0 && !v.error')
+        assert video.evaluate('(v)=>v.videoWidth===1920 && v.videoHeight===1080')
+        assert abs(video.evaluate('(v)=>v.duration') - duration) < .005
+        video.evaluate('(v)=>v.pause()')
     expected = {
         'seraphina-2026-10-04-test-data.csv': 'e1a6491162f0ca62c1e1094f125f1274c6ba1086f864d4f869b0d355cf8e416d',
         'seraphina-2026-10-04-startup.csv': '835ca8a805061dd2c2d9da14fdfd604a83ac269b915b9144bd57fbb4f2323868',
