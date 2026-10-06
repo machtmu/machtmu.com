@@ -6,6 +6,16 @@ image: https://machtmu.com/Seraphina/oct-4-hotfire/pumpkin-breaking.webp
 
 # Seraphina Hotfire & Relight — October 4, 2026
 
+## Successes
+
+We completed another successful double hotfire and introduced new members to hotfire operations. Despite the last-minute scrambling, we maintained a calm environment throughout the weekend.
+
+## Lessons
+
+We need to prepare earlier and treat logistics as seriously as the test itself. Thorough checklists, clear responsibilities, rehearsals, and confirming everything before departure would reduce scrambling. Packing, transport, supplies, and contingencies should be planned in advance.
+
+The reported igniter damage and apparent relight delay need further investigation. Questionable pressure readings, electrical weatherproofing, incomplete temperature logging, and a slow logging rate also highlighted technical areas to improve before the next test.
+
 ## Test Video
 
 <figure style="margin:2rem auto; width:100%; max-width:1000px; text-align:center;">
