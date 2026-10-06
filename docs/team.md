@@ -36,7 +36,7 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
     </li>
     <li>
       <a class="team-portrait team-portrait--jonathan" href="https://www.linkedin.com/in/jonathan-al-hinn/">
-        <img src="/assets/images/leads/Jonathan-Al-Hinn-studio.webp" alt="Jonathan Al-Hinn" width="1086" height="1448" loading="lazy" decoding="async" data-display-original data-portrait-delivery="100" sizes="(max-width: 600px) calc(62.5vw - 27.5px), (max-width: 1220px) calc(33.3334vw - 24px), 382.667px">
+        <img src="/assets/images/leads/Jonathan-Al-Hinn-lighting-v2-studio.webp" alt="Jonathan Al-Hinn" width="1086" height="1448" loading="lazy" decoding="async" data-display-original data-portrait-delivery="100" sizes="(max-width: 600px) calc(62.5vw - 27.5px), (max-width: 1220px) calc(33.3334vw - 24px), 382.667px">
         <span class="team-portrait-caption"><strong>Jonathan Al-Hinn</strong><em>Safety Officer</em></span>
       </a>
     </li>

@@ -40,6 +40,37 @@
     },
     {
       "name": "Jonathan Al-Hinn",
+      "active_edition": "lighting-v2",
+      "editions": [
+        {
+          "id": "lighting-v2",
+          "date": "2026-10-06",
+          "mode": "built-in image_gen",
+          "use_case": "lighting-weather",
+          "direct_original_edit": true,
+          "source": "Jonathan-Al-Hinn.jpg",
+          "source_sha256": "b9514f918b2048dfca5aa51f44638b63707b5ec1a3b5310d69c1e1c6ad48d8fa",
+          "reference_roles": {
+            "Jonathan-Al-Hinn-studio.png": "Framing reference only; not an identity source",
+            "Sam-Lead-studio.png": "Lighting and grey backdrop only",
+            "Tobe-Propellant-Management-Lead-studio.png": "Lighting and grey backdrop only",
+            "Madison-Warren-studio.png": "Lighting and grey backdrop only"
+          },
+          "output_master": "output/imagegen/jonathan-lighting-v2/Jonathan-Al-Hinn-lighting-v2-studio.png",
+          "output_master_published": false,
+          "output_master_sha256": "bfd4c73efb21e413099e3d43e933a21e3c624ace3d69469f99bf42ae4529cdc3",
+          "built_in_output_filename": "exec-ff8e8b0c-bf80-4356-9fa2-3e5d8ca2c9d6.png",
+          "delivery": "Jonathan-Al-Hinn-lighting-v2-studio.webp",
+          "delivery_sha256": "ab7381ec7fde9db3210a3a9237108e531de941896ecd9365ce256870950599e1",
+          "dimensions": [
+            1086,
+            1448
+          ],
+          "prompt": "Use case: lighting-weather\nAsset type: existing MACH website team-lead portrait, single original-source photographic edit.\nInput images: Image 1 (Jonathan-Al-Hinn.jpg) is the ONLY photographed person/edit target. Image 2 (Jonathan-Al-Hinn-studio.png) is ONLY framing/scale reference, not a source of face pixels. Images 3 (Sam), 4 (Toby), 5 (Madison) are ONLY references for soft diffuse portrait lighting and seamless neutral-grey backdrop. Do not blend any other person's identity into Jonathan.\nPrimary request: Starting directly from Image 1, give Jonathan the same soft balanced neutral studio light as the reference lead photos and replace only the concrete bleachers background with the matching opaque neutral grey photography backdrop. His current overhead outdoor lighting causes too-bright forehead/nose highlights and deep shadow under the eyebrows; gently soften those highlights and add subtle diffuse fill to those eye-socket/brow shadows. Preserve natural facial dimensionality and his true medium olive complexion. Match neutral white balance without making skin lighter or changing ethnicity. Backdrop #b7b7b7 with subtle upper-center #c8c8c8 falloff and lower-edge #a5a5a5, same as the other leads.\nComposition: Exactly retain the original portrait's 3:4 canvas, viewpoint, visible body, head scale, position, eye line, crop, seated pose, shoulders, neckline, hands outside frame. Match the existing Jonathan studio composition in image 2. No zoom, recrop, pose change, extra canvas, new limbs, or furniture. One finished photograph of Jonathan alone.\nCritical identity invariants: retain his exact original facial structure, eyes, eyebrows, nose, mouth, beard, all curly hair and wisps, age, relaxed closed-mouth expression and gaze, natural pores and small imperfections. Retain every original detail and texture of the charcoal-black diamond-pattern knit polo, white piping, collar and black buttons. Only exposure/light balance and background may change. No beautification, smoothing, face reconstruction, slimming, reshaping, new catchlights, sharpening or artificial skin-lightening. No extra people, text, watermark, logos, accessories, halos or dramatic rim lighting. Photorealistic, understated, faithful photography correction, not a newly imagined portrait.",
+          "review": "Original, previous studio image, edited candidate and reference leads independently visually reviewed before integration. Softer forehead highlights and diffuse brow/eye fill preserve recognizable identity, natural complexion, original pose/clothing/framing. Original JPEG, previous studio PNG/WebP and all other lead assets retained unchanged.",
+          "pixel_verification": "Native delivery and retained new PNG compare equal in every decoded RGBA pixel. Image editing itself is not claimed pixel-identical to the original photograph."
+        }
+      ],
       "stem": "Jonathan-Al-Hinn",
       "original": "Jonathan-Al-Hinn.jpg",
       "original_sha256": "b9514f918b2048dfca5aa51f44638b63707b5ec1a3b5310d69c1e1c6ad48d8fa",
