@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 from playwright.sync_api import sync_playwright
 from PIL import Image
 import numpy as np
+from prepare_aqua_artwork import dark_artwork
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--url', default='http://127.0.0.1:8876')
@@ -26,9 +27,8 @@ out.mkdir(exist_ok=True)
 
 original = Image.open(root/'docs/sponsors/flownex-logo.png').convert('RGBA')
 aqua_original = (root/'docs/sponsors/aqua-environment-logo.svg').read_text().strip()
-aqua_dark = (root/'docs/sponsors/aqua-environment-logo-dark.svg').read_text().strip()
-aqua_text_filter = '.cls-2,.cls-3{filter:invert(1) hue-rotate(180deg) saturate(1.05) brightness(1.08);}'
-assert aqua_dark == aqua_original.replace('</style>', aqua_text_filter+'</style>')
+aqua_dark = (root/'docs/sponsors/aqua-environment-logo-dark-v2.svg').read_text().strip()
+assert aqua_dark == dark_artwork(aqua_original)
 bounds = original.getchannel('A').getbbox()
 light = np.array(Image.open(root/'docs/sponsors/flownex-logo-original.png'))
 dark = np.array(Image.open(root/'docs/sponsors/flownex-logo-dark.png'))
@@ -70,7 +70,7 @@ with sync_playwright() as p:
             assert '© 2017 MEGAPRO Tools' in page.locator('.sponsor-item[href*="megaprotools"]').get_attribute('title')
             aqua = page.locator('.sponsor-item[href*="aquaenvironment"] img:visible')
             assert aqua.evaluate('(img)=>getComputedStyle(img).filter') == 'none'
-            assert aqua.get_attribute('src').endswith('aqua-environment-logo-dark.svg' if theme == 'dark' else 'aqua-environment-logo.svg')
+            assert aqua.get_attribute('src').endswith('aqua-environment-logo-dark-v2.svg' if theme == 'dark' else 'aqua-environment-logo.svg')
             if width == 390 and theme == 'dark':
                 comparison = page.locator('.sponsor-item[href*="aquaenvironment"]').evaluate('''async tile=>{
                     const images=[...tile.querySelectorAll('img')].map(source=>{

@@ -35,8 +35,10 @@ Its visible alpha bounds are `(23, 196, 1003, 815)`; CSS crops to
 CSS makes the lettering black in light mode and preserves white in dark mode.
 The source file is unchanged; no redraw or enlargement is needed.
 
-Aqua Environment's `aqua-environment-logo-dark.svg` adds a filter only to the
-lettering, tagline and separator (`.cls-2`, `.cls-3`). The symbol's gradient,
+Aqua Environment's `aqua-environment-logo-dark-v2.svg` uses explicit light fills
+for the lettering, tagline and separator (`.cls-2`, `.cls-3`). WebKit rendered
+the previous filtered SVG with its original dark fills. Run `python scripts/prepare_aqua_artwork.py`
+to reproduce the asset. The symbol's gradient,
 outline and embedded shadow are identical to the original SVG. No whole-image
 filter is applied, and the original remains the light-mode asset.
 
