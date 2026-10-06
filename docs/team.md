@@ -29,10 +29,10 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
       </a>
     </li>
     <li>
-      <div class="team-portrait team-portrait--samuel">
+      <a class="team-portrait team-portrait--samuel" href="https://www.linkedin.com/in/samuel-li-741440302/">
         <img src="/assets/images/leads/Sam-Lead-studio.webp" alt="Samuel Li" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="130" sizes="(max-width: 600px) calc(81.25vw - 35.75px), (max-width: 1220px) calc(43.3334vw - 31.2px), 497.467px">
         <span class="team-portrait-caption"><strong>Samuel Li</strong><em>Operations Director</em></span>
-      </div>
+      </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--jonathan" href="https://www.linkedin.com/in/jonathan-al-hinn/">
@@ -47,10 +47,10 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
       </a>
     </li>
     <li>
-      <div class="team-portrait team-portrait--madison">
+      <a class="team-portrait team-portrait--madison" href="https://www.linkedin.com/in/madison-warren-501997294/">
         <img src="/assets/images/leads/Madison-Warren-studio.webp" alt="Madison Warren" width="1025" height="1535" loading="lazy" decoding="async" data-display-original data-portrait-delivery="120" sizes="(max-width: 600px) calc(75vw - 33px), (max-width: 1220px) calc(40vw - 28.8px), 459.2px">
         <span class="team-portrait-caption"><strong>Madison Warren</strong><em>Media &amp; Logistics Lead</em></span>
-      </div>
+      </a>
     </li>
   </ul>
 </div>
