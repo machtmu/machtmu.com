@@ -24,6 +24,13 @@ def build():
     display = IMG / 'logo-hero-dark.png'
     logo.save(display, optimize=True, compress_level=9)
     print(f'{display.name}: {logo.width} x {logo.height}; {display.stat().st_size:,} bytes; source downsampled once.')
+    # Format-only delivery optimization: retain every decoded RGBA pixel,
+    # including transparent RGB, at the same native resolution and geometry.
+    delivery = IMG / 'logo-hero-dark.webp'
+    logo.save(delivery, 'WEBP', lossless=True, quality=100, method=6, exact=True)
+    with Image.open(delivery) as decoded:
+        assert decoded.convert('RGBA').tobytes() == logo.tobytes()
+    print(f'{delivery.name}: {delivery.stat().st_size:,} bytes; pixel-identical lossless delivery.')
     red, green, blue, alpha = logo.split()
     colour_difference = ImageChops.lighter(
         ImageChops.difference(red, green), ImageChops.difference(red, blue),

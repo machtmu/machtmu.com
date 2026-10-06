@@ -79,8 +79,11 @@ with sync_playwright() as p:
    themed=page.locator('img[data-plot-dark-src]')
    if themed.count():
     for image in themed.all():
+     image.scroll_into_view_if_needed()
+     page.wait_for_function('(img)=>img.complete&&img.naturalWidth>0',arg=image.element_handle())
      assert image.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
      assert image.get_attribute('src').endswith('-dark.png')==(scheme=='dark')
+    page.evaluate('scrollTo(0,0)');page.wait_for_timeout(100)
    if path=='/':
     projects=page.locator('.home-project-links a')
     assert projects.count()==3
@@ -138,6 +141,8 @@ with sync_playwright() as p:
     assert abs(branding['subtitleAxis']-branding['viewportAxis'])<1, branding
     assert abs(branding['gap']-(8 if width<=768 else 10))<1, branding
     assert page.locator('.home-hero__logo').get_attribute('alt')=='MACH'
+    assert page.locator('.home-hero__logo').get_attribute('src').endswith('/logo-hero-dark.webp')
+    assert page.locator('.home-hero__logo').evaluate('i=>[i.naturalWidth,i.naturalHeight]')==[2048,636]
     if not page.evaluate('matchMedia("(dynamic-range: high)").matches'):
      assert page.locator('.home-hero__title').evaluate('(e)=>getComputedStyle(e,"::after").display')=='none'
      assert page.locator('.home-hero__title').evaluate('(e)=>getComputedStyle(e,"::before").display')=='none'
@@ -145,6 +150,9 @@ with sync_playwright() as p:
     # Retain the optimized native-resolution hero rather than a video thumbnail.
     assert hero_video.get_attribute('poster').endswith('.webp')
     assert hero_video.get_attribute('poster')==hero_video.get_attribute('data-light-poster')==hero_video.get_attribute('data-dark-poster')
+    poster_preload=page.locator('link[rel="preload"][as="image"][fetchpriority="high"]')
+    assert poster_preload.count()==1 and poster_preload.get_attribute('type')=='image/webp'
+    assert page.evaluate('document.querySelector("link[rel=preload][as=image][fetchpriority=high]").href===document.querySelector(".hero-bg").poster')
     poster_size=hero_video.evaluate('''async v=>{const image=new Image();image.src=v.poster;await image.decode();return [image.naturalWidth,image.naturalHeight];}''')
     assert poster_size==[2688,1446], poster_size
     intro=page.locator('.home-team-intro')

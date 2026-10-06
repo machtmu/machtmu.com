@@ -6,6 +6,7 @@
 
 {% block extrahead %}
   {{ super() }}
+  <noscript><style>img[data-home-deferred-src] { display: none !important; }</style></noscript>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MACH">
   <meta property="og:title" content="{{ page.meta.seo_title | e }}">
@@ -79,6 +80,9 @@
       ]
     }
   </script>
+  {# The native video poster is the largest first-paint image. Give the exact
+     same resource priority without fetching motion or changing its pixels. #}
+  <link rel="preload" href="{{ 'assets/images/seraphina-august-relight-hero.webp' | url }}" as="image" type="image/webp" fetchpriority="high">
   <link rel="preload" href="{{ 'assets/fonts/inter-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <style>
     body {
@@ -776,7 +780,7 @@
     </video>
 
     <div class="home-hero__inner">
-      <h1 class="home-hero__title"><img class="home-hero__logo" src="{{ 'img/logo-hero-dark.png' | url }}" alt="MACH" width="2048" height="636" fetchpriority="high" decoding="async" data-display-original></h1>
+      <h1 class="home-hero__title"><img class="home-hero__logo" src="{{ 'img/logo-hero-dark.webp' | url }}" alt="MACH" width="2048" height="636" fetchpriority="high" decoding="async" data-display-original></h1>
       <p class="home-hero__subtitle">TMU Liquid Rocketry</p>
     </div>
     <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play hero video" hidden>
@@ -803,21 +807,23 @@
       <h2 class="home-hotfire__heading" id="home-hotfire-title">Latest hotfire: October 4 relight</h2>
       <video class="showcase-video" controls playsinline preload="none"
              aria-label="Seraphina hotfire and relight on October 4th, 2026, with a pumpkin in the exhaust path"
-             poster="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp">
+             data-poster="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp">
         <source src="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-hotfire.mp4" type="video/mp4">
       </video>
+      <noscript><style>.home-hotfire .showcase-video { background: center / cover no-repeat url("{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp"); }</style></noscript>
     </div>
   </section>
   <section class="home-data" aria-label="October 4 relight telemetry">
       <figure class="hotfire-data">
         <div class="hotfire-data__viewport">
-          <img src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
+          <img data-home-deferred-src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
                data-plot-light-src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
                data-plot-dark-src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire-dark.png"
                data-plot-controls="none"
                width="1771" height="1107"
                alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on October 4th, 2026"
                loading="lazy" decoding="async">
+          <noscript><picture><source media="(prefers-color-scheme: dark)" srcset="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire-dark.png"><img src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png" width="1771" height="1107" alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on October 4th, 2026"></picture></noscript>
         </div>
       </figure>
   </section>
@@ -831,14 +837,16 @@
             </span>
           </a>
           <a href="{{ 'SPRINT/' | url }}" class="home-project-link">
-            <img src="{{ 'SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp' | url }}" alt="" width="960" height="540" loading="lazy" decoding="async" data-display-original style="object-position: 85% center">
+            <img data-home-deferred-src="{{ 'SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp' | url }}" alt="" width="960" height="540" loading="lazy" decoding="async" data-display-original style="object-position: 85% center">
+            <noscript><img src="{{ 'SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp' | url }}" alt="" width="960" height="540" style="object-position: 85% center"></noscript>
             <span class="home-project-link__caption">
             <span class="home-project-link__name">SPRINT</span>
             <span class="home-project-link__years">2025</span>
             </span>
           </a>
           <a href="{{ 'GAR-E/' | url }}" class="home-project-link">
-            <img src="{{ 'GAR-E/hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp' | url }}" alt="" width="640" height="360" loading="lazy" decoding="async" data-display-original style="object-position: 20% center">
+            <img data-home-deferred-src="{{ 'GAR-E/hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp' | url }}" alt="" width="640" height="360" loading="lazy" decoding="async" data-display-original style="object-position: 20% center">
+            <noscript><img src="{{ 'GAR-E/hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp' | url }}" alt="" width="640" height="360" style="object-position: 20% center"></noscript>
             <span class="home-project-link__caption">
             <span class="home-project-link__name">GAR-E</span>
             <span class="home-project-link__years">2023–2024</span>

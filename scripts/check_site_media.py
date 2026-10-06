@@ -14,6 +14,8 @@ SITE_ROOT = REPO_ROOT / "site"
 URL_ATTRIBUTES = {
     "href",
     "poster",
+    "data-poster",
+    "data-home-deferred-src",
     "src",
     "data-dark-poster",
     "data-dark-src",
@@ -45,7 +47,7 @@ class ReferenceParser(HTMLParser):
                 for candidate in value.split(","):
                     self.references.append((tag, name, candidate.strip().split()[0]))
 
-        if tag == "video" and "poster" not in values:
+        if tag == "video" and not (values.get("poster") or values.get("data-poster")):
             self.video_without_poster.append(values.get("aria-label") or values.get("title") or "unlabelled video")
 
         if tag == "img" and (values.get("alt") or "").strip().lower() == "alt text":

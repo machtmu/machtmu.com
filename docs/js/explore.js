@@ -22,7 +22,11 @@
     const dark = scheme === "slate" || (scheme !== "default" && colorPreference.matches);
     document.querySelectorAll("img[data-plot-light-src][data-plot-dark-src]").forEach(img => {
       const source = new URL(dark ? img.dataset.plotDarkSrc : img.dataset.plotLightSrc, document.baseURI).href;
-      if (img.src !== source) img.src = source;
+      // Home telemetry waits until approached; remember the current system
+      // theme without pulling this below-the-fold image into first paint.
+      if (img.dataset.homeDeferredSrc && img.dataset.homeLoaded !== "true") {
+        img.dataset.homeDeferredSrc = source;
+      } else if (img.src !== source) img.src = source;
       img.dataset.plotTheme = dark ? "dark" : "light";
       const link = img.closest("a");
       if (link) link.href = source;

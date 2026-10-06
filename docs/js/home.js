@@ -88,8 +88,61 @@
     observer.observe(hero);
 
     const hotfire = document.querySelector(".home-hotfire");
+    const deferredImages = [...document.querySelectorAll("img[data-home-deferred-src]")];
+    const loadDeferredImage = image => {
+      if (image.dataset.homeLoaded === "true") return;
+      image.dataset.homeLoaded = "true";
+      // Theme may have changed while this photograph/plot was offscreen.
+      const dark = document.body.dataset.mdColorScheme === "slate";
+      image.src = image.dataset.plotLightSrc
+        ? (dark ? image.dataset.plotDarkSrc : image.dataset.plotLightSrc)
+        : image.dataset.homeDeferredSrc;
+    };
+    let imageObserver;
+    if ("IntersectionObserver" in window) {
+      imageObserver = new IntersectionObserver(entries => {
+        for (const entry of entries) if (entry.isIntersecting) {
+          loadDeferredImage(entry.target);
+          imageObserver.unobserve(entry.target);
+        }
+      }, { rootMargin: "100px" });
+      deferredImages.forEach(image => imageObserver.observe(image));
+      window.addEventListener("scroll", () => {
+        for (const image of deferredImages) {
+          if (image.dataset.homeLoaded !== "true" && image.getBoundingClientRect().top < innerHeight + 600) {
+            loadDeferredImage(image);
+            imageObserver.unobserve(image);
+          }
+        }
+      }, { passive: true, signal });
+    } else deferredImages.forEach(loadDeferredImage);
     const hotfireVideo = hotfire?.querySelector(".showcase-video");
+    let posterObserver;
     if (hotfireVideo) {
+      // Native video posters ignore preload="none". Keep this below-the-fold
+      // photograph out of the hero's critical network path, loading shortly
+      // before it comes into view without changing video or controls geometry.
+      const loadHotfirePoster = () => {
+        if (!hotfireVideo.poster && hotfireVideo.dataset.poster) {
+          hotfireVideo.poster = hotfireVideo.dataset.poster;
+        }
+        posterObserver?.disconnect();
+      };
+      if ("IntersectionObserver" in window) {
+        posterObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) loadHotfirePoster();
+        }, { rootMargin: "100px" });
+        posterObserver.observe(hotfireVideo);
+      } else loadHotfirePoster();
+      // Once the visitor starts exploring, allow a larger prefetch window for
+      // fast swipes. Initial page paint still reserves bandwidth for the hero.
+      window.addEventListener("scroll", () => {
+        if (!hotfireVideo.poster && hotfireVideo.getBoundingClientRect().top < innerHeight + 600) {
+          loadHotfirePoster();
+        }
+      }, { passive: true, signal });
+      hotfireVideo.addEventListener("pointerdown", loadHotfirePoster, { passive: true, signal });
+      hotfireVideo.addEventListener("focus", loadHotfirePoster, { signal });
       const revealHotfire = () => { hotfire.dataset.revealed = "true"; };
       const updateHotfirePlayback = () => {
         const playing = !hotfireVideo.paused && !hotfireVideo.ended;
@@ -125,7 +178,7 @@
     document.addEventListener("visibilitychange", updateVideo, { signal });
     measureLayout(); updateHeader(); updateVideo();
     cleanup = () => {
-      controller.abort(); observer.disconnect();
+      controller.abort(); observer.disconnect(); posterObserver?.disconnect(); imageObserver?.disconnect();
       cancelAnimationFrame(frame); video?.pause(); header?.removeAttribute("data-home-hero");
       hero.style.removeProperty("--hero-mobile-height");
     };

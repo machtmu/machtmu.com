@@ -18,13 +18,22 @@ with sync_playwright() as p:
                                       is_mobile=touch, has_touch=touch, reduced_motion=motion)
         page = context.new_page()
         errors = []
+        poster_requests = []
         page.on('pageerror', lambda e: errors.append(str(e)))
+        page.on('request', lambda request: poster_requests.append(request.url) if request.url.endswith('/seraphina-oct-4-poster.webp') else None)
         page.goto(base + '/', wait_until='domcontentloaded')
         panel = page.locator('.home-hotfire')
         video = panel.locator('video')
         page.wait_for_function('document.querySelector(".home-hotfire")?.dataset.playing==="false"')
+        if video.bounding_box()['y'] >= 1000:
+            page.wait_for_timeout(150)
+            assert not poster_requests and not video.get_attribute('poster'), poster_requests
         assert page.evaluate('document.querySelector(".home-team-intro").nextElementSibling===document.querySelector(".home-hotfire")')
         video.scroll_into_view_if_needed()
+        page.wait_for_function('''()=>{const video=document.querySelector('.home-hotfire video');return video.poster===new URL(video.dataset.poster,document.baseURI).href;}''')
+        video.evaluate('''async video=>{const image=new Image();image.src=video.poster;await image.decode();return image.naturalWidth>0;}''')
+        assert video.evaluate('v=>v.poster===new URL(v.dataset.poster,document.baseURI).href')
+        assert len(poster_requests) == 1, poster_requests
         page.mouse.move(0, 0)
         page.wait_for_function('getComputedStyle(document.querySelector(".home-hotfire video")).filter==="grayscale(1)"')
         assert video.evaluate('v=>v.paused&&!v.autoplay&&v.controls&&v.preload==="none"')
