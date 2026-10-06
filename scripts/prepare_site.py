@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Generate display-only media and fingerprint assets after `zensical build`.
+
+Original images, videos, CSVs, PDFs and all download links remain untouched.
+The generated site is disposable; .cache/media retains deterministic variants.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import html
+from html.parser import HTMLParser
+from pathlib import Path
+import re
+import shutil
+from urllib.parse import unquote, urlsplit
+
+from PIL import Image, ImageOps
+
+ROOT = Path(__file__).resolve().parents[1]
+VERSION = "display-v2"
+
+
+class Media:
+    def __init__(self, site: Path, cache: Path):
+        self.site, self.cache = site, cache
+        self.memo = {}
+        self.output = site / "assets/display"
+        self.output.mkdir(parents=True, exist_ok=True)
+        cache.mkdir(parents=True, exist_ok=True)
+
+    def variants(self, raw: str, page: Path, logo=False, poster=False):
+        parsed = urlsplit(raw)
+        if parsed.scheme or parsed.netloc or not parsed.path:
+            return None
+        source = ((self.site / unquote(parsed.path).lstrip("/")) if parsed.path.startswith("/")
+                  else (page.parent / unquote(parsed.path))).resolve()
+        if not source.is_relative_to(self.site.resolve()) or not source.is_file():
+            return None
+        if source.is_relative_to(self.output.resolve()):
+            return None
+        if source.suffix.lower() not in (".jpg", ".jpeg", ".webp", ".png"):
+            return None
+        # PNG telemetry remains at full resolution, with the existing theme/viewer.
+        if source.suffix.lower() == ".png" and not logo and not poster:
+            return None
+        if source.stat().st_size < 16000 and not logo:
+            return None
+        key = (source, logo, poster)
+        if key in self.memo:
+            return self.memo[key]
+        digest = hashlib.sha256(source.read_bytes() + VERSION.encode()).hexdigest()[:16]
+        with Image.open(source) as opened:
+            if getattr(opened, "is_animated", False):
+                return None
+            original_width, original_height = opened.size
+            if opened.getexif().get(274) in (5, 6, 7, 8):
+                original_width, original_height = original_height, original_width
+            image = None
+            widths = sorted({min(original_width, w) for w in ((480, 768, 1280) if logo else (480, 960, 1440))})
+            paths = []
+            for width in widths:
+                name = f"{digest}-{width}{'-logo' if logo else ''}.webp"
+                cached = self.cache / name
+                if not cached.exists():
+                    if image is None:
+                        image = ImageOps.exif_transpose(opened).convert("RGBA" if "A" in opened.getbands() or "transparency" in opened.info else "RGB")
+                    height = max(1, round(original_height * width / original_width))
+                    resized = image.resize((width, height), Image.Resampling.LANCZOS) if width != original_width else image
+                    resized.save(cached, "WEBP", quality=86, method=6, lossless=logo, exact=True,
+                                 icc_profile=opened.info.get("icc_profile", b""))
+                target = self.output / name
+                if not target.exists():
+                    shutil.copyfile(cached, target)
+                paths.append((width, "/assets/display/" + name))
+        default = next((url for width, url in reversed(paths) if width <= 960), paths[0][1])
+        result = (default, ", ".join(f"{url} {width}w" for width, url in paths), original_width, original_height)
+        self.memo[key] = result
+        return result
+
+
+class Rewriter(HTMLParser):
+    def __init__(self, page: Path, media: Media, assets: dict):
+        super().__init__(convert_charrefs=False)
+        self.page, self.media, self.assets = page, media, assets
+        self.parts = []
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        original = self.get_starttag_text()
+        changed = False
+        if tag == "img" and values.get("src") and "data-plot-dark-src" not in values:
+            logo = "/sponsors/" in values["src"] or values["src"].startswith("sponsors/")
+            result = self.media.variants(values["src"], self.page, logo=logo)
+            if result:
+                src, srcset, width, height = result
+                values["data-original-src"] = values["src"]
+                values.update(src=src, srcset=srcset, width=str(width), height=str(height))
+                values["sizes"] = ("(max-width: 900px) 60vw, 250px" if logo
+                                   else "(max-width: 760px) 92vw, (max-width: 1220px) 70vw, 960px")
+                if "slideshow-image" in values.get("class", ""):
+                    values["sizes"] = "(max-width: 760px) 92vw, 700px"
+                elif "/assets/images/leads/" in "/" + unquote(urlsplit(values["data-original-src"]).path).lstrip("./"):
+                    values["sizes"] = "(max-width: 760px) 45vw, 300px"
+                changed = True
+            if "slideshow-image" in values.get("class", ""):
+                # The first slide is usable without JS; others have no fetchable URL
+                # until home.js activates the current/next slide.
+                if values.get("alt") != "Telemetry and control electrical enclosure":
+                    for name in ("src", "srcset", "sizes"):
+                        if name in values:
+                            values["data-slide-" + name] = values.pop(name)
+                    changed = True
+        if tag == "video" and values.get("poster"):
+            if "hero-bg" not in values.get("class", ""):
+                values["preload"] = "none"
+                changed = True
+            result = self.media.variants(values["poster"], self.page, poster=True)
+            if result:
+                values["poster"] = result[0]
+                for name in ("data-light-poster", "data-dark-poster"):
+                    if name in values:
+                        values[name] = result[0]
+                changed = True
+            if "showcase-video" in values.get("class", ""):
+                values.update(width="1920", height="1080")
+                changed = True
+        for name in ("src", "href"):
+            raw = values.get(name)
+            if not raw:
+                continue
+            parsed = urlsplit(raw)
+            if parsed.scheme or parsed.netloc:
+                continue
+            source = ((self.media.site / parsed.path.lstrip("/")) if parsed.path.startswith("/")
+                      else (self.page.parent / parsed.path)).resolve()
+            if not source.is_relative_to(self.media.site):
+                continue
+            replacement = self.assets.get("/" + source.relative_to(self.media.site).as_posix())
+            if replacement:
+                values[name] = replacement
+                changed = True
+        if changed:
+            self.parts.append("<" + tag + "".join(" " + key if value is None else f' {key}="{html.escape(value, quote=True)}"'
+                                                for key, value in values.items()) + ">")
+        else:
+            self.parts.append(original)
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.parts[-1] = self.parts[-1][:-1] + " />"
+
+    def handle_endtag(self, tag): self.parts.append(f"</{tag}>")
+    def handle_data(self, data): self.parts.append(data)
+    def handle_entityref(self, name): self.parts.append(f"&{name};")
+    def handle_charref(self, name): self.parts.append(f"&#{name};")
+    def handle_comment(self, data): self.parts.append(f"<!--{data}-->")
+    def handle_decl(self, decl): self.parts.append(f"<!{decl}>")
+    def handle_pi(self, data): self.parts.append(f"<?{data}>")
+
+
+def prepare(site: Path, cache: Path):
+    assets = {}
+    for folder in ("css", "js"):
+        for path in (site / folder).glob("*.*"):
+            if re.search(r"\.[0-9a-f]{12}\.", path.name):
+                continue
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+            target = path.with_name(f"{path.stem}.{digest}{path.suffix}")
+            shutil.copyfile(path, target)
+            relative = path.relative_to(site).as_posix()
+            versioned = target.relative_to(site).as_posix()
+            assets[relative] = versioned
+            assets["/" + relative] = "/" + versioned
+    media = Media(site, cache)
+    for page in site.rglob("*.html"):
+        rewriter = Rewriter(page, media, assets)
+        rewriter.feed(page.read_text())
+        rewriter.close()
+        page.write_text("".join(rewriter.parts))
+    print(f"Prepared {len(media.memo)} display images; original files and download links retained.")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--site", type=Path, default=ROOT / "site")
+    parser.add_argument("--cache", type=Path, default=ROOT / ".cache/media")
+    args = parser.parse_args()
+    prepare(args.site.resolve(), args.cache.resolve())

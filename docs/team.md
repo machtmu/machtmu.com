@@ -52,12 +52,6 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
 
     *Media & Logistics Lead*
 
--   [![Milad](assets/images/leads/Milad-Media-Lead.jpg)](https://www.linkedin.com/in/milad-hemmat-a84647386/)
-
-    **[Milad Hemmat](https://www.linkedin.com/in/milad-hemmat-a84647386/)**
-
-    *Lead*
-
 </div>
 
 ## Former Members

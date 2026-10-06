@@ -10,6 +10,7 @@
 
 {% block extrahead %}
   {{ super() }}
+  <link rel="preload" href="{{ 'assets/fonts/inter-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   {% set description = page.meta.description if page.meta and page.meta.description else config.site_description %}
   {% set social_title = page.meta.seo_title if page.meta and page.meta.seo_title else (page.title | striptags) ~ ' - ' ~ config.site_name %}
   {% if (page.meta and page.meta.noindex) or '/archive/' in page.url %}

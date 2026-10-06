@@ -79,7 +79,7 @@
       ]
     }
   </script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap">
+  <link rel="preload" href="{{ 'assets/fonts/inter-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <style>
     body {
       background-color: var(--md-default-bg-color);
@@ -310,6 +310,11 @@
 
     section.about {
       margin-top: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    section.photo-showcase {
+      margin-top: 0;
     }
 
     .md-container.md-typeset {
@@ -410,7 +415,7 @@
     .image-slideshow-container {
       width: 100%;
       max-width: 700px;
-      margin: 2rem auto 0;
+      margin: 0.75rem auto 0;
     }
 
     .image-slideshow {

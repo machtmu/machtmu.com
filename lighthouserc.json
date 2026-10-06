@@ -10,6 +10,7 @@
         "http://localhost/SPRINT/",
         "http://localhost/Seraphina/aug-6-hotfire/",
         "http://localhost/Seraphina/aug-20-hotfire/",
+        "http://localhost/Seraphina/oct-4-hotfire/",
         "http://localhost/timeline/",
         "http://localhost/resources/"
       ],
@@ -23,7 +24,7 @@
         "categories:performance": [
           "error",
           {
-            "minScore": 0.6,
+            "minScore": 0.75,
             "aggregationMethod": "median"
           }
         ],

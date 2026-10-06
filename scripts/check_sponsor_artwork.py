@@ -6,6 +6,7 @@ import base64
 import io
 import json
 import re
+import shutil
 from pathlib import Path
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
@@ -16,7 +17,8 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--url', default='http://127.0.0.1:8876')
-parser.add_argument('--chrome', default='/opt/google/chrome/chrome')
+parser.add_argument('--chrome', default=shutil.which('google-chrome') or '/opt/google/chrome/chrome')
+parser.add_argument('--quick', action='store_true')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 out = Path('/tmp/mach-sponsor-audit')
@@ -55,7 +57,7 @@ for sponsor, filename in (('dishoncnc.com', 'dishon-logo-hires.png'),
 
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=args.chrome, headless=True, args=['--no-sandbox'])
-    for width in (320, 390, 430, 768, 1024, 1440):
+    for width in ((390, 768) if args.quick else (320, 390, 430, 768, 1024, 1440)):
         for theme in ('light', 'dark'):
             page = browser.new_page(viewport={'width':width, 'height':900}, device_scale_factor=3, color_scheme=theme, is_mobile=width<=430, has_touch=width<=430)
             errors = []
@@ -150,13 +152,14 @@ with sync_playwright() as p:
             result = page.locator('.sponsor-item').evaluate_all('''items=>items.map(item=>{
                 const img=[...item.querySelectorAll('img')].find(i=>getComputedStyle(i).display!=='none');
                 const image=img.getBoundingClientRect(), crop=item.querySelector('.sponsor-logo__crop').getBoundingClientRect(), tile=item.getBoundingClientRect();
-                return {name:item.getAttribute('aria-label')||img.alt, src:img.src, natural:img.naturalWidth, naturalHeight:img.naturalHeight,
+                return {name:item.getAttribute('aria-label')||img.alt, src:img.currentSrc||img.src, natural:img.naturalWidth, naturalHeight:img.naturalHeight,
                     width:image.width, height:image.height, centered:Math.abs(crop.x+crop.width/2-tile.x-tile.width/2)<1,
                     ratio:crop.width/crop.height, visible:[...item.querySelectorAll('img')].filter(i=>getComputedStyle(i).display!=='none').length};
             })''')
             for logo in result:
                 assert logo['name'] and logo['visible'] == 1 and logo['centered'], logo
-                path = root/'docs'/urlsplit(logo['src']).path.lstrip('/')
+                relative = urlsplit(logo['src']).path.lstrip('/')
+                path = root/('site' if relative.startswith('assets/display/') else 'docs')/relative
                 if path.suffix == '.svg':
                     doc = ET.parse(path).getroot()
                     viewbox = list(map(float, doc.get('viewBox').split()))
@@ -174,8 +177,11 @@ with sync_playwright() as p:
                     native = Image.open(io.BytesIO(base64.b64decode(href.split(',')[1]))).width
                     available = native / float(part.get('width')) * float(doc.get('viewBox').split()[2])
                 else:
-                    available = logo['natural']
-                    assert abs((logo['width']/logo['height'])/(logo['natural']/logo['naturalHeight'])-1)<.002, ('stretched raster',logo)
+                    # A w-descriptor srcset makes naturalWidth density-corrected
+                    # (and integer-rounded), not the stored raster resolution.
+                    with Image.open(path) as raster:
+                        available, native_height = raster.size
+                    assert abs((logo['width']/logo['height'])/(available/native_height)-1)<.002, ('stretched raster',logo)
                 density = available / logo['width']
                 assert density >= 3, (width, theme, logo['name'], density)
                 logo['quality'] = f'{density:.1f}x'

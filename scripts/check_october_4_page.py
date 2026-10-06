@@ -8,6 +8,7 @@ from playwright.sync_api import sync_playwright
 parser = argparse.ArgumentParser()
 parser.add_argument('--url', default='http://127.0.0.1:8894')
 parser.add_argument('--output', default='/tmp/mach-oct4-browser-review')
+parser.add_argument('--quick', action='store_true')
 args = parser.parse_args()
 out = Path(args.output)
 out.mkdir(parents=True, exist_ok=True)
@@ -16,7 +17,7 @@ asset = '/Seraphina/oct-4-hotfire/'
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path='/usr/bin/google-chrome', headless=True,
                                args=['--no-sandbox', '--disable-dev-shm-usage'])
-    for width in (1440, 390, 320):
+    for width in ((390,) if args.quick else (1440, 390, 320)):
         for scheme in ('light', 'dark'):
             context = browser.new_context(viewport={'width': width, 'height': 900}, color_scheme=scheme)
             page = context.new_page()
@@ -44,7 +45,7 @@ with sync_playwright() as p:
                     first = page.locator('.program-test-grid article').first
                     assert first.locator('time').get_attribute('datetime') == '2026-10-04'
                     assert first.locator('time').text_content() == 'October 4, 2026'
-                    assert first.locator('img').get_attribute('src').endswith('pumpkin-breaking.webp')
+                    assert first.locator('img').get_attribute('data-original-src').endswith('pumpkin-breaking.webp')
                     first.scroll_into_view_if_needed()
                     page.screenshot(path=str(out / f'card-{width}-{scheme}.png'))
                 elif path == asset:
@@ -85,7 +86,7 @@ with sync_playwright() as p:
     assert page.locator('[data-plot-zoom]').inner_text() == '2×'
     page.keyboard.press('Escape')
     video = page.locator('video')
-    video.evaluate('(v)=>{v.muted=true;v.load()}')
+    video.evaluate('(v)=>{v.muted=true;v.preload="auto";v.load()}')
     page.wait_for_function('()=>document.querySelector("video").readyState>=2')
     video.evaluate('(v)=>v.play()')
     page.wait_for_timeout(600)

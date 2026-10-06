@@ -99,6 +99,7 @@
   function enhancePlots() {
     const names = /(?:burn-telemetry|double-hotfire|propellant-loading|hotfire3-perf|coldflow-test\d+)(?:-dark)?\.png$/i;
     document.querySelectorAll(".md-content img").forEach(img => {
+      if (!img.getAttribute("src")) return;
       if (!names.test(new URL(img.src).pathname) || img.dataset.plotEnhanced) return;
       img.dataset.plotEnhanced = "true";
       img.classList.add("mach-plot");
@@ -146,28 +147,20 @@
         item.dataset.type = [...(tag?.classList || [])].find(c => c.startsWith("gare-tag--"))?.replace("gare-tag--", "") || "organization";
       }
     }
-    const toolbar = document.createElement("div");
-    toolbar.className = "timeline-controls";
-    toolbar.innerHTML = `<div class="timeline-filters">
-      <label>Year<select data-filter="year"><option value="">All years</option></select></label>
-      <label>Project<select data-filter="project"><option value="">All projects</option></select></label>
-      <label>Event type<select data-filter="type"><option value="">All events</option>
-        <option value="hotfire">Ignition / hot fire</option><option value="coldflow">Cold flow</option>
-        <option value="component">Component / pressure test</option><option value="program">Design milestone</option>
-        <option value="organization">Organization</option></select></label>
-      <button type="button" class="mach-control" data-filter-clear>Clear filters</button>
-    </div><nav class="timeline-years" aria-label="Jump to year"></nav>
-    <p class="timeline-filter-status" role="status"></p>`;
+    const toolbar = document.querySelector(".timeline-controls");
+    if (!toolbar) return;
     const year = toolbar.querySelector('[data-filter="year"]');
     const project = toolbar.querySelector('[data-filter="project"]');
     const type = toolbar.querySelector('[data-filter="type"]');
     const nav = toolbar.querySelector("nav");
     for (const heading of headings) {
       year.add(new Option(heading.dataset.year, heading.dataset.year));
-      const a = document.createElement("a");
-      a.href = `#${heading.id}`;
-      a.textContent = heading.dataset.year;
-      nav.append(a);
+      if (!nav.querySelector(`[href="#${heading.id}"]`)) {
+        const a = document.createElement("a");
+        a.href = `#${heading.id}`;
+        a.textContent = heading.dataset.year;
+        nav.append(a);
+      }
     }
     projects.filter(p => events.some(e => e.dataset.projects.split("|").includes(p))).forEach(p => project.add(new Option(p, p)));
     function filter() {
@@ -187,8 +180,6 @@
     toolbar.querySelector("[data-filter-clear]").addEventListener("click", () => {
       year.value = ""; project.value = ""; type.value = ""; filter();
     });
-    const legend = document.querySelector(".gare-timeline-legend");
-    (legend || list).before(toolbar);
     filter();
   }
 

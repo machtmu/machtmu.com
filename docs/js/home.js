@@ -66,9 +66,17 @@
     let index = 0;
     let slidesPlaying = !motion.matches && innerWidth > 768;
     let timer;
+    function loadSlide(image) {
+      if (!image || image.getAttribute("src")) return;
+      if (image.dataset.slideSrcset) image.srcset = image.dataset.slideSrcset;
+      if (image.dataset.slideSizes) image.sizes = image.dataset.slideSizes;
+      if (image.dataset.slideSrc) image.src = image.dataset.slideSrc;
+    }
     function showSlide(next) {
       if (!images.length) return;
       index = (next + images.length) % images.length;
+      loadSlide(images[index]);
+      loadSlide(images[(index + 1) % images.length]);
       images.forEach((image, i) => {
         image.style.opacity = i === index ? "1" : "0";
         image.setAttribute("aria-hidden", String(i !== index));

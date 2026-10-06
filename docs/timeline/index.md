@@ -1,7 +1,7 @@
 ---
 title: Timeline
 description: A verified timeline of MACH projects, component tests, cold flows, ignition attempts and hot fires from 2018 through 2026.
-image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp
+image: https://machtmu.com/Seraphina/oct-4-hotfire/pumpkin-breaking.webp
 hide:
   - toc
   - navigation
@@ -10,6 +10,17 @@ hide:
 # MACH Timeline
 
 Events are ordered newest first. This record separates completed tests, failed attempts, scrubs and design changes from RPG's early engine work through Seraphina. Measurements with known timing, calibration or sensor faults are labelled as limited.
+
+<div class="timeline-controls">
+  <div class="timeline-filters">
+    <label>Year<select data-filter="year"><option value="">All years</option></select></label>
+    <label>Project<select data-filter="project"><option value="">All projects</option></select></label>
+    <label>Event type<select data-filter="type"><option value="">All events</option><option value="hotfire">Ignition / hot fire</option><option value="coldflow">Cold flow</option><option value="component">Component / pressure test</option><option value="program">Design milestone</option><option value="organization">Organization</option></select></label>
+    <button type="button" class="mach-control" data-filter-clear>Clear filters</button>
+  </div>
+  <nav class="timeline-years" aria-label="Jump to year"><a href="#year-2026">2026</a><a href="#year-2025">2025</a><a href="#year-2024">2024</a><a href="#year-2023">2023</a><a href="#year-2022">2022</a><a href="#year-2021">2021</a><a href="#year-2020">2020</a><a href="#year-2019">2019</a><a href="#year-2018">2018</a></nav>
+  <p class="timeline-filter-status" role="status">All events</p>
+</div>
 
 <div class="gare-timeline-legend" aria-label="Timeline legend">
   <span class="gare-tag gare-tag--organization">Organization</span>
@@ -24,7 +35,22 @@ Events are ordered newest first. This record separates completed tests, failed a
 
 <ol class="gare-timeline">
 
-  <li class="gare-timeline__year"><span>2026 · Seraphina</span></li>
+  <li class="gare-timeline__year" id="year-2026"><span>2026 · Seraphina</span></li>
+
+  <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
+    <span class="gare-timeline__dot" aria-hidden="true"></span>
+    <article class="gare-timeline__card">
+      <a class="gare-timeline__media" href="/Seraphina/oct-4-hotfire/" aria-label="Open the October 4, 2026 Seraphina relight-test page">
+        <img src="/Seraphina/oct-4-hotfire/pumpkin-breaking.webp" alt="Pumpkin breaking apart during the October 4 Seraphina hotfire" width="1920" height="1080" loading="lazy" decoding="async">
+      </a>
+      <div class="gare-timeline__body">
+        <time datetime="2026-10-04">October 4, 2026</time>
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
+        <h2><a href="/Seraphina/oct-4-hotfire/">Seraphina hotfire and relight</a></h2>
+        <a class="gare-timeline__link" href="/Seraphina/oct-4-hotfire/">Video, telemetry and test data <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </li>
 
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -100,7 +126,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2025 · Chimera, SABRE and SPRINT</span></li>
+  <li class="gare-timeline__year" id="year-2025"><span>2025 · Chimera, SABRE and SPRINT</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -266,7 +292,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2024 · New GAR-E and Chimera</span></li>
+  <li class="gare-timeline__year" id="year-2024"><span>2024 · New GAR-E and Chimera</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -384,7 +410,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2023 · Spender and GAR-E testing</span></li>
+  <li class="gare-timeline__year" id="year-2023"><span>2023 · Spender and GAR-E testing</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -572,7 +598,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2022 · MACH, GAR-E and Spender</span></li>
+  <li class="gare-timeline__year" id="year-2022"><span>2022 · MACH, GAR-E and Spender</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -708,7 +734,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2021 · Borealis development</span></li>
+  <li class="gare-timeline__year" id="year-2021"><span>2021 · Borealis development</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--left">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -752,7 +778,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2020 · Borealis</span></li>
+  <li class="gare-timeline__year" id="year-2020"><span>2020 · Borealis</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--right">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -774,7 +800,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2019 · Liquid-engine design</span></li>
+  <li class="gare-timeline__year" id="year-2019"><span>2019 · Liquid-engine design</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--right">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
@@ -786,7 +812,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     </article>
   </li>
 
-  <li class="gare-timeline__year"><span>2018 · RPG begins</span></li>
+  <li class="gare-timeline__year" id="year-2018"><span>2018 · RPG begins</span></li>
 
   <li class="gare-timeline__event gare-timeline__event--left">
     <span class="gare-timeline__dot" aria-hidden="true"></span>

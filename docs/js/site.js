@@ -1,7 +1,10 @@
 (function () {
   "use strict";
+  if (window.__machSiteLoaded) return;
+  window.__machSiteLoaded = true;
 
   let searchIndexPromise;
+  let searchRevision = 0;
   let lastFocusedElement;
 
   const getDialog = () => document.querySelector("[data-mach-search-input]")?.closest("[role='dialog']");
@@ -33,7 +36,18 @@
           if (!response.ok) throw new Error("Search index unavailable");
           return response.json();
         })
-        .then((data) => Array.isArray(data) ? data : (data.items || data.docs || []));
+        .then((data) => {
+          const items = Array.isArray(data) ? data : (data.items || data.docs || []);
+          return items.map((item) => ({
+            ...item,
+            title: stripMarkup(item.title),
+            text: stripMarkup(item.text || item.content),
+          }));
+        })
+        .catch((error) => {
+          searchIndexPromise = undefined;
+          throw error;
+        });
     }
     return searchIndexPromise;
   }
@@ -80,6 +94,7 @@
   }
 
   function runSearch(value) {
+    const revision = ++searchRevision;
     const query = value.trim().toLocaleLowerCase();
     if (!query) {
       renderResults([], "");
@@ -89,11 +104,12 @@
     setStatus("Searching…");
     loadSearchIndex()
       .then((items) => {
+        if (revision !== searchRevision || getDialog()?.hidden) return;
         const terms = query.split(/\s+/).filter(Boolean);
         const ranked = items
           .map((item) => {
-            const title = stripMarkup(item.title).toLocaleLowerCase();
-            const text = stripMarkup(item.text || item.content).toLocaleLowerCase();
+            const title = item.title.toLocaleLowerCase();
+            const text = item.text.toLocaleLowerCase();
             const location = String(item.location || item.url || "").toLocaleLowerCase();
             const matches = terms.every((term) => title.includes(term) || text.includes(term) || location.includes(term));
             if (!matches) return null;
@@ -112,7 +128,9 @@
           .map((entry) => entry.item);
         renderResults(ranked, query);
       })
-      .catch(() => setStatus("Search is unavailable"));
+      .catch(() => {
+        if (revision === searchRevision && !getDialog()?.hidden) setStatus("Search is unavailable. Try searching again.");
+      });
   }
 
   function openSearch() {
@@ -125,14 +143,14 @@
     document.body.classList.add("mach-search-open");
     const input = dialog.querySelector("[data-mach-search-input]");
     input?.focus();
-    setStatus(input?.value ? "Searching…" : "Type to search");
-    loadSearchIndex().catch(() => setStatus("Search is unavailable"));
+    runSearch(input?.value || "");
   }
 
   function closeSearch() {
     const dialog = getDialog();
     const button = getSearchButton();
     if (!dialog || dialog.hidden) return;
+    searchRevision++;
     dialog.hidden = true;
     button?.setAttribute("aria-expanded", "false");
     document.body.classList.remove("mach-search-open");

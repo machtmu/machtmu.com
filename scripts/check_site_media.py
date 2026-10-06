@@ -22,6 +22,8 @@ URL_ATTRIBUTES = {
     "data-mobile-src",
     "data-plot-light-src",
     "data-plot-dark-src",
+    "data-slide-src",
+    "data-original-src",
 }
 IGNORED_SCHEMES = {"data", "javascript", "mailto", "tel"}
 
@@ -39,6 +41,9 @@ class ReferenceParser(HTMLParser):
         for name, value in attrs:
             if name in URL_ATTRIBUTES and value:
                 self.references.append((tag, name, value))
+            if name in ("srcset", "data-slide-srcset") and value and not value.startswith("data:"):
+                for candidate in value.split(","):
+                    self.references.append((tag, name, candidate.strip().split()[0]))
 
         if tag == "video" and "poster" not in values:
             self.video_without_poster.append(values.get("aria-label") or values.get("title") or "unlabelled video")

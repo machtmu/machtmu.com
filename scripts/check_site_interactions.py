@@ -11,22 +11,25 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--url', default='http://127.0.0.1:8876')
 parser.add_argument('--chrome', default=shutil.which('google-chrome') or '/opt/google/chrome/chrome')
 parser.add_argument('--output', default='/tmp/mach-polish-preview')
+parser.add_argument('--axe', default=str(Path(__file__).resolve().parents[1]/'ci/node_modules/axe-core/axe.min.js'))
+parser.add_argument('--quick', action='store_true', help='Deployment smoke coverage; full checks run on PRs/manual audits.')
 args=parser.parse_args()
 out=Path(args.output);out.mkdir(exist_ok=True)
 base=args.url.rstrip('/')
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path=args.chrome,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
- for width,scheme in [(1440,'light'),(390,'light'),(390,'dark')]:
-  ctx=b.new_context(viewport={'width':width,'height':900},color_scheme=scheme)
+ for width,scheme in ([(1440,'light'),(320,'dark')] if args.quick else [(1440,'light'),(390,'light'),(390,'dark'),(320,'dark')]):
+  ctx=b.new_context(viewport={'width':width,'height':900},color_scheme=scheme,reduced_motion='reduce')
   page=ctx.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-  for path in ['/','/team/','/sponsors/','/Seraphina/aug-20-hotfire/','/timeline/','/SPRINT/']:
+  for path in ['/','/team/','/sponsors/','/Seraphina/aug-20-hotfire/','/Seraphina/oct-4-hotfire/','/timeline/','/SPRINT/']:
    page.goto(base+path,wait_until='domcontentloaded');page.wait_for_timeout(500)
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'), (path,'overflow')
    assert page.locator('[data-mach-drawer-toggle]').is_visible() == (width < 1220)
    themed=page.locator('img[data-plot-dark-src]')
    if themed.count():
-    assert themed.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
-    assert themed.get_attribute('src').endswith('double-hotfire-dark.png' if scheme=='dark' else 'double-hotfire.png')
+    for image in themed.all():
+     assert image.get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
+     assert image.get_attribute('src').endswith('-dark.png')==(scheme=='dark')
    if path=='/':
     assert page.locator('.home-hero__inner p').count()==0
     assert "Toronto Metropolitan University" in page.locator('.about').inner_text()
@@ -40,7 +43,8 @@ with sync_playwright() as p:
     if width==390:assert page.locator('.hero-bg').get_attribute('src') is None
     hero=page.locator('[data-hero-motion]');hero.click();page.wait_for_timeout(300)
     hero.click();page.wait_for_timeout(300)
-    assert page.locator('.slideshow-image').first.get_attribute('src').endswith('/SPRINT/electronics/overview.webp')
+    assert page.locator('.slideshow-image').first.get_attribute('alt')=='Telemetry and control electrical enclosure'
+    assert page.locator('.slideshow-image[src]').count()==2
     assert page.locator('.slideshow-image').evaluate_all('(images)=>images.every(i=>getComputedStyle(i).objectFit==="contain"&&getComputedStyle(i).maxHeight==="none")')
     plumbing=page.locator('.slideshow-image--plumbing-board')
     assert plumbing.count()==1
@@ -62,22 +66,23 @@ with sync_playwright() as p:
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
     cards=page.locator('.team-leads li')
-    expected=[('Tobechukwu Okoh','Propulsion Lead'),('Julia Puszynska','Team Captain'),('Samuel Li','Operations Director'),('Jonathan Al-Hinn','Safety Officer'),('Kasper Pajak','Electrical Lead'),('Madison Warren','Media & Logistics Lead'),('Milad Hemmat','Lead')]
+    expected=[('Tobechukwu Okoh','Propulsion Lead'),('Julia Puszynska','Team Captain'),('Samuel Li','Operations Director'),('Jonathan Al-Hinn','Safety Officer'),('Kasper Pajak','Electrical Lead'),('Madison Warren','Media & Logistics Lead')]
     assert cards.count()==len(expected)
     for card,(name,role) in zip(cards.all(),expected):
      assert card.locator('strong').inner_text()==name
      assert card.locator('em').inner_text()==role
      card.locator('img').evaluate('(i)=>i.decode()')
    if path=='/sponsors/':
-    crops=page.locator('.sponsor-logo__crop');assert crops.count()==23
+    crops=page.locator('.sponsor-logo__crop');assert crops.count()==24
     assert page.locator('.sponsor-item').evaluate_all('(es)=>es.every(e=>!e.innerText.trim()&&e.querySelector("img")?.alt.trim())')
     assert crops.evaluate_all('(es)=>es.every(e=>{const r=e.getBoundingClientRect(),c=getComputedStyle(e);return r.width>0&&r.height>0&&Math.abs(r.width/r.height-parseFloat(c.getPropertyValue("--logo-ratio")))<0.03&&c.backgroundColor==="rgba(0, 0, 0, 0)"})')
-   if path=='/Seraphina/aug-20-hotfire/':
+   if path in ('/Seraphina/aug-20-hotfire/', '/Seraphina/oct-4-hotfire/'):
     controls=page.get_by_role('button',name='Expand plot:',exact=False);assert controls.count()==2
     controls.nth(1).click();page.wait_for_timeout(300)
     assert page.locator('dialog').is_visible()
-    assert page.locator('dialog img').get_attribute('src')==themed.get_attribute('src')
-    assert page.locator('dialog [data-plot-original]').get_attribute('href')==themed.get_attribute('src')
+    active_plot=page.locator('.md-content img.mach-plot').nth(1)
+    assert page.locator('dialog img').get_attribute('src')==active_plot.get_attribute('src')
+    assert page.locator('dialog [data-plot-original]').get_attribute('href')==active_plot.get_attribute('src')
     assert page.locator('dialog').get_attribute('data-plot-theme')==('dark' if scheme=='dark' else 'light')
     w=page.locator('dialog img').evaluate('(i)=>i.width')
     page.get_by_role('button',name='Zoom in',exact=True).click();page.wait_for_timeout(100)
@@ -88,7 +93,8 @@ with sync_playwright() as p:
    if path=='/timeline/':
     page.locator('[data-filter="project"]').select_option('Seraphina')
     page.locator('[data-filter="type"]').select_option('hotfire')
-    count=page.locator('.gare-timeline__event:visible').count();assert count==2,count
+    count=page.locator('.gare-timeline__event:visible').count();assert count==3,count
+    assert page.locator('.gare-timeline__event:visible').first.locator('time').get_attribute('datetime')=='2026-10-04'
     page.locator('[data-filter="year"]').select_option('2018');assert page.locator('.gare-timeline__event:visible').count()==0
     page.get_by_role('button',name='Clear filters').click();assert page.locator('.gare-timeline__event:visible').count()>30
     page.locator('[data-filter="year"]').select_option('2026')
@@ -96,7 +102,7 @@ with sync_playwright() as p:
    page.wait_for_timeout(250);page.evaluate('scrollTo(0,0)')
    slug=path.strip('/').replace('/','-')or'home'
    page.screenshot(path=str(out/f'{slug}-{width}-{scheme}.png'),full_page=True)
-   page.add_script_tag(url='https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js')
+   page.add_script_tag(path=args.axe)
    axe=page.evaluate('async()=>{const r=await axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21aa"]}});return r.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary})).slice(0,3)}))}')
    print(json.dumps({'page':path,'width':width,'scheme':scheme,'errors':errors,'axe':axe}),flush=True)
    assert not errors, errors
@@ -114,7 +120,7 @@ with sync_playwright() as p:
  plot.scroll_into_view_if_needed()
  def check_theme(theme):
   page.wait_for_function('(theme)=>document.querySelector("img[data-plot-dark-src]")?.dataset.plotTheme===theme',arg=theme)
-  assert plot.evaluate('(img)=>img.closest("a").href===img.src')
+  assert plot.evaluate('(img)=>!img.closest("a") || img.closest("a").href===img.src')
   page.wait_for_function('()=>{const img=document.querySelector("img[data-plot-dark-src]");return img.complete&&img.naturalWidth>0}')
  # Use the actual palette controls, including explicit choice overriding the OS.
  check_theme('light')
@@ -130,8 +136,11 @@ with sync_playwright() as p:
  page.emulate_media(color_scheme='light');page.emulate_media(color_scheme='dark');check_theme('light')
  page.locator('label[for="__palette_2"]:visible').click()
  page.locator('label[for="__palette_0"]:visible').click();check_theme('dark')
- # A system-theme change must also update an already zoomed/open viewer.
- link=page.locator('.hotfire-data > a');link.focus();page.keyboard.press('Enter')
+ # An open viewer on a test page also follows the system preference.
+ page.goto(base+'/Seraphina/oct-4-hotfire/',wait_until='domcontentloaded')
+ plot=page.locator('img[data-plot-dark-src]').last
+ link=page.get_by_role('button',name='Expand plot:',exact=False).last
+ link.focus();page.keyboard.press('Enter')
  page.get_by_role('button',name='Zoom in',exact=True).click()
  page.emulate_media(color_scheme='light');check_theme('light')
  assert page.locator('dialog[open] img').get_attribute('src')==plot.get_attribute('src')

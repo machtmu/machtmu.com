@@ -69,8 +69,8 @@
   font-weight: 600;
   letter-spacing: -0.05em;
 }
-.md-typeset .team-leads img[src$="Jonathan-Al-Hinn.jpg"],
-.md-typeset .team-leads img[src$="Madison-Warren.jpg"] {
+.md-typeset .team-leads img[alt="Jonathan Al-Hinn"],
+.md-typeset .team-leads img[alt="Madison Warren"] {
   object-position: center top;
 }
 .former-member-initials {
@@ -151,6 +151,20 @@ dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; 
 .plot-viewer__hint { font-size: 0.65rem; color: var(--md-default-fg-color--light); margin: 0; }
 
 .timeline-controls { margin: 1.5rem 0 0; }
+.md-header__button.mach-drawer-toggle,
+.md-header__button.mach-search-toggle,
+.md-header__button[for^="__palette"],
+.md-top {
+  min-height: 44px;
+  min-width: 44px;
+}
+.md-header__button.mach-search-toggle { height: 44px; }
+/* Selected sidebar links sit on a tinted surface, not the page's white. */
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__item .md-nav__link--active { color: #354bcc; }
+@media screen and (max-width: 44.984375em) {
+  .md-header__button.mach-search-toggle { width: 44px; padding: 10px; }
+  .md-header__button.mach-drawer-toggle { margin: 0; }
+}
 .gare-tag { color: var(--md-default-fg-color); }
 .timeline-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.65rem; }
 .timeline-filters label { display: flex; flex: 1 1 9rem; flex-direction: column; gap: 0.3rem; font-size: 0.68rem; font-weight: 600; }
