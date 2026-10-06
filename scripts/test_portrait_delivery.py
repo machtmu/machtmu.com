@@ -51,6 +51,11 @@ class PortraitDeliveryTests(unittest.TestCase):
         self.assertTrue((directory / portrait['output']).is_file())
         self.assertTrue((directory / portrait['delivery']).is_file())
         self.assertIn('Image 1', edition['prompt'])
+        retained = edition['cached_html_compatibility']
+        self.assertEqual(len(retained['files']), 5)
+        self.assertEqual(sum((root / 'docs/assets/display' / name).stat().st_size for name in retained['files']), retained['total_bytes'])
+        for filename, expected in retained['files'].items():
+            self.assertEqual(hashlib.sha256((root / 'docs/assets/display' / filename).read_bytes()).hexdigest(), expected)
 
     def test_all_six_deliveries_preserve_native_pixels(self):
         directory = Path(__file__).resolve().parents[1] / 'docs/assets/images/leads'

@@ -62,6 +62,19 @@
           "built_in_output_filename": "exec-ff8e8b0c-bf80-4356-9fa2-3e5d8ca2c9d6.png",
           "delivery": "Jonathan-Al-Hinn-lighting-v2-studio.webp",
           "delivery_sha256": "ab7381ec7fde9db3210a3a9237108e531de941896ecd9365ce256870950599e1",
+          "cached_html_compatibility": {
+            "reason": "Retain exactly the five responsive URLs from the previously deployed team HTML so cached or in-flight instant-navigation pages do not show a broken Jonathan portrait during rollout.",
+            "source": "https://machtmu.com/assets/display/",
+            "verification": "Each retained file matches a second independent fetch of its live URL byte-for-byte by SHA-256. Original native portrait and previous master remain unchanged.",
+            "total_bytes": 2100174,
+            "files": {
+              "a64d949b39adcedb-320-portrait-q96.webp": "d2fd44cfd9eb6b0b1ffde9936d1d896fc3f0719cfe69d5c70ecd2c30bfa618b5",
+              "a64d949b39adcedb-480-portrait-q96.webp": "28cafd798042a0d52325713dec2f85bedf9035f9ed3d5d16a53cd014b27d1ee5",
+              "a64d949b39adcedb-640-portrait-q96.webp": "d057cb550fb97e7a75498cc560d04d14fe535901ca9cea13731c717075dea901",
+              "a64d949b39adcedb-960-portrait-q96.webp": "537b9f625f1572272ce1ec74be64c14da55be124fde33f4e5830a200b902e2a6",
+              "a64d949b39adcedb-1086-portrait-lossless.webp": "7b818067e960f3ca6e7585a2cf5e61fc294e8383e791f1d4f79dd66ef3eafef8"
+            }
+          },
           "dimensions": [
             1086,
             1448
