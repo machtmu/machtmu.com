@@ -1025,3 +1025,53 @@ body.mach-search-open {
 html.js noscript {
   display: none !important;
 }
+
+/* Preserve technical context instead of treating every event as a panorama. */
+.md-typeset .gare-timeline__media--full-frame {
+  height: auto;
+}
+
+.md-typeset .gare-timeline__media--full-frame img {
+  height: auto;
+  object-fit: contain;
+}
+
+.md-typeset .gare-timeline__media--portrait-context {
+  background: var(--md-default-bg-color);
+  height: clamp(280px, 38vw, 420px);
+}
+
+.md-typeset .gare-timeline__media--portrait-context img {
+  object-fit: contain;
+}
+
+.gare-timeline__card:is(:hover, :focus-within)
+  :is(.gare-timeline__media--full-frame, .gare-timeline__media--portrait-context) img {
+  transform: none;
+}
+
+.md-typeset .gare-timeline__media--heads-top {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.md-typeset .gare-timeline__media--heads-top img {
+  object-position: center top;
+}
+
+.md-typeset .gare-timeline__media--heads-tall {
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.md-typeset .gare-timeline__media--heads-tall img {
+  object-position: center 18%;
+}
+
+.md-typeset .gare-timeline__media--flame-top img {
+  object-position: center 12%;
+}
+
+.md-typeset .gare-timeline__media--bottom img {
+  object-position: center bottom;
+}

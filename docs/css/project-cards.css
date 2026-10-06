@@ -1,6 +1,6 @@
 /* Program overviews: image panels with a title and quiet test-date label. */
 :root {
-  --mach-project-card-gradient: linear-gradient(transparent 50%, rgb(0 0 0 / 80%) 75%, #000 100%);
+  --mach-project-card-gradient: linear-gradient(transparent 55%, rgb(0 0 0 / 45%) 80%, rgb(0 0 0 / 85%) 100%);
 }
 
 .md-typeset .project-cards {
@@ -44,12 +44,19 @@
   margin: 0;
   max-height: none;
   object-fit: cover;
+  object-position: var(--mach-card-focal, center 50%);
   width: 100%;
 }
 
 .md-typeset .project-cards .program-test-grid__media--relight-team img {
   /* Real sky and grass from the original scan preserve the whole group. */
   object-position: center 60%;
+}
+
+/* Preserve complete groups and separated subjects even in narrow tablet cards. */
+.md-typeset .project-cards .project-card-media--full-frame img {
+  object-fit: contain;
+  object-position: center top;
 }
 
 .md-typeset .project-cards > article::before {

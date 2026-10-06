@@ -3,7 +3,9 @@
   "use_case": "precise-object-edit",
   "transparent_background": false,
   "calls": "One new background-replacement edit per original JPEG. No cutout, composite or prior generated image was used as input.",
-  "render_strategy": "The website displays each final opaque studio image directly. No alpha mask or generated CSS backdrop layer remains. CSS alone matches zoom and eyeline, with a flat neutral-grey matte solely for necessary layout margins. Original JPEG files are preserved; edited portraits are visually faithful, not asserted to be pixel-identical.",
+  "render_strategy": "The website displays each final opaque studio image through responsive WebP display copies sized for the actual CSS image width and device pixel ratio. No alpha mask or generated CSS backdrop layer remains. CSS alone matches zoom and eyeline, with a flat neutral-grey matte solely for necessary layout margins. Original JPEG and final studio PNG files are preserved; edited portraits are visually faithful to the JPEGs, not asserted to be pixel-identical. Retained native-resolution WebP masters and native-width variants preserve every decoded RGBA pixel of their approved studio PNGs. Smaller display copies use only mechanical Lanczos resizing and high-quality q96 WebP encoding, with no retouching, new crop or another AI edit.",
+  "delivery": {"format": "lossless WebP", "encoder": "Pillow WEBP lossless=True quality=100 method=6 exact=True", "helper": "scripts/build_portrait_delivery.py", "verification": "scripts/test_portrait_delivery.py", "png_total_bytes": 11236314, "webp_total_bytes": 7494864},
+  "responsive_delivery": {"pipeline": "scripts/prepare_site.py", "widths": [320, 480, 640, 960, "native"], "resizing": "Lanczos, maintaining the native aspect ratio without upscaling", "encoding": "Resized display copies: WebP lossless=False quality=96 method=6. Native-width variants: WebP lossless=True quality=100 method=6 exact=True.", "sizes": "Per-portrait CSS width including the 1.25 mobile framing scale", "master_reference": "data-original-src retains the native-resolution lossless WebP URL"},
   "prompt_template": "Use case: precise-object-edit\nAsset type: website team portrait, final direct photograph.\nInput image: this ORIGINAL photograph is the sole edit target, {stem}. No previous generated image or cutout is an input.\nPrimary request: replace ONLY the background in this original photo with a standard neutral grey photography-studio backdrop in one edit. Use a seamless neutral grey #b7b7b7 background with a very subtle studio falloff toward #c8c8c8 near the upper center and #a5a5a5 at the far lower edges; matching all other team portraits. Opaque finished photograph.\nCritical invariants: the original photographed person must remain EXACTLY unchanged. Preserve original foreground pixels/identity, exact face and expression, eyes/nose/mouth, natural skin texture, fine hair and all strands, pose, body proportions, visible arms/hands, clothing and every fabric pattern/button/logo/text/jewelry detail, original colors and lighting. Do not retouch or relight the person. Keep original canvas/aspect/framing and every originally visible person part; no zooming or recropping. Background-only replacement, not a newly generated portrait.\nAvoid: face regeneration, beautification, sharpening, skin smoothing, color changes, artificial person relighting, restyling, redrawing clothing, extra body/limbs, text, watermark, props, scenery, halos or sharp foreground cutout borders.",
   "portraits": [
     {
@@ -12,6 +14,7 @@
       "original": "Julia-Operations-Director.jpg",
       "original_sha256": "4f5887188b030bdcafc7db5726abc5646024198cccd354945b127628d37d0f0e",
       "output": "Julia-Operations-Director-studio.png",
+      "delivery": "Julia-Operations-Director-studio.webp",
       "dimensions": [1254, 1254],
       "built_in_output_filename": "exec-650b283a-2192-4fec-82ef-0b3ab72956f8.png"
     },
@@ -21,6 +24,7 @@
       "original": "Tobe-Propellant-Management-Lead.jpg",
       "original_sha256": "fe90480a09f9ca162afe3a1d536b9e9a8439bc48ada6206c750ef9099d4336e1",
       "output": "Tobe-Propellant-Management-Lead-studio.png",
+      "delivery": "Tobe-Propellant-Management-Lead-studio.webp",
       "dimensions": [1254, 1254],
       "built_in_output_filename": "exec-a2075bf9-d0b3-4dd7-916e-295b0c259b0d.png"
     },
@@ -30,6 +34,7 @@
       "original": "Sam-Lead.jpg",
       "original_sha256": "72adafe68aff98bfadd9d70a6ef2d7219892aa4084547923ff1c14960e8cdf31",
       "output": "Sam-Lead-studio.png",
+      "delivery": "Sam-Lead-studio.webp",
       "dimensions": [1254, 1254],
       "built_in_output_filename": "exec-7d5a66da-67f7-4ba1-ae16-13decfeb4ad5.png"
     },
@@ -39,6 +44,7 @@
       "original": "Jonathan-Al-Hinn.jpg",
       "original_sha256": "b9514f918b2048dfca5aa51f44638b63707b5ec1a3b5310d69c1e1c6ad48d8fa",
       "output": "Jonathan-Al-Hinn-studio.png",
+      "delivery": "Jonathan-Al-Hinn-studio.webp",
       "dimensions": [1086, 1448],
       "built_in_output_filename": "exec-4f339651-2d77-408c-a9ca-c9c65211d565.png"
     },
@@ -48,6 +54,7 @@
       "original": "Kasper-Mission-Control.jpg",
       "original_sha256": "057588d4e583751dfffeecf19ed7459f6ce417416d13b6974916311fac1fd454",
       "output": "Kasper-Mission-Control-studio.png",
+      "delivery": "Kasper-Mission-Control-studio.webp",
       "dimensions": [1254, 1254],
       "built_in_output_filename": "exec-c5ab3e12-ff61-427e-abcf-95164dd574b3.png"
     },
@@ -57,6 +64,7 @@
       "original": "Madison-Warren.jpg",
       "original_sha256": "8ae48993fbf6f64e682c3bf9160efe5938e0e61c9ebab5563a170c6bb1b32f49",
       "output": "Madison-Warren-studio.png",
+      "delivery": "Madison-Warren-studio.webp",
       "dimensions": [1025, 1535],
       "built_in_output_filename": "exec-8f683793-a7a1-4165-b225-5124c8206c74.png"
     }

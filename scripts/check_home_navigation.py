@@ -52,6 +52,17 @@ with sync_playwright() as playwright:
                 page.wait_for_selector('.home-hero')
                 confirm_same_document()
 
+            def check_prompt_drawer():
+                if width < 600:
+                    # Click immediately after native navigation/anchor entry.
+                    # Only then wait to detect a stale delayed auto-close.
+                    page.locator('[data-mach-drawer-toggle]').click()
+                    page.wait_for_timeout(180)
+                    assert page.locator('#__drawer').is_checked()
+                    assert page.get_by_role('link', name='Team', exact=True).bounding_box()['x'] >= 0
+                    page.keyboard.press('Escape')
+                    assert not page.locator('#__drawer').is_checked()
+
             def check_home(label):
                 page.wait_for_function('document.documentElement.classList.contains("js")')
                 plot = page.locator('.home-data img[data-home-deferred-src]')
@@ -84,7 +95,15 @@ with sync_playwright() as playwright:
             page.locator('.project-cards a[href$="electronics/"]').first.click()
             page.wait_for_url(base + '/SPRINT/electronics/')
             confirm_same_document()
+            check_prompt_drawer()
             top_link('Team', '/team/')
+            # Exercise native fragment navigation with a temporary, visible
+            # test anchor; this site intentionally has no heading permalinks.
+            page.locator('#leads').evaluate('h=>{const a=document.createElement("a");a.href="#leads";a.id="mach-fragment-probe";a.textContent="Leads anchor probe";h.append(a);}')
+            page.locator('#mach-fragment-probe').click()
+            page.wait_for_url(base + '/team/#leads')
+            page.locator('#mach-fragment-probe').evaluate('a=>a.remove()')
+            check_prompt_drawer()
             top_link('Seraphina', '/Seraphina/')
             return_home()
             check_home('project-return')
@@ -92,11 +111,26 @@ with sync_playwright() as playwright:
             page.go_back()
             page.wait_for_url(base + '/')
             page.wait_for_selector('.home-hero')
+            check_prompt_drawer()
             check_home('back')
             page.go_forward()
             page.wait_for_url(base + '/team/')
             return_home()
             check_home('forward-return')
+            # Exercise real media after the return, not only DOM/source state.
+            if not args.webkit:
+                control = page.locator('[data-hero-motion]')
+                control.click()
+                page.wait_for_function('()=>{const v=document.querySelector(".hero-bg");return v.currentTime>0&&!v.paused;}')
+                control.click()
+                assert page.locator('.hero-bg').evaluate('v=>v.paused')
+                video = page.locator('.home-hotfire video')
+                video.scroll_into_view_if_needed()
+                video.evaluate('async v=>{v.muted=true;await v.play();}')
+                page.wait_for_function('document.querySelector(".home-hotfire video").currentTime>0')
+                assert video.evaluate('v=>v.controls&&getComputedStyle(v).transform==="none"')
+                video.evaluate('v=>v.pause()')
+                confirm_same_document()
             assert not errors, errors
             print(f'Actual same-document click/Back/Forward/theme/media checks passed: {width}px, initial {start}', flush=True)
             context.close()

@@ -16,7 +16,7 @@ GAR-E was MACH's ethanol and nitrous oxide engine. Spender was the plumbing, tan
 
 <div class="program-test-grid project-cards">
   <article>
-    <a href="hotfire-2024-09-28/"><img src="hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp" alt="New GAR-E firing on September 29, 2024" loading="lazy" decoding="async"></a>
+    <a href="hotfire-2024-09-28/" style="--mach-card-focal: 20% center"><img src="hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp" alt="New GAR-E firing on September 29, 2024" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2024-09-29">September 28–29, 2024</time>
       <h2><a href="hotfire-2024-09-28/">Final New GAR-E campaign</a></h2>
@@ -44,14 +44,14 @@ GAR-E was MACH's ethanol and nitrous oxide engine. Spender was the plumbing, tan
     </div>
   </article>
   <article>
-    <a href="hotfire-2023-08-30/"><img src="hotfire-2023-08-30/team.webp" alt="MACH with GAR-E at Launch Canada 2023" loading="lazy" decoding="async"></a>
+    <a class="project-card-media--full-frame" href="hotfire-2023-08-30/"><img src="hotfire-2023-08-30/team.webp" alt="MACH with GAR-E at Launch Canada 2023" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2023-08-31">August 30–September 1, 2023</time>
       <h2><a href="hotfire-2023-08-30/">Launch Canada ignition attempt</a></h2>
     </div>
   </article>
   <article>
-    <a href="coldflow-2023-08-19/"><img src="coldflow-2023-08-19/team.webp" alt="MACH with Spender during the August 2023 cold-flow campaign" loading="lazy" decoding="async"></a>
+    <a class="project-card-media--full-frame" href="coldflow-2023-08-19/"><img src="coldflow-2023-08-19/team.webp" alt="MACH with Spender during the August 2023 cold-flow campaign" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2023-08-19">August 19–20, 2023</time>
       <h2><a href="coldflow-2023-08-19/">Pre-Launch Canada cold flows</a></h2>

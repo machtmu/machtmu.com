@@ -40,7 +40,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/Seraphina/oct-4-hotfire/" aria-label="Open the October 4, 2026 Seraphina relight-test page">
+      <a class="gare-timeline__media gare-timeline__media--bottom" href="/Seraphina/oct-4-hotfire/" aria-label="Open the October 4, 2026 Seraphina relight-test page">
         <img src="/Seraphina/oct-4-hotfire/pumpkin-breaking.webp" alt="Pumpkin breaking apart during the October 4 Seraphina hotfire" width="1920" height="1080" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -147,7 +147,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/SPRINT/nov-20-coldflow/" aria-label="Open the November 20 SPRINT cold-flow page">
+      <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/nov-20-coldflow/" aria-label="Open the November 20 SPRINT cold-flow page">
         <img src="/SPRINT/nov-20-coldflow/thumbnail.webp" alt="SPRINT cold-flow setup on November 20, 2025" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -163,7 +163,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/SPRINT/nov-7-coldflow/" aria-label="Open the November 7 SPRINT cold-flow page">
+      <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/nov-7-coldflow/" aria-label="Open the November 7 SPRINT cold-flow page">
         <img src="/SPRINT/nov-7-coldflow/thumbnail.webp" alt="SPRINT cold flow on November 7, 2025" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -211,7 +211,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/SPRINT/aug-19-coldflow/" aria-label="Open the August 2025 SPRINT cold-flow page">
+      <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/aug-19-coldflow/" aria-label="Open the August 2025 SPRINT cold-flow page">
         <img src="/SPRINT/aug-19-coldflow/thumbnail.webp" alt="SPRINT during the August 9, 2025 cold-flow campaign" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -227,7 +227,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/sprint-tank-pressure-2025-08-02/" aria-label="Open the August 2025 SPRINT pressure-test summary">
+      <a class="gare-timeline__media gare-timeline__media--heads-top" href="/timeline/sprint-tank-pressure-2025-08-02/" aria-label="Open the August 2025 SPRINT pressure-test summary">
         <img src="/timeline/sprint-tank-pressure-2025-08-02/thumbnail.webp" alt="MACH members with suspended SPRINT hardware during pressure testing" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -431,7 +431,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/igniter-2023-11-15/" aria-label="Open the November 2023 GAR-E igniter acceptance tests">
+      <a class="gare-timeline__media gare-timeline__media--portrait-context" href="/timeline/igniter-2023-11-15/" aria-label="Open the November 2023 GAR-E igniter acceptance tests">
         <img src="/timeline/igniter-2023-11-15/thumbnail.webp" alt="GAR-E igniter firing inside a clear chamber-length test fixture" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -521,7 +521,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/spender-coldflow-2023-06-03/" aria-label="Open Spender Cold-Flow Attempt 2">
+      <a class="gare-timeline__media gare-timeline__media--heads-tall" href="/timeline/spender-coldflow-2023-06-03/" aria-label="Open Spender Cold-Flow Attempt 2">
         <img src="/timeline/spender-coldflow-2023-06-03/thumbnail.webp" alt="MACH working on Spender during the June 2023 test" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -537,7 +537,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media gare-timeline__media--portrait" href="/timeline/component-tests-2023-05/" aria-label="Open the May 2023 component tests">
+      <a class="gare-timeline__media gare-timeline__media--flame-top" href="/timeline/component-tests-2023-05/" aria-label="Open the May 2023 component tests">
         <img src="/timeline/component-tests-2023-05/thumbnail.webp" alt="Igniter firing during the May 2023 component campaign" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -553,7 +553,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/garolite-2023-03-16/" aria-label="Open the March 2023 Garolite tests">
+      <a class="gare-timeline__media gare-timeline__media--portrait-context" href="/timeline/garolite-2023-03-16/" aria-label="Open the March 2023 Garolite tests">
         <img src="/timeline/garolite-2023-03-16/thumbnail.webp" alt="Numbered Garolite samples after burn testing" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -569,7 +569,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--right gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/igniter-2023-03-11/" aria-label="Open the March 2023 igniter campaign">
+      <a class="gare-timeline__media gare-timeline__media--full-frame" href="/timeline/igniter-2023-03-11/" aria-label="Open the March 2023 igniter campaign">
         <img src="/timeline/igniter-2023-03-11/thumbnail.webp" alt="Temperature plot from the March 2023 igniter campaign" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
@@ -765,7 +765,7 @@ Events are ordered newest first. This record separates completed tests, failed a
   <li class="gare-timeline__event gare-timeline__event--left gare-timeline__event--featured">
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
-      <a class="gare-timeline__media" href="/timeline/resin-borealis-plan-2021/" aria-label="Open the 2021 SLA resin engine test-plan summary">
+      <a class="gare-timeline__media gare-timeline__media--full-frame" href="/timeline/resin-borealis-plan-2021/" aria-label="Open the 2021 SLA resin engine test-plan summary">
         <img src="/timeline/resin-borealis-plan-2021/thumbnail.webp" alt="CAD rendering of the proposed SLA resin engine test-stand mount" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">

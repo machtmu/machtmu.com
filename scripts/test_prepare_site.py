@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from PIL import Image
-from prepare_site import prepare, navigation_assets, NAVIGATION_MEDIA
+from prepare_site import prepare, navigation_assets, NAVIGATION_MEDIA, immediate_navigation_close, Media, Rewriter, portrait_encoding
 
 
 class PreparationTests(unittest.TestCase):
@@ -15,8 +15,18 @@ class PreparationTests(unittest.TestCase):
         bundle.parent.mkdir(parents=True, exist_ok=True)
         stylesheet.write_text('@media (min-width:76.25em){.md-tabs{display:block}}'
                               '@media (max-width:76.234375em){.md-tabs{display:none}}')
-        bundle.write_text('matchMedia("(min-width: 76.25em)")')
+        bundle.write_text('matchMedia("(min-width: 76.25em)");'
+                          'I(br,vr).pipe(Mr(125)).subscribe(()=>{$o("drawer",!1),$o("search",!1)})')
         return stylesheet, bundle
+
+    def test_only_post_navigation_drawer_cleanup_is_immediate(self):
+        cleanup = 'I(br,vr).pipe(Mr(125)).subscribe(()=>{$o("drawer",!1),$o("search",!1)})'
+        unrelated = 'other.pipe(Mr(125)).subscribe(refresh)'
+        output = immediate_navigation_close(cleanup + ';' + unrelated)
+        self.assertIn('pipe(Mr(0)).subscribe', output)
+        self.assertIn(unrelated, output)
+        with self.assertRaisesRegex(RuntimeError, 'cleanup not found'):
+            immediate_navigation_close(unrelated)
 
     def test_navigation_css_and_js_share_content_fit_breakpoint(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -73,6 +83,29 @@ class PreparationTests(unittest.TestCase):
             self.assertRegex(result, r'/bundle\.test\.min\.nav-[0-9a-f]{12}\.js')
             with Image.open(next((site / "assets/display").glob("*-logo.webp"))) as preview:
                 self.assertEqual(preview.convert("RGBA").getpixel((100, 100)), (192, 12, 24, 255))
+
+    def test_portrait_derivatives_keep_native_master_and_explicit_sizes(self):
+        self.assertEqual(portrait_encoding(True), {'lossless': True, 'quality': 100})
+        self.assertEqual(portrait_encoding(False), {'lossless': False, 'quality': 96})
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory) / 'site'
+            site.mkdir()
+            master = site / 'portrait.webp'
+            Image.effect_noise((900, 1100), 40).convert('RGB').save(master, 'WEBP', lossless=True, exact=True)
+            digest = hashlib.sha256(master.read_bytes()).hexdigest()
+            media = Media(site, Path(directory) / 'cache')
+            writer = Rewriter(site / 'index.html', media, {})
+            writer.feed('<img src="/portrait.webp" data-display-original data-portrait-delivery sizes="75vw">')
+            result = ''.join(writer.parts)
+            self.assertIn('sizes="75vw"', result)
+            self.assertIn('data-original-src="/portrait.webp"', result)
+            self.assertIn('320w', result)
+            self.assertIn('900w', result)
+            self.assertEqual(hashlib.sha256(master.read_bytes()).hexdigest(), digest)
+            with Image.open(next(media.output.glob('*-320-portrait-q96.webp'))) as display:
+                self.assertEqual(display.size, (320, 391))
+            with Image.open(master) as source, Image.open(next(media.output.glob('*-900-portrait-lossless.webp'))) as native:
+                self.assertEqual(source.convert('RGBA').tobytes(), native.convert('RGBA').tobytes())
 
 
 if __name__ == "__main__":

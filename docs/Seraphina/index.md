@@ -17,7 +17,7 @@ Seraphina is MACH's project for 2026. It was a complete overhaul of the tank sys
 
 <div class="program-test-grid project-cards">
   <article>
-    <a href="oct-4-hotfire/"><img src="oct-4-hotfire/pumpkin-breaking.webp" alt="A pumpkin breaking apart in the Seraphina engine exhaust on October 4, 2026" width="1920" height="1080" loading="lazy" decoding="async"></a>
+    <a class="project-card-media--full-frame" href="oct-4-hotfire/"><img src="oct-4-hotfire/pumpkin-breaking.webp" alt="A pumpkin breaking apart in the Seraphina engine exhaust on October 4, 2026" width="1920" height="1080" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2026-10-04">October 4, 2026</time>
       <h2><a href="oct-4-hotfire/">Hotfire and relight</a></h2>
@@ -31,7 +31,7 @@ Seraphina is MACH's project for 2026. It was a complete overhaul of the tank sys
     </div>
   </article>
   <article>
-    <a class="program-test-grid__media--team" href="aug-6-hotfire/"><img src="aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6 hot-fire campaign" loading="lazy" decoding="async"></a>
+    <a class="program-test-grid__media--team project-card-media--full-frame" href="aug-6-hotfire/"><img src="aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6 hot-fire campaign" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2026-08-06">August 6, 2026</time>
       <h2><a href="aug-6-hotfire/">Hot-fire campaign</a></h2>
@@ -45,7 +45,7 @@ Seraphina is MACH's project for 2026. It was a complete overhaul of the tank sys
     </div>
   </article>
   <article>
-    <a href="../timeline/seraphina-tank-proof-2026-06-26/"><img src="../timeline/seraphina-tank-proof-2026-06-26/thumbnail.webp" alt="Seraphina tank hydrostatic proof-test setup" loading="lazy" decoding="async"></a>
+    <a class="project-card-media--full-frame" href="../timeline/seraphina-tank-proof-2026-06-26/"><img src="../timeline/seraphina-tank-proof-2026-06-26/thumbnail.webp" alt="Seraphina tank hydrostatic proof-test setup" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2026-06-26">June 26, 2026</time>
       <h2><a href="../timeline/seraphina-tank-proof-2026-06-26/">Tank proof test</a></h2>

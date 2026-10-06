@@ -22,7 +22,7 @@ def check_black_gradient(locator, pseudo, z_index):
  assert geometry['position']=='absolute' and geometry['z']==str(z_index),geometry
  assert abs(geometry['overlayWidth']-geometry['width'])<1 and abs(geometry['overlayHeight']-geometry['height'])<1,geometry
  gradient=geometry['background']
- assert gradient.startswith('linear-gradient(') and 'rgba(0, 0, 0, 0.8) 75%' in gradient and 'rgb(0, 0, 0) 100%' in gradient,gradient
+ assert gradient.startswith('linear-gradient(') and 'rgba(0, 0, 0, 0) 55%' in gradient and 'rgba(0, 0, 0, 0.45) 80%' in gradient and 'rgba(0, 0, 0, 0.85) 100%' in gradient,gradient
  return gradient
 
 with sync_playwright() as p:
@@ -257,9 +257,10 @@ with sync_playwright() as p:
      assert background==['none','rgb(183, 183, 183)'],(name,background)
      image=card.locator('img');image.scroll_into_view_if_needed()
      image.evaluate('''i=>Promise.race([i.decode(),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Lead portrait did not decode')),15000))])''')
-     assert image.get_attribute('src').endswith('-studio.png') and image.get_attribute('data-display-original') is not None
+     assert image.get_attribute('data-original-src').endswith('-studio.webp') and image.get_attribute('data-portrait-delivery') is not None
      dimensions=image.evaluate('i=>[i.naturalWidth,i.naturalHeight]')
-     assert dimensions==[int(image.get_attribute('width')),int(image.get_attribute('height'))],(name,dimensions)
+     master_width,master_height=int(image.get_attribute('width')),int(image.get_attribute('height'))
+     assert dimensions[0]<=master_width and abs(dimensions[0]/dimensions[1]-master_width/master_height)<0.01,(name,dimensions)
      mask=image.evaluate('i=>getComputedStyle(i).maskImage')
      assert mask=='none',(name,mask)
      panel_box=card.locator('.team-portrait').bounding_box();image_box=image.bounding_box()
@@ -296,6 +297,8 @@ with sync_playwright() as p:
     assert cards.count()=={'/Seraphina/':5,'/SPRINT/':9,'/GAR-E/':6}[path]
     for card in cards.all():
      card.scroll_into_view_if_needed();card.locator('img').evaluate('i=>i.decode()')
+     if card.locator(':scope > a.project-card-media--full-frame').count():
+      assert card.locator('img').evaluate('i=>getComputedStyle(i).objectFit')=='contain'
      gradient=check_black_gradient(card,'::before',1)
      if gradient_reference is None:gradient_reference=gradient
      assert gradient==gradient_reference

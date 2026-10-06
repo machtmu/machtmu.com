@@ -2,7 +2,7 @@
 title: SPRINT
 seo_title: SPRINT Liquid Rocket Engine and Test Results | MACH TMU
 description: Explore SPRINT, MACH's liquid rocket engine project at Toronto Metropolitan University, including propulsion, avionics, electronics and hotfire test results.
-image: https://machtmu.com/SPRINT/aug-22-hotfire/thumbnail.webp
+image: https://machtmu.com/SPRINT/aug-22-hotfire/test-video-poster.jpg
 hide:
   - toc
   - navigation
@@ -55,7 +55,7 @@ hide:
 <div class="program-test-grid project-cards test-gallery">
 
     <article class="test-item">
-        <a href="dec-15-16-hotfire/"><img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async"></a>
+        <a href="dec-15-16-hotfire/" style="--mach-card-focal: 25% center"><img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-12-15">December 15th &amp; 16th, 2025</time>
         <h3><a href="dec-15-16-hotfire/">Hot Fire Test</a></h3>
@@ -63,7 +63,7 @@ hide:
     </article>
 
     <article class="test-item">
-        <a href="nov-20-coldflow/"><img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async"></a>
+        <a href="nov-20-coldflow/" style="--mach-card-focal: 85% center"><img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-11-20">November 20th, 2025</time>
         <h3><a href="nov-20-coldflow/">Cold Flow Test</a></h3>
@@ -71,7 +71,7 @@ hide:
     </article>
 
     <article class="test-item">
-        <a href="nov-7-coldflow/"><img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async"></a>
+        <a href="nov-7-coldflow/" style="--mach-card-focal: 75% center"><img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-11-07">November 7th, 2025</time>
         <h3><a href="nov-7-coldflow/">Cold Flow Test</a></h3>
@@ -79,7 +79,7 @@ hide:
     </article>
 
     <article class="test-item">
-        <a href="sept-13-hotfire/"><img src="sept-13-hotfire/sept-14-hotfire-2s.webp" alt="SPRINT firing on September 14, 2025" width="960" height="540" loading="lazy" decoding="async"></a>
+        <a href="sept-13-hotfire/" style="--mach-card-focal: 85% center"><img src="sept-13-hotfire/sept-14-hotfire-2s.webp" alt="SPRINT firing on September 14, 2025" width="960" height="540" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-09-13">September 13th &amp; 14th, 2025</time>
         <h3><a href="sept-13-hotfire/">Hot Fire Test</a></h3>
@@ -87,7 +87,7 @@ hide:
     </article>
 
     <article class="test-item">
-        <a href="aug-22-hotfire/"><img src="aug-22-hotfire/thumbnail.webp" alt="Hot-fire Test" loading="lazy" decoding="async"></a>
+        <a href="aug-22-hotfire/" style="--mach-card-focal: center bottom"><img src="aug-22-hotfire/test-video-poster.jpg" alt="SPRINT engine firing on August 22, 2025" width="480" height="858" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-08-22">August 22nd, 2025</time>
         <h3><a href="aug-22-hotfire/">Hot Fire Test</a></h3>
@@ -95,7 +95,7 @@ hide:
     </article>
 
     <article class="test-item">
-        <a href="aug-19-coldflow/"><img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async"></a>
+        <a href="aug-19-coldflow/" style="--mach-card-focal: 20% center"><img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async"></a>
         <div>
         <time datetime="2025-08-09">August 9th, 2025</time>
         <h3><a href="aug-19-coldflow/">Cold Flow Test</a></h3>
