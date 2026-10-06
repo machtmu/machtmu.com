@@ -20,6 +20,12 @@ with sync_playwright() as playwright:
         page.on('request', lambda request: requests.append(request.url))
         page.goto(base + '/', wait_until='networkidle')
         poster = 'seraphina-august-relight-hero.webp'
+        assert page.locator('link[rel="preload"][as="image"]').count() == 1
+        assert page.evaluate('''()=>{
+          const preload=document.querySelector('link[rel="preload"][as="image"]');
+          const style=document.querySelector('link[rel="stylesheet"]');
+          return preload.getAttribute('fetchpriority')==='high' && Boolean(preload.compareDocumentPosition(style)&Node.DOCUMENT_POSITION_FOLLOWING);
+        }''')
         assert sum(url.endswith(poster) for url in requests) >= 1, requests
         if not args.webkit:
             assert sum(url.endswith(poster) for url in requests) == 1, requests
@@ -33,6 +39,10 @@ with sync_playwright() as playwright:
         assert not any(url.endswith(deferred) for url in requests), requests
         logo = page.locator('.home-hero__logo')
         assert logo.evaluate('i=>[i.naturalWidth,i.naturalHeight]') == [2048, 636]
+        intro = page.locator('.home-team-intro__photo')
+        assert intro.get_attribute('fetchpriority') == 'low'
+        intro.evaluate('i=>i.decode()')
+        assert intro.evaluate('i=>[i.naturalWidth,i.naturalHeight]') == ([1200, 1738] if width <= 768 else [2140, 1204])
         plot = page.locator('.home-data img[data-plot-dark-src]')
         page.emulate_media(color_scheme='dark')
         page.wait_for_function('document.querySelector(".home-data img").dataset.plotTheme==="dark"')

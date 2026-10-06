@@ -29,9 +29,10 @@
   const logoObserver = new MutationObserver(prepareLogos);
   logoObserver.observe(document.body, {
     attributes: true,
-    subtree: true,
-    attributeFilter: ["data-md-color-scheme", "data-home-hero"],
+    attributeFilter: ["data-md-color-scheme"],
   });
+  const logoHeader = document.querySelector(".md-header");
+  if (logoHeader) logoObserver.observe(logoHeader, { attributes: true, attributeFilter: ["data-home-hero"] });
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", prepareLogos);
   document.addEventListener("load", (event) => {
     if (event.target.matches?.(".mach-logo__image")) prepareLogos();

@@ -4,6 +4,12 @@
   <title>{{ page.meta.seo_title | e }}</title>
 {% endblock %}
 
+{% block styles %}
+  {# Discover the exact native poster before the global stylesheet requests. #}
+  <link rel="preload" href="{{ 'assets/images/seraphina-august-relight-hero.webp' | url }}" as="image" type="image/webp" fetchpriority="high">
+  {{ super() }}
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
   {# Instant navigation parses fetched HTML with scripting disabled. Scope
@@ -82,9 +88,6 @@
       ]
     }
   </script>
-  {# The native video poster is the largest first-paint image. Give the exact
-     same resource priority without fetching motion or changing its pixels. #}
-  <link rel="preload" href="{{ 'assets/images/seraphina-august-relight-hero.webp' | url }}" as="image" type="image/webp" fetchpriority="high">
   <link rel="preload" href="{{ 'assets/fonts/inter-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <style>
     body {
@@ -795,7 +798,7 @@
            src="{{ 'Seraphina/aug-20-hotfire/seraphina-relight-team-intro.webp' | url }}"
            alt="Seraphina team at the Launch Canada 2026 relight test"
            width="2140" height="1204"
-           loading="lazy" decoding="async" data-display-original>
+           loading="lazy" fetchpriority="low" decoding="async" data-display-original>
     </picture>
     <div class="home-team-intro__content">
       <h2 id="home-team-intro-title">Student liquid rocketry in Toronto</h2>
