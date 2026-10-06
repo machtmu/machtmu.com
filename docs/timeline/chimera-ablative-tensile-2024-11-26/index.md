@@ -28,5 +28,3 @@ No formulation was selected from this test. The test record required repeated co
 </div>
 
 [Read the Chimera material section in the 2025 PDR](/resources/machpdr2025.pdf#page=73){ .md-button }
-
-[Back to the complete timeline](../)

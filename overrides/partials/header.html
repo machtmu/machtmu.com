@@ -5,12 +5,14 @@
   {% set class = class ~ " md-header--shadow" %}
 {% endif %}
 <header class="{{ class }}" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+  <div class="md-header__inner md-grid">
     <button class="md-header__button md-icon mach-drawer-toggle" type="button" aria-label="{{ lang.t('nav') }}" aria-controls="__drawer" aria-expanded="false" data-mach-drawer-toggle>
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </button>
-    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+    {# Instant navigation retains this header. Keep a permanent logo node and
+       update its visibility for each page in site.js, including Back/Forward. #}
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo" data-mach-home="{{ 'true' if page.url == nav.homepage.url else 'false' }}"{% if page.url == nav.homepage.url %} aria-current="page"{% endif %}>
       {% include "partials/logo.html" %}
     </a>
     <div class="md-header__title" data-md-component="header-title">
@@ -31,9 +33,15 @@
         </div>
       </div>
     </div>
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
     {% if config.theme.palette %}
       {% if not config.theme.palette is mapping %}
-        {% include "partials/palette.html" %}
+        {# Keep the native OS palette observer, but expose no theme controls. #}
+        <div hidden aria-hidden="true">
+          {% include "partials/palette.html" %}
+        </div>
       {% endif %}
     {% endif %}
     {% if not config.theme.palette is mapping %}
@@ -48,15 +56,5 @@
         {% include "partials/search.html" %}
       {% endif %}
     {% endif %}
-    <div class="md-header__source">
-      {% if config.repo_url %}
-        {% include "partials/source.html" %}
-      {% endif %}
-    </div>
-  </nav>
-  {% if "navigation.tabs.sticky" in features %}
-    {% if "navigation.tabs" in features %}
-      {% include "partials/tabs.html" %}
-    {% endif %}
-  {% endif %}
+  </div>
 </header>

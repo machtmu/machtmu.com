@@ -24,5 +24,3 @@ The 2024 Launch Canada report records the Day-Glo fuel tank as proof-tested to 1
 </div>
 
 [Read the 2024 Launch Canada report](/resources/MACH_LCR2024.pdf#page=10){ .md-button }
-
-[Back to the complete timeline](../)

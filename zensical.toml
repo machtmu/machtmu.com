@@ -3,7 +3,6 @@ site_name        = "MACH"
 site_description = "MACH is Toronto Metropolitan University's student liquid rocketry team in Toronto. Explore our rocket engines, hotfire test data, avionics and team."
 site_author      = "Mach"
 site_url         = "https://machtmu.com/"
-repo_url         = "https://github.com/machtmu/machtmu.com"
 edit_uri         = "edit/main/docs/"
 copyright        = "MACH - TMU Liquid Rocketry © 2026"
 nav = [
@@ -47,6 +46,8 @@ extra_css = [
   "css/fonts.css",
   "css/extra.css",
   "css/refinements.css",
+  "css/team-portraits.css",
+  "css/project-cards.css",
 ]
 
 extra_javascript = [
@@ -123,7 +124,6 @@ features = [
   "header.autohide",
 
   # Navigation
-  "navigation.footer",
   "navigation.indexes",
   "navigation.instant",
   "navigation.instant.prefetch",
@@ -131,7 +131,6 @@ features = [
   "navigation.sections",
   "navigation.tabs",
   "navigation.tabs.sticky",
-  "navigation.top",
   "navigation.tracking",
 
   # Search
@@ -141,29 +140,20 @@ features = [
   "toc.follow",
 ]
 
-[project.theme.icon]
-# Use repo icon in header (Zensical will still infer some things from repo_url)
-repo = "fontawesome/brands/github"
-
-# Palette toggle for automatic mode
+# System appearance only. The hidden automatic palette keeps the native
+# theme and browser chrome in sync with OS changes, without user overrides.
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"
-toggle.icon = "lucide/sun-moon"
-toggle.name = "Switch to light mode"
 
-# Palette toggle for light mode
+# Light system appearance
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
 scheme = "default"
-toggle.icon = "lucide/sun"
-toggle.name = "Switch to dark mode"
 
-# Palette toggle for dark mode
+# Dark system appearance
 [[project.theme.palette]]
 media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-toggle.icon = "lucide/moon"
-toggle.name = "Switch to system preference"
 
 # If you want MACH-black accent later:
 # primary = "black"  # under each palette block

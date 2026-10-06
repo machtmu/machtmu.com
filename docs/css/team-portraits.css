@@ -1,0 +1,139 @@
+/* One original-to-studio edit per portrait, with CSS-only framing and eyelines. */
+.md-typeset .team-portraits .team-portrait-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 1rem 0 2rem;
+  padding: 0;
+}
+
+.md-typeset .team-portraits .team-portrait-list > li {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.md-typeset .team-portraits .team-portrait {
+  --portrait-scale: 1;
+  aspect-ratio: 1;
+  background: #b7b7b7;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.md-typeset .team-portraits .team-portrait img {
+  aspect-ratio: auto;
+  border-radius: 0;
+  display: block;
+  height: auto;
+  left: var(--portrait-center, 50%);
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  top: 34%;
+  transform: translate(-50%, var(--portrait-eye-lift));
+  width: calc(var(--portrait-width) * var(--portrait-scale));
+}
+
+.md-typeset .team-portraits .team-portrait--julia {
+  --portrait-width: 121%;
+  --portrait-eye-lift: -33.1%;
+}
+
+.md-typeset .team-portraits .team-portrait--toby {
+  --portrait-width: 134%;
+  --portrait-eye-lift: -33.3%;
+}
+
+.md-typeset .team-portraits .team-portrait--samuel {
+  --portrait-width: 130%;
+  --portrait-eye-lift: -34%;
+}
+
+.md-typeset .team-portraits .team-portrait--jonathan {
+  --portrait-width: 100%;
+  --portrait-eye-lift: -28.1%;
+}
+
+.md-typeset .team-portraits .team-portrait--kasper {
+  --portrait-width: 132%;
+  --portrait-eye-lift: -33.4%;
+}
+
+.md-typeset .team-portraits .team-portrait--madison {
+  --portrait-width: 120%;
+  --portrait-eye-lift: -24.6%;
+}
+
+.md-typeset .team-portraits .team-portrait::after {
+  background: linear-gradient(transparent 62%, rgb(0 0 0 / 42%) 80%, rgb(0 0 0 / 90%));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.md-typeset .team-portraits .team-portrait-caption {
+  bottom: 0;
+  color: #fff;
+  display: grid;
+  gap: 0.15rem;
+  inset-inline: 0;
+  line-height: 1.3;
+  padding: 0.9rem;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+}
+
+.md-typeset .team-portraits .team-portrait-caption strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.md-typeset .team-portraits .team-portrait-caption > em {
+  font-size: 0.75rem;
+  font-style: normal;
+}
+
+.md-typeset .team-portraits a.team-portrait:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .md-typeset .team-portraits .team-portrait-list {
+    gap: 0.6rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md-typeset .team-portraits .team-portrait {
+    --portrait-scale: 1.25;
+    aspect-ratio: 4 / 5;
+  }
+
+  .md-typeset .team-portraits .team-portrait-caption {
+    gap: 0.1rem;
+    padding: 0.5rem;
+  }
+
+  .md-typeset .team-portraits .team-portrait-caption strong {
+    font-size: 0.7rem;
+  }
+
+  .md-typeset .team-portraits .team-portrait-caption > em {
+    font-size: 0.6rem;
+  }
+}

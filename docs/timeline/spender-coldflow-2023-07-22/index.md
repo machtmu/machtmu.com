@@ -37,5 +37,3 @@ The final analysis concluded that injector-throat tuning was still required, but
     <figcaption>The integrated test site.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

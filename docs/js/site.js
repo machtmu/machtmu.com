@@ -8,9 +8,22 @@
   let lastFocusedElement;
 
   const getDialog = () => document.querySelector("[data-mach-search-input]")?.closest("[role='dialog']");
-  const getSearchButton = () => document.querySelector("[data-mach-search-open]");
 
   function preparePage() {
+    // The theme keeps the header during instant navigation. Derive visibility
+    // from the current page rather than the page that first created it.
+    const headerLogo = document.querySelector('.md-header [data-md-component="logo"]');
+    if (headerLogo) {
+      const home = Boolean(document.querySelector(".home-hero"));
+      headerLogo.dataset.machHome = String(home);
+      if (home) headerLogo.setAttribute("aria-current", "page");
+      else headerLogo.removeAttribute("aria-current");
+    }
+
+    document.querySelectorAll(".md-logo[title], .md-logo [title], .home-hero__logo[title]").forEach((logo) => {
+      logo.removeAttribute("title");
+    });
+
     document.querySelectorAll(".md-overlay[aria-label]").forEach((overlay) => {
       overlay.removeAttribute("aria-label");
     });
@@ -19,8 +32,6 @@
     const toggle = document.querySelector("[data-mach-drawer-toggle]");
     if (drawer && toggle) toggle.setAttribute("aria-expanded", String(drawer.checked));
 
-    const shortcut = document.querySelector(".mach-search-toggle__shortcut");
-    if (shortcut) shortcut.textContent = /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl+K";
   }
 
   function stripMarkup(value) {
@@ -135,11 +146,9 @@
 
   function openSearch() {
     const dialog = getDialog();
-    const button = getSearchButton();
-    if (!dialog || !button || !dialog.hidden) return;
+    if (!dialog || !dialog.hidden) return;
     lastFocusedElement = document.activeElement;
     dialog.hidden = false;
-    button.setAttribute("aria-expanded", "true");
     document.body.classList.add("mach-search-open");
     const input = dialog.querySelector("[data-mach-search-input]");
     input?.focus();
@@ -148,11 +157,9 @@
 
   function closeSearch() {
     const dialog = getDialog();
-    const button = getSearchButton();
     if (!dialog || dialog.hidden) return;
     searchRevision++;
     dialog.hidden = true;
-    button?.setAttribute("aria-expanded", "false");
     document.body.classList.remove("mach-search-open");
     if (lastFocusedElement instanceof HTMLElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
   }
@@ -169,7 +176,6 @@
       return;
     }
 
-    if (event.target.closest("[data-mach-search-open]")) openSearch();
     if (event.target.closest("[data-mach-search-close]")) closeSearch();
   });
 

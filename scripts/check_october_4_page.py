@@ -36,7 +36,7 @@ with sync_playwright() as p:
                     if parent.evaluate('(p)=>p.tagName') == 'A':
                         assert parent.get_attribute('href').endswith(image.get_attribute('src').split('/')[-1])
                 if path == '/':
-                    assert 'October 4' in page.locator('.hotfire-showcase__header').inner_text()
+                    assert 'October 4' in page.locator('.home-hotfire__heading').inner_text()
                     assert page.locator('.showcase-video source').get_attribute('src').endswith('seraphina-oct-4-hotfire.mp4')
                     assert page.locator('.hotfire-data a, .hotfire-data button').count() == 0
                     page.locator('.showcase-video').scroll_into_view_if_needed()
@@ -49,6 +49,10 @@ with sync_playwright() as p:
                     first.scroll_into_view_if_needed()
                     page.screenshot(path=str(out / f'card-{width}-{scheme}.png'))
                 elif path == asset:
+                    headings = page.locator('.md-content h2').all_text_contents()
+                    headings = [heading.replace('\u00b6', '').strip() for heading in headings]
+                    assert headings[0] == 'Test Video', headings
+                    assert headings[-2:] == ['Successes', 'Lessons'], headings
                     assert page.locator('.hotfire-frame-grid img').count() == 2
                     assert page.locator('img[alt*="team photo" i]').count() == 0
                     assert page.locator('img[data-plot-dark-src]').count() == 2

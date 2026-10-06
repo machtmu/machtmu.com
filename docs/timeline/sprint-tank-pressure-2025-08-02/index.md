@@ -14,5 +14,3 @@ The scheduling and photographs support a tank-related test, but the result does 
   <img src="/timeline/sprint-tank-pressure-2025-08-02/tank-test.webp" alt="MACH members with the suspended SPRINT tank after the August 2, 2025 pressure test" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:8px;">
   <figcaption>Suspended SPRINT hardware and ground-support controls in the reported pressure-test result.</figcaption>
 </figure>
-
-[Back to the complete timeline](../)

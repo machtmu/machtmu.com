@@ -22,5 +22,3 @@ A black-hose connection leaked during setup and was tightened. The corrected set
     <figcaption>Pump, regulator and pressure gauge.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

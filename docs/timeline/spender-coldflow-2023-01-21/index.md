@@ -32,5 +32,3 @@ The rebuild replaced the temporary pneumatic tubing with hardline copper and add
     <figcaption>Plumbing and valve integration.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

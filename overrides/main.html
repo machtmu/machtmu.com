@@ -8,6 +8,50 @@
   {% endif %}
 {% endblock %}
 
+{# Side columns are opt-in for substantial technical documents. Keep the
+   native navigation markup so the global mobile drawer remains available. #}
+{% block site_nav %}
+  {% set sidebar_allowed = false %}
+  {% set hidden_items = [] %}
+  {% if page and page.meta %}
+    {% set sidebar_allowed = (page.meta.sidebars | default(false)) == true and "Seraphina/" not in page.url %}
+    {% set hidden_items = page.meta.hide | default([], true) %}
+  {% endif %}
+  {% set navigation_hidden = not sidebar_allowed or "navigation" in hidden_items %}
+  {% set toc_hidden = not sidebar_allowed or "toc" in hidden_items %}
+  {% if nav %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {% if navigation_hidden %}hidden{% endif %}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {% if toc_hidden %}hidden{% endif %}>
+      <div class="md-sidebar__scrollwrap">
+        {% if not toc_hidden and config.theme.variant != "classic" %}
+          {% set toc = page.toc %}
+          {% set first = toc | first %}
+          {% if first and first.level == 1 %}
+            {% set toc = first.children %}
+          {% endif %}
+          {% if toc %}
+            <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+            <div class="md-sidebar-button__wrapper">
+              <label class="md-sidebar-button" for="__toc"></label>
+            </div>
+          {% endif %}
+        {% endif %}
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
   <link rel="preload" href="{{ 'assets/fonts/inter-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>

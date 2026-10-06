@@ -1,3 +1,7 @@
+---
+sidebars: true
+---
+
 # DFM Guide
 
 **Design for manufacturing guide. <br> "Forked" from [QRET](https://qret.ca/)'s component repository.**

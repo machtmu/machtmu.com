@@ -30,5 +30,3 @@ Launch Canada's test video records a 35-second firing and reports a peak thrust 
 [Watch the firing on YouTube](https://www.youtube.com/watch?v=rvTrceeJUlc){ .md-button target="_blank" rel="noopener" }
 [Open the original 1080p60 edit](https://drive.google.com/file/d/14oO4Uxw2SC9NDj83wipzvGgnJ-8UDWky/view){ .md-button target="_blank" rel="noopener" }
 [Open the archived photo folder](https://drive.google.com/drive/folders/1OIHyOJa3gtpBPZABxFH9AOmcuQa6wGI0){ .md-button target="_blank" rel="noopener" }
-
-[Back to the complete timeline](../)

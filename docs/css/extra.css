@@ -1,3 +1,8 @@
+:root {
+    /* Shared by the hero, top bar and navigation drawer. */
+    --mach-logo-hdr-strength: 0.5;
+}
+
 /* General image styling with height constraints */
 img {
     display: block;
@@ -72,9 +77,68 @@ a.former-member-card:hover {
     width: auto;
 }
 
-@media screen and (max-width: 76.234375em) {
+@media screen and (max-width: 37.484375em) {
     .md-header__button.md-logo {
         display: flex;
+    }
+    /* The mobile home hero already contains the branding. */
+    .md-header__button.md-logo[data-mach-home="true"] {
+        display: none !important;
+    }
+}
+
+/* One desktop row: home logo and top-level links. Keep the native
+   tabs component so active sections and instant navigation continue to work. */
+@media screen and (min-width: 37.5em) {
+    .md-header__inner {
+        gap: 0.35rem;
+        min-height: 52px;
+    }
+    .md-header__title {
+        display: none;
+    }
+    .md-header__button.md-logo {
+        align-items: center;
+        display: inline-flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        margin: 0;
+        min-height: 44px;
+        padding: 0 0.4rem;
+    }
+    .md-header .md-tabs {
+        background: transparent;
+        box-shadow: none;
+        color: inherit;
+        flex: 1 1 auto;
+        margin: 0;
+        min-width: 0;
+        overflow: visible;
+        width: auto;
+    }
+    .md-header .md-tabs > .md-grid {
+        margin: 0;
+        padding: 0;
+    }
+    .md-header .md-tabs__list {
+        align-items: center;
+        contain: none;
+        height: 44px;
+        margin: 0;
+        overflow: visible;
+    }
+    .md-header .md-tabs__item {
+        border-bottom: 0;
+        height: 44px;
+        padding: 0 0.55rem;
+    }
+    .md-header .md-tabs__item--active {
+        box-shadow: inset 0 -1px currentColor;
+    }
+    .md-header .md-tabs__link {
+        align-items: center;
+        height: 44px;
+        margin: 0;
     }
 }
 
@@ -115,6 +179,7 @@ a.former-member-card:hover {
 
 .mach-logo__hdr {
     display: none;
+    opacity: var(--mach-logo-hdr-strength);
 }
 
 @media (dynamic-range: high) {
@@ -132,40 +197,58 @@ a.former-member-card:hover {
     }
 }
 
+.md-footer-meta__inner {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.4rem 1.2rem;
+    justify-content: space-between;
+    padding: 0.8rem;
+}
+
+.md-footer-meta__inner .md-copyright {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.md-footer-meta__inner .md-social {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .mach-footer-location {
     color: var(--md-footer-fg-color--lighter);
     align-self: center;
     display: inline-flex;
     align-items: center;
     font-size: 0.64rem;
-    line-height: 1.2;
-    margin: 0 0.8rem;
+    line-height: 1.5;
+    margin: 0;
     white-space: nowrap;
 }
 
-@media screen and (max-width: 44.984375em) {
+@media screen and (max-width: 59.984375em) {
     .md-footer-meta__inner {
+        flex-direction: column;
         justify-content: center;
     }
 
     .md-footer-meta__inner .md-copyright {
-        flex-basis: 100%;
-        margin: 0;
+        width: 100%;
         text-align: center;
     }
 
     .md-footer-meta__inner .md-social {
         order: 2;
         justify-content: center;
-        margin: 0.15rem 0 0;
     }
 
     .mach-footer-location {
         order: 3;
-        flex-basis: 100%;
+        width: 100%;
         justify-content: center;
-        font-size: 0.56rem;
-        margin: 0 0 0.35rem;
+        font-size: 0.6rem;
         text-align: center;
     }
 }
@@ -788,48 +871,8 @@ a.former-member-card:hover {
 }
 
 /* Match the theme's desktop navigation breakpoint for our button control. */
-@media screen and (min-width: 76.25em) {
+@media screen and (min-width: 37.5em) {
     .md-header__button.mach-drawer-toggle { display: none; }
-}
-
-.md-header__button.mach-search-toggle {
-    align-items: center;
-    background: color-mix(in srgb, var(--md-default-bg-color) 8%, transparent);
-    border: 0.05rem solid color-mix(in srgb, currentColor 22%, transparent);
-    border-radius: 0.25rem;
-    color: inherit;
-    cursor: pointer;
-    display: inline-flex;
-    gap: 0.35rem;
-    height: 1.7rem;
-    margin: 0 0.3rem;
-    padding: 0 0.45rem;
-    min-width: 5.1rem;
-    width: auto;
-}
-
-.mach-search-toggle:hover,
-.mach-search-toggle:focus-visible {
-    background: color-mix(in srgb, var(--md-default-bg-color) 15%, transparent);
-}
-
-.mach-search-toggle svg {
-    height: 0.9rem;
-    width: 0.9rem;
-}
-
-.mach-search-toggle__label {
-    font-size: 0.68rem;
-}
-
-.mach-search-toggle__shortcut {
-    background: color-mix(in srgb, currentColor 12%, transparent);
-    border: 0;
-    border-radius: 0.15rem;
-    color: inherit;
-    font-family: inherit;
-    font-size: 0.52rem;
-    padding: 0.12rem 0.25rem;
 }
 
 .mach-search-dialog[hidden] {
@@ -969,28 +1012,6 @@ body.mach-search-open {
 }
 
 @media screen and (max-width: 44.984375em) {
-    .md-header__button.mach-search-toggle {
-        background: transparent;
-        border: 0;
-        border-radius: 50%;
-        height: 2.4rem;
-        justify-content: center;
-        margin: 0;
-        min-width: 2.4rem;
-        padding: 0.6rem;
-        width: 2.4rem;
-    }
-
-    .mach-search-toggle svg {
-        height: 1.2rem;
-        width: 1.2rem;
-    }
-
-    .mach-search-toggle__label,
-    .mach-search-toggle__shortcut {
-        display: none;
-    }
-
     .mach-search-dialog {
         padding: 3.4rem 0.45rem 0.45rem;
     }

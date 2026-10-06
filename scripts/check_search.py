@@ -18,7 +18,10 @@ with sync_playwright() as p:
     pending = []
     page.route("**/search.json", lambda route: pending.append(route))
     page.goto(args.url + "/team/", wait_until="domcontentloaded")
-    page.locator("[data-mach-search-open]").click()
+    opener = page.locator('.md-header [data-md-component="logo"]')
+    opener.focus()
+    assert page.locator("[data-mach-search-open]").count() == 0
+    page.keyboard.press("Control+k")
     query = page.locator("[data-mach-search-input]")
     query.fill("Seraphina")
     page.wait_for_timeout(50)
@@ -32,7 +35,7 @@ with sync_playwright() as p:
     page.wait_for_function('()=>document.querySelector("[data-mach-search-status]").textContent === "1 result"')
     assert page.locator("[data-mach-search-results] a").inner_text().startswith("Sponsors")
     page.keyboard.press("Escape")
-    assert page.locator("[data-mach-search-open]").evaluate("e=>e===document.activeElement")
+    assert opener.evaluate("e=>e===document.activeElement")
     context.close()
 
     context = browser.new_context()
@@ -43,11 +46,11 @@ with sync_playwright() as p:
         route.fulfill(status=503, body="Temporary failure") if len(requests) == 1 else route.fulfill(json=INDEX)
     page.route("**/search.json", serve)
     page.goto(args.url + "/team/", wait_until="domcontentloaded")
-    page.locator("[data-mach-search-open]").click()
+    page.keyboard.press("Control+k")
     page.locator("[data-mach-search-input]").fill("Seraphina")
     page.wait_for_function('()=>document.querySelector("[data-mach-search-status]").textContent.startsWith("Search is unavailable")')
     page.keyboard.press("Escape")
-    page.locator("[data-mach-search-open]").click()
+    page.keyboard.press("Control+k")
     page.locator("[data-mach-search-input]").fill("Seraphina")
     page.wait_for_function('()=>document.querySelector("[data-mach-search-status]").textContent === "1 result"')
     assert len(requests) == 2
@@ -60,14 +63,14 @@ with sync_playwright() as p:
     pending = []
     page.route("**/search.json", lambda route: pending.append(route))
     page.goto(args.url + "/team/", wait_until="domcontentloaded")
-    page.locator("[data-mach-search-open]").click()
+    page.keyboard.press("Control+k")
     page.locator("[data-mach-search-input]").fill("Seraphina")
     page.wait_for_timeout(50)
     page.keyboard.press("Escape")
     pending[0].fulfill(json=INDEX)
     page.wait_for_timeout(150)
     assert page.locator("[data-mach-search-results] li").count() == 0
-    page.locator("[data-mach-search-open]").click()
+    page.keyboard.press("Control+k")
     page.locator("[data-mach-search-input]").fill("Sponsors")
     page.wait_for_function('()=>document.querySelector("[data-mach-search-results] a")?.textContent.startsWith("Sponsors")')
     context.close()

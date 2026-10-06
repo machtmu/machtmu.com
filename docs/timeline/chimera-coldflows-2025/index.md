@@ -32,5 +32,3 @@ Shivesh's May 17 follow-up recorded that the 3/64-inch nitrous orifices flowed t
     <figcaption>May 12 subscale flow.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

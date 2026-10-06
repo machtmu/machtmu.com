@@ -22,5 +22,3 @@ The follow-up design record set a minimum wall thickness of 1.5 mm for the print
     <figcaption>Clear SLA sample during direct-flame exposure.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

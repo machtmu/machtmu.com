@@ -37,5 +37,3 @@ The tank was depressurized and disassembled. The cylinder, O-ring, retaining rin
 </div>
 
 [Read the Seraphina FDR](https://docs.google.com/document/d/1mJKCzCJIxTM3iiBUpg4c9eRuTjE--2w4mBKeafEWI8k/edit){ .md-button target="_blank" rel="noopener" }
-
-[Back to the complete timeline](../)

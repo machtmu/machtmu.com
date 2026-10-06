@@ -33,5 +33,3 @@ The burn produced strong fumes. Follow-up discussion identified hydrogen-bromide
   <img src="/timeline/garolite-2023-03-16/thumbnail.webp" alt="Numbered Garolite samples after the March 2023 burn tests" loading="lazy" decoding="async">
   <figcaption>Numbered Garolite samples after testing.</figcaption>
 </figure>
-
-[Back to the complete timeline](../)

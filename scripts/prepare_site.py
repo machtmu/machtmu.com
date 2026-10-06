@@ -20,6 +20,34 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "display-v2"
 
+# Content-fit cutoff (600px): the full logo and six tabs need about 583px
+# including gutters, with a little extra room for active-link font widths.
+# Keep the native theme's drawer, section
+# navigation and JS viewport observer in step with our compact header row.
+# Transform only disposable build assets; never edit installed theme sources.
+NAVIGATION_MEDIA = {"76.25em": "37.5em", "76.234375em": "37.484375em"}
+
+
+def navigation_assets(site: Path):
+    assets = {}
+    styles = sorted((site / "assets/stylesheets").glob("*/main.*.min.css"))
+    bundles = sorted((site / "assets/javascripts").glob("bundle.*.min.js"))
+    for paths in (styles, bundles):
+        if not paths:
+            raise RuntimeError("Native navigation assets missing; check theme build layout")
+        for path in paths:
+            original = path.read_text()
+            updated = original
+            for old, new in NAVIGATION_MEDIA.items():
+                updated = updated.replace(old, new)
+            if updated == original:
+                raise RuntimeError(f"Native navigation breakpoint not found in {path.name}")
+            digest = hashlib.sha256(updated.encode()).hexdigest()[:12]
+            target = path.with_name(f"{path.stem}.nav-{digest}{path.suffix}")
+            target.write_text(updated)
+            assets["/" + path.relative_to(site).as_posix()] = "/" + target.relative_to(site).as_posix()
+    return assets
+
 
 class Media:
     def __init__(self, site: Path, cache: Path):
@@ -91,31 +119,25 @@ class Rewriter(HTMLParser):
         changed = False
         if tag == "img" and values.get("src") and "data-plot-dark-src" not in values:
             logo = "/sponsors/" in values["src"] or values["src"].startswith("sponsors/")
-            result = self.media.variants(values["src"], self.page, logo=logo)
+            # Explicit original-image opt-ins retain their source pixels.
+            result = None if "data-display-original" in values else self.media.variants(values["src"], self.page, logo=logo)
             if result:
                 src, srcset, width, height = result
                 values["data-original-src"] = values["src"]
                 values.update(src=src, srcset=srcset, width=str(width), height=str(height))
                 values["sizes"] = ("(max-width: 900px) 60vw, 250px" if logo
                                    else "(max-width: 760px) 92vw, (max-width: 1220px) 70vw, 960px")
-                if "slideshow-image" in values.get("class", ""):
-                    values["sizes"] = "(max-width: 760px) 92vw, 700px"
-                elif "/assets/images/leads/" in "/" + unquote(urlsplit(values["data-original-src"]).path).lstrip("./"):
+                if "/assets/images/leads/" in "/" + unquote(urlsplit(values["data-original-src"]).path).lstrip("./"):
                     values["sizes"] = "(max-width: 760px) 45vw, 300px"
                 changed = True
-            if "slideshow-image" in values.get("class", ""):
-                # The first slide is usable without JS; others have no fetchable URL
-                # until home.js activates the current/next slide.
-                if values.get("alt") != "Telemetry and control electrical enclosure":
-                    for name in ("src", "srcset", "sizes"):
-                        if name in values:
-                            values["data-slide-" + name] = values.pop(name)
-                    changed = True
         if tag == "video" and values.get("poster"):
-            if "hero-bg" not in values.get("class", ""):
+            hero = "hero-bg" in values.get("class", "").split()
+            if not hero:
                 values["preload"] = "none"
                 changed = True
-            result = self.media.variants(values["poster"], self.page, poster=True)
+            # The hero already has an optimized native-resolution WebP. Keep
+            # its detail rather than replacing it with a 960px video thumbnail.
+            result = None if hero else self.media.variants(values["poster"], self.page, poster=True)
             if result:
                 values["poster"] = result[0]
                 for name in ("data-light-poster", "data-dark-poster"):
@@ -160,7 +182,7 @@ class Rewriter(HTMLParser):
 
 
 def prepare(site: Path, cache: Path):
-    assets = {}
+    assets = navigation_assets(site)
     for folder in ("css", "js"):
         for path in (site / folder).glob("*.*"):
             if re.search(r"\.[0-9a-f]{12}\.", path.name):

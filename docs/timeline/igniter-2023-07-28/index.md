@@ -26,5 +26,3 @@ The next revision standardized grain dimensions and added an internal backstop o
     <figcaption>GAR-E and Spender during test preparation.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

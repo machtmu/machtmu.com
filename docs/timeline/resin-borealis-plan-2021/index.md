@@ -26,5 +26,3 @@ The Resin Rocket Drive folder contains CAD, analysis and bill-of-materials files
 [Open the test SOP](https://drive.google.com/file/d/1aKXmYerp5PWFt02-GQEuk0vucRCbFqiN/view){ .md-button target="_blank" rel="noopener" }
 [Open the September 16 presentation](https://drive.google.com/file/d/17PY066fYVYyJ44fkmiqLzj-wPMW0fAwY/view){ .md-button target="_blank" rel="noopener" }
 [Open the Resin Rocket folder](https://drive.google.com/drive/folders/1IrfwewV8L07UOFsEm4G4UMYZbevKanF_){ .md-button target="_blank" rel="noopener" }
-
-[Back to the complete timeline](../)

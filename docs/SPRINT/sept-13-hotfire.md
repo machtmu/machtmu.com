@@ -1,7 +1,7 @@
 ---
 title: Hot Fire Test - September 13th and 14th, 2025
 description: SPRINT completed one hot fire on September 13th and two more on September 14th, 2025; the final shortened run recorded complete pressure, thrust and tank-mass telemetry.
-image: https://machtmu.com/SPRINT/sept-13-hotfire/thumbnail.webp
+image: https://machtmu.com/SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp
 ---
 
 # SPRINT Hot Fire Test - September 13th and 14th, 2025
@@ -24,7 +24,7 @@ The September 14 telemetry reached 839.1 N peak thrust and 184.1 psi peak chambe
 </figure>
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
-  <video controls preload="metadata" playsinline src="/SPRINT/sept-13-hotfire/sept-14-hotfire.mp4" poster="/SPRINT/sept-13-hotfire/sept-14-poster.jpg" aria-label="SPRINT hot fire on September 14th, 2025" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
+  <video controls preload="metadata" playsinline src="/SPRINT/sept-13-hotfire/sept-14-hotfire.mp4" poster="/SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp" aria-label="SPRINT hot fire on September 14th, 2025" style="width:100%; max-width:800px; aspect-ratio:16/9; height:auto; border-radius:8px; display:block; margin:0 auto;"></video>
   <figcaption style="font-size:0.9rem; color:#888; margin-top:0.5rem;">One of the two September 14 firings.</figcaption>
 </figure>
 

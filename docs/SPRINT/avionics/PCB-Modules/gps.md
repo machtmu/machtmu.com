@@ -1,3 +1,7 @@
+---
+sidebars: true
+---
+
 # [GPS](https://github.com/machtmu/4in-gps) 
 
 ---

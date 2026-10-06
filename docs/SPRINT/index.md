@@ -21,81 +21,86 @@ hide:
     </div>
 </div>
 
-[See the complete MACH test timeline](../timeline/){ .md-button }
 
 ## Systems
 
-<div class="subsystem-gallery">
+<div class="program-test-grid project-cards subsystem-gallery">
 
-    <div class="subsystem-item">
-        <img src="propulsion/overview.webp" alt="SPRINT propulsion ground-support equipment" loading="lazy" decoding="async">
-        <h3>Propulsion</h3>
-        <p>Feed-system plumbing, ground-support equipment, and quick-disconnect testing.</p>
-        <a href="propulsion/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="subsystem-item">
+        <a href="propulsion/"><img src="propulsion/overview.webp" alt="SPRINT propulsion ground-support equipment" loading="lazy" decoding="async"></a>
+        <div>
+        <h3><a href="propulsion/">Propulsion</a></h3>
+        </div>
+    </article>
 
-    <div class="subsystem-item">
-        <img src="electronics/overview.webp" alt="SPRINT electrical ground-support equipment" loading="lazy" decoding="async">
-        <h3>Electronics</h3>
-        <p>Electrical ground-support hardware and the LabVIEW control interface.</p>
-        <a href="electronics/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="subsystem-item">
+        <a href="electronics/"><img src="electronics/overview.webp" alt="SPRINT electrical ground-support equipment" loading="lazy" decoding="async"></a>
+        <div>
+        <h3><a href="electronics/">Electronics</a></h3>
+        </div>
+    </article>
 
-    <div class="subsystem-item">
-        <img src="avionics/cad/thumbnail.webp" alt="SPRINT avionics system" loading="lazy" decoding="async">
-        <h3>Avionics</h3>
-        <p>Flight computers, sensors, power, telemetry, and recovery electronics.</p>
-        <a href="avionics/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="subsystem-item">
+        <a href="avionics/"><img src="avionics/cad/thumbnail.webp" alt="SPRINT avionics system" loading="lazy" decoding="async"></a>
+        <div>
+        <h3><a href="avionics/">Avionics</a></h3>
+        </div>
+    </article>
 
 </div>
 
 
 ## Tests
 
-<div class="test-gallery">
+<div class="program-test-grid project-cards test-gallery">
 
-    <div class="test-item">
-        <img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async">
-        <h3>Hot Fire Test - December 15th & 16th, 2025</h3>
-        <p>One cold-weather hot fire reached 510.0 N and 107.2 psi; residual fuel ignited during purge.</p>
-        <a href="dec-15-16-hotfire/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="dec-15-16-hotfire/"><img src="dec-15-16-hotfire/thumbnail.webp" alt="December 15-16 Hot Fire Test" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-12-15">December 15th &amp; 16th, 2025</time>
+        <h3><a href="dec-15-16-hotfire/">Hot Fire Test</a></h3>
+        </div>
+    </article>
 
-    <div class="test-item">
-        <img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async">
-        <h3>Cold Flow Test - November 20th, 2025</h3>
-        <p>Mission-control integration exposed a wrong V5 mapping, an incompletely installed P4 sensor and a leaking CO₂ fitting.</p>
-        <a href="nov-20-coldflow/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="nov-20-coldflow/"><img src="nov-20-coldflow/thumbnail.webp" alt="November 20 Cold-flow Test" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-11-20">November 20th, 2025</time>
+        <h3><a href="nov-20-coldflow/">Cold Flow Test</a></h3>
+        </div>
+    </article>
 
-    <div class="test-item">
-        <img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async">
-        <h3>Cold Flow Test - November 7th, 2025</h3>
-        <p>Two cold flows followed the control-software rewrite and recorded complete oxidizer-pressure and tank-mass files.</p>
-        <a href="nov-7-coldflow/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="nov-7-coldflow/"><img src="nov-7-coldflow/thumbnail.webp" alt="November 7 Cold-flow Test" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-11-07">November 7th, 2025</time>
+        <h3><a href="nov-7-coldflow/">Cold Flow Test</a></h3>
+        </div>
+    </article>
 
-    <div class="test-item">
-        <img src="sept-13-hotfire/thumbnail.webp" alt="September Hot-fire Test" loading="lazy" decoding="async">
-        <h3>Hot Fire Test - September 13th & 14th, 2025</h3>
-        <p>Three successful fires; the final run reached 839.1 N, 184.1 psi chamber pressure and approximately 2.4 kN·s.</p>
-        <a href="sept-13-hotfire/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="sept-13-hotfire/"><img src="sept-13-hotfire/sept-14-hotfire-2s.webp" alt="SPRINT firing on September 14, 2025" width="960" height="540" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-09-13">September 13th &amp; 14th, 2025</time>
+        <h3><a href="sept-13-hotfire/">Hot Fire Test</a></h3>
+        </div>
+    </article>
 
-    <div class="test-item">
-        <img src="aug-22-hotfire/thumbnail.webp" alt="Hot-fire Test" loading="lazy" decoding="async">
-        <h3>Hot Fire Test - August 22nd, 2025</h3>
-        <p>The first SPRINT hot fire reached commanded cutoff, but a partial fill and missing telemetry prevented a measured performance result.</p>
-        <a href="aug-22-hotfire/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="aug-22-hotfire/"><img src="aug-22-hotfire/thumbnail.webp" alt="Hot-fire Test" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-08-22">August 22nd, 2025</time>
+        <h3><a href="aug-22-hotfire/">Hot Fire Test</a></h3>
+        </div>
+    </article>
 
-    <div class="test-item">
-        <img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async">
-        <h3>Cold Flow Test - August 9th, 2025</h3>
-        <p>CO₂ and distilled water flowed after two leak checks passed; an igniter integration failure blocked the planned hot fire.</p>
-        <a href="aug-19-coldflow/" class="find-out-more">Find out more →</a>
-    </div>
+    <article class="test-item">
+        <a href="aug-19-coldflow/"><img src="aug-19-coldflow/thumbnail.webp" alt="Cold-flow Test" loading="lazy" decoding="async"></a>
+        <div>
+        <time datetime="2025-08-09">August 9th, 2025</time>
+        <h3><a href="aug-19-coldflow/">Cold Flow Test</a></h3>
+        </div>
+    </article>
 
 </div>
 

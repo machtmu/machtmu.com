@@ -1,0 +1,15 @@
+{# Ignore previously saved manual choices before the first content paint.
+   The native palette observer then handles live OS appearance changes. #}
+<script>
+  (() => {
+    __md_set("__palette", { index: 0 });
+    const media = matchMedia("(prefers-color-scheme: dark)");
+    const option = document.querySelector(media.matches
+      ? "[data-md-color-media='(prefers-color-scheme: dark)']"
+      : "[data-md-color-media='(prefers-color-scheme: light)']");
+    if (!option) return;
+    for (const key of ["media", "scheme", "primary", "accent"]) {
+      document.body.setAttribute(`data-md-color-${key}`, option.getAttribute(`data-md-color-${key}`));
+    }
+  })();
+</script>

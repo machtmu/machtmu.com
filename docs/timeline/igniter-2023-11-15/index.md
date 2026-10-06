@@ -42,5 +42,3 @@ The temperature records were captured on November 15. Additional test footage wa
     <figcaption>Open-air igniter firing from the same campaign.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

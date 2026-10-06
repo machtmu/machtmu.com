@@ -180,7 +180,7 @@ Events are ordered newest first. This record separates completed tests, failed a
     <span class="gare-timeline__dot" aria-hidden="true"></span>
     <article class="gare-timeline__card">
       <a class="gare-timeline__media" href="/SPRINT/sept-13-hotfire/" aria-label="Open the September 2025 SPRINT campaign">
-        <img src="/SPRINT/sept-13-hotfire/thumbnail.webp" alt="SPRINT during the September 2025 hot-fire campaign" loading="lazy" decoding="async">
+        <img src="/SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp" alt="SPRINT during the September 2025 hot-fire campaign" width="960" height="540" loading="lazy" decoding="async">
       </a>
       <div class="gare-timeline__body">
         <time datetime="2025-09-14">September 13–14, 2025</time>

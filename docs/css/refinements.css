@@ -1,4 +1,7 @@
 /* Shared surfaces and controls across project pages, figures and navigation. */
+.md-content__inner.md-typeset h2#team-celebration {
+  text-align: center;
+}
 :root, [data-md-color-scheme] {
   --mach-radius: 0.45rem;
   --mach-border: var(--md-default-fg-color--lightest);
@@ -87,8 +90,8 @@
 }
 .hero-motion-toggle {
   position: absolute;
-  bottom: 1rem;
-  right: max(1rem, calc((100vw - 1200px) / 2));
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
   display: grid;
   place-items: center;
   width: 44px;
@@ -103,17 +106,16 @@
 .hero-motion-toggle::before {
   content: "";
   position: absolute;
-  inset: 4px;
+  inset: 12px;
   border-radius: 50%;
-  background: rgb(0 0 0 / 60%);
+  background: rgb(0 0 0 / 65%);
 }
 .hero-motion-toggle:hover::before, .hero-motion-toggle:focus-visible::before { background: rgb(0 0 0 / 80%); }
-.hero-motion-toggle svg { position: relative; width: 18px; height: 18px; fill: currentColor; }
+.hero-motion-toggle svg { position: relative; width: 12px; height: 12px; fill: currentColor; }
 .hero-motion-toggle .hero-motion-icon--pause,
 .hero-motion-toggle[data-playing="true"] .hero-motion-icon--play { display: none; }
 .hero-motion-toggle[data-playing="true"] .hero-motion-icon--pause { display: block; }
-.slideshow-controls { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
-.slideshow-controls[hidden], .hero-motion-toggle[hidden] { display: none; }
+.hero-motion-toggle[hidden] { display: none; }
 
 .md-content img.mach-plot { max-height: none; }
 .plot-actions { display: flex; justify-content: flex-end; width: 100%; margin: 0.6rem 0; }
@@ -151,18 +153,22 @@ dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; 
 .plot-viewer__hint { font-size: 0.65rem; color: var(--md-default-fg-color--light); margin: 0; }
 
 .timeline-controls { margin: 1.5rem 0 0; }
-.md-header__button.mach-drawer-toggle,
-.md-header__button.mach-search-toggle,
-.md-header__button[for^="__palette"],
-.md-top {
+.md-header__button.mach-drawer-toggle {
   min-height: 44px;
   min-width: 44px;
 }
-.md-header__button.mach-search-toggle { height: 44px; }
+@media screen and (max-width: 37.484375em) {
+  .md-header__button.mach-drawer-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+  }
+}
 /* Selected sidebar links sit on a tinted surface, not the page's white. */
 [data-md-color-scheme="default"] .md-nav--primary .md-nav__item .md-nav__link--active { color: #354bcc; }
-@media screen and (max-width: 44.984375em) {
-  .md-header__button.mach-search-toggle { width: 44px; padding: 10px; }
+@media screen and (max-width: 37.484375em) {
+  .md-header__inner { min-height: 48px; }
   .md-header__button.mach-drawer-toggle { margin: 0; }
 }
 .gare-tag { color: var(--md-default-fg-color); }
@@ -205,6 +211,25 @@ dialog.plot-viewer[open] { display: flex; flex-direction: column; gap: 0.65rem; 
 }
 .md-typeset .hotfire-frame-grid figure { margin: 0; min-width: 0; }
 .md-typeset .hotfire-frame-grid img { display: block; width: 100%; height: auto; border-radius: 8px; }
+
+.seraphina-team-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+.seraphina-team-gallery--single { grid-template-columns: minmax(0, 1fr); max-width: 960px; margin: 1.5rem auto; }
+.md-typeset .seraphina-team-gallery figure { margin: 0; min-width: 0; width: 100%; }
+.seraphina-team-photo { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; }
+.md-typeset .seraphina-team-photo img {
+  position: absolute;
+  display: block;
+  width: var(--photo-width);
+  max-width: none;
+  max-height: none;
+  height: auto;
+  left: var(--photo-left);
+  top: var(--photo-top);
+  margin: 0;
+}
+.md-typeset .seraphina-team-gallery figcaption { margin: .5rem 0 0; font-size: .75rem; line-height: 1.4; text-align: center; }
+.md-typeset h2#team-celebration + .seraphina-team-gallery figcaption { margin-inline: auto; width: 100%; max-width: none; }
+@media (max-width: 760px) { .seraphina-team-gallery { grid-template-columns: 1fr; } }
 .md-typeset .hotfire-frame-grid figcaption { margin-top: .6rem; text-align: center; }
 .hotfire-downloads { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: 1rem 0 2rem; }
 @media (max-width: 600px) {

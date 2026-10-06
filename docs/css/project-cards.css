@@ -1,0 +1,146 @@
+/* Program overviews: image panels with a title and quiet test-date label. */
+:root {
+  --mach-project-card-gradient: linear-gradient(transparent 50%, rgb(0 0 0 / 80%) 75%, #000 100%);
+}
+
+.md-typeset .project-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.25rem 0 2rem;
+}
+
+.md-typeset .project-cards > article {
+  align-items: stretch;
+  background: #000;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-areas: "panel";
+  grid-template-rows: minmax(20rem, auto);
+  isolation: isolate;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transform: none;
+}
+
+.md-typeset .project-cards > article > a {
+  display: block;
+  grid-area: panel;
+  height: 100%;
+  inset: 0;
+  min-height: 20rem;
+  overflow: hidden;
+  position: absolute;
+}
+
+.md-typeset .project-cards img {
+  border-radius: 0;
+  display: block;
+  height: 100%;
+  margin: 0;
+  max-height: none;
+  object-fit: cover;
+  width: 100%;
+}
+
+.md-typeset .project-cards .program-test-grid__media--relight-team img {
+  /* Real sky and grass from the original scan preserve the whole group. */
+  object-position: center 60%;
+}
+
+.md-typeset .project-cards > article::before {
+  background: var(--mach-project-card-gradient);
+  content: "";
+  /* SPRINT's older flex-start alignment must not collapse this empty layer. */
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.md-typeset .project-cards > article > div {
+  align-self: end;
+  color: #fff;
+  grid-area: panel;
+  padding: 1.25rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.md-typeset .project-cards :is(h2, h3) {
+  align-self: auto;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+  text-align: left;
+}
+
+.md-typeset .project-cards :is(h2, h3) a,
+.md-typeset .project-cards :is(h2, h3) a:visited {
+  background-image: none !important;
+  /* The older project-card link colour is fixed with !important. */
+  color: #fff !important;
+  pointer-events: auto;
+  text-decoration: none !important;
+}
+
+.md-typeset .project-cards time {
+  color: rgb(255 255 255 / 85%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  margin: 0 0 0.35rem;
+}
+
+.md-typeset .project-cards a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+.md-typeset .project-cards > article:focus-within {
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+@media (max-width: 42rem) {
+  .md-typeset .project-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .project-cards > article {
+    grid-template-rows: minmax(19rem, auto);
+  }
+
+  .md-typeset .project-cards > article > a {
+    min-height: 19rem;
+  }
+
+  .md-typeset .project-cards > article > div {
+    padding: 1rem;
+  }
+
+  .md-typeset .project-cards :is(h2, h3) {
+    font-size: 1rem;
+  }
+
+  .md-typeset .project-cards .program-test-grid__media--team img {
+    /* A wide group cannot be portrait-cropped without losing teammates. */
+    object-fit: contain;
+    object-position: center top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .project-cards img {
+    transition: none;
+  }
+
+  .md-typeset .project-cards > article:is(:hover, :focus-within) img {
+    transform: none;
+  }
+}

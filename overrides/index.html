@@ -88,13 +88,21 @@
     /* Keep header controls readable while the header overlays the hero, then
        return to the normal scheme-aware header once the hero has passed. */
     body[data-md-color-scheme="default"] .md-header[data-home-hero="overlay"] {
-      background-color: rgba(255, 255, 255, 0.32) !important;
-      color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(7, 18, 34, 0.25) !important;
+      color: rgba(255, 255, 255, 0.95);
     }
 
     body[data-md-color-scheme="slate"] .md-header[data-home-hero="overlay"] {
-      background-color: rgba(7, 10, 18, 0.42) !important;
-      color: rgba(255, 255, 255, 0.92);
+      background-color: rgba(7, 18, 34, 0.25) !important;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .md-header[data-home-hero="overlay"] .mach-logo__image--light { display: none !important; }
+    .md-header[data-home-hero="overlay"] .mach-logo__image--dark { display: block !important; }
+    .md-header[data-home-hero="overlay"] .mach-logo__hdr { display: none; }
+    .md-header[data-home-hero="overlay"] .md-tabs {
+      color: #fff;
+      background-color: transparent;
     }
 
     .md-header[data-home-hero="scrolled"] {
@@ -159,12 +167,14 @@
 
     /* HERO */
     .home-hero {
-      --home-header-offset: 4.8rem;
+      --home-header-offset: 52px;
+      --hero-parallax-distance: 24%;
       position: relative;
       isolation: isolate;
       margin-top: calc(-1 * var(--home-header-offset));
-      min-height: 30rem;
-      min-height: clamp(24rem, 62svh, 36rem);
+      /* Preserve more of the photograph's native vertical framing as desktop
+         width grows, rather than flattening every wide screen into a 650px strip. */
+      min-height: clamp(446px, calc(100vw * 1446 / 2688), 90svh);
       width: 100%;
       display: flex;
       justify-content: center;
@@ -183,111 +193,212 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: right center;
+      object-position: center center;
+      filter: saturate(1.06);
       z-index: -1;
       pointer-events: none;
-      transform: scale(1.025);
+      transform: none;
     }
 
     .home-hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgb(0 0 0 / 16%), rgb(0 0 0 / 45%));
+      /* Shade the sky behind the branding, fading away toward the exhaust. */
+      background: linear-gradient(180deg, rgb(0 0 0 / 36%) 0%, rgb(0 0 0 / 28%) 42%, rgb(0 0 0 / 7%) 70%, transparent 100%);
       z-index: -1;
       pointer-events: none;
     }
 
     .home-hero__inner {
+      position: absolute;
+      top: clamp(104px, 23%, 148px);
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       text-align: center;
-      padding: 3rem 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .home-hero__inner h1 {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 3rem;
+      padding: 0 1rem;
       color: #fff;
-      margin: 0;
-      letter-spacing: -0.01em;
-      line-height: 1.1;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 12px rgb(0 0 0 / 45%);
     }
 
-    @media (dynamic-range: high) {
-      @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-        .home-hero__title {
-          background: url("/img/white-7.5x.jpg") center / cover;
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) and (animation-range: exit 0% exit 100%) {
+        .home-hero {
+          view-timeline-name: --hero-scroll;
+          view-timeline-axis: block;
+          view-timeline-inset: 0;
         }
 
-        .home-hero__title::selection {
-          background: rgba(255, 255, 255, 0.25);
-          color: #fff;
+        .hero-bg {
+          /* Native scroll timing avoids main-thread updates lagging behind
+             touch/inertial scrolling. The initial crop is unchanged. */
+          /* Prepare the transform layer at rest, rather than leaving its
+             promotion until Safari starts the first scroll animation. */
+          transform: translate3d(0, 0, 0);
+          will-change: transform;
+          animation: hero-media-parallax linear both;
+          animation-duration: auto;
+          animation-timeline: --hero-scroll;
+          animation-range: exit 0% exit 100%;
         }
       }
     }
 
-    .home-hero__cta {
-      margin-top: 2rem;
+    @keyframes hero-media-parallax {
+      from { transform: translate3d(0, 0, 0); }
+      to {
+        /* Any exposed top edge is already above the viewport. */
+        transform: translate3d(0, var(--hero-parallax-distance), 0);
+      }
+    }
+
+    .home-hero__title {
+      position: relative;
+      margin: 0;
+      width: clamp(360px, 31.5vw, 472px);
+      max-width: 82%;
+      line-height: 0;
+      /* Center the lettering, with a small visual nudge right of the subtitle. */
+      transform: translateX(9%);
+    }
+
+    .home-hero__title::before,
+    .home-hero__title::after {
+      content: "";
+      display: none;
+    }
+
+    @media (dynamic-range: high) {
+      @supports ((-webkit-mask-image: linear-gradient(#000, #000)) or (mask-image: linear-gradient(#000, #000))) {
+        .home-hero__title::before,
+        .home-hero__title::after {
+          /* Slightly brighter HDR over the unchanged, colour-correct SDR logo. */
+          display: block;
+          inset: 0;
+          opacity: var(--mach-logo-hdr-strength);
+          pointer-events: none;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .home-hero__title::after {
+          background: url("{{ 'img/white-7.5x.jpg' | url }}") center / cover no-repeat;
+          -webkit-mask: url("{{ 'img/logo-hero-hdr-mask.png' | url }}") center / contain no-repeat;
+          mask: url("{{ 'img/logo-hero-hdr-mask.png' | url }}") center / contain no-repeat;
+        }
+
+        .home-hero__title::before {
+          background: url("{{ 'img/red-7.5x.jpg' | url }}") center / cover no-repeat;
+          -webkit-mask: url("{{ 'img/logo-hero-hdr-accent-mask.png' | url }}") center / contain no-repeat;
+          mask: url("{{ 'img/logo-hero-hdr-accent-mask.png' | url }}") center / contain no-repeat;
+        }
+      }
+    }
+
+    .home-hero__logo {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+
+    .home-hero__subtitle {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 500;
+      letter-spacing: .035em;
+    }
+
+    .home-project-strip {
+      margin: 0;
+      padding: 0;
+      width: 100%;
     }
 
     .home-project-links {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin: 0 auto;
-      max-width: 680px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.8rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: transform 0.2s ease;
-      margin: 0 0.4rem;
-      border: 1px solid transparent;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .home-project-link,
-    .home-project-link:visited {
-      align-items: center;
-      background: var(--md-default-bg-color);
-      border-color: var(--md-default-fg-color--lightest);
-      color: var(--md-default-fg-color) !important;
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      justify-content: center;
+      gap: 0;
       margin: 0;
-      padding: 0.75rem 0.8rem;
-      text-decoration: none !important;
+      max-width: none;
+      width: 100%;
     }
 
-    .home-project-link:hover,
-    .home-project-link:focus {
-      background: color-mix(in srgb, var(--md-default-fg-color) 6%, var(--md-default-bg-color));
-      color: var(--md-default-fg-color) !important;
+    .home-project-links .home-project-link,
+    .home-project-links .home-project-link:visited {
+      aspect-ratio: auto;
+      background: #111;
+      background-image: none !important;
+      border: 0;
+      border-radius: 0;
+      box-sizing: border-box;
+      color: #fff !important;
+      display: block;
+      height: clamp(380px, 36vw, 560px);
+      isolation: isolate;
+      margin: 0;
+      min-height: 380px;
+      min-width: 0;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
       text-decoration: none !important;
+      width: 100%;
+    }
+
+    .home-project-links .home-project-link img {
+      display: block;
+      height: 100%;
+      inset: 0;
+      margin: 0;
+      max-height: none;
+      object-fit: cover;
+      position: absolute;
+      transition: transform 180ms ease;
+      width: 100%;
+      z-index: -2;
+    }
+
+    .home-project-link::after {
+      background: var(--mach-project-card-gradient);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .home-project-link__caption {
+      bottom: 0;
+      display: grid;
+      gap: 0.2rem;
+      inset-inline: 0;
+      padding: 1rem;
+      position: absolute;
+      text-align: left;
+    }
+
+    .home-project-link:focus-visible {
+      outline: 3px solid var(--md-accent-fg-color);
+      outline-offset: -3px;
+    }
+
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      .home-project-link:hover img {
+        transform: scale(1.03);
+      }
     }
 
     .home-project-link__name {
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
       line-height: 1.15;
     }
 
@@ -301,8 +412,7 @@
 
     /* Sections */
     section.about,
-    section.video-showcase,
-    section.photo-showcase {
+    section.video-showcase {
       background: transparent;
       color: var(--md-default-fg-color);
       margin: 2rem auto 3rem auto;
@@ -313,7 +423,12 @@
       margin-bottom: 1.25rem;
     }
 
-    section.photo-showcase {
+    section.about > .md-container {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    section.about.home-explore {
       margin-top: 0;
     }
 
@@ -331,38 +446,6 @@
       margin-bottom: 1rem;
     }
 
-    .hotfire-showcase__header {
-      align-items: baseline;
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    section.video-showcase .hotfire-showcase__header h2 {
-      margin-bottom: 0;
-    }
-
-    .hotfire-showcase__report,
-    .hotfire-showcase__report:visited {
-      border-bottom: 1px solid currentColor;
-      color: var(--md-default-fg-color) !important;
-      flex: 0 0 auto;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      padding-bottom: 0.15rem;
-      text-decoration: none !important;
-      text-transform: uppercase;
-    }
-
-    .hotfire-showcase__report:hover,
-    .hotfire-showcase__report:focus {
-      border-bottom-color: currentColor;
-      color: var(--md-default-fg-color) !important;
-    }
-
     section.about p,
     section.video-showcase p {
       font-family: 'Source Sans Pro', sans-serif;
@@ -371,119 +454,291 @@
       margin-bottom: 1rem;
     }
 
-    .video-container {
-      margin-top: 1rem;
-      border-radius: 6px;
+    /* The existing introduction overlays the original-resolution team crop.
+       This display-only treatment leaves the shared colour asset untouched. */
+    .home-team-intro {
+      background: #111;
+      color: #fff;
+      display: grid;
+      isolation: isolate;
+      margin: 0;
+      min-height: clamp(420px, 45vw, 720px);
       overflow: hidden;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hotfire-data {
-      margin: 1.25rem 0 0;
+      position: relative;
       width: 100%;
     }
 
-    .hotfire-data img {
-      background: transparent;
-      border-radius: 0;
+    .home-team-intro__photo {
       display: block;
-      height: auto;
+      filter: grayscale(1);
+      height: 100%;
+      inset: 0;
+      margin: 0;
+      max-height: none;
+      object-fit: cover;
+      object-position: center 35%;
+      position: absolute;
+      width: 100%;
+      z-index: -2;
+    }
+
+    .home-team-intro__media {
+      display: contents;
+    }
+
+    @media screen and (min-width: 769px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) and (animation-range: exit 0% exit 100%) {
+        .home-team-intro {
+          view-timeline-name: --home-team-scroll;
+          view-timeline-axis: block;
+          view-timeline-inset: 0;
+        }
+
+        .home-team-intro__photo {
+          /* Drift only the photograph as the panel passes the viewport top.
+             Keep the approved crop at entry and leave the text stationary. */
+          transform: translate3d(0, 0, 0);
+          will-change: transform;
+          animation: home-team-parallax linear both;
+          animation-duration: auto;
+          animation-timeline: --home-team-scroll;
+          animation-range: exit 0% exit 100%;
+        }
+      }
+    }
+
+    @keyframes home-team-parallax {
+      from { transform: translate3d(0, 0, 0); }
+      /* The exposed top edge is already off-screen; no zoom or extra crop. */
+      to { transform: translate3d(0, 20%, 0); }
+    }
+
+    .home-team-intro::after {
+      background: linear-gradient(180deg, rgb(17 17 17 / 8%) 0%, rgb(17 17 17 / 12%) 40%, rgb(17 17 17 / 55%) 68%, rgb(17 17 17 / 94%) 100%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .home-team-intro__content {
+      align-self: end;
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 1100px;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      width: 100%;
+    }
+
+    .home-team-intro h2 {
+      color: inherit;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
+      text-wrap: balance;
+    }
+
+    .home-team-intro p {
+      color: inherit;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 62ch;
+    }
+
+    @media (max-width: 768px) {
+      .home-team-intro {
+        /* A dedicated native portrait crop retains the whole team and real
+           grass behind the paragraph at every phone/tablet width. */
+        min-height: clamp(480px, 70vw, 540px);
+      }
+
+      .home-team-intro::after {
+        bottom: 0;
+        height: auto;
+        background: linear-gradient(180deg, rgb(17 17 17 / 8%) 0%, rgb(17 17 17 / 12%) 40%, rgb(17 17 17 / 55%) 65%, rgb(17 17 17 / 84%) 100%);
+      }
+
+      .home-team-intro__content {
+        padding: 1.5rem 1rem 1.75rem;
+      }
+
+      .home-team-intro h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
+
+      .home-team-intro p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .home-hotfire {
+      background: #111;
       margin: 0;
       width: 100%;
     }
 
-    .hotfire-data figcaption {
-      color: var(--md-default-fg-color--light);
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 0.78rem;
-      margin: 0.5rem 0 0;
-      max-width: none;
-      text-align: center;
+    .home-hotfire__frame {
+      isolation: isolate;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .home-hotfire__frame::after {
+      background: linear-gradient(180deg, rgb(0 0 0 / 62%), transparent);
+      content: "";
+      height: 42%;
+      inset: 0 0 auto;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .home-hotfire__heading {
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.15rem, 2vw, 1.8rem);
+      font-weight: 600;
+      left: 0;
+      line-height: 1.25;
+      margin: 0;
+      padding: clamp(1rem, 3vw, 2rem);
+      pointer-events: none;
+      position: absolute;
+      text-shadow: 0 1px 8px rgb(0 0 0 / 35%);
+      top: 0;
+      z-index: 2;
+    }
+
+    .home-hotfire .showcase-video {
+      aspect-ratio: 16 / 9;
+      background: #111;
+      display: block;
+      filter: grayscale(1);
+      height: auto;
+      object-fit: contain;
+      transform: none;
+      transition: filter 350ms ease;
       width: 100%;
     }
 
-    /* Simple slideshow */
-    .photo-showcase > .md-container {
+    .home-hotfire[data-revealed="true"] .showcase-video,
+    .home-hotfire[data-playing="true"] .showcase-video,
+    .home-hotfire .showcase-video:focus-visible {
+      filter: grayscale(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .home-hotfire:hover .showcase-video {
+        filter: grayscale(0);
+      }
+    }
+
+    /* Crop only the replaced picture, never the video element or its native
+       controls. Older Safari keeps the colour reveal without a zoom effect. */
+    @supports (object-view-box: inset(1%)) {
+      .home-hotfire .showcase-video {
+        object-view-box: inset(0%);
+        transition: filter 350ms ease, object-view-box 500ms ease;
+      }
+
+      .home-hotfire[data-revealed="true"] .showcase-video,
+      .home-hotfire[data-playing="true"] .showcase-video,
+      .home-hotfire .showcase-video:focus-visible {
+        object-view-box: inset(1.22%);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .home-hotfire:hover .showcase-video {
+          object-view-box: inset(1.22%);
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-hotfire .showcase-video {
+        object-view-box: inset(0%) !important;
+        transition: none;
+      }
+    }
+
+    .home-data {
+      padding: 1rem 0;
       width: 100%;
     }
 
-    .image-slideshow-container {
+    .home-data .hotfire-data {
+      /* Override the theme's fit-content figure width: a deferred image has
+         no intrinsic size yet and must not collapse to zero off-screen. */
+      display: block;
+      margin: 0 auto;
+      /* Fill the page unless that would make the complete crop taller than
+         the viewport. Leave room for the fixed header and a little breathing space. */
+      max-width: calc(90svh * 1771 / 850);
       width: 100%;
-      max-width: 700px;
-      margin: 0.75rem auto 0;
     }
 
-    .image-slideshow {
+    .hotfire-data__viewport {
+      /* Display only source rows 205–1054. Retain the legend, curves and every
+         axis label; leave the report PNGs and their download links unchanged. */
+      aspect-ratio: 1771 / 850;
+      overflow: hidden;
       position: relative;
       width: 100%;
-      aspect-ratio: 1;
-      border-radius: 6px;
-      overflow: hidden;
     }
 
-    .image-slideshow .slideshow-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+    .hotfire-data__viewport img {
+      background: transparent;
+      border-radius: 0;
+      display: block;
+      height: auto;
+      left: 0;
+      margin: 0;
       max-height: none;
-      object-fit: contain;
-      border-radius: 6px;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slideshow-image:first-child {
-      opacity: 1;
-    }
-
-    /* This 982 × 1280 scan includes a black film edge. In the square,
-       contain-fit frame, trim 36 source pixels from each side and 24 from
-       the top/bottom. Keep the original photo and the other slides intact. */
-    .image-slideshow .slideshow-image--plumbing-board {
-      clip-path: inset(1.875% 14.453125%);
-    }
-
-    .slideshow-caption {
-      text-align: center;
-      margin-top: 0.5rem;
+      position: absolute;
+      top: 0;
+      /* Transform percentages use the image height, not the viewport height. */
+      transform: translateY(-18.5185185185%);
+      width: 100%;
     }
 
     @media (max-width: 768px) {
       .home-hero {
-        --home-header-offset: 2.4rem;
-        min-height: clamp(22rem, 56svh, 29rem);
+        --hero-parallax-distance: 18%;
+        min-height: var(--hero-mobile-height, clamp(446px, 56svh, 580px));
       }
 
       .hero-bg {
-        /* Lower the engine/exhaust below the title; cover the top without gaps. */
-        height: calc(100% + 8rem);
-        object-position: right top;
-        transform: none;
+        /* Slightly left of the approved right-edge crop to reveal more flame. */
+        object-position: 90% center;
       }
 
-      .home-hero__inner h1 {
-        font-size: 2.3rem;
-      }
-
-      .home-hero__cta .btn {
-        margin: 0;
-        max-width: none;
-        padding-right: 0.4rem;
-        padding-left: 0.4rem;
-      }
+      .home-hero__inner { top: 105px; gap: 8px; }
+      .home-hero__title { width: 256px; }
+      .home-hero__subtitle { font-size: 16px; }
 
       .home-project-links {
-        gap: 0.4rem;
+        gap: 0;
+      }
+
+      .home-project-links .home-project-link,
+      .home-project-links .home-project-link:visited {
+        height: clamp(220px, 60vw, 280px);
+        min-height: 220px;
+      }
+
+      .home-project-link__caption {
+        gap: 0.15rem;
+        padding: 0.5rem;
       }
 
       .home-project-link__name {
-        font-size: clamp(0.61rem, 3.6vw, 0.76rem);
+        font-size: clamp(0.6rem, 3.2vw, 0.8rem);
         letter-spacing: 0.01em;
         white-space: nowrap;
       }
@@ -492,12 +747,10 @@
         font-size: 0.62rem;
       }
 
-      .hotfire-showcase__header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.35rem;
-      }
+    }
 
+    @media screen and (max-width: 37.484375em) {
+      .home-hero { --home-header-offset: 48px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -506,14 +759,6 @@
         opacity: 0.55;
       }
 
-      .hero-bg,
-      .home-hero__inner {
-        transform: none !important;
-      }
-
-      .slideshow-image {
-        transition: none;
-      }
     }
   </style>
 {% endblock %}
@@ -521,123 +766,93 @@
 {% block hero %}
   <section class="home-hero">
     <video class="hero-bg" muted loop playsinline preload="none" aria-hidden="true"
-           poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
-           data-light-src="{{ base_url }}/assets/videos/seraphina-hero-desktop.mp4"
-           data-dark-src="{{ base_url }}/assets/videos/seraphina-hero-desktop.mp4"
-           data-mobile-src="{{ base_url }}/assets/videos/seraphina-hero-mobile.mp4"
-           data-light-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp"
-           data-dark-poster="{{ base_url }}/assets/images/seraphina-hotfire-poster.webp">
+           poster="{{ base_url }}/assets/images/seraphina-august-relight-hero.webp"
+           data-light-src="{{ base_url }}/assets/videos/seraphina-august-relight-hero.mp4"
+           data-dark-src="{{ base_url }}/assets/videos/seraphina-august-relight-hero.mp4"
+           data-mobile-src="{{ base_url }}/assets/videos/seraphina-august-relight-hero-mobile.mp4"
+           data-light-poster="{{ base_url }}/assets/images/seraphina-august-relight-hero.webp"
+           data-dark-poster="{{ base_url }}/assets/images/seraphina-august-relight-hero.webp">
       Your browser does not support embedded video.
     </video>
 
     <div class="home-hero__inner">
-      <h1 class="home-hero__title">MACH - TMU Liquid Rocketry</h1>
+      <h1 class="home-hero__title"><img class="home-hero__logo" src="{{ 'img/logo-hero-dark.png' | url }}" alt="MACH" width="2048" height="636" fetchpriority="high" decoding="async" data-display-original></h1>
+      <p class="home-hero__subtitle">TMU Liquid Rocketry</p>
     </div>
-    <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play background video" title="Play background video" hidden>
+    <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play hero video" hidden>
       <svg class="hero-motion-icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 11 7-11 7Z" /></svg>
       <svg class="hero-motion-icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg>
     </button>
   </section>
-{% endblock %}
-
-{% block content %}
-  <!-- Video Showcase Section -->
-  <section class="video-showcase">
-    <div class="md-container md-typeset">
-      <div class="hotfire-showcase__header">
-        <h2>Latest hotfire: October 4 relight test</h2>
-        <a class="hotfire-showcase__report" href="{{ 'Seraphina/oct-4-hotfire/' | url }}">View all test data</a>
-      </div>
-      <div class="video-container">
-        <video class="showcase-video" controls playsinline preload="none"
-               aria-label="Seraphina hotfire and relight on October 4th, 2026, with a pumpkin in the exhaust path"
-               poster="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp">
-          <source src="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-hotfire.mp4" type="video/mp4">
-        </video>
-      </div>
-
+  <section class="home-team-intro" aria-labelledby="home-team-intro-title">
+    <picture class="home-team-intro__media">
+      <source media="(max-width: 768px)" srcset="{{ 'Seraphina/aug-20-hotfire/seraphina-relight-team-intro-portrait.webp' | url }}" width="1200" height="1738">
+      <img class="home-team-intro__photo"
+           src="{{ 'Seraphina/aug-20-hotfire/seraphina-relight-team-intro.webp' | url }}"
+           alt="Seraphina team at the Launch Canada 2026 relight test"
+           width="2140" height="1204"
+           loading="lazy" decoding="async" data-display-original>
+    </picture>
+    <div class="home-team-intro__content">
+      <h2 id="home-team-intro-title">Student liquid rocketry in Toronto</h2>
+      <p>MACH is Toronto Metropolitan University's student liquid rocketry team, based in Toronto, Ontario. We design, build and test liquid rocket engines, avionics and ground-support systems.</p>
+    </div>
+  </section>
+  <section class="home-hotfire" aria-labelledby="home-hotfire-title">
+    <div class="home-hotfire__frame">
+      <h2 class="home-hotfire__heading" id="home-hotfire-title">Latest hotfire: October 4 relight</h2>
+      <video class="showcase-video" controls playsinline preload="none"
+             aria-label="Seraphina hotfire and relight on October 4th, 2026, with a pumpkin in the exhaust path"
+             poster="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-poster.webp">
+        <source src="{{ base_url }}/Seraphina/oct-4-hotfire/seraphina-oct-4-hotfire.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+  <section class="home-data" aria-label="October 4 relight telemetry">
       <figure class="hotfire-data">
-        <img src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
+        <div class="hotfire-data__viewport">
+          <img src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
                data-plot-light-src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire.png"
                data-plot-dark-src="{{ base_url }}/Seraphina/oct-4-hotfire/mach-hotfire-2026-10-04-double-hotfire-dark.png"
                data-plot-controls="none"
                width="1771" height="1107"
                alt="Pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on October 4th, 2026"
                loading="lazy" decoding="async">
-        <figcaption>Double-hotfire telemetry</figcaption>
+        </div>
       </figure>
-
-    </div>
   </section>
-
-  <!-- About Section -->
-  <section class="about">
-    <div class="md-container md-typeset">
-      <h2>Student liquid rocketry in Toronto</h2>
-      <p>MACH is Toronto Metropolitan University's student liquid rocketry team, based in Toronto, Ontario. We design, build and test liquid rocket engines, avionics and ground-support systems.</p>
-      <p>Explore Seraphina, SPRINT and GAR-E below for the hardware, hotfire footage and measured test results. Our <a href="{{ 'timeline/' | url }}">rocket engine testing timeline</a> follows that development, and our <a href="{{ 'resources/' | url }}">Launch Canada reports</a> document the engineering behind it. <a href="{{ 'team/' | url }}">Meet the MACH team</a>.</p>
-      <div class="home-hero__cta">
-        <div class="home-project-links">
-          <a href="{{ 'Seraphina/' | url }}" class="btn home-project-link">
+  <section class="home-project-strip" aria-label="Projects">
+      <div class="home-project-links">
+          <a href="{{ 'Seraphina/' | url }}" class="home-project-link">
+            <img src="{{ 'assets/images/seraphina-august-relight-hero.webp' | url }}" alt="" width="2688" height="1446" loading="lazy" decoding="async" data-display-original style="object-position: 100% center">
+            <span class="home-project-link__caption">
             <span class="home-project-link__name">Seraphina</span>
             <span class="home-project-link__years">2026</span>
+            </span>
           </a>
-          <a href="{{ 'SPRINT/' | url }}" class="btn home-project-link">
+          <a href="{{ 'SPRINT/' | url }}" class="home-project-link">
+            <img src="{{ 'SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp' | url }}" alt="" width="960" height="540" loading="lazy" decoding="async" data-display-original style="object-position: 85% center">
+            <span class="home-project-link__caption">
             <span class="home-project-link__name">SPRINT</span>
             <span class="home-project-link__years">2025</span>
+            </span>
           </a>
-          <a href="{{ 'GAR-E/' | url }}" class="btn home-project-link">
+          <a href="{{ 'GAR-E/' | url }}" class="home-project-link">
+            <img src="{{ 'GAR-E/hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp' | url }}" alt="" width="640" height="360" loading="lazy" decoding="async" data-display-original style="object-position: 20% center">
+            <span class="home-project-link__caption">
             <span class="home-project-link__name">GAR-E</span>
             <span class="home-project-link__years">2023–2024</span>
+            </span>
           </a>
-        </div>
       </div>
-    </div>
   </section>
+{% endblock %}
 
-  <section class="photo-showcase">
+{% block content %}
+
+  <section class="about home-explore">
     <div class="md-container md-typeset">
-      <div class="image-slideshow-container">
-        <div class="image-slideshow">
-          <img src="{{ base_url }}/SPRINT/electronics/overview.webp"
-               alt="Telemetry and control electrical enclosure"
-               width="1400" height="1400"
-               loading="lazy" decoding="async"
-               class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/launch-canada-2026-all-teams.jpg"
-               alt="All teams gathered at Launch Canada 2026"
-               width="1280" height="853"
-               loading="lazy" decoding="async"
-               class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/tank-assembly-640.webp"
-               srcset="{{ base_url }}/assets/images/tank-assembly-640.webp 640w, {{ base_url }}/assets/images/tank-assembly.webp 1400w"
-               sizes="(max-width: 760px) 92vw, 700px"
-               alt="SPRINT tank assembly with integrated propulsion components"
-               loading="lazy" decoding="async"
-               class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/torquing-plumbing-fittings.jpg"
-               alt="Torquing plumbing fittings"
-               width="960" height="1280"
-               loading="lazy" decoding="async"
-               class="slideshow-image">
-          <img src="{{ base_url }}/assets/images/ground-support-plumbing-board.jpg"
-               alt="Ground-support plumbing board"
-               width="982" height="1280"
-               loading="lazy" decoding="async"
-               class="slideshow-image slideshow-image--plumbing-board">
-          <img src="{{ base_url }}/assets/images/seraphina-tank-machining.jpg"
-               alt="Machining holes in the Seraphina tank"
-               width="960" height="1280"
-               loading="lazy" decoding="async"
-               class="slideshow-image">
-        </div>
-        <p class="slideshow-caption"></p>
-        <div class="slideshow-controls" hidden>
-          <button type="button" class="mach-control" data-slide-previous aria-label="Previous photo">←</button>
-          <button type="button" class="mach-control" data-slide-motion>Pause slideshow</button>
-          <button type="button" class="mach-control" data-slide-next aria-label="Next photo">→</button>
-        </div>
-      </div>
+      <p>Explore Seraphina, SPRINT and GAR-E for the hardware, hotfire footage and measured test results. Our <a href="{{ 'timeline/' | url }}">rocket engine testing timeline</a> follows that development, and our <a href="{{ 'resources/' | url }}">Launch Canada reports</a> document the engineering behind it. <a href="{{ 'team/' | url }}">Meet the MACH team</a>.</p>
     </div>
   </section>
 {% endblock %}

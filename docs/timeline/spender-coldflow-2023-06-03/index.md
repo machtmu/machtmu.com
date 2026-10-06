@@ -30,5 +30,3 @@ The next plan called for a separate high-pressure PCP-air test of the nitrous ci
     <figcaption>Test-site setup and ground equipment.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

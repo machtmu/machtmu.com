@@ -28,5 +28,3 @@ The stacked tank's piston held 800 psig during its documented functional test. T
 </div>
 
 [Read the 2025 Launch Canada report at the qualification section](/resources/MACH_LCR2025.pdf#page=34){ .md-button }
-
-[Back to the complete timeline](../)

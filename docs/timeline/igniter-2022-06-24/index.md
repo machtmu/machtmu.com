@@ -24,5 +24,3 @@ The processed record reported a peak temperature of 1,368 °C and about 9.17 sec
     <figcaption>Processed temperature record preserved with the test.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

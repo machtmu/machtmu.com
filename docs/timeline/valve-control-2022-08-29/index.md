@@ -22,5 +22,3 @@ The control system could address five solenoid valves. The radio link was unreli
     <figcaption>Manual switch box and Arduino-based control hardware.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

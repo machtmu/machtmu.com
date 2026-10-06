@@ -8,6 +8,26 @@ image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-pos
 
 On August 20, 2026, MACH completed a remotely commanded relight of its liquid-bipropellant engine. The first hotfire was intentionally shut down, chamber pressure returned to ambient, and the engine was then commanded through a second hotfire without physical servicing or personnel approaching the system.
 
+## Team photo
+
+<div class="seraphina-team-gallery seraphina-team-gallery--single">
+  <figure>
+    <a class="seraphina-team-photo" href="/Seraphina/aug-20-hotfire/team-photos/team-at-test-stand-full.jpg" target="_blank" rel="noopener" aria-label="Open the original August relight team photo" style="--photo-width:100%; --photo-left:0%; --photo-top:0%;">
+      <img src="/Seraphina/aug-20-hotfire/seraphina-relight-team.webp" alt="Seraphina team beside the test stand at the August Launch Canada relight" width="2515" height="1415" loading="lazy" decoding="async" data-display-original>
+    </a>
+    <figcaption>Team at the Seraphina test stand.</figcaption>
+  </figure>
+</div>
+
+## Launch Canada 2026
+
+<figure style="display:block; width:100%; max-width:720px; margin:1.5rem auto;">
+  <a href="/assets/images/launch-canada-2026-all-teams.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Launch Canada 2026 group photo">
+    <img src="/assets/images/launch-canada-2026-all-teams.jpg" alt="All teams gathered at Launch Canada 2026" width="1280" height="853" loading="lazy" decoding="async" style="width:100%; height:auto; max-height:none; border-radius:6px;">
+  </a>
+  <figcaption>All teams gathered at Launch Canada 2026.</figcaption>
+</figure>
+
 ## Test Video
 
 <figure style="margin:2rem auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; text-align:center;">
@@ -53,3 +73,14 @@ A separate Seraphina hotfire was also completed on August 20. No telemetry data 
     <img src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" data-plot-light-src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire.png" data-plot-dark-src="/Seraphina/aug-20-hotfire/mach-hotfire-2026-08-20-double-hotfire-dark.png" alt="Combined pressure, thrust and propellant-mass telemetry for both Seraphina hot fires on August 20th, 2026" loading="lazy" decoding="async" style="width:100%; max-width:1200px; height:auto; border-radius:8px; display:block; margin:0 auto; object-fit:contain;">
   </a>
 </figure>
+
+## Team celebration
+
+<div class="seraphina-team-gallery seraphina-team-gallery--single">
+  <figure>
+    <a class="seraphina-team-photo" href="/Seraphina/aug-20-hotfire/team-photos/team-celebration-full.jpg" target="_blank" rel="noopener" aria-label="Open the original August relight team celebration photo" style="--photo-width:100%; --photo-left:0%; --photo-top:0%;">
+      <img src="/Seraphina/aug-20-hotfire/seraphina-relight-celebration.webp" alt="Seraphina team celebrating the August Launch Canada relight test" width="2767" height="1556" loading="lazy" decoding="async" data-display-original>
+    </a>
+    <figcaption>Team celebration.</figcaption>
+  </figure>
+</div>

@@ -32,5 +32,3 @@ The upper and lower pneumatic assemblies passed their leak checks. A later impac
     <figcaption>Valve pressure testing in the lab.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)

@@ -31,5 +31,3 @@ The team added a separate low-pressure assembly check so fittings could be teste
 
 [Open the July 16 refinement list](https://docs.google.com/spreadsheets/d/1zh22Rn5QS1S485Pi30mX-OnPJvqNmUK2kSJYdNCp9OQ/edit){ .md-button target="_blank" rel="noopener" }
 [Open the archived rehearsal media](https://drive.google.com/drive/folders/1vWp2eEvh0Kx2wcDLfHfwKfsoQIJG72NI){ .md-button target="_blank" rel="noopener" }
-
-[Back to the complete timeline](../)

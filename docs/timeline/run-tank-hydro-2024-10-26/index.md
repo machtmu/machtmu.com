@@ -30,5 +30,3 @@ The PDR verification matrix records no permanent deformation or yielding in eith
 </div>
 
 [Read the 2025 PDR test report](/resources/machpdr2025.pdf#page=97){ .md-button }
-
-[Back to the complete timeline](../)

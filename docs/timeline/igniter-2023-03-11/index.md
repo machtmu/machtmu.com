@@ -22,5 +22,3 @@ Surviving plots show reported peaks near 880 °C for one igniter and roughly 300
     <figcaption>Second preserved test plot.</figcaption>
   </figure>
 </div>
-
-[Back to the complete timeline](../)
