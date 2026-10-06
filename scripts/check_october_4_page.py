@@ -29,6 +29,9 @@ with sync_playwright() as p:
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (path, width)
                 for image in page.locator('img[data-plot-dark-src]').all():
                     image.scroll_into_view_if_needed()
+                    # The homepage intentionally assigns below-the-fold media
+                    # after its observer sees the approaching viewport.
+                    page.wait_for_function('(i)=>!i.dataset.homeDeferredSrc||i.dataset.homeLoaded==="true"', arg=image.element_handle())
                     image.evaluate('(i)=>i.decode()')
                     assert image.get_attribute('data-plot-theme') == scheme
                     assert image.get_attribute('src').endswith('-dark.png') == (scheme == 'dark')
