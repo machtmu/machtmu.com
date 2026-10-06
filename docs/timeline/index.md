@@ -43,11 +43,12 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--bottom" href="/Seraphina/oct-4-hotfire/" aria-label="Open the October 4, 2026 Seraphina relight-test page">
         <img src="/Seraphina/oct-4-hotfire/pumpkin-breaking.webp" alt="Pumpkin breaking apart during the October 4 Seraphina hotfire" width="1920" height="1080" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2026-10-04">October 4, 2026</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
         <h2><a href="/Seraphina/oct-4-hotfire/">Seraphina hotfire and relight</a></h2>
-        <a class="gare-timeline__link" href="/Seraphina/oct-4-hotfire/">Video, telemetry and test data <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
       </div>
     </article>
   </li>
@@ -58,12 +59,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/Seraphina/aug-20-hotfire/" aria-label="Open the August 20, 2026 Seraphina relight-test page">
         <img src="/Seraphina/aug-20-hotfire/seraphina-double-hotfire-poster.webp" alt="Seraphina firing during the August 20, 2026 relight test" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2026-08-20">August 20, 2026</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
         <h2><a href="/Seraphina/aug-20-hotfire/">Seraphina relight test</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina relight</span><span class="gare-status gare-status--successful">Two hot fires</span></div>
         <p>Seraphina completed a remotely commanded relight. The first hotfire was intentionally shut down, chamber pressure returned to ambient, and the engine was then commanded through a second hotfire without physical servicing or personnel approaching the system.</p>
-        <a class="gare-timeline__link" href="/Seraphina/aug-20-hotfire/">Video, telemetry and test data <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -74,12 +76,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--team" href="/Seraphina/aug-6-hotfire/" aria-label="Open the August 2026 Seraphina hot-fire page">
         <img src="/Seraphina/aug-6-hotfire/seraphina-hotfire-team.webp" alt="Seraphina team at the August 6, 2026 hot fire" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2026-08-06">August 6, 2026</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina hot fire</span><span class="gare-status gare-status--successful">Second attempt sustained</span></div>
         <h2><a href="/Seraphina/aug-6-hotfire/">Seraphina hot-fire campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Seraphina hot fire</span><span class="gare-status gare-status--successful">Second attempt sustained</span></div>
         <p>The first attempt did not ignite after an e-match continuity failure; its 172.11 N reading is only a load-cell signal. The second attempt burned for a reported 8.2 seconds, reaching 254.36 psi chamber pressure and 1,233.28 N peak thrust. The igniter cartridge plug failed during the run, followed by a loss of chamber pressure and thrust.</p>
-        <a class="gare-timeline__link" href="/Seraphina/aug-6-hotfire/">Seraphina test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -90,12 +93,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/seraphina-coldflow-2026-07-16/" aria-label="Open the July 2026 Seraphina operations rehearsal">
         <img src="/timeline/seraphina-coldflow-2026-07-16/thumbnail.webp" alt="Seraphina hardware during the July 16, 2026 operations rehearsal" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2026-07-29">July 16–29, 2026</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Operations rehearsal</span><span class="gare-status gare-status--partial">Leaks and integration faults</span></div>
         <h2><a href="/timeline/seraphina-coldflow-2026-07-16/">Cold flow and subsystem checks</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Operations rehearsal</span><span class="gare-status gare-status--partial">Leaks and integration faults</span></div>
         <p>The July 16 integrated water flow exposed leaking NPT plugs and a swage fitting, a short oxidizer hose, reversed V3 actuator and incorrect servo ranges. A July 25 low-pressure check passed. Several mini cold flows were later reported, but no count, run log, telemetry or pass criteria were preserved.</p>
-        <a class="gare-timeline__link" href="/timeline/seraphina-coldflow-2026-07-16/">Photos, faults and corrective checks <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -106,12 +110,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/seraphina-tank-proof-2026-06-26/" aria-label="Open the June 2026 Seraphina tank proof test">
         <img src="/timeline/seraphina-tank-proof-2026-06-26/thumbnail.webp" alt="Annotated Seraphina tank hydrostatic proof-test setup" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2026-06-26">June 26, 2026</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Proof hold passed</span></div>
         <h2><a href="/timeline/seraphina-tank-proof-2026-06-26/">Seraphina tank proof test</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Proof hold passed</span></div>
         <p>Minor NPT-plug leaks were corrected at 100 psi. The live log later recorded aggressive leakage while climbing beyond 1,000 psi; the formal report states that the final 1,350 psi hold lasted 18 minutes with no pressure loss, leakage or visible deformation.</p>
-        <a class="gare-timeline__link" href="/timeline/seraphina-tank-proof-2026-06-26/">Setup, sequence and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -134,12 +139,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/SPRINT/dec-15-16-hotfire/" aria-label="Open the December 2025 SPRINT hot-fire page">
         <img src="/SPRINT/dec-15-16-hotfire/thumbnail.webp" alt="SPRINT firing during the December 2025 campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-12-16">December 15–16, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--partial">Reduced performance</span></div>
         <h2><a href="/SPRINT/dec-15-16-hotfire/">Cold-weather hot-fire campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--partial">Reduced performance</span></div>
         <p>At about −5 °C, the run peaked at 510.0 N and 107.2 psi chamber pressure; the oxidizer-tank channel read 264 and 256 psi at those peaks. Residual fuel ignited during purge while both main-valve command channels remained at 100%.</p>
-        <a class="gare-timeline__link" href="/SPRINT/dec-15-16-hotfire/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -150,12 +156,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/nov-20-coldflow/" aria-label="Open the November 20 SPRINT cold-flow page">
         <img src="/SPRINT/nov-20-coldflow/thumbnail.webp" alt="SPRINT cold-flow setup on November 20, 2025" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-11-20">November 20, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--partial">Integration faults documented</span></div>
         <h2><a href="/SPRINT/nov-20-coldflow/">Mission-control integration</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--partial">Integration faults documented</span></div>
         <p>The quad campaign exposed a wrong V5 mapping, an incompletely installed P4 sensor and a CO₂ CGA leak that stopped after tightening. Data and a debrief were preserved.</p>
-        <a class="gare-timeline__link" href="/SPRINT/nov-20-coldflow/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -166,12 +173,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/nov-7-coldflow/" aria-label="Open the November 7 SPRINT cold-flow page">
         <img src="/SPRINT/nov-7-coldflow/thumbnail.webp" alt="SPRINT cold flow on November 7, 2025" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-11-07">November 7, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--successful">Two flows</span></div>
         <h2><a href="/SPRINT/nov-7-coldflow/">First quad cold flows</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--successful">Two flows</span></div>
         <p>The first quad campaign after a controls rewrite completed two cold flows. Preserved files reached 579 and 523 psi oxidizer-tank pressure and averaged 56 and 34 rows per second, not the rates in their filenames.</p>
-        <a class="gare-timeline__link" href="/SPRINT/nov-7-coldflow/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -182,12 +190,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/SPRINT/sept-13-hotfire/" aria-label="Open the September 2025 SPRINT campaign">
         <img src="/SPRINT/sept-13-hotfire/sept-14-hotfire-2s.webp" alt="SPRINT during the September 2025 hot-fire campaign" width="960" height="540" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-09-14">September 13–14, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--successful">Three fires</span></div>
         <h2><a href="/SPRINT/sept-13-hotfire/">September ignition campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--successful">Three fires</span></div>
         <p>After an early igniter failure and cold flow, SPRINT fired later on September 13. Two more fires followed September 14; the final shortened run recorded 839.1 N peak thrust, 184.1 psi chamber pressure and approximately 2.4 kN·s total impulse.</p>
-        <a class="gare-timeline__link" href="/SPRINT/sept-13-hotfire/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -198,12 +207,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--team-low" href="/SPRINT/aug-22-hotfire/" aria-label="Open the August 2025 SPRINT hot-fire page">
         <img src="/SPRINT/aug-22-hotfire/sprint-hotfire-team.webp" alt="MACH team with SPRINT at Launch Canada 2025" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-08-22">August 22, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--successful">First hot fire</span></div>
         <h2><a href="/SPRINT/aug-22-hotfire/">Launch Canada 2025</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">SPRINT hot fire</span><span class="gare-status gare-status--successful">First hot fire</span></div>
         <p>An ignition-threshold error and a fuel servo blocked by a turnbuckle stopped the first two attempts. The August 22 run reached engine cutoff with a partial fill; no usable telemetry was recovered.</p>
-        <a class="gare-timeline__link" href="/SPRINT/aug-22-hotfire/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -214,12 +224,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--full-frame" href="/SPRINT/aug-19-coldflow/" aria-label="Open the August 2025 SPRINT cold-flow page">
         <img src="/SPRINT/aug-19-coldflow/thumbnail.webp" alt="SPRINT during the August 9, 2025 cold-flow campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-08-09">August 9, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--partial">Hot fire blocked</span></div>
         <h2><a href="/SPRINT/aug-19-coldflow/">First integrated SPRINT weekend</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">SPRINT cold flow</span><span class="gare-status gare-status--partial">Hot fire blocked</span></div>
         <p>The full-system leak check passed and CO₂ and distilled water were flowed. An igniter integration failure blocked the planned hot fire; no cold-flow telemetry was recorded.</p>
-        <a class="gare-timeline__link" href="/SPRINT/aug-19-coldflow/">SPRINT test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -230,12 +241,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--heads-top" href="/timeline/sprint-tank-pressure-2025-08-02/" aria-label="Open the August 2025 SPRINT pressure-test summary">
         <img src="/timeline/sprint-tank-pressure-2025-08-02/thumbnail.webp" alt="MACH members with suspended SPRINT hardware during pressure testing" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-08-02">August 2, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Pressure test</span><span class="gare-status gare-status--successful">Reported passed</span></div>
         <h2><a href="/timeline/sprint-tank-pressure-2025-08-02/">Suspended SPRINT hardware test</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Pressure test</span><span class="gare-status gare-status--successful">Reported passed</span></div>
         <p>A result post states that the pressure test passed and shows the SPRINT tank suspended from its tripod. The tested pressure boundary, applied pressure and hold duration were not preserved.</p>
-        <a class="gare-timeline__link" href="/timeline/sprint-tank-pressure-2025-08-02/">Photo and evidence limits <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -246,12 +258,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/sprint-qualification-2025-07/" aria-label="Open the SPRINT structural and piston qualification tests">
         <img src="/timeline/sprint-qualification-2025-07/thumbnail.webp" alt="SPRINT test stand used for structural qualification" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-07">After SPRINT began · July 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Structural and pressure tests</span><span class="gare-status gare-status--successful">Passed documented checks</span></div>
         <h2><a href="/timeline/sprint-qualification-2025-07/">SPRINT stand, tripod and piston qualification</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Structural and pressure tests</span><span class="gare-status gare-status--successful">Passed documented checks</span></div>
         <p>The stand passed 500 lbf proof and cyclic-load tests. The tank tripod carried three times expected load, and the piston held 800 psig.</p>
-        <a class="gare-timeline__link" href="/timeline/sprint-qualification-2025-07/">Photos and qualification record <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -282,12 +295,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/chimera-coldflows-2025/" aria-label="Open the 2025 Chimera injector cold flows">
         <img src="/timeline/chimera-coldflows-2025/thumbnail.webp" alt="Subscale Chimera injector cold flow in May 2025" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2025-05-12">March 28 and May 12, 2025</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Chimera cold flow</span><span class="gare-status gare-status--partial">Seven flows; timing fault</span></div>
         <h2><a href="/timeline/chimera-coldflows-2025/">Subscale injector campaigns</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Chimera cold flow</span><span class="gare-status gare-status--partial">Seven flows; timing fault</span></div>
         <p>Three March flows exposed a faulty data time base. Four May flows produced usable files; one unclamped article was ejected, leading to remote operation for full-scale tests.</p>
-        <a class="gare-timeline__link" href="/timeline/chimera-coldflows-2025/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -300,12 +314,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/chimera-ablative-tensile-2024-11-26/" aria-label="Open the November 2024 Chimera ablative tensile screening">
         <img src="/timeline/chimera-ablative-tensile-2024-11-26/thumbnail.webp" alt="Chimera material specimens prepared on November 9, 2024 before tensile screening" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-11-26">November 26, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--partial">Screening only</span></div>
         <h2><a href="/timeline/chimera-ablative-tensile-2024-11-26/">Chimera ablative tensile screening</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--partial">Screening only</span></div>
         <p>Nineteen epoxy/additive specimens were tested. One specimen per formulation, visible defects and a low control result prevented a material down-selection.</p>
-        <a class="gare-timeline__link" href="/timeline/chimera-ablative-tensile-2024-11-26/">Samples, plots and limitations <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -316,12 +331,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/run-tank-hydro-2024-10-26/" aria-label="Open the October 2024 run-tank hydrostatic tests">
         <img src="/timeline/run-tank-hydro-2024-10-26/thumbnail.webp" alt="Ethanol run tank connected to hydrostatic test equipment" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-10-26">October 25–26, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Both tanks passed</span></div>
         <h2><a href="/timeline/run-tank-hydro-2024-10-26/">Fuel and oxidizer run-tank proof tests</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Both tanks passed</span></div>
         <p>Both tanks held 1,300 psi for 15 minutes. An initial leak at the oxidizer tank's capped relief port stopped after the fitting was tightened.</p>
-        <a class="gare-timeline__link" href="/timeline/run-tank-hydro-2024-10-26/">Photos and measured results <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -342,12 +358,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/GAR-E/hotfire-2024-09-28/" aria-label="Open the final New GAR-E campaign">
         <img src="/GAR-E/hotfire-2024-09-28/gare-hotfire-2024-09-29-close-poster.webp" alt="New GAR-E firing on September 29, 2024" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-09-29">September 28–29, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot fire</span><span class="gare-status gare-status--partial">Nozzle failure</span></div>
         <h2><a href="/GAR-E/hotfire-2024-09-28/">Final New GAR-E campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot fire</span><span class="gare-status gare-status--partial">Nozzle failure</span></div>
         <p>An integrated RNX-puck ignition test worked September 28. The September 29 firing reached about 1.07 kN before the graphite nozzle separated as full ignition developed, roughly 0.2 seconds after valve opening. The archive does not establish one root cause.</p>
-        <a class="gare-timeline__link" href="/GAR-E/hotfire-2024-09-28/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -358,12 +375,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/GAR-E/hotfire-2024-08-22/" aria-label="Open the August 2024 New GAR-E hot fire">
         <img src="/GAR-E/hotfire-2024-08-22/team.webp" alt="MACH with New GAR-E and Spender at Launch Canada 2024" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-08-22">August 20–22, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot fire</span><span class="gare-status gare-status--successful">Sustained combustion</span></div>
         <h2><a href="/GAR-E/hotfire-2024-08-22/">Launch Canada 2024</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot fire</span><span class="gare-status gare-status--successful">Sustained combustion</span></div>
         <p>Two attempts failed on August 20; a brief ignition did not sustain on August 21. A cast igniter and hard-coded sequence produced the first sustained in-chamber GAR-E firing on August 22.</p>
-        <a class="gare-timeline__link" href="/GAR-E/hotfire-2024-08-22/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -374,12 +392,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/GAR-E/coldflow-2024-07-14/" aria-label="Open the July 2024 New GAR-E cold flow">
         <img src="/GAR-E/coldflow-2024-07-14/thumbnail.webp" alt="New GAR-E injector cold flow in July 2024" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-07-14">July 14, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Injector cold flow</span><span class="gare-status gare-status--successful">Two flows</span></div>
         <h2><a href="/GAR-E/coldflow-2024-07-14/">New GAR-E injector characterization</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Injector cold flow</span><span class="gare-status gare-status--successful">Two flows</span></div>
         <p>Two inert flows measured 0.189 kg/s fuel-side flow, 106–108 psi fuel-injector drop and 0.53 kg/s oxidizer-side flow. Excess loss was isolated to the fuel-volute transition.</p>
-        <a class="gare-timeline__link" href="/GAR-E/coldflow-2024-07-14/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -390,12 +409,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/hydrostatic-2024-05-18/" aria-label="Open the May 2024 proof tests">
         <img src="/timeline/hydrostatic-2024-05-18/thumbnail.webp" alt="Test team with the ethanol tank after proof testing" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2024-05-18">May 18, 2024</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Passed</span></div>
         <h2><a href="/timeline/hydrostatic-2024-05-18/">Day-Glo tank and New GAR-E case proof tests</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Hydrostatic test</span><span class="gare-status gare-status--successful">Passed</span></div>
         <p>The Day-Glo ethanol tank and New GAR-E engine case both passed. Later reporting describes the tank proof as 1.5 times MEOP; the exact setpoint was not preserved.</p>
-        <a class="gare-timeline__link" href="/timeline/hydrostatic-2024-05-18/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -418,12 +438,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/GAR-E/hotfire-2023-11-19/" aria-label="Open the November 2023 GAR-E ignition campaign">
         <img src="/GAR-E/hotfire-2023-11-19/thumbnail.webp" alt="GAR-E ignition during the November 2023 test campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-11-19">November 18–19, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Ignition attempt</span><span class="gare-status gare-status--partial">Downstream combustion</span></div>
         <h2><a href="/GAR-E/hotfire-2023-11-19/">First integrated liquid-propellant ignition</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Ignition attempt</span><span class="gare-status gare-status--partial">Downstream combustion</span></div>
         <p>The gerb lit propellant near the throat, fell from its mount and left combustion anchored between the concrete barriers. The 80 psi rise came from cold nitrous flow, not sustained chamber combustion; the force reading was invalid.</p>
-        <a class="gare-timeline__link" href="/GAR-E/hotfire-2023-11-19/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -434,12 +455,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--portrait-context" href="/timeline/igniter-2023-11-15/" aria-label="Open the November 2023 GAR-E igniter acceptance tests">
         <img src="/timeline/igniter-2023-11-15/thumbnail.webp" alt="GAR-E igniter firing inside a clear chamber-length test fixture" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-11-17">November 15–17, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--successful">Acceptance data</span></div>
         <h2><a href="/timeline/igniter-2023-11-15/">GAR-E igniter acceptance tests</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--successful">Acceptance data</span></div>
         <p>Two instrumented burns reached igniter peaks of 1,032 °C and 860 °C. The second downstream thermocouple exceeded ethanol autoignition temperature for 10.3 seconds.</p>
-        <a class="gare-timeline__link" href="/timeline/igniter-2023-11-15/">Video, raw data and temperature plot <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -450,12 +472,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--team-top" href="/GAR-E/hotfire-2023-08-30/" aria-label="Open the Launch Canada 2023 GAR-E attempt">
         <img src="/GAR-E/hotfire-2023-08-30/team.webp" alt="MACH with GAR-E and Spender at Launch Canada 2023" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-08-31">August 31, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot-fire attempt</span><span class="gare-status gare-status--scrubbed">No ignition</span></div>
         <h2><a href="/GAR-E/hotfire-2023-08-30/">Launch Canada 2023</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Hot-fire attempt</span><span class="gare-status gare-status--scrubbed">No ignition</span></div>
         <p>Propellants flowed, but the igniter exploded 0.883 seconds after the E-match and before the main valves opened. The abort worked and the system was undamaged.</p>
-        <a class="gare-timeline__link" href="/GAR-E/hotfire-2023-08-30/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -466,12 +489,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/GAR-E/coldflow-2023-08-19/" aria-label="Open the August 2023 GAR-E cold flows">
         <img src="/GAR-E/coldflow-2023-08-19/team.webp" alt="MACH team with Spender during the August 2023 cold flows" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-08-20">August 19–20, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Injector cold flow</span><span class="gare-status gare-status--partial">Limited data</span></div>
         <h2><a href="/GAR-E/coldflow-2023-08-19/">Pre-Launch Canada campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Injector cold flow</span><span class="gare-status gare-status--partial">Limited data</span></div>
         <p>One water and two CO₂ injector flows were completed. The engine computer froze and one CO₂ record ended before the main oxidizer valve opened; the fuel-injector drop was about 150 psi.</p>
-        <a class="gare-timeline__link" href="/GAR-E/coldflow-2023-08-19/">GAR-E test page <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -482,12 +506,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/igniter-2023-07-28/" aria-label="Open the July 2023 igniter failure report">
         <img src="/timeline/igniter-2023-07-28/thumbnail.webp" alt="Igniter hardware after the July 2023 housing failure" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-07-29">July 28–29, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--partial">Hardware failure</span></div>
         <h2><a href="/timeline/igniter-2023-07-28/">Igniter housing failure</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--partial">Hardware failure</span></div>
         <p>Excess internal volume let one igniter pressurize and separate its head, leading to changes in grain placement, venting and geometry.</p>
-        <a class="gare-timeline__link" href="/timeline/igniter-2023-07-28/">Photos and failure summary <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -498,12 +523,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/spender-coldflow-2023-07-22/" aria-label="Open Spender Cold-Flow Campaign 3">
         <img src="/timeline/spender-coldflow-2023-07-22/thumbnail.webp" alt="MACH team with Spender after the July 2023 campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-07-23">July 22–23, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold flow</span><span class="gare-status gare-status--successful">First integrated flows</span></div>
         <h2><a href="/timeline/spender-coldflow-2023-07-22/">Spender Cold-Flow Campaign 3</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold flow</span><span class="gare-status gare-status--successful">First integrated flows</span></div>
         <p>Water and CO₂ flowed separately and together. The final report calculated 0.162 kg/s water and 0.354 kg/s CO₂ flow, with discharge coefficients of 0.83 and 0.76.</p>
-        <a class="gare-timeline__link" href="/timeline/spender-coldflow-2023-07-22/">Photos and measurements <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -524,12 +550,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--heads-tall" href="/timeline/spender-coldflow-2023-06-03/" aria-label="Open Spender Cold-Flow Attempt 2">
         <img src="/timeline/spender-coldflow-2023-06-03/thumbnail.webp" alt="MACH working on Spender during the June 2023 test" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-06-04">June 3–4, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold-flow attempt</span><span class="gare-status gare-status--scrubbed">Incomplete</span></div>
         <h2><a href="/timeline/spender-coldflow-2023-06-03/">Spender Cold-Flow Attempt 2</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold-flow attempt</span><span class="gare-status gare-status--scrubbed">Incomplete</span></div>
         <p>The rebuilt system held pressure after pad repairs, but controls work consumed the test window. Later review measured an oxidizer-side leak near 5 cm³/s; no full flow occurred.</p>
-        <a class="gare-timeline__link" href="/timeline/spender-coldflow-2023-06-03/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -540,12 +567,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--flame-top" href="/timeline/component-tests-2023-05/" aria-label="Open the May 2023 component tests">
         <img src="/timeline/component-tests-2023-05/thumbnail.webp" alt="Igniter firing during the May 2023 component campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-05-22">May 14–22, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Component campaign</span><span class="gare-status gare-status--partial">Failures, then corrected</span></div>
         <h2><a href="/timeline/component-tests-2023-05/">Igniter, pneumatic and valve tests</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Component campaign</span><span class="gare-status gare-status--partial">Failures, then corrected</span></div>
         <p>Five igniter trials exposed E-match, vent-area and thermocouple-retention failures. A revised igniter worked; pneumatics and every tested valve passed pressure checks.</p>
-        <a class="gare-timeline__link" href="/timeline/component-tests-2023-05/">Photos and results <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -556,12 +584,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--portrait-context" href="/timeline/garolite-2023-03-16/" aria-label="Open the March 2023 Garolite tests">
         <img src="/timeline/garolite-2023-03-16/thumbnail.webp" alt="Numbered Garolite samples after burn testing" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-03-16">March 16, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--partial">Completed with issues</span></div>
         <h2><a href="/timeline/garolite-2023-03-16/">Garolite ablative tests</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--partial">Completed with issues</span></div>
         <p>G10/FR-4 samples were burned from 6 to 75 seconds plus a longer trial. Bad thermocouple installation and fumes changed the procedure.</p>
-        <a class="gare-timeline__link" href="/timeline/garolite-2023-03-16/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -572,12 +601,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--full-frame" href="/timeline/igniter-2023-03-11/" aria-label="Open the March 2023 igniter campaign">
         <img src="/timeline/igniter-2023-03-11/thumbnail.webp" alt="Temperature plot from the March 2023 igniter campaign" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-03-11">March 11, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--partial">Uncertain data</span></div>
         <h2><a href="/timeline/igniter-2023-03-11/">Igniter and thermocouple campaign</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--partial">Uncertain data</span></div>
         <p>Multiple designs and sensor positions were tested. Corrupted records and placement problems make the reported temperatures non-definitive.</p>
-        <a class="gare-timeline__link" href="/timeline/igniter-2023-03-11/">Plots and record note <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -588,12 +618,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/spender-coldflow-2023-01-21/" aria-label="Open Spender Cold-Flow Attempt 1">
         <img src="/timeline/spender-coldflow-2023-01-21/thumbnail.webp" alt="Spender during the January 2023 cold-flow attempt" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2023-01-22">January 21–22, 2023</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold-flow attempt</span><span class="gare-status gare-status--scrubbed">Scrubbed</span></div>
         <h2><a href="/timeline/spender-coldflow-2023-01-21/">Spender Cold-Flow Attempt 1</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--coldflow">Cold-flow attempt</span><span class="gare-status gare-status--scrubbed">Scrubbed</span></div>
         <p>The main pressurant-valve stem seal yielded after its packing hardware was assembled incorrectly. Downstream isolation prevented further damage; no complete flow occurred.</p>
-        <a class="gare-timeline__link" href="/timeline/spender-coldflow-2023-01-21/">Photos and failure summary <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -606,12 +637,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/pressure-checkout-2022-12-20/" aria-label="Open the December 2022 pressure-equipment checkout">
         <img src="/timeline/pressure-checkout-2022-12-20/thumbnail.webp" alt="Team with the pressure-test equipment in December 2022" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2022-12-20">December 20, 2022</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Pressure test</span><span class="gare-status gare-status--successful">Passed</span></div>
         <h2><a href="/timeline/pressure-checkout-2022-12-20/">Pressure-test equipment checkout</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Pressure test</span><span class="gare-status gare-status--successful">Passed</span></div>
         <p>The water pump, regulator and pressure-transducer setup held approximately 500 psi with about 600 psi at its inlet.</p>
-        <a class="gare-timeline__link" href="/timeline/pressure-checkout-2022-12-20/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -632,12 +664,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/igniter-resin-2022-12-15/" aria-label="Open the December 2022 GAR-E igniter-housing material test">
         <img src="/timeline/igniter-resin-2022-12-15/thumbnail.webp" alt="APCP G-motor grain burning during GAR-E igniter-housing material testing" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2022-12-15">December 15, 2022</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <h2><a href="/timeline/igniter-resin-2022-12-15/">SLA igniter-housing flame test</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Material test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <p>Clear SLA resin was exposed to direct flame and an APCP G-motor grain segment. The result set a 1.5 mm minimum wall for the next GAR-E igniter-housing designs; no complete igniter was fired.</p>
-        <a class="gare-timeline__link" href="/timeline/igniter-resin-2022-12-15/">Test media and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -698,12 +731,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/valve-control-2022-08-29/" aria-label="Open the August 2022 Borealis valve-control integration test">
         <img src="/timeline/valve-control-2022-08-29/thumbnail.webp" alt="Borealis main valves and pneumatic control hardware on the propellant stand" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2022-08-29">August 29, 2022</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Valve-control test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <h2><a href="/timeline/valve-control-2022-08-29/">Borealis valve-control integration</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Valve-control test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <p>The main fuel and oxidizer valves were mounted and pneumatically actuated. Five solenoid valves could be controlled, but an unreliable radio link forced the demonstration to use a manual switch. No test fluid was loaded.</p>
-        <a class="gare-timeline__link" href="/timeline/valve-control-2022-08-29/">Photos and result <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -724,12 +758,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/igniter-2022-06-24/" aria-label="Open the June 2022 igniter test">
         <img src="/timeline/igniter-2022-06-24/thumbnail.webp" alt="Igniter instrumentation hardware used in June 2022" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2022-06-24">June 24, 2022</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <h2><a href="/timeline/igniter-2022-06-24/">Igniter instrumentation test</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--component">Igniter test</span><span class="gare-status gare-status--successful">Completed</span></div>
         <p>The earliest confirmed test of the team's own hardware in the surviving archive used a custom acquisition box. Processed data reported a 1,368 °C peak and about 9.17 seconds above 1,000 °C.</p>
-        <a class="gare-timeline__link" href="/timeline/igniter-2022-06-24/">Test summary and data plot <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -752,12 +787,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media" href="/timeline/lr101-assist-2021-10-24/" aria-label="Open the October 2021 LR-101 test-assist summary">
         <img src="/timeline/lr101-assist-2021-10-24/thumbnail.webp" alt="Launch Canada's LR-101 test stand in Welland in October 2021" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2021-10-24">October 24, 2021</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Test operations</span><span class="gare-status gare-status--successful">Completed</span></div>
         <h2><a href="/timeline/lr101-assist-2021-10-24/">Launch Canada LR-101 test assist</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--hotfire">Test operations</span><span class="gare-status gare-status--successful">Completed</span></div>
         <p>RPG members volunteered on assembly and test operations for Launch Canada's LR-101 firing in Welland. Launch Canada's video reports a 35 s burn and approximately 4.45 kN peak thrust. The LR-101 was not a MACH engine.</p>
-        <a class="gare-timeline__link" href="/timeline/lr101-assist-2021-10-24/">Video and event note <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>
@@ -768,12 +804,13 @@ Events are ordered newest first. This record separates completed tests, failed a
       <a class="gare-timeline__media gare-timeline__media--full-frame" href="/timeline/resin-borealis-plan-2021/" aria-label="Open the 2021 SLA resin engine test-plan summary">
         <img src="/timeline/resin-borealis-plan-2021/thumbnail.webp" alt="CAD rendering of the proposed SLA resin engine test-stand mount" loading="lazy" decoding="async">
       </a>
-      <div class="gare-timeline__body">
+      <div class="gare-timeline__caption">
         <time datetime="2021-10-10">September–October 2021</time>
-        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--program">Test plan</span><span class="gare-status gare-status--scrubbed">No firing verified</span></div>
         <h2><a href="/timeline/resin-borealis-plan-2021/">SLA resin engine test program</a></h2>
+      </div>
+      <div class="gare-timeline__body">
+        <div class="gare-timeline__tags"><span class="gare-tag gare-tag--program">Test plan</span><span class="gare-status gare-status--scrubbed">No firing verified</span></div>
         <p>RPG proposed firing a small SLA resin engine with propane, compressed air and a hobby-motor igniter. A September presentation said the engines still had to be printed; the October SOP has no results entries, and no firing data or video was found.</p>
-        <a class="gare-timeline__link" href="/timeline/resin-borealis-plan-2021/">Design and evidence limits <span aria-hidden="true">→</span></a>
       </div>
     </article>
   </li>

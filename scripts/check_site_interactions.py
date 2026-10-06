@@ -247,6 +247,9 @@ with sync_playwright() as p:
     current=page.locator('.team-leads').inner_text();former=page.locator('.former-members-grid').inner_text()
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
+    assert page.locator('#former-leads').inner_text()=='Former Leads'
+    assert page.locator('.former-members-grid .former-member-card').count()==24
+    assert 'Milad Hemmat' in former and 'Milad Hemmat' not in current
     cards=page.locator('.team-leads li')
     expected=[('Julia Puszynska','Team Captain'),('Tobechukwu Okoh','Propulsion Lead'),('Samuel Li','Operations Director'),('Jonathan Al-Hinn','Safety Officer'),('Kasper Pajak','Electrical Lead'),('Madison Warren','Media & Logistics Lead')]
     assert cards.count()==len(expected)
@@ -284,6 +287,17 @@ with sync_playwright() as p:
     page.keyboard.press('Escape');assert not page.locator('dialog').is_visible()
     assert controls.nth(1).evaluate('(e)=>e===document.activeElement')
    if path=='/timeline/':
+    assert page.locator('.gare-timeline__card').count()==56
+    assert page.locator('.gare-timeline__media').count()==37
+    assert page.locator('.gare-timeline__caption').count()==37
+    assert page.locator('.gare-timeline__card p').count()==55
+    assert page.locator('.gare-timeline__caption h2 a').count()==37
+    assert page.locator('.gare-timeline__caption h2 a').evaluate_all('(els)=>els.every(e=>e.getBoundingClientRect().height>=24)')
+    assert page.locator('.gare-timeline__link').count()==0
+    assert page.locator('.gare-timeline__card').evaluate_all('(els)=>els.every(e=>{const s=getComputedStyle(e);return s.borderTopWidth==="0px"&&s.boxShadow==="none"&&s.backgroundColor==="rgba(0, 0, 0, 0)"})')
+    assert page.locator('.gare-timeline__caption').evaluate_all('(els)=>els.every(e=>getComputedStyle(e).color==="rgb(255, 255, 255)")')
+    assert page.locator('.gare-timeline__media--full-frame, .gare-timeline__media--portrait-context').count()==7
+    assert page.locator('.gare-timeline__media--full-frame, .gare-timeline__media--portrait-context').evaluate_all('(els)=>els.every(e=>getComputedStyle(e,"::after").display==="none"&&getComputedStyle(e.parentElement.querySelector(".gare-timeline__caption")).gridRowStart==="caption")')
     page.locator('[data-filter="project"]').select_option('Seraphina')
     page.locator('[data-filter="type"]').select_option('hotfire')
     count=page.locator('.gare-timeline__event:visible').count();assert count==3,count

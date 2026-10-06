@@ -57,6 +57,7 @@ jobs:
           python -m unittest discover -s scripts -p test_portrait_delivery.py
           python scripts/check_home_startup.py
           python scripts/check_home_navigation.py --quick
+          python scripts/check_logo_navigation.py --quick
           python scripts/check_search.py
           python scripts/check_site_interactions.py --quick
           python scripts/check_october_4_page.py --url http://127.0.0.1:8876 --quick

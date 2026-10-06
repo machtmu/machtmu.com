@@ -9,7 +9,36 @@
 
   const getDialog = () => document.querySelector("[data-mach-search-input]")?.closest("[role='dialog']");
 
+  function prepareLogos() {
+    const scheme = document.body.dataset.mdColorScheme;
+    const dark = scheme ? scheme === "slate" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.querySelectorAll(".md-logo .mach-logo").forEach((logo) => {
+      const source = logo.querySelector(".mach-logo__picture source");
+      const overlay = logo.closest(".md-header")?.dataset.homeHero === "overlay";
+      // One native image surface: source selection cannot paint two sibling
+      // logos during instant navigation or a system-theme transition.
+      const media = dark || overlay ? "all" : "not all";
+      if (source && source.media !== media) source.media = media;
+      const hdr = logo.querySelector(".mach-logo__hdr");
+      const image = logo.querySelector(".mach-logo__image");
+      // Do not brighten an old black frame while a new white source is loading.
+      if (hdr) hdr.hidden = !dark || overlay || !image?.complete || !image.currentSrc.endsWith("/logo-header-dark.png");
+    });
+  }
+
+  const logoObserver = new MutationObserver(prepareLogos);
+  logoObserver.observe(document.body, {
+    attributes: true,
+    subtree: true,
+    attributeFilter: ["data-md-color-scheme", "data-home-hero"],
+  });
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", prepareLogos);
+  document.addEventListener("load", (event) => {
+    if (event.target.matches?.(".mach-logo__image")) prepareLogos();
+  }, true);
+
   function preparePage() {
+    prepareLogos();
     // The theme keeps the header during instant navigation. Derive visibility
     // from the current page rather than the page that first created it.
     const headerLogo = document.querySelector('.md-header [data-md-component="logo"]');

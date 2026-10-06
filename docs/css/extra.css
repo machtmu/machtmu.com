@@ -72,6 +72,10 @@ a.former-member-card:hover {
     position: relative;
 }
 
+.mach-logo__picture {
+    display: contents;
+}
+
 .md-header__button.md-logo .mach-logo__image {
     height: 1.2rem;
     width: auto;
@@ -162,19 +166,9 @@ a.former-member-card:hover {
     object-fit: contain;
 }
 
-.md-header__button.md-logo img.mach-logo__image--dark,
-.md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--dark {
-    display: none;
-}
-
-[data-md-color-scheme="slate"] .md-header__button.md-logo img.mach-logo__image--light,
-[data-md-color-scheme="slate"] .md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--light {
-    display: none;
-}
-
-[data-md-color-scheme="slate"] .md-header__button.md-logo img.mach-logo__image--dark,
-[data-md-color-scheme="slate"] .md-nav .md-nav__title[for="__drawer"] .md-logo img.mach-logo__image--dark {
-    display: block;
+.mach-logo__hdr[hidden] {
+    display: none !important;
+    visibility: hidden !important;
 }
 
 .mach-logo__hdr {
@@ -1074,4 +1068,120 @@ html.js noscript {
 
 .md-typeset .gare-timeline__media--bottom img {
   object-position: center bottom;
+}
+
+/* Timeline photos share the project-card treatment; summaries stay readable. */
+.md-typeset .gare-timeline .gare-timeline__card {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+  transform: none;
+  transition: none;
+}
+
+.md-typeset .gare-timeline__card:has(.gare-timeline__media) {
+  display: grid;
+  grid-template-areas: "media" "body";
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.md-typeset .gare-timeline__card > .gare-timeline__media {
+  border-radius: 0;
+  grid-area: media;
+  isolation: isolate;
+  position: relative;
+}
+
+.md-typeset .gare-timeline__card > .gare-timeline__media img {
+  border-radius: 0;
+}
+
+.md-typeset .gare-timeline__media:not(:is(
+  .gare-timeline__media--full-frame,
+  .gare-timeline__media--portrait-context,
+  .gare-timeline__media--heads-top,
+  .gare-timeline__media--heads-tall
+)) {
+  height: clamp(200px, 24vw, 280px);
+}
+
+.md-typeset .gare-timeline__card > .gare-timeline__media::after {
+  background: var(--mach-project-card-gradient);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.md-typeset .gare-timeline__caption {
+  align-self: end;
+  color: #fff;
+  grid-area: media;
+  padding: 0.8rem;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+.md-typeset .gare-timeline__caption time {
+  color: rgb(255 255 255 / 86%);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin: 0 0 0.3rem;
+  text-transform: none;
+}
+
+.md-typeset .gare-timeline__caption h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.md-typeset .gare-timeline__caption h2 a,
+.md-typeset .gare-timeline__caption h2 a:visited,
+.md-typeset .gare-timeline__caption h2 a:is(:hover, :focus) {
+  color: #fff !important;
+  display: inline-block;
+  min-height: 24px;
+  pointer-events: auto;
+}
+
+.md-typeset .gare-timeline__caption h2 a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.md-typeset .gare-timeline__body {
+  grid-area: body;
+  padding: 0.6rem 0 0;
+}
+
+/* Technical figures keep their complete, undimmed pixels and labelled axes. */
+.md-typeset .gare-timeline__card:has(:is(
+  .gare-timeline__media--full-frame,
+  .gare-timeline__media--portrait-context
+)) {
+  grid-template-areas: "media" "caption" "body";
+}
+
+.md-typeset :is(
+  .gare-timeline__media--full-frame,
+  .gare-timeline__media--portrait-context
+)::after {
+  display: none;
+}
+
+.md-typeset .gare-timeline__card:has(:is(
+  .gare-timeline__media--full-frame,
+  .gare-timeline__media--portrait-context
+)) > .gare-timeline__caption {
+  align-self: stretch;
+  background: #111;
+  grid-area: caption;
 }

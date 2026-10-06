@@ -55,7 +55,9 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
   </ul>
 </div>
 
-## Former Members
+<span id="former-members"></span>
+
+## Former Leads
 
 <div class="former-members-grid">
   <a class="former-member-card" href="https://ca.linkedin.com/in/adam-oudeh"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/adam-oudeh.jpg" alt=""><strong>Adam Oudeh</strong></a>
@@ -72,6 +74,7 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
   <a class="former-member-card" href="https://ca.linkedin.com/in/kai-st"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/kai-stewart.jpg" alt=""><strong>Kai Stewart</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/leandro-tomarchio"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/leandro-tomarchio.jpg" alt=""><strong>Leandro Tomarchio</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/mark-paul"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/mark-paul.jpg" alt=""><strong>Mark Paul</strong></a>
+  <a class="former-member-card" href="https://www.linkedin.com/in/milad-hemmat-a84647386/"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/leads/Milad-Media-Lead.jpg" alt=""><strong>Milad Hemmat</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/nikolai-sydorenko"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/nikolai-sydorenko.jpg" alt=""><strong>Nikolai Sydorenko</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Orion Moore</strong></div>
   <a class="former-member-card former-member-card--text-only" href="https://ca.linkedin.com/in/rochelle-st"><strong>Rochelle Suarez-Tapanes</strong></a>

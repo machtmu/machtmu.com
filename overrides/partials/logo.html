@@ -1,7 +1,10 @@
 {% if config.theme.logo %}
   <span class="mach-logo">
-    <img class="mach-logo__image mach-logo__image--light" src="{{ 'img/logo-header.png' | url }}" alt="{{ config.site_name }}" width="512" height="159">
-    <img class="mach-logo__image mach-logo__image--dark" src="{{ 'img/logo-header-dark.png' | url }}" alt="{{ config.site_name }}" width="512" height="159">
+    <picture class="mach-logo__picture">
+      {# Without script the native theme remains its default light palette. #}
+      <source srcset="{{ 'img/logo-header-dark.png' | url }}" media="not all">
+      <img class="mach-logo__image" src="{{ 'img/logo-header.png' | url }}" alt="{{ config.site_name }}" width="512" height="159">
+    </picture>
     <span class="mach-logo__hdr" aria-hidden="true"></span>
   </span>
 {% else %}
