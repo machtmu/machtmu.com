@@ -35,45 +35,54 @@
   border-radius: 0;
   display: block;
   height: auto;
-  left: var(--portrait-center, 50%);
+  left: 50%;
   margin: 0;
   max-height: none;
   max-width: none;
   object-fit: contain;
   object-position: center;
   position: absolute;
-  top: 34%;
-  transform: translate(-50%, var(--portrait-eye-lift));
+  top: var(--portrait-eye-line, 35%);
+  /* Centre the subject, not the source canvas. This remains correct when
+     mobile increases the rendered image width for the taller cards. */
+  transform: translate(calc(-1 * var(--portrait-subject-center, 50%)), var(--portrait-eye-lift));
   width: calc(var(--portrait-width) * var(--portrait-scale));
 }
 
 .md-typeset .team-portraits .team-portrait--julia {
-  --portrait-width: 121%;
+  --portrait-width: 118%;
+  --portrait-subject-center: 50.4%;
   --portrait-eye-lift: -33.1%;
 }
 
 .md-typeset .team-portraits .team-portrait--toby {
-  --portrait-width: 134%;
+  --portrait-width: 130%;
+  --portrait-subject-center: 49.7%;
   --portrait-eye-lift: -33.3%;
 }
 
 .md-typeset .team-portraits .team-portrait--samuel {
-  --portrait-width: 130%;
+  --portrait-width: 127%;
+  --portrait-subject-center: 50.6%;
   --portrait-eye-lift: -34%;
 }
 
 .md-typeset .team-portraits .team-portrait--jonathan {
-  --portrait-width: 100%;
+  --portrait-width: 110%;
+  --portrait-subject-center: 54.5%;
   --portrait-eye-lift: -28.1%;
+  --portrait-eye-line: 37%;
 }
 
 .md-typeset .team-portraits .team-portrait--kasper {
-  --portrait-width: 132%;
+  --portrait-width: 128%;
+  --portrait-subject-center: 49.6%;
   --portrait-eye-lift: -33.4%;
 }
 
 .md-typeset .team-portraits .team-portrait--madison {
-  --portrait-width: 120%;
+  --portrait-width: 116%;
+  --portrait-subject-center: 50.7%;
   --portrait-eye-lift: -24.6%;
 }
 
@@ -113,7 +122,7 @@
   outline-offset: 4px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .md-typeset .team-portraits .team-portrait-list {
     gap: 0.6rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -136,4 +145,69 @@
   .md-typeset .team-portraits .team-portrait-caption > em {
     font-size: 0.6rem;
   }
+}
+
+@media (max-width: 360px) {
+  .md-typeset .team-portraits .team-portrait-caption strong {
+    font-size: 0.62rem;
+  }
+  .md-typeset .team-portraits .team-portrait-caption > em {
+    font-size: 0.53rem;
+  }
+}
+
+/* Wider archive photos need a subject-centred circular viewport, rather
+   than a centre crop of the entire scene. No source pixels are rewritten. */
+.former-member-avatar-frame {
+  border-radius: 50%;
+  display: block;
+  flex: 0 0 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 2.5rem;
+}
+
+.former-member-card .former-member-avatar-frame img {
+  border-radius: 0;
+  height: auto;
+  left: 50%;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  position: absolute;
+  top: var(--avatar-eye-line, 35%);
+  transform: translate(calc(-1 * var(--avatar-center)), calc(-1 * var(--avatar-eye)));
+  width: var(--avatar-width);
+}
+
+.former-member-avatar-frame--evan {
+  --avatar-width: 140%;
+  --avatar-center: 52%;
+  --avatar-eye: 28%;
+}
+
+.former-member-avatar-frame--kai {
+  --avatar-width: 125%;
+  --avatar-center: 40%;
+  --avatar-eye: 30%;
+}
+
+.former-member-avatar-frame--leandro {
+  --avatar-width: 208%;
+  --avatar-center: 24.5%;
+  --avatar-eye: 25%;
+  --avatar-eye-line: 40%;
+}
+
+.former-member-avatar-frame--mark {
+  --avatar-width: 250%;
+  --avatar-center: 68%;
+  --avatar-eye: 63%;
+}
+
+.former-member-avatar-frame--shivesh {
+  --avatar-width: 140%;
+  --avatar-center: 46.5%;
+  --avatar-eye: 26%;
 }

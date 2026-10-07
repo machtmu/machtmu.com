@@ -55,6 +55,8 @@ jobs:
           python -m unittest discover -s scripts -p test_prepare_site.py
           python -m unittest discover -s scripts -p test_hero_logo_delivery.py
           python -m unittest discover -s scripts -p test_portrait_delivery.py
+          python scripts/check_team_portraits.py --url http://127.0.0.1:8876 --widths 390 601 1440 --scheme light
+          python scripts/check_team_portraits.py --url http://127.0.0.1:8876 --browser webkit --widths 390 601 1440 --scheme dark
           python scripts/check_home_startup.py
           python scripts/check_home_navigation.py --quick
           python scripts/check_logo_navigation.py --quick

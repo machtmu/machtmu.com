@@ -18,37 +18,37 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
   <ul class="team-portrait-list">
     <li>
       <a class="team-portrait team-portrait--julia" href="https://www.linkedin.com/in/julia-puszynska-7977b72b0/">
-        <img src="/assets/images/leads/Julia-Operations-Director-studio.webp" alt="Julia Puszynska" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="121" sizes="(max-width: 600px) calc(75.625vw - 33.275px), (max-width: 1220px) calc(40.3334vw - 29.04px), 463.027px">
+        <img src="/assets/images/leads/Julia-Operations-Director-studio.webp" alt="Julia Puszynska" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="118" sizes="(max-width: 760px) calc(73.75vw - 32.45px), (max-width: 1220px) calc(39.3334vw - 28.32px), 451.547px">
         <span class="team-portrait-caption"><strong>Julia Puszynska</strong><em>Team Captain</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--toby" href="https://www.linkedin.com/in/tobechukwu-okoh/">
-        <img src="/assets/images/leads/Tobe-Propellant-Management-Lead-studio.webp" alt="Tobechukwu Okoh" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="134" sizes="(max-width: 600px) calc(83.75vw - 36.85px), (max-width: 1220px) calc(44.6667vw - 32.16px), 512.774px">
+        <img src="/assets/images/leads/Tobe-Propellant-Management-Lead-studio.webp" alt="Tobechukwu Okoh" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="130" sizes="(max-width: 760px) calc(81.25vw - 35.75px), (max-width: 1220px) calc(43.3334vw - 31.2px), 497.467px">
         <span class="team-portrait-caption"><strong>Tobechukwu Okoh</strong><em>Propulsion Lead</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--samuel" href="https://www.linkedin.com/in/samuel-li-741440302/">
-        <img src="/assets/images/leads/Sam-Lead-studio.webp" alt="Samuel Li" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="130" sizes="(max-width: 600px) calc(81.25vw - 35.75px), (max-width: 1220px) calc(43.3334vw - 31.2px), 497.467px">
+        <img src="/assets/images/leads/Sam-Lead-studio.webp" alt="Samuel Li" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="127" sizes="(max-width: 760px) calc(79.375vw - 34.925px), (max-width: 1220px) calc(42.3334vw - 30.48px), 485.987px">
         <span class="team-portrait-caption"><strong>Samuel Li</strong><em>Operations Director</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--jonathan" href="https://www.linkedin.com/in/jonathan-al-hinn/">
-        <img src="/assets/images/leads/Jonathan-Al-Hinn-lighting-v2-studio.webp" alt="Jonathan Al-Hinn" width="1086" height="1448" loading="lazy" decoding="async" data-display-original data-portrait-delivery="100" sizes="(max-width: 600px) calc(62.5vw - 27.5px), (max-width: 1220px) calc(33.3334vw - 24px), 382.667px">
+        <img src="/assets/images/leads/Jonathan-Al-Hinn-lighting-v3-studio.webp" alt="Jonathan Al-Hinn" width="1086" height="1448" loading="lazy" decoding="async" data-display-original data-portrait-delivery="110" sizes="(max-width: 760px) calc(68.75vw - 30.25px), (max-width: 1220px) calc(36.6667vw - 26.4px), 420.933px">
         <span class="team-portrait-caption"><strong>Jonathan Al-Hinn</strong><em>Safety Officer</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--kasper" href="https://www.linkedin.com/in/kasper-pajak-462435282/">
-        <img src="/assets/images/leads/Kasper-Mission-Control-studio.webp" alt="Kasper Pajak" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="132" sizes="(max-width: 600px) calc(82.5vw - 36.3px), (max-width: 1220px) calc(44vw - 31.68px), 505.12px">
+        <img src="/assets/images/leads/Kasper-Mission-Control-studio.webp" alt="Kasper Pajak" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="128" sizes="(max-width: 760px) calc(80vw - 35.2px), (max-width: 1220px) calc(42.6667vw - 30.72px), 489.813px">
         <span class="team-portrait-caption"><strong>Kasper Pajak</strong><em>Electrical Lead</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--madison" href="https://www.linkedin.com/in/madison-warren-501997294/">
-        <img src="/assets/images/leads/Madison-Warren-studio.webp" alt="Madison Warren" width="1025" height="1535" loading="lazy" decoding="async" data-display-original data-portrait-delivery="120" sizes="(max-width: 600px) calc(75vw - 33px), (max-width: 1220px) calc(40vw - 28.8px), 459.2px">
+        <img src="/assets/images/leads/Madison-Warren-studio.webp" alt="Madison Warren" width="1025" height="1535" loading="lazy" decoding="async" data-display-original data-portrait-delivery="116" sizes="(max-width: 760px) calc(72.5vw - 31.9px), (max-width: 1220px) calc(38.6667vw - 27.84px), 443.893px">
         <span class="team-portrait-caption"><strong>Madison Warren</strong><em>Media &amp; Logistics Lead</em></span>
       </a>
     </li>
@@ -67,19 +67,19 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
   <a class="former-member-card" href="https://ca.linkedin.com/in/ben-kubica-9ab3912bb"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/ben-kubica.jpg" alt=""><strong>Ben Kubica</strong></a>
   <a class="former-member-card former-member-card--text-only" href="https://ca.linkedin.com/in/d-ibanescu"><strong>Daniel Ibanescu</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Dmitriy Leminov</strong></div>
-  <a class="former-member-card" href="https://ca.linkedin.com/in/evan-bhogal"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/evan-bhogal.jpg" alt=""><strong>Evan Bhogal</strong></a>
+  <a class="former-member-card" href="https://ca.linkedin.com/in/evan-bhogal"><span class="former-member-avatar-frame former-member-avatar-frame--evan"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/evan-bhogal.jpg" alt=""></span><strong>Evan Bhogal</strong></a>
   <a class="former-member-card former-member-card--text-only" href="https://ca.linkedin.com/in/georgia-jovanovic-91a895203"><strong>Georgia Jovanovic</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/sin-clair"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/jack-sinclair.jpg" alt=""><strong>Jack Sinclair</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/juliano-sciabbarrasi-000b74291"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/juliano-sciabbarrasi.jpg" alt=""><strong>Juliano Sciabbarrasi</strong></a>
-  <a class="former-member-card" href="https://ca.linkedin.com/in/kai-st"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/kai-stewart.jpg" alt=""><strong>Kai Stewart</strong></a>
-  <a class="former-member-card" href="https://ca.linkedin.com/in/leandro-tomarchio"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/leandro-tomarchio.jpg" alt=""><strong>Leandro Tomarchio</strong></a>
-  <a class="former-member-card" href="https://ca.linkedin.com/in/mark-paul"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/mark-paul.jpg" alt=""><strong>Mark Paul</strong></a>
+  <a class="former-member-card" href="https://ca.linkedin.com/in/kai-st"><span class="former-member-avatar-frame former-member-avatar-frame--kai"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/kai-stewart.jpg" alt=""></span><strong>Kai Stewart</strong></a>
+  <a class="former-member-card" href="https://ca.linkedin.com/in/leandro-tomarchio"><span class="former-member-avatar-frame former-member-avatar-frame--leandro"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/leandro-tomarchio.jpg" alt=""></span><strong>Leandro Tomarchio</strong></a>
+  <a class="former-member-card" href="https://ca.linkedin.com/in/mark-paul"><span class="former-member-avatar-frame former-member-avatar-frame--mark"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/mark-paul.jpg" alt=""></span><strong>Mark Paul</strong></a>
   <a class="former-member-card" href="https://www.linkedin.com/in/milad-hemmat-a84647386/"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/leads/Milad-Media-Lead.jpg" alt=""><strong>Milad Hemmat</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/nikolai-sydorenko"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/nikolai-sydorenko.jpg" alt=""><strong>Nikolai Sydorenko</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Orion Moore</strong></div>
   <a class="former-member-card former-member-card--text-only" href="https://ca.linkedin.com/in/rochelle-st"><strong>Rochelle Suarez-Tapanes</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/rui-fernandes-55997a189"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/rui-fernandes.jpg" alt=""><strong>Rui Fernandes</strong></a>
-  <a class="former-member-card" href="https://ca.linkedin.com/in/shivesh-maraj-55b983200"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/shivesh-maraj.jpg" alt=""><strong>Shivesh Maraj</strong></a>
+  <a class="former-member-card" href="https://ca.linkedin.com/in/shivesh-maraj-55b983200"><span class="former-member-avatar-frame former-member-avatar-frame--shivesh"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/shivesh-maraj.jpg" alt=""></span><strong>Shivesh Maraj</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/umaremshabbir"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/umar-shabbir.jpg" alt=""><strong>Umar Shabbir</strong></a>
   <a class="former-member-card" href="https://ca.linkedin.com/in/william-pirie-25b8b31a9"><img loading="lazy" decoding="async" class="former-member-avatar" src="/assets/images/former-members/william-pirie.jpg" alt=""><strong>William Pirie</strong></a>
   <div class="former-member-card former-member-card--text-only"><strong>Yiwei Luo</strong></div>

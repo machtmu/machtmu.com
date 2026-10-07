@@ -40,8 +40,50 @@
     },
     {
       "name": "Jonathan Al-Hinn",
-      "active_edition": "lighting-v2",
+      "active_edition": "lighting-v3",
       "editions": [
+        {
+          "id": "lighting-v3",
+          "date": "2026-10-07",
+          "mode": "built-in image_gen",
+          "use_case": "lighting-weather",
+          "direct_original_edit": true,
+          "source": "Jonathan-Al-Hinn.jpg",
+          "source_sha256": "b9514f918b2048dfca5aa51f44638b63707b5ec1a3b5310d69c1e1c6ad48d8fa",
+          "reference_roles": {
+            "Julia-Operations-Director-studio.webp": "Lighting quality and neutral-grey backdrop only; not face, skin tone, body or pose"
+          },
+          "reference_sha256": {
+            "Julia-Operations-Director-studio.webp": "ea9d20f9d6ac43fadb410dad72f32a126ff467bde5508d3d65460644c6729e4f"
+          },
+          "no_previous_jonathan_edit_as_input": true,
+          "output_master": "output/imagegen/jonathan-lighting-v3/Jonathan-Al-Hinn-lighting-v3-studio.png",
+          "output_master_published": false,
+          "output_master_sha256": "3bc3a4031b26dcb2fe591f25c0e39815d1f4228de4dc4ff0f06310c2f13d70bf",
+          "built_in_output_filename": "exec-80acc38e-b724-4653-a50c-a268af29801a.png",
+          "delivery": "Jonathan-Al-Hinn-lighting-v3-studio.webp",
+          "delivery_sha256": "8964bcf95229cd101c6f886cfb8c875b3c5bfd94795c6e72037fb4ba27607150",
+          "cached_html_compatibility": {
+            "reason": "Retain exactly the five responsive URLs of the currently deployed lighting-v2 portrait so cached or in-flight team HTML remains loadable while lighting-v3 is deployed. Earlier pre-v2 URLs and provenance are also retained under the lighting-v2 edition.",
+            "source": "https://machtmu.com/assets/display/",
+            "verification": "Exact previously deployed files downloaded from their live URLs and preserved under the same filenames; SHA-256 checks lock their original bytes.",
+            "total_bytes": 2069734,
+            "files": {
+              "8180f4979a151aab-320-portrait-q96.webp": "2bd0561bbb6deb3527a333ae646d66dd94e62b58d679e7caaeb5b9d7d5782e61",
+              "8180f4979a151aab-480-portrait-q96.webp": "4befa261021afd8b7f4d23e18d8945b5539b446401a4bd8720125cdd74d2aac6",
+              "8180f4979a151aab-640-portrait-q96.webp": "e38e168b92661fbf3229f7bae4e984c7487cd218d392771a61bf7d4f719b34c7",
+              "8180f4979a151aab-960-portrait-q96.webp": "961c9811c1c7ec4ea7413b287adb4a4b135c3dec722cb33cc354eaaa6fb4ad27",
+              "8180f4979a151aab-1086-portrait-lossless.webp": "ab7381ec7fde9db3210a3a9237108e531de941896ecd9365ce256870950599e1"
+            }
+          },
+          "dimensions": [
+            1086,
+            1448
+          ],
+          "prompt": "Use case: lighting-weather\nAsset type: MACH website lead portrait, direct correction of the original photograph.\nInput images: Image 1 Jonathan-Al-Hinn.jpg is the ONLY edit target and ONLY source for the photographed person's identity and clothing. Image 2 Julia-Operations-Director-studio.webp is a REFERENCE ONLY for light quality and the neutral grey seamless studio background. Do not copy Julia's face, skin color, body or pose into Jonathan. No prior edited portrait of Jonathan is an input.\nPrimary request: Correct Jonathan's lighting to match the broad, soft, even, bright frontal diffused studio lighting in Julia's photo. This must be a clear lighting correction, not merely a grey background replacement. Remove the harsh overhead-light signature: suppress the shiny forehead hot spot and deep brow/eye-socket shadows, softly fill BOTH cheeks and the lower face so they have the same balanced exposure as the forehead, and neutralize the warm reddish light cast. Use large broad frontal diffuse fill with very gentle natural facial shading. Keep Jonathan's original real complexion exactly his own; match Julia's LIGHT, not her SKIN TONE. Do not whiten or lighten his inherent skin pigment.\nScene/backdrop: Replace the concrete stadium bleachers with the same understated neutral-grey studio backdrop as Julia, approximately #b7b7b7, slight soft upper-centre falloff, no scenery, no hard cutout outline.\nComposition/framing: Return a 3:4 portrait 1086x1448. Preserve Image 1's exact subject position, head size, eye line, camera angle, seated pose, gaze, closed-mouth relaxed expression, shoulders and visible torso crop. No zooming, repositioning, new body parts or recropping. CSS will handle display framing later.\nCritical invariants: preserve the original person's identity, facial anatomy and proportions, nose, eyes, eyebrows, lips, beard shape, natural skin pores/imperfections, every curly hair strand and flyaway, age and expression. Preserve exact black textured diamond-knit polo, collar, white piping, original buttons, folds and fabric detail. Change ONLY illumination/white balance and backdrop. Photorealistic photographic relighting, not a beauty portrait or newly imagined face.\nAvoid: plastic/smoothed skin, beautification, airbrushing, face reconstruction, facial changes, sharpening, blurring, glamour light, dramatic rim light, blown highlights, dark eye sockets, sweaty-looking forehead hotspot, skin-tone bleaching, changes to beard/hair/clothing/pose, props, watermark, text, halos.",
+          "review": "Original Jonathan, Julia lighting reference and v3 output independently visually reviewed and approved before integration. More even diffuse frontal illumination reduces forehead hotspot and brow/under-eye/cheek contrast. Jonathan's original complexion, recognizable face/expression, curly hair, beard, pose and textured polo remain visually consistent. No previous edited Jonathan portrait was an input. All originals, previous masters and other lead assets remain unchanged.",
+          "pixel_verification": "Native WebP and retained v3 PNG compare equal in every decoded RGBA pixel. The photographic edit itself is not asserted pixel-identical to the original source."
+        },
         {
           "id": "lighting-v2",
           "date": "2026-10-06",

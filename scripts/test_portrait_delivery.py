@@ -34,6 +34,12 @@ class PortraitDeliveryTests(unittest.TestCase):
         manifest = json.loads((directory / 'portrait-studio-manifest.json').read_text())
         portrait = next(p for p in manifest['portraits'] if p['name'] == 'Jonathan Al-Hinn')
         edition = next(e for e in portrait['editions'] if e['id'] == portrait['active_edition'])
+        self.assertEqual(portrait['active_edition'], 'lighting-v3')
+        self.assertEqual({e['id'] for e in portrait['editions']}, {'lighting-v2', 'lighting-v3'})
+        self.assertTrue(edition['no_previous_jonathan_edit_as_input'])
+        self.assertEqual(list(edition['reference_roles']), ['Julia-Operations-Director-studio.webp'])
+        self.assertEqual(hashlib.sha256((directory / 'Julia-Operations-Director-studio.webp').read_bytes()).hexdigest(),
+                         edition['reference_sha256']['Julia-Operations-Director-studio.webp'])
         self.assertTrue(edition['direct_original_edit'])
         self.assertFalse(edition['output_master_published'])
         self.assertEqual(edition['mode'], 'built-in image_gen')
@@ -55,6 +61,12 @@ class PortraitDeliveryTests(unittest.TestCase):
         self.assertEqual(len(retained['files']), 5)
         self.assertEqual(sum((root / 'docs/assets/display' / name).stat().st_size for name in retained['files']), retained['total_bytes'])
         for filename, expected in retained['files'].items():
+            self.assertEqual(hashlib.sha256((root / 'docs/assets/display' / filename).read_bytes()).hexdigest(), expected)
+        # A new active edition must not discard the prior native master or
+        # the previously retained URLs needed by older in-flight team HTML.
+        prior = next(e for e in portrait['editions'] if e['id'] == 'lighting-v2')
+        self.assertEqual(hashlib.sha256((directory / prior['delivery']).read_bytes()).hexdigest(), prior['delivery_sha256'])
+        for filename, expected in prior['cached_html_compatibility']['files'].items():
             self.assertEqual(hashlib.sha256((root / 'docs/assets/display' / filename).read_bytes()).hexdigest(), expected)
 
     def test_all_six_deliveries_preserve_native_pixels(self):
