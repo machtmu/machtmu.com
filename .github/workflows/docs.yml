@@ -36,11 +36,15 @@ jobs:
       - name: Configure bounded HTTPS Ubuntu dependency downloads
         run: |
           python -m unittest discover -s scripts -p test_configure_ci_apt.py
+          python -m unittest discover -s scripts -p test_ci_workflow.py
           sudo --preserve-env=GITHUB_ACTIONS,RUNNER_ENVIRONMENT python3 scripts/configure_ci_apt.py
       - name: Install WebKit for mobile SVG regression checks
         timeout-minutes: 5
         run: python -m playwright install --with-deps webkit
       - run: npm ci --prefix ci --ignore-scripts
+      # --clean clears .cache, including the display variants. Restore only
+      # after the clean build so those validated variants actually survive.
+      - run: zensical build --clean
       - name: Restore display image cache
         id: display-cache
         uses: actions/cache/restore@v4
@@ -49,7 +53,6 @@ jobs:
           key: display-v2-${{ hashFiles('scripts/prepare_site.py') }}-${{ github.sha }}
           restore-keys: |
             display-v2-${{ hashFiles('scripts/prepare_site.py') }}-
-      - run: zensical build --clean
       - run: python scripts/prepare_site.py
       - name: Check built-site links and media
         run: python scripts/check_site_media.py
