@@ -1,0 +1,13 @@
+{
+  "measurement": "Manual native-pixel solid crown/main hair mass to bottom of chin, excluding flyaways and hair below the jaw. Coordinates come from visual source inspection, independently of CSS. Re-measure if the source hash changes.",
+  "target_card_height": 0.63305709,
+  "crown_margin": 0.07,
+  "portraits": [
+    {"name": "Julia Puszynska", "file": "Julia-Operations-Director-studio.webp", "sha256": "ea9d20f9d6ac43fadb410dad72f32a126ff467bde5508d3d65460644c6729e4f", "width": 1254, "height": 1254, "crown_y": 109, "chin_y": 685, "eyes_y": 415, "previous_css_width": 118},
+    {"name": "Tobechukwu Okoh", "file": "Tobe-Propellant-Management-Lead-studio.webp", "sha256": "efc07ec4d38c163b31f86912902a3419f2d89689a604ea420ef64f70ff361da4", "width": 1254, "height": 1254, "crown_y": 163, "chin_y": 686, "eyes_y": 418, "previous_css_width": 130},
+    {"name": "Samuel Li", "file": "Sam-Lead-studio.webp", "sha256": "75dabca925a94877c10fd1f67b99e6fa36a43d85addada94f3837922fa0c3312", "width": 1254, "height": 1254, "crown_y": 167, "chin_y": 707, "eyes_y": 426, "previous_css_width": 127},
+    {"name": "Jonathan Al-Hinn", "file": "Jonathan-Al-Hinn-lighting-v3-studio.webp", "sha256": "8964bcf95229cd101c6f886cfb8c875b3c5bfd94795c6e72037fb4ba27607150", "width": 1086, "height": 1448, "crown_y": 110, "chin_y": 735, "eyes_y": 407, "previous_css_width": 110},
+    {"name": "Kasper Pajak", "file": "Kasper-Mission-Control-studio.webp", "sha256": "e0e4d9942aa3e5fb6043dd6c949a1d31a79860b09913646b830b956d80244ecd", "width": 1254, "height": 1254, "crown_y": 156, "chin_y": 677, "eyes_y": 419, "previous_css_width": 128},
+    {"name": "Madison Warren", "file": "Madison-Warren-studio.webp", "sha256": "eb8cfd32ef0a2dd89c9703b1f2821db8c259258f7e688b2ca1d72d60c03f3c8f", "width": 1025, "height": 1535, "crown_y": 110, "chin_y": 600, "eyes_y": 378, "previous_css_width": 116}
+  ]
+}

@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -11,6 +12,28 @@ from PIL import Image
 
 
 class PortraitDeliveryTests(unittest.TestCase):
+    def test_css_framing_matches_independent_native_head_landmarks(self):
+        root = Path(__file__).resolve().parents[1]
+        landmarks = json.loads(Path(__file__).with_name('team_portrait_landmarks.json').read_text())
+        css = (root/'docs/css/team-portraits.css').read_text()
+        keys = ('julia', 'toby', 'samuel', 'jonathan', 'kasper', 'madison')
+        heights = []
+        for key, source in zip(keys, landmarks['portraits']):
+            with self.subTest(portrait=source['name']):
+                asset = root/'docs/assets/images/leads'/source['file']
+                self.assertEqual(hashlib.sha256(asset.read_bytes()).hexdigest(), source['sha256'])
+                with Image.open(asset) as image:
+                    self.assertEqual(image.size, (source['width'], source['height']))
+                block = re.search(r'\.team-portrait--'+key+r'\s*\{([^}]+)', css).group(1)
+                zoom = float(re.search(r'--portrait-width:\s*([\d.]+)%', block).group(1))/100
+                height = zoom*(source['chin_y']-source['crown_y'])/source['width']
+                heights.append(height)
+                self.assertAlmostEqual(height, landmarks['target_card_height'], delta=.0001)
+                eye_line = float(re.search(r'--portrait-eye-line:\s*([\d.]+)%', block).group(1))/100
+                crown = eye_line-zoom*(source['eyes_y']-source['crown_y'])/source['width']
+                self.assertAlmostEqual(crown, landmarks['crown_margin'], delta=.0001)
+        self.assertLess(max(heights)-min(heights), .0001)
+
     def test_explicit_encoder_requires_new_paired_paths(self):
         helper = Path(__file__).with_name('build_portrait_delivery.py')
         with tempfile.TemporaryDirectory() as folder:

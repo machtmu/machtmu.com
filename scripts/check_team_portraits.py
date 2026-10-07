@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check responsive team framing, image delivery and navigation at crop breakpoints."""
 import argparse
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -11,6 +12,7 @@ from playwright.sync_api import sync_playwright
 
 NAMES = ['Julia Puszynska', 'Tobechukwu Okoh', 'Samuel Li',
          'Jonathan Al-Hinn', 'Kasper Pajak', 'Madison Warren']
+LANDMARKS = json.loads(Path(__file__).with_name('team_portrait_landmarks.json').read_text())
 
 
 def check(page, base, width):
@@ -22,7 +24,7 @@ def check(page, base, width):
         image.evaluate('i => i.decode()')
     assert page.locator('.team-portrait-caption strong').all_text_contents() == NAMES
     assert page.locator('.former-member-card').count() == 24
-    measurements = images.evaluate_all('''images => images.map(i => {
+    measurements = images.evaluate_all('''(images, landmarks) => images.map(i => {
       const card = i.closest('.team-portrait');
       const r = card.getBoundingClientRect(), b = i.getBoundingClientRect();
       const style = getComputedStyle(card), imageStyle = getComputedStyle(i);
@@ -37,6 +39,9 @@ def check(page, base, width):
       probe.remove();
       const center = parseFloat(style.getPropertyValue('--portrait-subject-center')) / 100;
       const eye = -parseFloat(style.getPropertyValue('--portrait-eye-lift')) / 100;
+      const measured = landmarks.portraits.find(p => p.name === i.alt);
+      const sourceY = y => (b.top + y/measured.height*b.height - r.top)/r.height;
+      const captionTop = (card.querySelector('.team-portrait-caption strong').getBoundingClientRect().top-r.top)/r.height;
       return {name:i.alt, source:i.currentSrc, native:i.dataset.originalSrc,
         complete:i.complete && i.naturalWidth>0,
         declaredWidth:Number(i.dataset.portraitDelivery),
@@ -48,6 +53,9 @@ def check(page, base, width):
         subjectX:(b.left+center*b.width-r.left)/r.width,
         eyeY:(b.top+eye*b.height-r.top)/r.height,
         expectedEye:parseFloat(style.getPropertyValue('--portrait-eye-line') || '35')/100,
+        crownY:sourceY(measured.crown_y), chinY:sourceY(measured.chin_y),
+        measuredHeadHeight:(measured.chin_y-measured.crown_y)/measured.height*b.height/r.height,
+        measuredEyesY:sourceY(measured.eyes_y), captionTop,
         filter:imageStyle.filter,
         expectedWidth:r.width*parseFloat(style.getPropertyValue('--portrait-width'))/100*
           parseFloat(style.getPropertyValue('--portrait-scale')),
@@ -55,7 +63,7 @@ def check(page, base, width):
         advertisedWidth,
         scrollbar:innerWidth-document.documentElement.getBoundingClientRect().width,
         captionFits:card.querySelector('.team-portrait-caption').scrollWidth <= r.width+1};
-    })''')
+    })''', LANDMARKS)
     for entry in measurements:
         assert entry['complete'], entry
         assert entry['declaredWidth'] == entry['cssWidth'], entry
@@ -72,8 +80,15 @@ def check(page, base, width):
         assert left <= 1 and top <= 1 and right >= -1 and bottom >= -1, entry
         assert abs(entry['subjectX'] - .5) < .005, entry
         assert abs(entry['eyeY'] - entry['expectedEye']) < .005, entry
+        # Independent native-pixel landmarks, not CSS zoom values, define the
+        # equal visual head size. Check the actual rendered source geometry.
+        assert abs(entry['measuredHeadHeight'] - LANDMARKS['target_card_height']) < .003, entry
+        assert abs(entry['crownY'] - LANDMARKS['crown_margin']) < .003, entry
+        assert abs(entry['measuredEyesY'] - entry['expectedEye']) < .003, entry
+        assert entry['captionTop'] - entry['chinY'] > .015, entry
         assert entry['filter'] == 'none', entry
         assert entry['captionFits'], entry
+    assert max(e['measuredHeadHeight'] for e in measurements)-min(e['measuredHeadHeight'] for e in measurements) < .003
     for image in page.locator('.former-member-avatar').all():
         image.scroll_into_view_if_needed()
         image.evaluate('i => i.decode()')
@@ -115,6 +130,12 @@ def main():
     parser.add_argument('--widths', type=int, nargs='+')
     parser.add_argument('--scheme', choices=('light', 'dark', 'both'), default='both')
     args = parser.parse_args()
+    root = Path(__file__).resolve().parents[1]
+    for source in LANDMARKS['portraits']:
+        path = root/'docs/assets/images/leads'/source['file']
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == source['sha256'], source['name']
+        with Image.open(path) as image:
+            assert image.size == (source['width'], source['height']), source['name']
     args.output.mkdir(parents=True, exist_ok=True)
     results = []
     with sync_playwright() as p:

@@ -18,19 +18,19 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
   <ul class="team-portrait-list">
     <li>
       <a class="team-portrait team-portrait--julia" href="https://www.linkedin.com/in/julia-puszynska-7977b72b0/">
-        <img src="/assets/images/leads/Julia-Operations-Director-studio.webp" alt="Julia Puszynska" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="118" sizes="(max-width: 760px) calc(73.75vw - 32.45px), (max-width: 1220px) calc(39.3334vw - 28.32px), 451.547px">
+        <img src="/assets/images/leads/Julia-Operations-Director-studio.webp" alt="Julia Puszynska" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="137.82" sizes="(max-width: 760px) calc(86.1375vw - 37.9005px), (max-width: 1220px) calc(45.94vw - 33.0768px), 527.391px">
         <span class="team-portrait-caption"><strong>Julia Puszynska</strong><em>Team Captain</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--toby" href="https://www.linkedin.com/in/tobechukwu-okoh/">
-        <img src="/assets/images/leads/Tobe-Propellant-Management-Lead-studio.webp" alt="Tobechukwu Okoh" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="130" sizes="(max-width: 760px) calc(81.25vw - 35.75px), (max-width: 1220px) calc(43.3334vw - 31.2px), 497.467px">
+        <img src="/assets/images/leads/Tobe-Propellant-Management-Lead-studio.webp" alt="Tobechukwu Okoh" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="151.79" sizes="(max-width: 760px) calc(94.8687vw - 41.7422px), (max-width: 1220px) calc(50.5967vw - 36.4296px), 580.85px">
         <span class="team-portrait-caption"><strong>Tobechukwu Okoh</strong><em>Propulsion Lead</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--samuel" href="https://www.linkedin.com/in/samuel-li-741440302/">
-        <img src="/assets/images/leads/Sam-Lead-studio.webp" alt="Samuel Li" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="127" sizes="(max-width: 760px) calc(79.375vw - 34.925px), (max-width: 1220px) calc(42.3334vw - 30.48px), 485.987px">
+        <img src="/assets/images/leads/Sam-Lead-studio.webp" alt="Samuel Li" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="147.01" sizes="(max-width: 760px) calc(91.8812vw - 40.4278px), (max-width: 1220px) calc(49.0033vw - 35.2824px), 562.558px">
         <span class="team-portrait-caption"><strong>Samuel Li</strong><em>Operations Director</em></span>
       </a>
     </li>
@@ -42,13 +42,13 @@ Meet the people leading and building MACH, Toronto Metropolitan University's stu
     </li>
     <li>
       <a class="team-portrait team-portrait--kasper" href="https://www.linkedin.com/in/kasper-pajak-462435282/">
-        <img src="/assets/images/leads/Kasper-Mission-Control-studio.webp" alt="Kasper Pajak" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="128" sizes="(max-width: 760px) calc(80vw - 35.2px), (max-width: 1220px) calc(42.6667vw - 30.72px), 489.813px">
+        <img src="/assets/images/leads/Kasper-Mission-Control-studio.webp" alt="Kasper Pajak" width="1254" height="1254" loading="lazy" decoding="async" data-display-original data-portrait-delivery="152.37" sizes="(max-width: 760px) calc(95.2313vw - 41.9018px), (max-width: 1220px) calc(50.79vw - 36.5688px), 583.069px">
         <span class="team-portrait-caption"><strong>Kasper Pajak</strong><em>Electrical Lead</em></span>
       </a>
     </li>
     <li>
       <a class="team-portrait team-portrait--madison" href="https://www.linkedin.com/in/madison-warren-501997294/">
-        <img src="/assets/images/leads/Madison-Warren-studio.webp" alt="Madison Warren" width="1025" height="1535" loading="lazy" decoding="async" data-display-original data-portrait-delivery="116" sizes="(max-width: 760px) calc(72.5vw - 31.9px), (max-width: 1220px) calc(38.6667vw - 27.84px), 443.893px">
+        <img src="/assets/images/leads/Madison-Warren-studio.webp" alt="Madison Warren" width="1025" height="1535" loading="lazy" decoding="async" data-display-original data-portrait-delivery="132.43" sizes="(max-width: 760px) calc(82.7688vw - 36.4183px), (max-width: 1220px) calc(44.1433vw - 31.7832px), 506.766px">
         <span class="team-portrait-caption"><strong>Madison Warren</strong><em>Media &amp; Logistics Lead</em></span>
       </a>
     </li>

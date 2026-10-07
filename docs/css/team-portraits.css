@@ -1,4 +1,6 @@
-/* One original-to-studio edit per portrait, with CSS-only framing and eyelines. */
+/* CSS-only framing: measured crown-to-chin height is 63.31% of each card.
+   Source landmarks are recorded in scripts/team_portrait_landmarks.json.
+   Individual eye anchors preserve natural anatomy with a common 7% crown margin. */
 .md-typeset .team-portraits .team-portrait-list {
   display: grid;
   gap: 1rem;
@@ -50,40 +52,45 @@
 }
 
 .md-typeset .team-portraits .team-portrait--julia {
-  --portrait-width: 118%;
+  --portrait-width: 137.82%;
   --portrait-subject-center: 50.4%;
-  --portrait-eye-lift: -33.1%;
+  --portrait-eye-lift: -33.094%;
+  --portrait-eye-line: 40.631%;
 }
 
 .md-typeset .team-portraits .team-portrait--toby {
-  --portrait-width: 130%;
+  --portrait-width: 151.79%;
   --portrait-subject-center: 49.7%;
-  --portrait-eye-lift: -33.3%;
+  --portrait-eye-lift: -33.333%;
+  --portrait-eye-line: 37.866%;
 }
 
 .md-typeset .team-portraits .team-portrait--samuel {
-  --portrait-width: 127%;
+  --portrait-width: 147.01%;
   --portrait-subject-center: 50.6%;
-  --portrait-eye-lift: -34%;
+  --portrait-eye-lift: -33.971%;
+  --portrait-eye-line: 37.363%;
 }
 
 .md-typeset .team-portraits .team-portrait--jonathan {
   --portrait-width: 110%;
   --portrait-subject-center: 54.5%;
-  --portrait-eye-lift: -28.1%;
-  --portrait-eye-line: 37%;
+  --portrait-eye-lift: -28.108%;
+  --portrait-eye-line: 37.083%;
 }
 
 .md-typeset .team-portraits .team-portrait--kasper {
-  --portrait-width: 128%;
+  --portrait-width: 152.37%;
   --portrait-subject-center: 49.6%;
-  --portrait-eye-lift: -33.4%;
+  --portrait-eye-lift: -33.413%;
+  --portrait-eye-line: 38.957%;
 }
 
 .md-typeset .team-portraits .team-portrait--madison {
-  --portrait-width: 116%;
+  --portrait-width: 132.43%;
   --portrait-subject-center: 50.7%;
-  --portrait-eye-lift: -24.6%;
+  --portrait-eye-lift: -24.625%;
+  --portrait-eye-line: 41.624%;
 }
 
 .md-typeset .team-portraits .team-portrait::after {
@@ -148,11 +155,29 @@
 }
 
 @media (max-width: 360px) {
+  .md-typeset .team-portraits .team-portrait-caption {
+    padding: 0.3rem;
+  }
   .md-typeset .team-portraits .team-portrait-caption strong {
     font-size: 0.62rem;
   }
   .md-typeset .team-portraits .team-portrait-caption > em {
     font-size: 0.53rem;
+  }
+}
+
+/* Three columns just above the mobile breakpoint still have narrow cards.
+   Keep labels compact until the photos have room for desktop typography. */
+@media (min-width: 761px) and (max-width: 1000px) {
+  .md-typeset .team-portraits .team-portrait-caption {
+    gap: 0.1rem;
+    padding: 0.5rem;
+  }
+  .md-typeset .team-portraits .team-portrait-caption strong {
+    font-size: 0.7rem;
+  }
+  .md-typeset .team-portraits .team-portrait-caption > em {
+    font-size: 0.6rem;
   }
 }
 
