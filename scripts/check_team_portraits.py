@@ -82,8 +82,13 @@ def check(page, base, width):
     # The same portraits must decode after instant navigation back to Team.
     page.locator('.md-logo').first.click()
     page.wait_for_url(base + '/')
-    page.locator('.md-tabs a[href$="team/"]').first.click() if width >= 768 else page.goto(base + '/team/')
+    # A new URL can arrive before the replacement document/instant-navigation
+    # content. In WebKit, a second goto at that point interrupts the first.
+    page.locator('.home-hero').wait_for(state='visible')
+    page.wait_for_load_state('domcontentloaded')
+    page.locator('.md-tabs a[href$="team/"]').first.click() if width >= 768 else page.goto(base + '/team/', wait_until='domcontentloaded')
     page.wait_for_url(base + '/team/')
+    page.locator('.team-leads').wait_for(state='visible')
     for image in page.locator('.team-portrait img').all():
         image.scroll_into_view_if_needed()
         image.evaluate('i => i.decode()')
