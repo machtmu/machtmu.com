@@ -53,10 +53,24 @@
   object-position: center 60%;
 }
 
-/* Preserve complete groups and separated subjects even in narrow tablet cards. */
+/* Whole-frame photos size their own panel. A fixed-height contained image left
+   a large black strip beneath landscape subjects, especially on phones. Keep
+   the title on the actual photograph rather than on that unused letterbox. */
+.md-typeset .project-cards > article:has(> .project-card-media--full-frame) {
+  align-self: start;
+  grid-template-rows: auto;
+}
+
+.md-typeset .project-cards > article > .project-card-media--full-frame {
+  height: auto;
+  min-height: 0;
+  position: relative;
+}
+
 .md-typeset .project-cards .project-card-media--full-frame img {
+  height: auto;
   object-fit: contain;
-  object-position: center top;
+  object-position: center;
 }
 
 .md-typeset .project-cards > article::before {

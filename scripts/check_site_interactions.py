@@ -311,8 +311,14 @@ with sync_playwright() as p:
     assert cards.count()=={'/Seraphina/':5,'/SPRINT/':9,'/GAR-E/':6}[path]
     for card in cards.all():
      card.scroll_into_view_if_needed();card.locator('img').evaluate('i=>i.decode()')
-     if card.locator(':scope > a.project-card-media--full-frame').count():
+     full_frame=bool(card.locator(':scope > a.project-card-media--full-frame').count())
+     if full_frame:
       assert card.locator('img').evaluate('i=>getComputedStyle(i).objectFit')=='contain'
+      assert card.locator('img').evaluate('i=>Number(i.getAttribute("width"))>0&&Number(i.getAttribute("height"))>0')
+      # A whole-frame photo must fill its panel with real pixels, not be
+      # contained at the top of an oversized black title strip.
+      photo=card.locator('img').evaluate('i=>{const r=i.getBoundingClientRect();return {w:r.width,h:r.height,nw:Number(i.getAttribute("width")),nh:Number(i.getAttribute("height"))}}')
+      assert abs(photo['h']-photo['w']*photo['nh']/photo['nw'])<1,photo
      gradient=check_black_gradient(card,'::before',1)
      if gradient_reference is None:gradient_reference=gradient
      assert gradient==gradient_reference
@@ -324,7 +330,13 @@ with sync_playwright() as p:
      assert c['left']>=r['left']-1 and c['right']<=r['right']+1 and c['bottom']<=r['bottom']+1,geometry
      assert c['top']>=i['top']-1 and c['bottom']<=i['bottom']+1,geometry
      assert i['height']>=r['height']-1,geometry
-     assert r['height']<=max(geometry['minimum'],c['height'])+1,geometry
+     if full_frame:
+      assert abs(r['height']-i['height'])<1,geometry
+     else:
+      # A neighbouring whole-frame photo may set a taller desktop grid row.
+      # Cover panels fill that row, while the photograph itself reserves it.
+      peer_photo_height=card.evaluate('''e=>{const y=e.getBoundingClientRect().top;return Math.max(0,...[...e.parentElement.children].filter(p=>Math.abs(p.getBoundingClientRect().top-y)<1&&p.querySelector(':scope>.project-card-media--full-frame')).map(p=>p.querySelector('img').getBoundingClientRect().height))}''')
+      assert r['height']<=max(geometry['minimum'],c['height'],peer_photo_height)+1,geometry
      assert card.locator('a').first.get_attribute('href'),path
    for y in range(0,min(page.evaluate('document.body.scrollHeight'),6500),700):page.evaluate('(y)=>scrollTo(0,y)',y);page.wait_for_timeout(60)
    page.wait_for_timeout(250);page.evaluate('scrollTo(0,0)')

@@ -23,7 +23,7 @@ GAR-E was MACH's ethanol and nitrous oxide engine. Spender was the plumbing, tan
     </div>
   </article>
   <article>
-    <a href="hotfire-2024-08-22/"><img src="hotfire-2024-08-22/team.webp" alt="MACH with New GAR-E at Launch Canada 2024" loading="lazy" decoding="async"></a>
+    <a class="project-card-media--full-frame" href="hotfire-2024-08-22/"><img src="hotfire-2024-08-22/team.webp" alt="MACH with New GAR-E at Launch Canada 2024" loading="lazy" decoding="async"></a>
     <div>
       <time datetime="2024-08-22">August 20–22, 2024</time>
       <h2><a href="hotfire-2024-08-22/">Launch Canada sustained hot fire</a></h2>
