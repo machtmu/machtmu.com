@@ -17,7 +17,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/configure-pages@v5
@@ -33,10 +33,17 @@ jobs:
           cache: npm
           cache-dependency-path: ci/package-lock.json
       - run: pip install -r requirements-test.txt
+      - name: Configure bounded HTTPS Ubuntu dependency downloads
+        run: |
+          python -m unittest discover -s scripts -p test_configure_ci_apt.py
+          sudo --preserve-env=GITHUB_ACTIONS,RUNNER_ENVIRONMENT python3 scripts/configure_ci_apt.py
       - name: Install WebKit for mobile SVG regression checks
+        timeout-minutes: 5
         run: python -m playwright install --with-deps webkit
       - run: npm ci --prefix ci --ignore-scripts
-      - uses: actions/cache@v4
+      - name: Restore display image cache
+        id: display-cache
+        uses: actions/cache/restore@v4
         with:
           path: .cache/media
           key: display-v2-${{ hashFiles('scripts/prepare_site.py') }}-${{ github.sha }}
@@ -48,6 +55,14 @@ jobs:
         run: python scripts/check_site_media.py
       - name: Check landing-page SEO metadata
         run: python scripts/check_site_seo.py
+      # Save only successfully prepared/validated deterministic media. A later
+      # browser or Lighthouse failure must not force re-encoding it next run.
+      - name: Save validated display image cache
+        if: steps.display-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/media
+          key: ${{ steps.display-cache.outputs.cache-primary-key }}
       - name: Start local preview
         run: python scripts/serve_site.py > /tmp/mach-preview.log 2>&1 &
       - name: Check browser interactions and accessibility
