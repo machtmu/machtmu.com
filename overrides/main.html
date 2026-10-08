@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block site_meta %}
+  {{ super() }}
+  {% include "partials/darkreader.html" %}
+{% endblock %}
+
 {% block htmltitle %}
   {% if page and page.meta and page.meta.seo_title %}
     <title>{{ page.meta.seo_title | e }}</title>

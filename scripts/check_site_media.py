@@ -36,9 +36,16 @@ class ReferenceParser(HTMLParser):
         self.references: list[tuple[str, str, str]] = []
         self.video_without_poster: list[str] = []
         self.placeholder_alt: list[str] = []
+        self.in_head = False
+        self.darkreader_locks: list[bool] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {name: value for name, value in attrs}
+
+        if tag == "head":
+            self.in_head = True
+        if tag == "meta" and (values.get("name") or "").lower() == "darkreader-lock":
+            self.darkreader_locks.append(self.in_head)
 
         for name, value in attrs:
             if name in URL_ATTRIBUTES and value:
@@ -52,6 +59,15 @@ class ReferenceParser(HTMLParser):
 
         if tag == "img" and (values.get("alt") or "").strip().lower() == "alt text":
             self.placeholder_alt.append(values.get("src") or "unknown image")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "head":
+            self.in_head = False
+
+
+def darkreader_lock_is_valid(parser: ReferenceParser) -> bool:
+    """The opt-out must be static, in the head, and present exactly once."""
+    return parser.darkreader_locks == [True]
 
 
 def local_target(page: Path, raw_url: str) -> Path | None:
@@ -92,6 +108,9 @@ def main() -> int:
         parser = ReferenceParser()
         parser.feed(page.read_text(encoding="utf-8"))
         page_name = page.relative_to(SITE_ROOT)
+
+        if not darkreader_lock_is_valid(parser):
+            failures.append(f"{page_name}: expected exactly one Dark Reader opt-out meta in head")
 
         for tag, attribute, raw_url in parser.references:
             target = local_target(page, raw_url)
