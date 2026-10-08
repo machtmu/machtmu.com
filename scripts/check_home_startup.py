@@ -38,7 +38,13 @@ with sync_playwright() as playwright:
                     'gare-hotfire-2024-09-29-close-poster.webp', 'double-hotfire.png', 'double-hotfire-dark.png')
         assert not any(url.endswith(deferred) for url in requests), requests
         logo = page.locator('.home-hero__logo')
-        assert logo.evaluate('i=>[i.naturalWidth,i.naturalHeight]') == [2048, 636]
+        logo.evaluate('i=>i.decode()')
+        if args.webkit:
+            # WebKit reports SVG natural dimensions at the rendered CSS size.
+            assert logo.evaluate('i=>i.naturalWidth>0 && i.naturalHeight>0 && Math.abs(i.naturalWidth/i.naturalHeight-2471/636)<.05')
+        else:
+            assert logo.evaluate('i=>[i.naturalWidth,i.naturalHeight]') == [2471, 636]
+        assert logo.evaluate('i=>{const r=i.getBoundingClientRect();return Math.abs(r.width/r.height-2471/636)<.01}')
         intro = page.locator('.home-team-intro__photo')
         assert intro.get_attribute('fetchpriority') == 'low'
         intro.evaluate('i=>i.decode()')

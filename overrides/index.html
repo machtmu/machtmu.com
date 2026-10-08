@@ -271,11 +271,10 @@
     .home-hero__title {
       position: relative;
       margin: 0;
-      width: clamp(360px, 31.5vw, 472px);
-      max-width: 82%;
+      /* Preserve the artwork size while including its transparent left padding. */
+      width: clamp(434.355px, 38.006vw, 569.488px);
+      max-width: 98.937%;
       line-height: 0;
-      /* Center the lettering, with a small visual nudge right of the subtitle. */
-      transform: translateX(9%);
     }
 
     .home-hero__title::before,
@@ -299,14 +298,14 @@
 
         .home-hero__title::after {
           background: url("{{ 'img/white-7.5x.jpg' | url }}") center / cover no-repeat;
-          -webkit-mask: url("{{ 'img/logo-hero-hdr-mask.png' | url }}") center / contain no-repeat;
-          mask: url("{{ 'img/logo-hero-hdr-mask.png' | url }}") center / contain no-repeat;
+          -webkit-mask: url("{{ 'img/logo-hero-word-centered-hdr-mask.svg' | url }}") center / contain no-repeat;
+          mask: url("{{ 'img/logo-hero-word-centered-hdr-mask.svg' | url }}") center / contain no-repeat;
         }
 
         .home-hero__title::before {
           background: url("{{ 'img/red-7.5x.jpg' | url }}") center / cover no-repeat;
-          -webkit-mask: url("{{ 'img/logo-hero-hdr-accent-mask.png' | url }}") center / contain no-repeat;
-          mask: url("{{ 'img/logo-hero-hdr-accent-mask.png' | url }}") center / contain no-repeat;
+          -webkit-mask: url("{{ 'img/logo-hero-word-centered-hdr-accent-mask.svg' | url }}") center / contain no-repeat;
+          mask: url("{{ 'img/logo-hero-word-centered-hdr-accent-mask.svg' | url }}") center / contain no-repeat;
         }
       }
     }
@@ -731,7 +730,7 @@
       }
 
       .home-hero__inner { top: 105px; gap: 8px; }
-      .home-hero__title { width: 256px; }
+      .home-hero__title { width: 308.875px; }
       .home-hero__subtitle { font-size: 16px; }
 
       .home-project-links {
@@ -788,7 +787,7 @@
     </video>
 
     <div class="home-hero__inner">
-      <h1 class="home-hero__title"><img class="home-hero__logo" src="{{ 'img/logo-hero-dark.webp' | url }}" alt="MACH" width="2048" height="636" fetchpriority="high" decoding="async" data-display-original></h1>
+      <h1 class="home-hero__title"><img class="home-hero__logo" src="{{ 'img/logo-hero-word-centered.svg' | url }}" alt="MACH" width="2471" height="636" fetchpriority="high" decoding="async" data-display-original></h1>
       <p class="home-hero__subtitle">TMU Liquid Rocketry</p>
     </div>
     <button type="button" class="hero-motion-toggle" data-hero-motion aria-label="Play hero video" hidden>
