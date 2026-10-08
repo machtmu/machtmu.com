@@ -269,7 +269,7 @@ with sync_playwright() as p:
      panel_box=card.locator('.team-portrait').bounding_box();image_box=image.bounding_box()
      assert image_box['x']<=panel_box['x']+1 and image_box['y']<=panel_box['y']+1 and image_box['x']+image_box['width']>=panel_box['x']+panel_box['width']-1 and image_box['y']+image_box['height']>=panel_box['y']+panel_box['height']-1,(name,panel_box,image_box)
    if path=='/sponsors/':
-    crops=page.locator('.sponsor-logo__crop');assert crops.count()==24
+    crops=page.locator('.sponsor-logo__crop');assert crops.count()==25
     assert page.locator('.sponsor-item').evaluate_all('(es)=>es.every(e=>!e.innerText.trim()&&e.querySelector("img")?.alt.trim())')
     assert crops.evaluate_all('(es)=>es.every(e=>{const r=e.getBoundingClientRect(),c=getComputedStyle(e);return r.width>0&&r.height>0&&Math.abs(r.width/r.height-parseFloat(c.getPropertyValue("--logo-ratio")))<0.03&&c.backgroundColor==="rgba(0, 0, 0, 0)"})')
    if path in ('/Seraphina/aug-20-hotfire/', '/Seraphina/oct-4-hotfire/'):

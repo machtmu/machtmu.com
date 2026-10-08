@@ -1,9 +1,9 @@
 # Sponsor artwork
 
-Updated September 22, 2026. Original assets and downloadable reports are preserved.
+Updated October 7, 2026. Original assets and downloadable reports are preserved.
 Prefer native vectors or at least three source pixels per displayed CSS pixel at
 every supported breakpoint; do not make low-resolution artwork merely larger.
-The sponsor page has 23 entries and no per-logo captions. The separate artwork
+The sponsor page has 25 entries and no per-logo captions. The separate artwork
 credits page/link was removed at the user's request; Megapro attribution remains
 in its logo-link tooltip, both PNGs' embedded metadata, and the provenance below.
 
@@ -18,6 +18,7 @@ in its logo-link tooltip, both PNGs' embedded metadata, and the provenance below
 | Jaksa | `jaksa-logo-vector.svg` | Original vector paths from the manufacturer's [adapter document](https://www.jaksa.si/wp-content/uploads/2021/03/298971_en.pdf), top-left logo; unrelated page contents excluded. |
 | Megapro | `megapro-wordmark.png`, `megapro-wordmark-dark.png` | User-selected [Wikimedia wordmark](https://commons.wikimedia.org/wiki/File:Megapro_Logo.jpg), © 2017 MEGAPRO Tools, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); these adaptations retain the same license. White background removed with antialiased edges preserved. The white cross is isolated by its connected component, not a rectangular cutout, avoiding the former white remnant beside the O. Native 595 × 161 pixels, displayed at no more than 198 CSS px wide. Dark variant changes only the tagline to light grey. Experimental tracing distorted the lettering and was rejected. Attribution and changes are also embedded in both PNGs. |
 | Notion | `notion-logo-clean.svg` | Reuses the original SVG path geometry; paints the black silhouette first, then the white interior faces and black N. Removes the protruding white backing, not the logo's white faces. |
+| Pratt & Whitney | `pratt-whitney-logo.png` | Untouched [official media-room emblem](https://app.prattwhitney.com/images/pratt-logo-mobile.png), 648 × 512 transparent PNG, linked from [Pratt & Whitney's media room](https://app.prattwhitney.com/). CSS removes only unused canvas, retaining a one-source-pixel margin around alpha bounds `(2, 1, 579, 506)`. Native colours and pixels are identical in both themes, displayed at no more than 100 CSS px high (over 5x density). No redraw, enlargement or inversion. SHA-256 `6e34f5c99232960c591af6478653f215969561339d1cdbda4a97ee237b0289ca`. |
 | Stein Industries | `stein-logo-trimmed.png` | Lossless crop of the existing high-resolution transparent master, 1,484 × 199. Uses native bounds rather than fractional negative offsets; centred inside its grid cell. |
 | Swagelok | `swagelok-logo-hires.png` | Existing 1,343 px-wide JPEG master, white matte removed with edge-colour unmatting, tightly cropped. |
 | TeXtreme | `textreme-logo-vector.svg` | [Official vector](https://textreme.com/hubfs/textreme-logos/textreme-logo-dark-green.svg), not a resized PNG. |

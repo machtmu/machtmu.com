@@ -159,6 +159,12 @@ MACH is grateful for the support of our sponsors and partners who make our liqui
             <img loading="lazy" decoding="async" src="/sponsors/solidworks-logo.png" alt="SolidWorks">
         </span></span>
     </a>
+
+    <a href="https://www.prattwhitney.com/" target="_blank" class="sponsor-item">
+        <span class="sponsor-logo"><span class="sponsor-logo__crop" style="--logo-ratio:1.14201183; --logo-width:111.917098%; --logo-left:-0.172712%; --logo-top:0%;">
+            <img loading="lazy" decoding="async" src="/sponsors/pratt-whitney-logo.png" alt="Pratt &amp; Whitney">
+        </span></span>
+    </a>
 </div>
 
 <!-- Preserve saturated reds while reversing neutral lettering and cutouts. -->

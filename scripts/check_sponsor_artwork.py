@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import base64
 import io
+import hashlib
 import json
 import re
 import shutil
@@ -46,6 +47,9 @@ for name in ('megapro-wordmark.png', 'megapro-wordmark-dark.png'):
 brand_colours = {}
 sif_bounds = Image.open(root/'docs/sponsors/SIF-logo.png').getchannel('A').getbbox()
 assert sif_bounds == (23, 196, 1003, 815), ('SIF artwork changed; recheck crop', sif_bounds)
+pratt_path = root/'docs/sponsors/pratt-whitney-logo.png'
+assert hashlib.sha256(pratt_path.read_bytes()).hexdigest() == '6e34f5c99232960c591af6478653f215969561339d1cdbda4a97ee237b0289ca'
+assert Image.open(pratt_path).getchannel('A').getbbox() == (2, 1, 579, 506)
 for sponsor, filename in (('dishoncnc.com', 'dishon-logo-hires.png'),
                           ('hoskin.ca', 'hoskin-logo-hires.png'),
                           ('innovationboostzone', 'ibz-logo-transparent.png')):
@@ -64,7 +68,10 @@ with sync_playwright() as p:
             page.on('pageerror', lambda error: errors.append(str(error)))
             page.goto(args.url.rstrip('/')+'/sponsors/', wait_until='domcontentloaded')
             page.wait_for_function('(dark)=>document.body.dataset.mdColorScheme===(dark?"slate":"default")', arg=theme=='dark')
-            assert page.locator('.sponsor-grid > a.sponsor-item').count() == 24
+            assert page.locator('.sponsor-grid > a.sponsor-item').count() == 25
+            pratt = page.get_by_role('link', name='Pratt & Whitney', exact=True)
+            assert pratt.get_attribute('href') == 'https://www.prattwhitney.com/'
+            assert pratt.locator('img').evaluate('(img)=>getComputedStyle(img).filter') == 'none'
             assert page.locator('.sponsor-grid > :not(a)').count() == 0
             assert page.get_by_role('link', name='Artwork credits', exact=True).count() == 0
             assert '© 2017 MEGAPRO Tools' in page.locator('.sponsor-item[href*="megaprotools"]').get_attribute('title')
@@ -115,6 +122,14 @@ with sync_playwright() as p:
             for item in page.locator('.sponsor-item').all():
                 item.scroll_into_view_if_needed()
                 item.locator('img:visible').evaluate('(img)=>img.decode()')
+            pratt_geometry = pratt.evaluate('''tile=>{
+                const img=tile.querySelector('img'), r=img.getBoundingClientRect();
+                const c=tile.querySelector('.sponsor-logo__crop').getBoundingClientRect();
+                const x=r.width/648, y=r.height/512;
+                return {margins:[r.x+2*x-c.x,r.y+y-c.y,
+                    c.right-r.x-579*x,c.bottom-r.y-506*y]};
+            }''')
+            assert all(-.05 <= margin <= .3 for margin in pratt_geometry['margins']), ('Pratt & Whitney clipped or padded', pratt_geometry)
             sif = page.locator('.sponsor-item.logo-sif')
             sif_geometry = sif.evaluate('''tile=>{
                 const img=tile.querySelector('img'), r=img.getBoundingClientRect();
@@ -192,9 +207,10 @@ with sync_playwright() as p:
             if width in (390, 768, 1440):
                 page.screenshot(path=str(out/f'sponsors-{width}-{theme}.png'), full_page=True)
             if width == 390:
+                pratt.screenshot(path=str(out/f'pratt-whitney-{theme}.png'))
                 for name in ('flownex', 'megaprotools', 'steinindustries', 'notion'):
                     page.locator(f'.sponsor-item[href*="{name}"]').screenshot(path=str(out/f'{name}-{theme}.png'))
             print(json.dumps({'width':width,'theme':theme,'logos':[{k:logo[k] for k in ('name','quality')} for logo in result]}), flush=True)
             page.close()
     browser.close()
-print('All 24 logos: 3x-or-vector sharpness, tight centered bounds and light/dark rendering passed.')
+print('All 25 logos: 3x-or-vector sharpness, tight centered bounds and light/dark rendering passed.')
