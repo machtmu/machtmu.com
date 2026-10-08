@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Stress real same-document navigation back to home and its lower media."""
 import argparse
+import re
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -93,7 +94,12 @@ with sync_playwright() as playwright:
             check_home('first-return')
             top_link('SPRINT', '/SPRINT/')
             page.locator('.project-cards a[href$="electronics/"]').first.click()
-            page.wait_for_url(base + '/SPRINT/electronics/')
+            # Native heading tracking can preserve a fragment while the
+            # fetched document replaces the overview. Check the exact route
+            # and completed electronics content, not the transient fragment.
+            page.wait_for_url(re.compile(re.escape(base + '/SPRINT/electronics/') + r'(?:#.*)?$'))
+            page.wait_for_function('document.querySelector("link[rel=canonical]").href.endsWith("/SPRINT/electronics/")')
+            page.locator('.md-content #sprint-electronics').wait_for(state='visible')
             confirm_same_document()
             check_prompt_drawer()
             top_link('Team', '/team/')
