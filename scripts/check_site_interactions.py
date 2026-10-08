@@ -135,14 +135,14 @@ with sync_playwright() as p:
     assert page.locator('.home-hero__subtitle').inner_text()=='TMU Liquid Rocketry'
     branding=page.locator('.home-hero__inner').evaluate('''(el)=>{
      const logo=el.querySelector('img').getBoundingClientRect(), subtitle=el.querySelector('p').getBoundingClientRect(), hero=el.closest('.home-hero').getBoundingClientRect();
-     return {wordAxis:logo.left+logo.width*.43,subtitleAxis:subtitle.left+subtitle.width/2,logoWidth:logo.width,viewportAxis:hero.left+hero.width/2,gap:subtitle.top-logo.bottom};
+     return {wordAxis:logo.left+logo.width*(423+1625/2)/2471,subtitleAxis:subtitle.left+subtitle.width/2,logoWidth:logo.width,viewportAxis:hero.left+hero.width/2,gap:subtitle.top-logo.bottom};
     }''')
-    assert abs(branding['wordAxis']-branding['subtitleAxis']-branding['logoWidth']*.02)<1, branding
+    assert abs(branding['wordAxis']-branding['subtitleAxis'])<1, branding
     assert abs(branding['subtitleAxis']-branding['viewportAxis'])<1, branding
     assert abs(branding['gap']-(8 if width<=768 else 10))<1, branding
     assert page.locator('.home-hero__logo').get_attribute('alt')=='MACH'
-    assert page.locator('.home-hero__logo').get_attribute('src').endswith('/logo-hero-dark.webp')
-    assert page.locator('.home-hero__logo').evaluate('i=>[i.naturalWidth,i.naturalHeight]')==[2048,636]
+    assert page.locator('.home-hero__logo').get_attribute('src').endswith('/logo-hero-word-centered.svg')
+    assert page.locator('.home-hero__logo').evaluate('i=>[i.naturalWidth,i.naturalHeight]')==[2471,636]
     if not page.evaluate('matchMedia("(dynamic-range: high)").matches'):
      assert page.locator('.home-hero__title').evaluate('(e)=>getComputedStyle(e,"::after").display')=='none'
      assert page.locator('.home-hero__title').evaluate('(e)=>getComputedStyle(e,"::before").display')=='none'
@@ -553,13 +553,13 @@ with sync_playwright() as p:
   page.evaluate('''()=>{for(const sheet of document.styleSheets){let rules;try{rules=sheet.cssRules}catch{continue}for(const rule of rules){if(rule.type===CSSRule.MEDIA_RULE&&rule.conditionText==="(dynamic-range: high)")rule.media.mediaText="all";}}}''')
   hdr=page.locator('.home-hero__title').evaluate('''e=>{const s=getComputedStyle(e,"::after"),r=e.getBoundingClientRect();return {display:s.display,opacity:s.opacity,mask:s.maskImage,image:s.backgroundImage,pointer:s.pointerEvents,width:parseFloat(s.width),height:parseFloat(s.height),titleWidth:r.width,titleHeight:r.height}}''')
   assert hdr['display']=='block' and hdr['opacity']=='0.5' and hdr['pointer']=='none',hdr
-  assert 'logo-hero-hdr-mask.png' in hdr['mask'] and 'white-7.5x.jpg' in hdr['image'],hdr
+  assert 'logo-hero-word-centered-hdr-mask.svg' in hdr['mask'] and 'white-7.5x.jpg' in hdr['image'],hdr
   page.locator('.home-hero__logo').evaluate('i=>i.decode()')
-  assert page.locator('.home-hero__logo').evaluate('i=>[i.naturalWidth,i.naturalHeight]')==[2048,636]
+  assert page.locator('.home-hero__logo').evaluate('i=>[i.naturalWidth,i.naturalHeight]')==[2471,636]
   assert abs(hdr['width']-hdr['titleWidth'])<1 and abs(hdr['height']-hdr['titleHeight'])<1,hdr
   accent=page.locator('.home-hero__title').evaluate('''e=>{const s=getComputedStyle(e,"::before");return {display:s.display,opacity:s.opacity,mask:s.maskImage,image:s.backgroundImage,pointer:s.pointerEvents,width:parseFloat(s.width),height:parseFloat(s.height)}}''')
   assert accent['display']=='block' and accent['opacity']=='0.5' and accent['pointer']=='none',accent
-  assert 'logo-hero-hdr-accent-mask.png' in accent['mask'] and 'red-7.5x.jpg' in accent['image'],accent
+  assert 'logo-hero-word-centered-hdr-accent-mask.svg' in accent['mask'] and 'red-7.5x.jpg' in accent['image'],accent
   assert abs(accent['width']-hdr['width'])<1 and abs(accent['height']-hdr['height'])<1,accent
   print(f'Hero HDR lettering and red circle 50-percent alignment passed: {width}px',flush=True)
   page.goto(base+'/team/',wait_until='domcontentloaded')
