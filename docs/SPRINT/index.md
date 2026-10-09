@@ -34,7 +34,7 @@ hide:
     </article>
 
     <article class="subsystem-item">
-        <a href="electronics/"><img src="electronics/overview.webp" alt="SPRINT electrical ground-support equipment" loading="lazy" decoding="async"></a>
+        <a href="electronics/" class="project-card-media--full-frame"><img src="electronics/enclosure-img-2916.webp" alt="Telemetry and control electrical enclosure" width="3491" height="3491" loading="lazy" decoding="async"></a>
         <div>
         <h3><a href="electronics/">Electronics</a></h3>
         </div>

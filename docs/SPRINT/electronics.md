@@ -1,7 +1,7 @@
 ---
 title: SPRINT Electronics
 description: SPRINT Electronics
-image: https://machtmu.com/SPRINT/electronics/overview.webp
+image: https://machtmu.com/SPRINT/electronics/enclosure-img-2916.webp
 hide:
   - navigation
   - path
@@ -12,7 +12,7 @@ hide:
 
 ## Hardware
 
-![SPRINT electrical ground-support equipment](electronics/overview.webp)
+![Telemetry and control electrical enclosure](electronics/enclosure-img-2916.webp)
 <p class="image-caption">Electrical Ground Support Equipment (EGSE)</p>
 
 
