@@ -119,7 +119,6 @@
     viewer.append(portrait);
     const links = button.closest(".former-member-card").querySelector(".former-member-links")?.cloneNode(true);
     if (links) viewer.append(links);
-    formerMemberDialog.classList.toggle("former-member-dialog--has-links", Boolean(links));
     formerMemberDialog.replaceChildren(viewer);
     formerMemberDialog.showModal();
     // Responsive delivery must describe the expanded photo, not its source

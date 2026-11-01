@@ -144,8 +144,9 @@ def main():
                         assert active_card.locator('.former-member-links').evaluate('''g=>{
                           const card=g.closest('.former-member-card,.former-member-viewer'),r=g.getBoundingClientRect();
                           const p=card.querySelector('.former-member-portrait').getBoundingClientRect(),a=card.getBoundingClientRect();
-                          return Math.abs(r.top-p.bottom)<1&&r.height>=44&&r.bottom<=a.bottom+1&&
-                            r.left>=a.left&&r.right<=a.right;
+                          const text=card.querySelector('.former-member-details').getBoundingClientRect();
+                          return r.height>=44&&r.top>=p.top&&r.bottom<=p.bottom&&
+                            Math.abs(r.bottom-(p.bottom-4))<1&&r.left>=text.right&&r.right<=p.right;
                         }'''), name
                     for link, (kind, url) in zip(links.all(), expected_links):
                         label = f"{name}'s {'website' if kind == 'website' else 'LinkedIn'}"
@@ -157,8 +158,7 @@ def main():
                         assert svg.count() == 1 and svg.is_visible()
                         assert svg.get_attribute('aria-hidden') == 'true'
                         assert svg.get_attribute('focusable') == 'false'
-                        assert link.evaluate('''a=>getComputedStyle(a).color===(a.closest('dialog')?
-                          'rgb(255, 255, 255)':getComputedStyle(a.closest('.former-member-card')).color)''')
+                        assert link.evaluate("a=>getComputedStyle(a).color==='rgb(255, 255, 255)'")
                         assert link.evaluate('a=>{const r=a.getBoundingClientRect();return r.width>=44&&r.height>=44}')
                         assert svg.evaluate('s=>{const r=s.getBoundingClientRect();return r.width===20&&r.height===20}')
                         page.keyboard.press('Tab')
@@ -198,8 +198,8 @@ def main():
                   const name=c.querySelector('.former-member-name');
                   const n=name.getBoundingClientRect();
                   const overlay=c.querySelector('.former-member-overlay'),o=overlay.getBoundingClientRect();
-                  const footer=c.querySelector('.former-member-links');
-                  const f=footer&&getComputedStyle(footer).display!=='none'?footer.getBoundingClientRect():null;
+                  const socials=c.querySelector('.former-member-links');
+                  const f=socials&&getComputedStyle(socials).display!=='none'?socials.getBoundingClientRect():null;
                   const compact=window.innerWidth<=760;
                   const roles=[...c.querySelectorAll('small')].map(s=>s.getBoundingClientRect());
                   const image=portrait.querySelector('img'),i=image?.getBoundingClientRect();
@@ -212,7 +212,7 @@ def main():
                   return {name:c.querySelector('strong').textContent,compact,portrait:[a.width,a.height],
                     border:parseFloat(style.borderTopWidth),shadow:style.boxShadow,
                     overflow:c.scrollWidth>c.clientWidth+1,
-                    allInfoInside:Math.abs(r.bottom-(f?f.bottom:a.bottom))<1&&o.top>=a.top&&o.bottom<=a.bottom+1&&
+                    allInfoInside:Math.abs(r.bottom-a.bottom)<1&&(!f||f.bottom<=a.bottom&&f.top>=a.top&&f.left>=d.right)&&o.top>=a.top&&o.bottom<=a.bottom+1&&
                       roles.every((role,index)=>role.left>=a.left&&role.right<=a.right&&
                         role.top>=(index?roles[index-1].bottom:n.bottom)-1&&role.bottom<=a.bottom+1),
                     roleFits:[...c.querySelectorAll('small')].every(s=>s.scrollWidth<=s.clientWidth+1),

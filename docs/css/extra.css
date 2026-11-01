@@ -11,7 +11,7 @@ img {
     width: auto; /* Maintains aspect ratio */
 }
 
-/* Names/role summaries overlay squares; social links use a footer below. */
+/* Names, role summaries and social links share each portrait's bottom overlay. */
 .former-members-grid {
     align-items: start;
     display: grid;
@@ -27,6 +27,7 @@ img {
     display: block;
     min-width: 0;
     padding: 0;
+    position: relative;
 }
 
 .former-member-portrait {
@@ -57,6 +58,7 @@ img {
     isolation: isolate;
     overflow-wrap: anywhere;
     padding: 0.4rem;
+    padding-inline-end: calc(0.4rem + var(--former-links-space, 0px));
     position: absolute;
     z-index: 1;
 }
@@ -127,20 +129,29 @@ img {
 }
 
 .former-member-links {
-    background: none;
+    background: transparent;
     border-radius: 0;
     display: flex;
     flex-shrink: 0;
     gap: 2px;
     height: 44px;
     justify-content: flex-end;
-    position: static;
+    bottom: 4px;
+    position: absolute;
+    right: 4px;
+    z-index: 2;
 }
 
-.md-typeset.former-member-dialog .former-member-link,
-.md-typeset.former-member-dialog .former-member-link:visited,
-.md-typeset.former-member-dialog .former-member-link:hover,
-.md-typeset.former-member-dialog .former-member-link:focus {
+.former-member-viewer { position: relative; }
+.former-member-card:has(> .former-member-links),
+.former-member-viewer:has(> .former-member-links) { --former-links-space: 48px; }
+.former-member-card:has(> .former-member-links .former-member-link--website),
+.former-member-viewer:has(> .former-member-links .former-member-link--website) { --former-links-space: 94px; }
+
+.md-typeset .former-member-links .former-member-link,
+.md-typeset .former-member-links .former-member-link:visited,
+.md-typeset .former-member-links .former-member-link:hover,
+.md-typeset .former-member-links .former-member-link:focus {
     color: #fff !important;
 }
 
@@ -164,11 +175,11 @@ img {
 }
 
 .md-typeset .former-member-link:hover {
-    background: color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+    background: rgb(255 255 255 / 14%);
 }
 
 .md-typeset .former-member-link:focus-visible {
-    outline: 2px solid var(--md-accent-fg-color);
+    outline: 2px solid #fff;
     outline-offset: -2px;
 }
 
@@ -271,9 +282,8 @@ img {
     max-width: none;
     overflow: visible;
     padding: 0;
-    width: min(92vw, calc(100dvh - 32px - var(--former-viewer-footer, 0px)), 640px);
+    width: min(92vw, calc(100dvh - 32px), 640px);
 }
-.former-member-dialog--has-links { --former-viewer-footer: 44px; }
 .former-member-dialog::backdrop { background: rgb(0 0 0 / 78%); }
 .former-member-dialog-open { overflow: hidden; }
 .former-member-portrait--detail .former-member-name strong { font-size: 1rem; }
