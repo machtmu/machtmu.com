@@ -145,14 +145,16 @@ class Rewriter(HTMLParser):
             # Original opt-ins retain their native delivery unless a studio
             # portrait explicitly requests responsive display copies.
             # Even then, the unchanged native master remains data-original-src.
-            portrait = "data-portrait-delivery" in values
+            former_portrait = "former-member-avatar" in values.get("class", "").split()
+            portrait = "data-portrait-delivery" in values or former_portrait
             result = (self.media.variants(values["src"], self.page, portrait=True) if portrait
                       else None if "data-display-original" in values else self.media.variants(values["src"], self.page, logo=logo))
             if result:
                 src, srcset, width, height = result
                 values["data-original-src"] = values["src"]
                 values.update(src=src, srcset=srcset, width=str(width), height=str(height))
-                values["sizes"] = (values.get("sizes", "100vw") if portrait else
+                values["sizes"] = (values.get("sizes", "(max-width: 1199px) 32vw, 24vw") if former_portrait else
+                                   values.get("sizes", "100vw") if portrait else
                                    "(max-width: 900px) 60vw, 250px" if logo
                                    else "(max-width: 760px) 92vw, (max-width: 1220px) 70vw, 960px")
                 if not portrait and "/assets/images/leads/" in "/" + unquote(urlsplit(values["data-original-src"]).path).lstrip("./"):

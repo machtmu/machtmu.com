@@ -1,4 +1,7 @@
 .cache/
+/research/
+/output/
+__pycache__/
 .lighthouseci/
 .DS_Store
 .venv

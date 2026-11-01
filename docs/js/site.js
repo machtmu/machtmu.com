@@ -6,6 +6,129 @@
   let searchIndexPromise;
   let searchRevision = 0;
   let lastFocusedElement;
+  let formerMemberDialog;
+  let formerMemberOpener;
+  let formerCaptionFitFrame;
+
+  function fitFormerCaption(portrait) {
+    // A framed image may be wider than its clipped square. Advertise actual
+    // rendered image pixels in both grid/viewer, including after resizing.
+    const photo = portrait.querySelector("img");
+    if (photo?.srcset) photo.sizes = `${Math.ceil(photo.getBoundingClientRect().width)}px`;
+    portrait.querySelectorAll(".former-member-name strong, .former-member-summary").forEach((line) => {
+      line.style.fontSize = "";
+      const range = document.createRange();
+      const available = line.clientWidth - 0.5;
+      const textWidthOf = () => {
+        range.selectNodeContents(line);
+        return range.getBoundingClientRect().width;
+      };
+      if (line.classList.contains("former-member-summary")) {
+        // Prefer real role words at the existing readable size. Only a modest
+        // 10% fit is allowed before narrow tiles use their compact fallback.
+        // Save the fallback once so font loads/resizes can restore full labels.
+        line.dataset.compactSummary ??= line.textContent;
+        line.dataset.expandedSummary ??= line.dataset.compactSummary
+          .replace(/^T&C Lead\b/, "Telemetry and Control Lead")
+          .replace(/^PM Lead\b/, "Propellant Management Lead")
+          .replace(/^Tech\. Director\b/, "Technical Director");
+        const full = line.dataset.fullSummary || line.dataset.compactSummary;
+        line.textContent = full;
+        if (!portrait.classList.contains("former-member-portrait--detail")) {
+          for (const candidate of new Set([full, line.dataset.expandedSummary, line.dataset.compactSummary])) {
+            line.textContent = candidate;
+            if (textWidthOf() * 0.9 <= available) break;
+          }
+        }
+      }
+      const textWidth = textWidthOf();
+      if (textWidth > available && available > 0) {
+        const base = parseFloat(getComputedStyle(line).fontSize);
+        line.style.fontSize = `${Math.floor(base * available / textWidth * 100) / 100}px`;
+      }
+    });
+  }
+
+  function fitFormerCaptions() {
+    cancelAnimationFrame(formerCaptionFitFrame);
+    formerCaptionFitFrame = requestAnimationFrame(() => {
+      document.querySelectorAll(".former-member-portrait").forEach(fitFormerCaption);
+    });
+  }
+  window.addEventListener("resize", fitFormerCaptions);
+  document.fonts.ready.then(fitFormerCaptions);
+
+  function prepareFormerMembers() {
+    // A single delegated listener/dialog survives Zensical instant navigation.
+    // Never retain a removed page's profile or return focus to a detached tile.
+    if (formerMemberOpener && !formerMemberOpener.isConnected) {
+      if (formerMemberDialog?.open) formerMemberDialog.close();
+      formerMemberDialog?.replaceChildren();
+      formerMemberOpener = undefined;
+    }
+    document.querySelectorAll(".former-member-card").forEach((card) => {
+      if (card.querySelector(".former-member-open")) return;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "former-member-open";
+      button.setAttribute("aria-haspopup", "dialog");
+      const fullSummary = card.querySelector(".former-member-summary")?.dataset.fullSummary;
+      button.setAttribute("aria-label", `View ${card.querySelector("strong").textContent}'s profile details${fullSummary ? ': ' + fullSummary : ''}`);
+      card.querySelector(".former-member-portrait").append(button);
+      card.classList.add("former-member-card--interactive");
+      card.closest(".former-members-grid").classList.add("former-members-grid--compact-ready");
+    });
+    fitFormerCaptions();
+  }
+
+  function openFormerMember(button) {
+    if (!formerMemberDialog) {
+      formerMemberDialog = document.createElement("dialog");
+      formerMemberDialog.className = "former-member-dialog md-typeset";
+      formerMemberDialog.setAttribute("aria-labelledby", "former-member-dialog-name");
+      document.body.append(formerMemberDialog);
+      formerMemberDialog.addEventListener("close", () => {
+        document.body.classList.remove("former-member-dialog-open");
+        if (formerMemberOpener?.isConnected) formerMemberOpener.focus({ preventScroll: true });
+      });
+      formerMemberDialog.addEventListener("click", (event) => {
+        const bounds = formerMemberDialog.getBoundingClientRect();
+        if (event.target === formerMemberDialog &&
+            (event.clientX < bounds.left || event.clientX > bounds.right ||
+             event.clientY < bounds.top || event.clientY > bounds.bottom)) formerMemberDialog.close();
+      });
+    }
+    formerMemberOpener = button;
+    const portrait = button.closest(".former-member-portrait").cloneNode(true);
+    portrait.classList.add("former-member-portrait--detail");
+    portrait.querySelector(".former-member-open").remove();
+    portrait.querySelector("strong").id = "former-member-dialog-name";
+    const summary = portrait.querySelector(".former-member-summary");
+    if (summary) summary.textContent = summary.dataset.fullSummary;
+    const image = portrait.querySelector("img");
+    if (image) image.loading = "eager";
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "former-member-close";
+    close.setAttribute("aria-label", "Close profile details");
+    close.textContent = "×";
+    close.addEventListener("click", () => formerMemberDialog.close());
+    portrait.prepend(close);
+    const viewer = document.createElement("div");
+    viewer.className = "former-member-viewer";
+    viewer.append(portrait);
+    const links = button.closest(".former-member-card").querySelector(".former-member-links")?.cloneNode(true);
+    if (links) viewer.append(links);
+    formerMemberDialog.classList.toggle("former-member-dialog--has-links", Boolean(links));
+    formerMemberDialog.replaceChildren(viewer);
+    formerMemberDialog.showModal();
+    // Responsive delivery must describe the expanded photo, not its source
+    // thumbnail. The browser still chooses only existing native variants.
+    if (image) image.sizes = `${Math.ceil(image.getBoundingClientRect().width)}px`;
+    fitFormerCaption(portrait);
+    document.body.classList.add("former-member-dialog-open");
+    close.focus();
+  }
 
   const getDialog = () => document.querySelector("[data-mach-search-input]")?.closest("[role='dialog']");
 
@@ -40,6 +163,7 @@
 
   function preparePage() {
     prepareLogos();
+    prepareFormerMembers();
     // The theme keeps the header during instant navigation. Derive visibility
     // from the current page rather than the page that first created it.
     const headerLogo = document.querySelector('.md-header [data-md-component="logo"]');
@@ -195,6 +319,11 @@
   }
 
   document.addEventListener("click", (event) => {
+    const formerMemberButton = event.target.closest(".former-member-open");
+    if (formerMemberButton) {
+      openFormerMember(formerMemberButton);
+      return;
+    }
     const drawerToggle = event.target.closest("[data-mach-drawer-toggle]");
     if (drawerToggle) {
       const drawer = document.getElementById("__drawer");

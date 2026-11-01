@@ -107,6 +107,26 @@ class PreparationTests(unittest.TestCase):
             with Image.open(master) as source, Image.open(next(media.output.glob('*-900-portrait-lossless.webp'))) as native:
                 self.assertEqual(source.convert('RGBA').tobytes(), native.convert('RGBA').tobytes())
 
+    def test_former_portraits_use_high_quality_native_aware_delivery(self):
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory) / 'site'
+            master = site / 'assets/images/leads/former.jpg'
+            master.parent.mkdir(parents=True)
+            Image.effect_noise((800, 800), 45).convert('RGB').save(master, 'JPEG', quality=95)
+            digest = hashlib.sha256(master.read_bytes()).hexdigest()
+            media = Media(site, Path(directory) / 'cache')
+            writer = Rewriter(site / 'team/index.html', media, {})
+            writer.feed('<img class="former-member-avatar" src="/assets/images/leads/former.jpg" data-display-original>')
+            result = ''.join(writer.parts)
+            self.assertIn('sizes="(max-width: 1199px) 32vw, 24vw"', result)
+            self.assertIn('data-original-src="/assets/images/leads/former.jpg"', result)
+            self.assertIn('800-portrait-lossless.webp', result)
+            self.assertIn('320-portrait-q96.webp', result)
+            self.assertNotIn('45vw', result)
+            self.assertEqual(hashlib.sha256(master.read_bytes()).hexdigest(), digest)
+            with Image.open(master) as source, Image.open(next(media.output.glob('*-800-portrait-lossless.webp'))) as native:
+                self.assertEqual(source.convert('RGBA').tobytes(), native.convert('RGBA').tobytes())
+
 
 if __name__ == "__main__":
     unittest.main()

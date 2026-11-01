@@ -1,0 +1,93 @@
+/* Employer history is distinct from sponsorship. Native brand artwork has
+   an optical size cap rather than being stretched to fill identical cards. */
+.md-typeset .team-employers {
+  margin-block: 2.5rem 3rem;
+}
+
+.md-typeset .team-employers .team-employer-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+
+.md-typeset .team-employers .team-employer-list > li {
+  flex: 0 0 calc((100% - 4.5rem) / 4);
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.md-typeset .team-employer-link {
+  align-items: center;
+  border-radius: 0.2rem;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.md-typeset .team-employer-link:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 4px;
+}
+
+.md-typeset .team-employer-link img {
+  border-radius: 0;
+  display: block;
+  height: auto;
+  margin: 0;
+  max-height: var(--employer-height, 58px);
+  max-width: min(100%, var(--employer-width, 180px));
+  object-fit: contain;
+  width: auto;
+}
+
+.md-typeset .team-employer-link .team-employer-dark,
+[data-md-color-scheme="slate"] .md-typeset .team-employer-link .team-employer-light {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .team-employer-link .team-employer-dark {
+  display: block;
+}
+
+.md-typeset .team-employer-link--tesla { --employer-width: 155px; }
+.md-typeset .team-employer-link--spacex { --employer-width: 185px; }
+.md-typeset .team-employer-link--rocket-lab {
+  --employer-width: 133px;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.md-typeset .team-employer-caption {
+  color: color-mix(in srgb, var(--md-default-fg-color) 80%, var(--md-default-bg-color));
+  font-size: 0.58rem;
+  line-height: 1.25;
+  max-width: 100%;
+  text-align: center;
+}
+.md-typeset .team-employer-link--cesaroni { --employer-width: 185px; --employer-height: 72px; }
+.md-typeset .team-employer-link--dishon { --employer-width: 135px; --employer-height: 72px; }
+.md-typeset .team-employer-link--pratt { --employer-width: 106px; --employer-height: 84px; }
+
+[data-md-color-scheme="slate"] .team-employer-link--dishon img {
+  filter: url(#employer-preserve-red);
+}
+
+/* NordSpace supplies a pure-white transparent wordmark. Only this neutral
+   mark is adapted to black on light surfaces; coloured brands are untouched. */
+.md-typeset .team-employer-link--nordspace img { filter: brightness(0); }
+[data-md-color-scheme="slate"] .md-typeset .team-employer-link--nordspace img { filter: none; }
+
+@media (max-width: 760px) {
+  .md-typeset .team-employers { margin-block: 2rem; }
+  .md-typeset .team-employers .team-employer-list { gap: 0.75rem 1rem; margin-top: 1.25rem; }
+  .md-typeset .team-employers .team-employer-list > li { flex-basis: calc((100% - 1rem) / 2); }
+  .md-typeset .team-employer-link { height: 92px; padding: 0.4rem; }
+  .md-typeset .team-employer-link img { max-height: min(var(--employer-height, 58px), 72px); }
+}

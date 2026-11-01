@@ -141,8 +141,9 @@
   }
 
   .md-typeset .team-portraits .team-portrait-caption {
-    gap: 0.1rem;
-    padding: 0.5rem;
+    gap: 1px;
+    line-height: 1.15;
+    padding: 6px;
   }
 
   .md-typeset .team-portraits .team-portrait-caption strong {
@@ -150,19 +151,19 @@
   }
 
   .md-typeset .team-portraits .team-portrait-caption > em {
-    font-size: 0.6rem;
+    font-size: 10px;
   }
 }
 
 @media (max-width: 360px) {
   .md-typeset .team-portraits .team-portrait-caption {
-    padding: 0.3rem;
+    padding: 4px;
   }
   .md-typeset .team-portraits .team-portrait-caption strong {
     font-size: 0.62rem;
   }
   .md-typeset .team-portraits .team-portrait-caption > em {
-    font-size: 0.53rem;
+    font-size: 9.5px;
   }
 }
 
@@ -181,19 +182,18 @@
   }
 }
 
-/* Wider archive photos need a subject-centred circular viewport, rather
-   than a centre crop of the entire scene. No source pixels are rewritten. */
+/* Source-centred square archive crops; native source pixels stay unchanged. */
 .former-member-avatar-frame {
-  border-radius: 50%;
+  border-radius: 0;
   display: block;
-  flex: 0 0 2.5rem;
-  height: 2.5rem;
+  height: 100%;
+  inset: 0;
   overflow: hidden;
-  position: relative;
-  width: 2.5rem;
+  position: absolute;
+  width: 100%;
 }
 
-.former-member-card .former-member-avatar-frame img {
+.former-member-portrait .former-member-avatar-frame img {
   border-radius: 0;
   height: auto;
   left: 50%;
@@ -212,6 +212,14 @@
   --avatar-eye: 28%;
 }
 
+/* User-supplied 1440x1920 original: CSS-only square ROI x490,y450,size620. */
+.former-member-avatar-frame--evan-attachment {
+  --avatar-width: 232.2580645%;
+  --avatar-center: 55.5555556%;
+  --avatar-eye: 34.7395833%;
+  --avatar-eye-line: 35%;
+}
+
 .former-member-avatar-frame--kai {
   --avatar-width: 125%;
   --avatar-center: 40%;
@@ -219,20 +227,47 @@
 }
 
 .former-member-avatar-frame--leandro {
-  --avatar-width: 208%;
-  --avatar-center: 24.5%;
+  --avatar-width: 190%;
+  --avatar-center: 26.5%;
   --avatar-eye: 25%;
-  --avatar-eye-line: 40%;
+  --avatar-eye-line: 42%;
 }
 
 .former-member-avatar-frame--mark {
-  --avatar-width: 250%;
+  --avatar-width: 200%;
   --avatar-center: 68%;
   --avatar-eye: 63%;
+}
+
+.former-member-avatar-frame--farhan {
+  --avatar-width: 210%;
+  --avatar-center: 47%;
+  --avatar-eye: 39%;
+  --avatar-eye-line: 40%;
+}
+
+.former-member-avatar-frame--balin {
+  --avatar-width: 360%;
+  --avatar-center: 58%;
+  --avatar-eye: 30%;
+  --avatar-eye-line: 40%;
 }
 
 .former-member-avatar-frame--shivesh {
   --avatar-width: 140%;
   --avatar-center: 46.5%;
   --avatar-eye: 26%;
+}
+
+/* Legacy head framing retained as CSS, not irreversible native asset crops. */
+.former-member-avatar-frame--antonella {
+  --avatar-width: 222.222222%;
+  --avatar-center: 50%;
+  --avatar-eye: 24.5%;
+}
+
+.former-member-avatar-frame--david {
+  --avatar-width: 153.846154%;
+  --avatar-center: 55%;
+  --avatar-eye: 40.25%;
 }

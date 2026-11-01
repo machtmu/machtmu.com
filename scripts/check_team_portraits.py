@@ -23,7 +23,7 @@ def check(page, base, width):
         image.scroll_into_view_if_needed()
         image.evaluate('i => i.decode()')
     assert page.locator('.team-portrait-caption strong').all_text_contents() == NAMES
-    assert page.locator('.former-member-card').count() == 24
+    assert page.locator('.former-member-card').count() == 30
     measurements = images.evaluate_all('''(images, landmarks) => images.map(i => {
       const card = i.closest('.team-portrait');
       const r = card.getBoundingClientRect(), b = i.getBoundingClientRect();
@@ -56,6 +56,8 @@ def check(page, base, width):
         crownY:sourceY(measured.crown_y), chinY:sourceY(measured.chin_y),
         measuredHeadHeight:(measured.chin_y-measured.crown_y)/measured.height*b.height/r.height,
         measuredEyesY:sourceY(measured.eyes_y), captionTop,
+        captionHeight:card.querySelector('.team-portrait-caption').getBoundingClientRect().height,
+        captionRoleFont:parseFloat(getComputedStyle(card.querySelector('.team-portrait-caption > em')).fontSize),
         filter:imageStyle.filter,
         expectedWidth:r.width*parseFloat(style.getPropertyValue('--portrait-width'))/100*
           parseFloat(style.getPropertyValue('--portrait-scale')),
@@ -88,6 +90,9 @@ def check(page, base, width):
         assert entry['captionTop'] - entry['chinY'] > .015, entry
         assert entry['filter'] == 'none', entry
         assert entry['captionFits'], entry
+        if width <= 760:
+            assert entry['captionRoleFont'] <= (9.51 if width <= 360 else 10.01), entry
+            assert entry['captionHeight'] <= (35 if width <= 360 else 42), entry
     assert max(e['measuredHeadHeight'] for e in measurements)-min(e['measuredHeadHeight'] for e in measurements) < .003
     for image in page.locator('.former-member-avatar').all():
         image.scroll_into_view_if_needed()
@@ -154,7 +159,7 @@ def main():
                     path=str(args.output / f'{args.browser}-{width}-{scheme}.png'),
                     animations='disabled', style='.md-header{visibility:hidden!important}')
                 if width == 1440 and scheme == 'light':
-                    page.locator('.former-members-grid').screenshot(
+                    page.locator('.former-members-grid:not(.early-members-grid)').screenshot(
                         path=str(args.output / f'{args.browser}-former-leads.png'),
                         animations='disabled', style='.md-header{visibility:hidden!important}')
                 assert not errors, errors

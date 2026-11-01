@@ -11,28 +11,108 @@ img {
     width: auto; /* Maintains aspect ratio */
 }
 
-/* Compact former-member cards with optional LinkedIn profile photos. */
+/* Names/role summaries overlay squares; social links use a footer below. */
 .former-members-grid {
+    align-items: start;
     display: grid;
-    gap: 0.4rem;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .former-member-card {
-    align-items: center;
-    border: 0.05rem solid var(--md-default-fg-color--lightest);
-    border-radius: 0.2rem;
-    display: flex;
-    gap: 0.65rem;
-    min-height: 2.5rem;
-    padding: 0.55rem 0.65rem;
-    transition: border-color 125ms, box-shadow 125ms;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    min-width: 0;
+    padding: 0;
+}
+
+.former-member-portrait {
+    aspect-ratio: 1;
+    background: var(--mach-surface);
+    display: block;
+    isolation: isolate;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.former-member-portrait::after {
+    background: none;
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.former-member-overlay {
+    bottom: 0;
+    color: #fff;
+    display: grid;
+    gap: 0.2rem;
+    grid-template-columns: minmax(0, 1fr);
+    inset-inline: 0;
+    isolation: isolate;
+    overflow-wrap: anywhere;
+    padding: 0.4rem;
+    position: absolute;
+    z-index: 1;
+}
+
+.former-member-overlay::before {
+    background: linear-gradient(transparent 0, rgb(0 0 0 / 76%) 1.5rem, rgb(0 0 0 / 96%) 100%);
+    content: '';
+    inset: -1.5rem 0 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+}
+
+.former-member-name {
+    color: #fff;
+    display: block;
+    line-height: 1.15;
+    min-width: 0;
+}
+
+.former-member-name strong {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.former-member-portrait .former-member-initials {
+    box-sizing: border-box;
+    border-radius: 0;
+    color: var(--md-default-fg-color);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    height: 100%;
+    inset: 0;
+    padding-bottom: 15%;
+    position: absolute;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .former-members-grid { gap: 0.7rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 761px) {
+    .former-members-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1200px) {
+    .former-members-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 .md-typeset .team-leads a,
 .md-typeset .team-leads a:visited,
 .md-typeset .former-member-card,
-.md-typeset .former-member-card:visited {
+.md-typeset .former-member-link,
+.md-typeset .former-member-link:visited {
     background-image: none !important;
     color: var(--md-default-fg-color) !important;
     text-decoration: none !important;
@@ -40,30 +120,196 @@ img {
 
 .md-typeset .team-leads a:hover,
 .md-typeset .team-leads a:focus,
-.md-typeset .former-member-card:hover,
-.md-typeset .former-member-card:focus {
+.md-typeset .former-member-link:hover,
+.md-typeset .former-member-link:focus {
     color: var(--md-default-fg-color) !important;
     text-decoration: none !important;
 }
 
-a.former-member-card:hover {
-    border-color: var(--md-accent-fg-color);
-    box-shadow: 0 0.1rem 0.25rem rgb(0 0 0 / 8%);
+.former-member-links {
+    background: none;
+    border-radius: 0;
+    display: flex;
+    flex-shrink: 0;
+    gap: 2px;
+    height: 44px;
+    justify-content: flex-end;
+    position: static;
 }
 
-.former-member-card--text-only {
-    padding-left: 0.75rem;
+.md-typeset.former-member-dialog .former-member-link,
+.md-typeset.former-member-dialog .former-member-link:visited,
+.md-typeset.former-member-dialog .former-member-link:hover,
+.md-typeset.former-member-dialog .former-member-link:focus {
+    color: #fff !important;
+}
+
+/* MARS founder-link artwork/style, with comfortable44px targets in both themes. */
+.md-typeset .former-member-link {
+    align-items: center;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    height: 44px;
+    justify-content: center;
+    width: 44px;
+}
+
+.former-member-link svg {
+    display: block;
+    fill: currentColor;
+    height: 20px;
+    max-height: none;
+    max-width: none;
+    width: 20px;
+}
+
+.md-typeset .former-member-link:hover {
+    background: color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+}
+
+.md-typeset .former-member-link:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: -2px;
+}
+
+.former-member-details {
+    display: grid;
+    gap: 0.1rem;
+    grid-template-columns: minmax(0, 1fr);
+    line-height: 1.35;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.former-member-details:empty {
+    display: none;
+}
+
+.former-member-details small {
+    color: #fff;
+    column-gap: 3px;
+    display: grid;
+    font-size: 0.6rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    line-height: 1.2;
+    opacity: 1;
+}
+
+.former-member-role-dates {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.former-member-details .former-member-summary {
+    display: block;
+    line-height: 1.15;
+    min-width: 0;
+    white-space: nowrap;
 }
 
 .former-member-card .former-member-avatar {
-    border-radius: 50%;
+    border-radius: 0;
     display: block;
-    flex: 0 0 2.5rem;
-    height: 2.5rem;
+    height: 100%;
+    inset: 0;
     margin: 0;
     max-height: none;
     object-fit: cover;
-    width: 2.5rem;
+    position: absolute;
+    width: 100%;
+}
+
+/* Compact mobile portraits open a readable full-profile photo dialog. */
+.former-member-open {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    inset: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.md-typeset .former-member-open:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -3px;
+}
+
+@media (max-width: 760px) {
+    .former-members-grid--compact-ready {
+        gap: 0.5rem 0.3rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .former-member-card--interactive .former-member-links { display: none; }
+    .former-members-grid .former-member-card--interactive .former-member-overlay {
+        bottom: 0;
+        gap: 1px;
+        padding: 2px 3px;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-overlay::before {
+        background: linear-gradient(transparent 0, rgb(0 0 0 / 76%) 12px, rgb(0 0 0 / 96%) 100%);
+        inset: -12px 0 0;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-name strong {
+        font-size: 11px;
+        line-height: 1.05;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-summary {
+        font-size: 9px;
+        line-height: 1.05;
+    }
+}
+
+.former-member-dialog {
+    background: #111;
+    border: 0;
+    color: #fff;
+    margin: auto;
+    max-height: none;
+    max-width: none;
+    overflow: visible;
+    padding: 0;
+    width: min(92vw, calc(100dvh - 32px - var(--former-viewer-footer, 0px)), 640px);
+}
+.former-member-dialog--has-links { --former-viewer-footer: 44px; }
+.former-member-dialog::backdrop { background: rgb(0 0 0 / 78%); }
+.former-member-dialog-open { overflow: hidden; }
+.former-member-portrait--detail .former-member-name strong { font-size: 1rem; }
+.former-member-portrait--detail .former-member-summary { font-size: 0.7rem; }
+.former-member-dialog .former-member-avatar {
+    border-radius: 0;
+    height: 100%;
+    inset: 0;
+    margin: 0;
+    max-height: none;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+}
+.former-member-close {
+    align-items: center;
+    background: rgb(0 0 0 / 58%);
+    border: 0;
+    border-radius: 0.3rem;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 28px;
+    height: 44px;
+    justify-content: center;
+    left: 0.2rem;
+    line-height: 1;
+    padding: 0;
+    position: absolute;
+    top: 0.2rem;
+    width: 44px;
+    z-index: 3;
+}
+.md-typeset .former-member-close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
 }
 
 .md-logo .mach-logo {

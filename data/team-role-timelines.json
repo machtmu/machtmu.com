@@ -1,0 +1,1096 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "adam-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/adam-oudeh/",
+      "checked_on": "2026-10-17"
+    },
+    "audrey-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/audreyap/",
+      "checked_on": "2026-10-17"
+    },
+    "zeul-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/zeulewan/",
+      "checked_on": "2026-10-17"
+    },
+    "aditya-shinde-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/adityapshinde/",
+      "checked_on": "2026-10-17"
+    },
+    "anuja-thurairajah-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/anuja-thurairajah-7b1a11290/",
+      "checked_on": "2026-10-17"
+    },
+    "balin-moher-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/balinmoher/",
+      "checked_on": "2026-10-17"
+    },
+    "ben-kubica-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/ben-kubica-9ab3912bb/",
+      "checked_on": "2026-10-17"
+    },
+    "daniel-ibanescu-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/d-ibanescu/",
+      "checked_on": "2026-10-17"
+    },
+    "evan-bhogal-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/evan-bhogal/",
+      "checked_on": "2026-10-17"
+    },
+    "zeul-user-role-confirmation": {
+      "kind": "user_confirmation",
+      "checked_on": "2026-10-17"
+    },
+    "jack-sinclair-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/sin-clair/",
+      "checked_on": "2026-10-17"
+    },
+    "farhan-raza-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/sfraza7/",
+      "checked_on": "2026-10-17"
+    },
+    "juliano-sciabbarrasi-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/juliano-sciabbarrasi-000b74291/",
+      "checked_on": "2026-10-17"
+    },
+    "kai-stewart-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/kai-st/",
+      "checked_on": "2026-10-17"
+    },
+    "leandro-tomarchio-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/leandro-tomarchio/",
+      "checked_on": "2026-10-17"
+    },
+    "mark-paul-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/mark-paul/",
+      "checked_on": "2026-10-17"
+    },
+    "matthew-ho-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/m1ho/",
+      "checked_on": "2026-10-17"
+    },
+    "milad-hemmat-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/milad-hemmat-a84647386/",
+      "checked_on": "2026-10-17"
+    },
+    "nikolai-sydorenko-linkedin-volunteering": {
+      "kind": "linkedin_volunteering",
+      "url": "https://www.linkedin.com/in/nikolai-sydorenko/",
+      "checked_on": "2026-10-17"
+    },
+    "orion-moore-linkedin-volunteering": {
+      "kind": "linkedin_volunteering",
+      "url": "https://www.linkedin.com/in/orion-moore/",
+      "checked_on": "2026-10-17"
+    },
+    "rochelle-suarez-tapanes-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/rochelle-st/",
+      "checked_on": "2026-10-17"
+    },
+    "rui-fernandes-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/rui-fernandes-55997a189/",
+      "checked_on": "2026-10-17"
+    },
+    "shivesh-maraj-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/shivesh-maraj-55b983200/",
+      "checked_on": "2026-10-17"
+    },
+    "umar-shabbir-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/umaremshabbir/",
+      "checked_on": "2026-10-17"
+    },
+    "william-pirie-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/william-pirie-25b8b31a9/",
+      "checked_on": "2026-10-17"
+    },
+    "zak-harrison-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/zakaryharrison/",
+      "checked_on": "2026-10-17"
+    },
+    "antonella-ruta-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/antonella-ruta/",
+      "checked_on": "2026-10-17"
+    },
+    "david-machuca-linkedin-mach-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://www.linkedin.com/in/david-machuca-905a0315b/",
+      "checked_on": "2026-10-17"
+    },
+    "ben-user-role-end-confirmation": {
+      "kind": "user_confirmation",
+      "checked_on": "2026-10-17"
+    },
+    "audrey-user-role-end-confirmation": {
+      "kind": "user_confirmation",
+      "checked_on": "2026-10-17"
+    }
+  },
+  "people": [
+    {
+      "name": "Adam Oudeh",
+      "roles": [
+        {
+          "label": "Structures Lead",
+          "start": {
+            "value": "2023-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "adam-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-12",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "adam-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Anuja Thurairajah",
+      "roles": [
+        {
+          "label": "Director of Media & Logistics",
+          "start": {
+            "value": "2025-05",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "anuja-thurairajah-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-01",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "anuja-thurairajah-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Audrey Abergel-Preston",
+      "roles": [
+        {
+          "label": "Chief Engineer",
+          "start": {
+            "value": "2025-07",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "audrey-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-08",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "audrey-user-role-end-confirmation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Zeul Mordasiewicz",
+      "roles": [
+        {
+          "label": "Propellant Management Member",
+          "start": {
+            "value": "2022-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "zeul-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-07",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "zeul-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Captain",
+          "start": {
+            "value": "2025-07",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "zeul-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-01",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "zeul-linkedin-mach-experience",
+              "zeul-user-role-confirmation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Aditya Shinde",
+      "roles": [
+        {
+          "label": "Software & Propulsion Engineer",
+          "start": {
+            "value": "2024-10",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "aditya-shinde-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-12",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "aditya-shinde-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Balin Moher",
+      "roles": [
+        {
+          "label": "Co-founder & Director",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "balin-moher-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2019-06",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "balin-moher-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ben Kubica",
+      "roles": [
+        {
+          "label": "Co-captain",
+          "start": {
+            "value": "2023-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "ben-kubica-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-03",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "ben-user-role-end-confirmation"
+            ]
+          }
+        },
+        {
+          "label": "Propulsion Lead"
+        }
+      ]
+    },
+    {
+      "name": "Daniel Ibanescu",
+      "roles": [
+        {
+          "label": "Telemetry & Control Software Lead",
+          "start": {
+            "value": "2022-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "daniel-ibanescu-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-08",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "daniel-ibanescu-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evan Bhogal",
+      "roles": [
+        {
+          "label": "Telemetry & Control Member",
+          "start": {
+            "value": "2024-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "evan-bhogal-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-01",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "evan-bhogal-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Electrical Lead",
+          "start": {
+            "value": "2025-08",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "evan-bhogal-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-01",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "evan-bhogal-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jack Sinclair",
+      "roles": [
+        {
+          "label": "Digital Content Producer",
+          "start": {
+            "value": "2020-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-06",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Business Development Lead",
+          "start": {
+            "value": "2021-06",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-09",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Chief Safety Officer",
+          "start": {
+            "value": "2021-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-01",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Advisor",
+          "start": {
+            "value": "2024-01",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-06",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "jack-sinclair-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Farhan Raza",
+      "roles": [
+        {
+          "label": "Senior Mechanical Engineer – Propellant Management",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "farhan-raza-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2019-02",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "farhan-raza-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Juliano Sciabbarrasi",
+      "roles": [
+        {
+          "label": "Propulsion Dynamics Member",
+          "start": {
+            "value": "2023-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "juliano-sciabbarrasi-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-05",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "juliano-sciabbarrasi-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Propulsion Dynamics Lead",
+          "start": {
+            "value": "2025-05",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "juliano-sciabbarrasi-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-11",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "juliano-sciabbarrasi-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kai Stewart",
+      "roles": [
+        {
+          "label": "Telemetry & Control Hardware Member",
+          "start": {
+            "value": "2022-01",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "kai-stewart-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2023-03",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "kai-stewart-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Telemetry & Control Hardware Lead",
+          "start": {
+            "value": "2023-03",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "kai-stewart-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-12",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "kai-stewart-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Leandro Tomarchio",
+      "roles": [
+        {
+          "label": "Propulsion, Structures & Manufacturing Member",
+          "start": {
+            "value": "2024-03",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "leandro-tomarchio-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-10",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "leandro-tomarchio-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Structures Lead",
+          "start": {
+            "value": "2024-10",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "leandro-tomarchio-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-03",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "leandro-tomarchio-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mark Paul",
+      "roles": [
+        {
+          "label": "Telemetry & Control Software Lead",
+          "start": {
+            "value": "2022-10",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "mark-paul-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-12",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "mark-paul-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Matthew Ho",
+      "roles": [
+        {
+          "label": "Component Lead",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "matthew-ho-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2020-05",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "matthew-ho-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Team Director",
+          "start": {
+            "value": "2020-05",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "matthew-ho-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-04",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "matthew-ho-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Captain"
+        }
+      ]
+    },
+    {
+      "name": "Milad Hemmat",
+      "roles": [
+        {
+          "label": "Logistics Lead",
+          "start": {
+            "value": "2025-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "milad-hemmat-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2026-09",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "milad-hemmat-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Electrical Team",
+          "start": {
+            "value": "2026-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "milad-hemmat-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Media Lead"
+        }
+      ]
+    },
+    {
+      "name": "Nikolai Sydorenko",
+      "roles": [
+        {
+          "label": "Combustion Dynamics Member",
+          "start": {
+            "value": "2021-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "nikolai-sydorenko-linkedin-volunteering"
+            ]
+          },
+          "end": {
+            "value": "2023-04",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "nikolai-sydorenko-linkedin-volunteering"
+            ]
+          }
+        },
+        {
+          "label": "Combustion Dynamics Lead",
+          "start": {
+            "value": "2023-04",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "nikolai-sydorenko-linkedin-volunteering"
+            ]
+          },
+          "end": {
+            "value": "2024-10",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "nikolai-sydorenko-linkedin-volunteering"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orion Moore",
+      "roles": [
+        {
+          "label": "Combustion Dynamics CAD Designer",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "orion-moore-linkedin-volunteering"
+            ]
+          }
+        },
+        {
+          "label": "Combustion Dynamics Lead"
+        }
+      ]
+    },
+    {
+      "name": "Rochelle Suarez-Tapanes",
+      "roles": [
+        {
+          "label": "Propellant Management Member",
+          "start": {
+            "value": "2022-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "rochelle-suarez-tapanes-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2023-06",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "rochelle-suarez-tapanes-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Propulsion Lead",
+          "start": {
+            "value": "2023-06",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "rochelle-suarez-tapanes-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-12",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "rochelle-suarez-tapanes-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Propellant Management Lead"
+        }
+      ]
+    },
+    {
+      "name": "Rui Fernandes",
+      "roles": [
+        {
+          "label": "Propellant Management Member / Lead",
+          "start": {
+            "value": "2022-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "rui-fernandes-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2024-09",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "rui-fernandes-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shivesh Maraj",
+      "roles": [
+        {
+          "label": "Propellant Management Lead",
+          "start": {
+            "value": "2020-12",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "shivesh-maraj-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2023-11",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "shivesh-maraj-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Captain",
+          "start": {
+            "value": "2023-11",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "shivesh-maraj-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-07",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "shivesh-maraj-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Umar Shabbir",
+      "roles": [
+        {
+          "label": "Subteam Lead – Marketing & Outreach",
+          "start": {
+            "value": "2020-07",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "umar-shabbir-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-04",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "umar-shabbir-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Team Director",
+          "start": {
+            "value": "2021-05",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "umar-shabbir-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2023-08",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "umar-shabbir-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Captain"
+        }
+      ]
+    },
+    {
+      "name": "William Pirie",
+      "roles": [
+        {
+          "label": "Combustion Dynamics Lead",
+          "start": {
+            "value": "2021-07",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "william-pirie-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2025-06",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "william-pirie-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Captain"
+        }
+      ]
+    },
+    {
+      "name": "Zak Harrison",
+      "roles": [
+        {
+          "label": "Propulsion Systems Lead",
+          "start": {
+            "value": "2018-07",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "zak-harrison-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2019-05",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "zak-harrison-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Director",
+          "start": {
+            "value": "2019-06",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "zak-harrison-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2020-02",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "zak-harrison-linkedin-mach-experience"
+            ]
+          }
+        },
+        {
+          "label": "Co-founder · Captain"
+        }
+      ]
+    },
+    {
+      "name": "Antonella Ruta",
+      "roles": [
+        {
+          "label": "Combustion Dynamics Lead",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "antonella-ruta-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-08",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "antonella-ruta-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "David Machuca",
+      "roles": [
+        {
+          "label": "Lead Engineer – Propellant Management",
+          "start": {
+            "value": "2018-09",
+            "precision": "month",
+            "basis": "explicit_role_start",
+            "source_ids": [
+              "david-machuca-linkedin-mach-experience"
+            ]
+          },
+          "end": {
+            "value": "2021-04",
+            "precision": "month",
+            "basis": "explicit_role_end",
+            "source_ids": [
+              "david-machuca-linkedin-mach-experience"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
