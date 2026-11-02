@@ -221,6 +221,24 @@
   --avatar-eye-line: 35%;
 }
 
+/* Full 940x788 RPG poster retained: CSS-only ROI x671,y0,size224.
+   The face region has 224x224 source pixels; row224 blends the caption border. */
+.former-member-avatar-frame--orion-poster {
+  --avatar-width: 419.6428571%;
+  --avatar-center: 83.2978723%;
+  --avatar-eye: 0%;
+  --avatar-eye-line: 0%;
+}
+
+/* Same complete native poster as Orion; clean square x42,y528,size225.
+   Row753 blends the caption border; visible face detail is 225x225 pixels. */
+.former-member-avatar-frame--maheer-poster {
+  --avatar-width: 417.7777778%;
+  --avatar-center: 16.4361702%;
+  --avatar-eye: 67.0050761%;
+  --avatar-eye-line: 0%;
+}
+
 .former-member-avatar-frame--kai {
   --avatar-width: 125%;
   --avatar-center: 40%;

@@ -248,7 +248,7 @@ with sync_playwright() as p:
     assert 'Zeul' not in current and 'Audrey' not in current and 'Safety Officer' in current and 'Operations Director' in current
     assert 'Zeul Mordasiewicz' in former and 'Audrey Abergel-Preston' in former
     assert page.locator('#former-leads').inner_text()=='Former Leads'
-    assert page.locator('.former-members-grid .former-member-card').count()==30
+    assert page.locator('.former-members-grid .former-member-card').count()==31
     assert 'Milad Hemmat' in former and 'Milad Hemmat' not in current
     cards=page.locator('.team-leads li')
     expected=[('Julia Puszynska','Team Captain'),('Tobechukwu Okoh','Propulsion Lead'),('Samuel Li','Operations Director'),('Jonathan Al-Hinn','Safety Officer'),('Kasper Pajak','Electrical Lead'),('Madison Warren','Media & Logistics Lead')]

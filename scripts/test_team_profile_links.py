@@ -38,9 +38,9 @@ class TeamProfileLinkTests(unittest.TestCase):
         document, people = TEAM.read_text(), load_links()
         self.assertEqual(render_document(document, people), document)
         cards = list(CARD_PATTERN.finditer(document))
-        self.assertEqual(len(cards), 30)
+        self.assertEqual(len(cards), 31)
         self.assertNotIn('<a class="former-member-card"', document)
-        self.assertEqual(sum(bool(p['linkedin']) for p in people.values()), 28)
+        self.assertEqual(sum(bool(p['linkedin']) for p in people.values()), 29)
         self.assertEqual(sum(bool(p['website']) for p in people.values()), 4)
         for card in cards:
             self.assertEqual(card['tag'], 'div')
@@ -90,6 +90,12 @@ class TeamProfileLinkTests(unittest.TestCase):
         for name in ('Dmitriy Leminov', 'Yiwei Luo'):
             self.assertIsNone(people[name]['linkedin'])
             self.assertIsNone(people[name]['website'])
+
+    def test_maheer_keeps_verified_abbreviated_name_and_exact_profile(self):
+        people = load_links()
+        self.assertEqual(people['Maheer K.'], {
+            'name': 'Maheer K.', 'linkedin': 'https://ca.linkedin.com/in/7mkazi7', 'website': None})
+        self.assertFalse(any(name.startswith('Maheer ') and name != 'Maheer K.' for name in people))
 
     def test_current_six_and_employers_source_unchanged(self):
         # Authorized history removal/heading semicolon only; portraits/logos unchanged.

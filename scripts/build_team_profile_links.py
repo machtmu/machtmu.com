@@ -38,7 +38,7 @@ def span_content_range(source, class_name):
 
 def load_links(path=DATA):
     data = json.loads(path.read_text())
-    assert data['schema_version'] == 1 and len(data['people']) == 30
+    assert data['schema_version'] == 1 and len(data['people']) == 31
     seen = set()
     for person in data['people']:
         assert set(person) == {'name', 'linkedin', 'website'}
@@ -94,7 +94,7 @@ def render_document(document, links):
         return '<div class="former-member-card">' + body + '</div>'
 
     rendered = CARD_PATTERN.sub(replace, document)
-    assert seen == links.keys(), 'Only the existing30 former profiles may receive icons'
+    assert seen == links.keys(), 'Only the reviewed31 former profiles may receive icons'
     return rendered
 
 

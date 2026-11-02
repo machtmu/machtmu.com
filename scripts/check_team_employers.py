@@ -115,7 +115,7 @@ def main():
                 assert all(m['cssOrder'] == '0' for m in metrics)
                 assert [m['name'] for m in sorted(metrics, key=lambda m: (round(m['row']), m['column']))] == COMPANIES
                 assert page.locator('.team-portrait').count() == 6
-                assert page.locator('.former-member-card').count() == 30
+                assert page.locator('.former-member-card').count() == 31
                 if width == 1440 and scheme == 'dark':
                     cti_proof = page.evaluate('''async base=>{
                       const urls=['cesaroni-queens.png','cesaroni-queens-dark.svg'];

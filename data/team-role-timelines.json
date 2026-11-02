@@ -1,6 +1,11 @@
 {
   "schema_version": 1,
   "sources": {
+    "maheer-k-linkedin-rpg-experience": {
+      "kind": "linkedin_experience",
+      "url": "https://ca.linkedin.com/in/7mkazi7",
+      "checked_on": "2026-11-02"
+    },
     "adam-linkedin-mach-experience": {
       "kind": "linkedin_experience",
       "url": "https://www.linkedin.com/in/adam-oudeh/",
@@ -639,6 +644,21 @@
               "leandro-tomarchio-linkedin-mach-experience"
             ]
           }
+        }
+      ]
+    },
+    {
+      "name": "Maheer K.",
+      "roles": [
+        {
+          "label": "Telemetry & Control Hardware",
+          "start": {"value": "2019-09", "precision": "month", "basis": "explicit_role_start", "source_ids": ["maheer-k-linkedin-rpg-experience"]},
+          "end": {"value": "2020-01", "precision": "month", "basis": "explicit_role_end", "source_ids": ["maheer-k-linkedin-rpg-experience"]}
+        },
+        {
+          "label": "Avionics Team Lead",
+          "start": {"value": "2020-01", "precision": "month", "basis": "explicit_role_start", "source_ids": ["maheer-k-linkedin-rpg-experience"]},
+          "end": {"value": "2021-07", "precision": "month", "basis": "explicit_role_end", "source_ids": ["maheer-k-linkedin-rpg-experience"]}
         }
       ]
     },

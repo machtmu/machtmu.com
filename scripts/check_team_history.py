@@ -28,6 +28,7 @@ ROLES = {
     "Juliano Sciabbarrasi": "Propulsion Dynamics Lead",
     "Kai Stewart": "Telemetry & Control Hardware Lead",
     "Leandro Tomarchio": "Structures Lead",
+    "Maheer K.": "Avionics Team Lead",
     "Mark Paul": "Telemetry & Control Software Lead",
     "Matthew Ho": "Captain",
     "Milad Hemmat": "Media Lead",
@@ -43,8 +44,8 @@ ROLES = {
     "Zeul Mordasiewicz": "Captain",
 }
 ADDED = ['Balin Moher', 'Zak Harrison', 'David Machuca', 'Antonella Ruta', 'Farhan Raza', 'Matthew Ho']
-# Identity/photo availability is unchanged by native-quality replacements.
-EXPECTED_FORMER_PHOTOS = 25
+# The existing roster is unchanged; reviewed source photos replace initials only.
+EXPECTED_FORMER_PHOTOS = 29
 
 
 def main():
@@ -71,9 +72,9 @@ def main():
                         if response.status >= 400 and response.url.startswith(args.url.rstrip('/') + '/') else None)
                 page.goto(args.url.rstrip('/') + '/team/', wait_until='networkidle')
                 cards = page.locator('.former-member-card')
-                assert cards.count() == 30
+                assert cards.count() == 31
                 names = cards.locator('strong').all_text_contents()
-                assert len(set(names)) == 30
+                assert len(set(names)) == 31
                 assert set(names) == set(ROLES) | {'Antonella Ruta', 'David Machuca', 'Dmitriy Leminov', 'Farhan Raza'}
                 assert page.locator('.former-members-grid').count() == 1
                 assert page.locator('.early-members-grid').count() == 0
@@ -85,11 +86,11 @@ def main():
                 assert page.get_by_role('heading', name='Former Leads', exact=True).count() == 1
                 expected_lines = {name: [summary_text(summaries[name], compact=True)] for name in names}
                 assert cards.locator('small').count() == sum(map(len, expected_lines.values()))
-                assert cards.locator('.former-member-initials').count() == 30 - EXPECTED_FORMER_PHOTOS
+                assert cards.locator('.former-member-initials').count() == 31 - EXPECTED_FORMER_PHOTOS
                 assert cards.locator('img').count() == EXPECTED_FORMER_PHOTOS
                 assert 'Founder' not in cards.locator('small').all_text_contents()
                 assert page.locator('a.former-member-card, .former-member-card a a').count() == 0
-                assert cards.locator('.former-member-link--linkedin').count() == 28
+                assert cards.locator('.former-member-link--linkedin').count() == 29
                 assert cards.locator('.former-member-link--website').count() == 4
                 for card in cards.all():
                     card.scroll_into_view_if_needed()
@@ -196,9 +197,13 @@ def main():
                                         animations='disabled', style='.md-header{visibility:hidden!important}')
                     if name == 'Matthew Ho':
                         assert card.locator('.former-member-link--linkedin').get_attribute('href') == 'https://ca.linkedin.com/in/m1ho'
+                    if name == 'Maheer K.':
+                        assert card.locator('.former-member-link--linkedin').get_attribute('href') == 'https://ca.linkedin.com/in/7mkazi7'
+                        assert card.locator('.former-member-avatar-frame--maheer-poster img').count() == 1
                     if name == 'Orion Moore':
                         assert card.locator('.former-member-link--linkedin').get_attribute('href') == 'https://www.linkedin.com/in/orion-moore/'
-                        assert card.locator('.former-member-initials').count() == 1
+                        assert card.locator('.former-member-initials').count() == 0
+                        assert card.locator('.former-member-avatar-frame--orion-poster img').count() == 1
                 metrics = cards.evaluate_all('''async cards=>Promise.all(cards.map(async c=>{
                   const r=c.getBoundingClientRect(), d=c.querySelector('.former-member-details').getBoundingClientRect();
                   const portrait=c.querySelector('.former-member-portrait');
@@ -283,7 +288,7 @@ def main():
                         page.get_by_role('link', name='Team', exact=True).first.evaluate('a=>a.click()')
                         page.wait_for_url(args.url.rstrip('/') + '/team/')
                         page.locator('.former-member-open').first.wait_for(state='visible')
-                        assert page.locator('.former-member-open').count() == 30
+                        assert page.locator('.former-member-open').count() == 31
                         assert page.locator('.former-member-dialog').count() <= 1
                         first = page.locator('.former-member-open').first
                         first.focus()

@@ -19,7 +19,7 @@ class MemberSummaryTests(unittest.TestCase):
         source = TEAM.read_text()
         self.assertEqual(render_document(source, self.data), source)
         cards = list(CARD_PATTERN.finditer(source))
-        self.assertEqual(len(cards), 30)
+        self.assertEqual(len(cards), 31)
         for card in cards:
             name = html.unescape(re.search(r'<strong>(.*?)</strong>', card['body'])[1])
             summaries = re.findall(r'<small class="former-member-summary" data-full-summary="([^"]*)">(.*?)</small>', card['body'])
@@ -29,10 +29,18 @@ class MemberSummaryTests(unittest.TestCase):
             self.assertEqual(compact, summary_text(self.people[name], compact=True))
             self.assertNotIn('former-member-role-label', card['body'])
 
-    def test_full_history_months_and_provenance_are_unchanged(self):
+    def test_full_history_and_reviewed_addition_months_and_provenance_are_pinned(self):
         self.assertEqual(hashlib.sha256(TIMELINES.read_bytes()).hexdigest(),
-                         '6b0c3a6ca8e7db300e2663f7f278d53f6a37fa49da3b3f2571ade2a3a03fc5a1')
-        self.assertEqual(sum(bool(r.get('start')) for p in load_data()['people'] for r in p['roles']), 42)
+                         'edf06e9d002aaf81e2cf588e299536dff0493eb4ab45317b59f069fd3b39c590')
+        self.assertEqual(sum(bool(r.get('start')) for p in load_data()['people'] for r in p['roles']), 44)
+
+    def test_maheer_summary_uses_documented_highest_role_and_explicit_end_year(self):
+        person = self.people['Maheer K.']
+        self.assertEqual(summary_text(person), 'Avionics Team Lead · 2021')
+        self.assertEqual(summary_text(person, compact=True), 'Avionics Team Lead · 2021')
+        self.assertEqual(person['year_basis'], 'explicit_role_end')
+        self.assertEqual(person['role_source_ids'], ['maheer-k-linkedin-rpg-experience'])
+        self.assertEqual(person['year_source_ids'], ['maheer-k-linkedin-rpg-experience'])
 
     def test_unknown_and_suppressed_roles_are_not_invented(self):
         self.assertEqual(self.people['Orion Moore']['last_year'], 2022)

@@ -35,7 +35,7 @@ def validate(data):
         assert re.fullmatch(r'\d{4}-\d{2}-\d{2}', source['checked_on'])
     sources = {**canonical['sources'], **extra_sources}
     people = data['people']
-    assert len(people) == 30
+    assert len(people) == 31
     assert {p['name'] for p in people} == load_links().keys()
     for person in people:
         assert set(person) == {'name', 'highest_role', 'compact_role', 'role_source_ids', 'last_year',

@@ -208,7 +208,67 @@ NATIVE_AVATARS = [{'name': 'Balin Moher',
   'source_dimensions': [1440, 1920],
   'pixel_sha256': '6404fc6d916226a0ea0485125fe67b3225d5ba2302e313855c1e3d8173c25e65',
   'frame': 'evan-attachment',
-  'source_kind': 'user_supplied'}]
+  'source_kind': 'user_supplied'},
+ {
+   "name": "Georgia Jovanovic",
+   "sha256": "07fe6dbdd7dc9fbd121f487f5f2629e16c71fb59b293f6a0335067818e5af489",
+   "source_page": "https://machtmu.com/resources/MACH%20-%20Sponsorship%20Package%202022-2023.pdf#page=5",
+   "source_kind": "verified_public_pdf_portrait",
+   "output": "docs/assets/images/former-members/georgia-jovanovic-native-07fe6dbdd7dc.webp",
+   "source_dimensions": [
+     186,
+     279
+   ],
+   "pixel_sha256": "73c2090558a74529a04f17d7be6e82d29d35c5e20c6fdb0bbd4888cecebbe259",
+   "pdf_sha256": "473e125ddff2566faaa0f61a92fc68144d5410a3c922286369f5bbe75dc0d628",
+   "pdf_page": 5,
+   "pdf_image_xref": 54,
+   "pdf_image_resource": "Im2",
+   "embedded_image_sha256": "0acee43f3751268cec8470eec8a084535e43341c8fe713450278d6405edf9418",
+   "source_color_space": "DeviceCMYK",
+   "conversion": "native-dimension sRGB conversion"
+ },
+ {
+   "name": "Yiwei Luo",
+   "sha256": "f13032651589aec44f050e69ecbd9bbd370b8449325a9b4ac3d879bdc9943db2",
+   "source_page": "https://machtmu.com/resources/MACH%20-%20Sponsorship%20Package%202022-2023.pdf#page=5",
+   "source_kind": "verified_public_pdf_portrait",
+   "output": "docs/assets/images/former-members/yiwei-luo-native-f13032651589.webp",
+   "source_dimensions": [
+     265,
+     259
+   ],
+   "pixel_sha256": "86697c7495421e79e183c84c763a117b77ae97de1436585f3eba0fb94f8eb04a",
+   "pdf_sha256": "473e125ddff2566faaa0f61a92fc68144d5410a3c922286369f5bbe75dc0d628",
+   "pdf_page": 5,
+   "pdf_image_xref": 59,
+   "pdf_image_resource": "Im6",
+   "embedded_image_sha256": "3777ee8f17a407a8619a384e5482746f767cf664c508a467e0a172d1f1be1f3c",
+   "source_color_space": "DeviceCMYK",
+   "conversion": "native-dimension sRGB conversion"
+ },
+ {'name': 'Orion Moore',
+  'sha256': '5fc2361957fc42482b436b416c1f4b0cd9413bbde58742e5c7ec191f647712d8',
+  'source_page': 'https://ontherecordnews.ca/ryerson-student-team-on-track-to-complete-new-rocket/',
+  'image_url': 'https://s38612.pcdn.co/wp-content/uploads/2020/10/FB-leads-post-1-1.png',
+  'identity_source': 'https://www.torontomu.ca/zone-learning/design-fabrication-zone/community/members/mach/',
+  'source_attribution': 'RPG team-leads poster, courtesy of Ryerson Propulsion Group; caption: Orion M. - Combustion Dynamics Lead',
+  'output': 'docs/assets/images/former-members/orion-moore-native-5fc2361957fc.webp',
+  'source_dimensions': [940, 788],
+  'pixel_sha256': 'b5641c957e7d8a83e5ff81feffa42fc6d40c6aa5694f409e8b26d972e65bcab7',
+  'frame': 'orion-poster',
+  'source_kind': 'verified_public_captioned_poster'},
+ {'name': 'Maheer K.',
+  'sha256': '5fc2361957fc42482b436b416c1f4b0cd9413bbde58742e5c7ec191f647712d8',
+  'source_page': 'https://ontherecordnews.ca/ryerson-student-team-on-track-to-complete-new-rocket/',
+  'image_url': 'https://s38612.pcdn.co/wp-content/uploads/2020/10/FB-leads-post-1-1.png',
+  'identity_source': 'https://ca.linkedin.com/in/7mkazi7',
+  'source_attribution': 'RPG team-leads poster, courtesy of Ryerson Propulsion Group; caption: Maheer K. - Transfer & Control Lead',
+  'output': 'docs/assets/images/former-members/orion-moore-native-5fc2361957fc.webp',
+  'source_dimensions': [940, 788],
+  'pixel_sha256': 'b5641c957e7d8a83e5ff81feffa42fc6d40c6aa5694f409e8b26d972e65bcab7',
+  'frame': 'maheer-poster',
+  'source_kind': 'verified_public_captioned_poster'}]
 
 
 # Active records override only their matching legacy portrait; old assets remain.

@@ -23,7 +23,7 @@ def check(page, base, width):
         image.scroll_into_view_if_needed()
         image.evaluate('i => i.decode()')
     assert page.locator('.team-portrait-caption strong').all_text_contents() == NAMES
-    assert page.locator('.former-member-card').count() == 30
+    assert page.locator('.former-member-card').count() == 31
     measurements = images.evaluate_all('''(images, landmarks) => images.map(i => {
       const card = i.closest('.team-portrait');
       const r = card.getBoundingClientRect(), b = i.getBoundingClientRect();

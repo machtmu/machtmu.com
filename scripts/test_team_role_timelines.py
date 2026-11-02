@@ -25,7 +25,7 @@ class TeamRoleTimelineTests(unittest.TestCase):
                      for s in re.findall(r'<small(?: [^>]*)?>(.*?)</small>', card)]
             if any(p['name'] == name for p in self.data['people']):
                 self.assertEqual(lines, role_lines(name, ROLES.get(name), self.data))
-        self.assertEqual(len(names), 30)
+        self.assertEqual(len(names), 31)
         self.assertEqual(set(names), expected_names)
 
     def test_current_portrait_overlays_are_unchanged(self):
@@ -36,6 +36,20 @@ class TeamRoleTimelineTests(unittest.TestCase):
             ('Samuel Li', 'Operations Director'), ('Jonathan Al-Hinn', 'Safety Officer'),
             ('Kasper Pajak', 'Electrical Lead'), ('Madison Warren', 'Media & Logistics Lead')])
         self.assertNotIn('team-portrait-history', TEAM.read_text())
+
+    def test_maheer_explicit_role_chronology_is_not_inferred_from_the_poster(self):
+        person = next(p for p in self.data['people'] if p['name'] == 'Maheer K.')
+        self.assertEqual([(r['label'], r['start']['value'], r['end']['value']) for r in person['roles']], [
+            ('Telemetry & Control Hardware', '2019-09', '2020-01'),
+            ('Avionics Team Lead', '2020-01', '2021-07')])
+        for role in person['roles']:
+            for endpoint in ('start', 'end'):
+                self.assertEqual(role[endpoint]['precision'], 'month')
+                self.assertEqual(role[endpoint]['basis'], 'explicit_role_' + endpoint)
+                self.assertEqual(role[endpoint]['source_ids'], ['maheer-k-linkedin-rpg-experience'])
+        source = self.data['sources']['maheer-k-linkedin-rpg-experience']
+        self.assertEqual(source['url'], 'https://ca.linkedin.com/in/7mkazi7')
+        self.assertEqual(source['checked_on'], '2026-11-02')
 
     def test_current_history_cannot_be_rendered(self):
         bad = copy.deepcopy(self.data)
