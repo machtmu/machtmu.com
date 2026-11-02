@@ -122,6 +122,15 @@ def main():
                                       if profile_links[name][kind]]
                     active_card = card
                     if width <= 760:
+                        for link in card.locator('.former-member-link').all():
+                            assert link.is_visible()
+                            assert link.evaluate('''a=>{
+                              const r=a.getBoundingClientRect(),p=a.closest('.former-member-card').getBoundingClientRect();
+                              return r.width>=24&&r.height>=24&&r.right>=p.right-4&&r.bottom<=p.bottom&&
+                                document.elementFromPoint(r.x+r.width/2,r.y+r.height/2).closest('a')===a;
+                            }'''), name
+                            assert link.locator('svg').evaluate('s=>{const r=s.getBoundingClientRect(),w=s.closest(".former-member-card").getBoundingClientRect().width,n=Math.min(16,Math.max(8,w*.09));return Math.abs(r.width-n)<.05&&Math.abs(r.height-n)<.05}')
+                            assert link.evaluate('a=>{const s=getComputedStyle(a,"::before"),w=a.closest(".former-member-card").getBoundingClientRect().width,n=Math.min(16,Math.max(8,w*.09))*1.4;return Math.abs(parseFloat(s.width)-n)<.05&&Math.abs(parseFloat(s.height)-n)<.05}')
                         opener = card.locator('.former-member-open')
                         assert opener.is_visible() and opener.get_attribute('aria-haspopup') == 'dialog'
                         assert card.locator('.former-member-details').is_visible()
@@ -160,7 +169,7 @@ def main():
                         assert svg.get_attribute('focusable') == 'false'
                         assert link.evaluate("a=>getComputedStyle(a).color==='rgb(255, 255, 255)'")
                         assert link.evaluate('a=>{const r=a.getBoundingClientRect();return r.width>=44&&r.height>=44}')
-                        assert svg.evaluate('s=>{const r=s.getBoundingClientRect();return r.width===20&&r.height===20}')
+                        assert svg.evaluate('s=>{const r=s.getBoundingClientRect(),w=s.closest(".former-member-card,.former-member-viewer").getBoundingClientRect().width,n=Math.min(16,Math.max(8,w*.09));return Math.abs(r.width-n)<.05&&Math.abs(r.height-n)<.05}')
                         page.keyboard.press('Tab')
                         link.focus()
                         assert link.evaluate('a=>getComputedStyle(a).outlineStyle') != 'none'
@@ -212,11 +221,11 @@ def main():
                   return {name:c.querySelector('strong').textContent,compact,portrait:[a.width,a.height],
                     border:parseFloat(style.borderTopWidth),shadow:style.boxShadow,
                     overflow:c.scrollWidth>c.clientWidth+1,
-                    allInfoInside:Math.abs(r.bottom-a.bottom)<1&&(!f||f.bottom<=a.bottom&&f.top>=a.top&&f.left>=d.right)&&o.top>=a.top&&o.bottom<=a.bottom+1&&
+                    allInfoInside:Math.abs(r.bottom-a.bottom)<1&&(!f||f.bottom<=a.bottom&&a.bottom-f.bottom<=4.1&&f.top>=a.top&&f.left>=d.right)&&o.top>=a.top&&o.bottom<=a.bottom+1&&
                       roles.every((role,index)=>role.left>=a.left&&role.right<=a.right&&
                         role.top>=(index?roles[index-1].bottom:n.bottom)-1&&role.bottom<=a.bottom+1),
                     roleFits:[...c.querySelectorAll('small')].every(s=>s.scrollWidth<=s.clientWidth+1),
-                    roleFont:[...c.querySelectorAll('small')].every(s=>parseFloat(getComputedStyle(s).fontSize)>5),
+                    roleFont:[...c.querySelectorAll('small')].every(s=>parseFloat(getComputedStyle(s).fontSize)>(window.innerWidth<=360?4:5)),
                     roleMaxFont:Math.max(...[...c.querySelectorAll('small')].map(s=>parseFloat(getComputedStyle(s).fontSize))),
                     overlayHeight:o.height,
                     singleLines:[c.querySelector('strong'),...c.querySelectorAll('small')].every(s=>{
@@ -239,7 +248,11 @@ def main():
                 for m in metrics:
                     assert abs(m['portrait'][0]-m['portrait'][1])<1 and m['portrait'][0]>70, m
                     assert not m['overflow'] and m['allInfoInside'] and m['roleFits'] and m['nameInside'] and m['nameFits'], m
-                    assert m['nameFont']>5 and m['roleFont'] and m['whiteText'] and m['singleLines'], m
+                    # User explicitly chose tiny single-line labels in the
+                    # three-column phone grid beside real24px link targets.
+                    # Only <=360px compact tiles relax the former5px floor;
+                    # wider cards and the readable expanded viewer stay unchanged.
+                    assert m['nameFont']>(4 if width<=360 else 5) and m['roleFont'] and m['whiteText'] and m['singleLines'], m
                     if width <= 760:
                         assert m['nameFont'] <= 11.01 and m['roleMaxFont'] <= 9.01, m
                         assert m['overlayHeight'] <= 27, m

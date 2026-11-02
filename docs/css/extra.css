@@ -24,6 +24,7 @@ img {
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    container-type: inline-size;
     display: block;
     min-width: 0;
     padding: 0;
@@ -60,13 +61,14 @@ img {
     padding: 0.4rem;
     padding-inline-end: calc(0.4rem + var(--former-links-space, 0px));
     position: absolute;
+    text-shadow: 0 0 1px rgb(0 0 0 / 95%), 0 1px 2px rgb(0 0 0 / 90%);
     z-index: 1;
 }
 
 .former-member-overlay::before {
-    background: linear-gradient(transparent 0, rgb(0 0 0 / 76%) 1.5rem, rgb(0 0 0 / 96%) 100%);
+    background: linear-gradient(transparent 0, rgb(0 0 0 / 20%) 12%, rgb(0 0 0 / 56%) 32%, rgb(0 0 0 / 66%) 72%, rgb(0 0 0 / 76%) 100%);
     content: '';
-    inset: -1.5rem 0 0;
+    inset: -8px 0 0;
     pointer-events: none;
     position: absolute;
     z-index: -1;
@@ -142,7 +144,7 @@ img {
     z-index: 2;
 }
 
-.former-member-viewer { position: relative; }
+.former-member-viewer { container-type: inline-size; position: relative; }
 .former-member-card:has(> .former-member-links),
 .former-member-viewer:has(> .former-member-links) { --former-links-space: 48px; }
 .former-member-card:has(> .former-member-links .former-member-link--website),
@@ -157,6 +159,7 @@ img {
 
 /* MARS founder-link artwork/style, with comfortable44px targets in both themes. */
 .md-typeset .former-member-link {
+    --former-icon-size: clamp(8px, 3vw, 16px);
     align-items: center;
     border-radius: 0.3rem;
     display: inline-flex;
@@ -165,13 +168,20 @@ img {
     width: 44px;
 }
 
+.former-member-dialog .former-member-link { --former-icon-size: 16px; }
+@supports (width: 1cqw) {
+    .md-typeset .former-member-link {
+        --former-icon-size: clamp(8px, 9cqw, 16px);
+    }
+}
+
 .former-member-link svg {
     display: block;
     fill: currentColor;
-    height: 20px;
+    height: var(--former-icon-size);
     max-height: none;
     max-width: none;
-    width: 20px;
+    width: var(--former-icon-size);
 }
 
 .md-typeset .former-member-link:hover {
@@ -253,15 +263,49 @@ img {
         gap: 0.5rem 0.3rem;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .former-member-card--interactive .former-member-links { display: none; }
+    /* Bottom-right controls remain separate from the caption's text column. */
+    .former-members-grid .former-member-card--interactive:has(> .former-member-links) {
+        --former-links-space: 28px;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-links {
+        bottom: 3px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        pointer-events: none;
+        right: 3px;
+        top: auto;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-link {
+        background: transparent;
+        border-radius: 3px;
+        flex: 0 0 24px;
+        height: 24px;
+        isolation: isolate;
+        pointer-events: auto;
+        position: relative;
+        width: 24px;
+    }
+    .former-members-grid .former-member-card--interactive .former-member-link::before {
+        background: rgb(0 0 0 / 60%);
+        border-radius: 3px;
+        content: '';
+        height: calc(var(--former-icon-size) * 1.4);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(var(--former-icon-size) * 1.4);
+        z-index: -1;
+    }
     .former-members-grid .former-member-card--interactive .former-member-overlay {
         bottom: 0;
         gap: 1px;
         padding: 2px 3px;
+        padding-inline-end: calc(3px + var(--former-links-space, 0px));
     }
     .former-members-grid .former-member-card--interactive .former-member-overlay::before {
-        background: linear-gradient(transparent 0, rgb(0 0 0 / 76%) 12px, rgb(0 0 0 / 96%) 100%);
-        inset: -12px 0 0;
+        inset: -5px 0 0;
     }
     .former-members-grid .former-member-card--interactive .former-member-name strong {
         font-size: 11px;

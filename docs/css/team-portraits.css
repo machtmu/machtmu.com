@@ -94,7 +94,7 @@
 }
 
 .md-typeset .team-portraits .team-portrait::after {
-  background: linear-gradient(transparent 62%, rgb(0 0 0 / 42%) 80%, rgb(0 0 0 / 90%));
+  background: linear-gradient(transparent 72%, rgb(0 0 0 / 14%) 82%, rgb(0 0 0 / 44%) 92%, rgb(0 0 0 / 72%) 100%);
   content: "";
   inset: 0;
   pointer-events: none;
@@ -111,6 +111,7 @@
   padding: 0.9rem;
   position: absolute;
   text-align: left;
+  text-shadow: 0 0 1px rgb(0 0 0 / 95%), 0 1px 2px rgb(0 0 0 / 90%);
   z-index: 1;
 }
 
