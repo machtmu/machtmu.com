@@ -8,9 +8,15 @@ image: https://machtmu.com/Seraphina/aug-20-hotfire/seraphina-double-hotfire-pos
 
 On August 20, 2026, MACH completed a remotely commanded relight of its liquid-bipropellant engine. The first hotfire was intentionally shut down, chamber pressure returned to ambient, and the engine was then commanded through a second hotfire without physical servicing or personnel approaching the system.
 
-## Team photo
+## Team photos
 
 <div class="seraphina-team-gallery seraphina-team-gallery--single">
+  <figure>
+    <a class="seraphina-team-photo" href="/Seraphina/aug-20-hotfire/team-photos/team-launch-canada-2026-full.png" target="_blank" rel="noopener" aria-label="Open the original Launch Canada 2026 Seraphina team photo" style="aspect-ratio:1281/850; --photo-width:100%; --photo-left:0%; --photo-top:0%;">
+      <img src="/Seraphina/aug-20-hotfire/seraphina-launch-canada-2026-team.webp" alt="MACH team with Seraphina at Launch Canada 2026" width="1281" height="850" loading="lazy" decoding="async">
+    </a>
+    <figcaption>Seraphina team at Launch Canada 2026.</figcaption>
+  </figure>
   <figure>
     <a class="seraphina-team-photo" href="/Seraphina/aug-20-hotfire/team-photos/team-at-test-stand-full.jpg" target="_blank" rel="noopener" aria-label="Open the original August relight team photo" style="--photo-width:100%; --photo-left:0%; --photo-top:0%;">
       <img src="/Seraphina/aug-20-hotfire/seraphina-relight-team.webp" alt="Seraphina team beside the test stand at the August Launch Canada relight" width="2515" height="1415" loading="lazy" decoding="async" data-display-original>

@@ -220,19 +220,24 @@ with sync_playwright() as p:
     assert group.count()==1
     assert group.locator('..').get_attribute('href').endswith('/assets/images/launch-canada-2026-all-teams.jpg')
     photos=page.locator('.seraphina-team-gallery figure')
-    assert photos.count()==2
+    assert photos.count()==3
     assert page.locator('.seraphina-team-gallery').count()==2
+    lc_team=page.get_by_role('img',name='MACH team with Seraphina at Launch Canada 2026',exact=True)
+    assert lc_team.count()==1
+    assert 'assets/display/' in lc_team.get_attribute('src')
+    assert lc_team.locator('..').get_attribute('href').endswith('/team-photos/team-launch-canada-2026-full.png')
     for photo in photos.all():
      gallery=photo.locator('..').bounding_box()
      box=photo.bounding_box()
      frame=photo.locator('.seraphina-team-photo').bounding_box()
      assert abs(box['width']-frame['width'])<1, (box,frame)
-     assert abs(frame['width']/frame['height']-16/9)<.01, frame
+     ratio=1281/850 if photo.locator('img').get_attribute('alt')=='MACH team with Seraphina at Launch Canada 2026' else 16/9
+     assert abs(frame['width']/frame['height']-ratio)<.01, frame
      if width<=760:
       assert abs(box['width']-gallery['width'])<1, (box,gallery)
     if width<=760:
-     first,second=[photo.bounding_box() for photo in photos.all()]
-     assert second['y']>=first['y']+first['height']
+     boxes=[photo.bounding_box() for photo in photos.all()]
+     assert all(second['y']>=first['y']+first['height'] for first,second in zip(boxes,boxes[1:]))
     celebration=page.get_by_role('img',name='Seraphina team celebrating the August Launch Canada relight test',exact=True)
     assert celebration.locator('..').get_attribute('href').endswith('/team-celebration-full.jpg')
     celebration.scroll_into_view_if_needed()
